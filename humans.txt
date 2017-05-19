@@ -1,0 +1,62 @@
+﻿/ CZ /
+
+Tento web s entuziasmem vytvořila digitální agentura PROFICIO v roce 2016.
+
+
+/* Tvůrčí tým */
+
+	Šéf: Petr Halík
+	E-mail: info@proficio.cz
+	Twitter: @petrhalik
+
+	Webdesign doplňujících stránek: Ondřej Janus
+	Twitter: @OndrejJanus
+
+	Texty doplňujících stránek: Martin Smutek
+	Twitter: @Smutkovo
+
+	Grafika doplňujících stránek: Žaneta Kučarová
+	Twitter: @ZanetaKucarova
+
+	Programování: Petr Parimucha
+	Twitter: @parisek
+
+
+/* Kontakty */
+
+	Proficio Marketing s.r.o.
+	+420 731 133 337
+	info@proficio.cz
+	www.proficio.cz
+
+/ EN /
+
+
+This web was created by enthusiastic digital agency PROFICIO in 2016.
+
+
+/* Creative team */
+
+	Boss: Petr Halik
+	E-mail: info@proficio.cz
+	Twitter: @petrhalik
+
+	Additional webdesign: Ondrej Janus
+	Twitter: @OndrejJanus
+
+	Additional copywriting: Martin Smutek
+	Twitter: @Smutkovo
+
+	Additional graphics: Zaneta Kucarova
+	Twitter: @ZanetaKucarova
+
+	Programming: Petr Parimucha
+	Twitter: @parisek
+
+
+/* Contacts */
+
+	Proficio Marketing s.r.o.
+	+420 731 133 337
+	info@proficio.cz
+	www.proficio.cz

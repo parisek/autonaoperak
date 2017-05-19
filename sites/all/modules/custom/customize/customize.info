@@ -1,0 +1,13 @@
+name = Custom modification
+description = Custom modification to alter basic functionality. [developed by <a href="http://proficio.cz">Proficio marketing s.r.o.</a>]
+core = 7.x
+package = Proficio
+
+dependencies[] = block
+dependencies[] = ds
+dependencies[] = views
+dependencies[] = token
+dependencies[] = taxonomy_term_depth
+
+; Views handlers
+files[] = views/handlers/customize_handler_area_search_block.inc

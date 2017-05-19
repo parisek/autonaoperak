@@ -1,0 +1,365 @@
+<?php
+
+// load blocks
+module_load_include('inc', 'customize', 'customize.block');
+
+/**
+ * Implements hook_views_api().
+ */
+function customize_views_api() {
+  return array(
+    'api' => 3,
+    'path' => drupal_get_path('module', 'customize') . '/views',
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function customize_theme() {
+
+  $module_path = drupal_get_path('module', 'customize');
+
+  return array(
+    'customize_menu_dropdown' => array(
+      'template' => 'customize-menu-dropdown',
+      'path' => $module_path . '/templates',
+      'variables' => array('data' => array()),
+    ),
+    'customize_hp_slider' => array(
+      'template' => 'customize-hp-slider',
+      'path' => $module_path . '/templates',
+      'variables' => array('slides' => array(), 'data' => array()),
+    ),
+    'customize_hp_promotion' => array(
+      'template' => 'customize-hp-promotion',
+      'path' => $module_path . '/templates',
+      'variables' => array('products' => array(), 'data' => array()),
+    ),
+    'customize_hp_highlight' => array(
+      'template' => 'customize-hp-highlight',
+      'path' => $module_path . '/templates',
+      'variables' => array('data' => array()),
+    ),
+    'customize_hp_banner' => array(
+      'template' => 'customize-hp-banner',
+      'path' => $module_path . '/templates',
+      'variables' => array('data' => array()),
+    ),
+    'customize_hp_video' => array(
+      'template' => 'customize-hp-video',
+      'path' => $module_path . '/templates',
+      'variables' => array('video' => array(), 'data' => array()),
+    ),
+    'customize_product_menu' => array(
+      'template' => 'customize-product-menu',
+      'path' => $module_path . '/templates',
+      'variables' => array('data' => array()),
+    ),
+    'customize_product_submenu' => array(
+      'template' => 'customize-product-submenu',
+      'path' => $module_path . '/templates',
+      'variables' => array('data' => array()),
+    ),
+    'customize_product_submenu2' => array(
+      'template' => 'customize-product-submenu2',
+      'path' => $module_path . '/templates',
+      'variables' => array('data' => array()),
+    ),
+    'customize_product_price' => array(
+      'template' => 'customize-product-price',
+      'path' => $module_path . '/templates',
+      'variables' => array('data' => array()),
+    ),
+    'customize_product_tech' => array(
+      'template' => 'customize-product-tech',
+      'path' => $module_path . '/templates',
+      'variables' => array('data' => array()),
+    ),
+  );
+}
+
+/**
+ * Implementation of hook_menu_alter().
+ */
+function customize_menu_alter(&$items) {
+  $items['node']['page callback'] = 'drupal_not_found';
+}
+
+/**
+ * Make taxonomy/term/ID/edit vertical tabs
+ */
+function customize_form_taxonomy_form_term_alter(&$form, &$form_state, $form_id) {
+
+  $form['additional_settings'] = array(
+    '#type' => 'vertical_tabs',
+    '#weight' => 99,
+    '#attached' => array(
+      'js' => array(drupal_get_path('module', 'node') . '/content_types.js'),
+    ),
+  );
+
+  foreach ($form as $delta => $element) {
+    if (is_array($element)) {
+      if (!empty($element['#type'])) {
+        if ($element['#type'] == 'fieldset') {
+          $form[$delta]['#group'] = 'additional_settings';
+          $form['additional_settings'][$delta] = $form[$delta];
+          unset($form[$delta]);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ * - hide locale user edit page settings
+ */
+function customize_form_alter(&$form, $form_state, $form_id) {
+
+  if($form_id === 'user_login') {
+    $form['wrapper'] = array(
+      '#markup' => '<h2>' . t('Administration') . '</h2>',
+      '#weight' => -10,
+    );
+    $form['name']['#attributes']['placeholder'] = t('E-mail');
+    $form['name']['#attributes']['autocomplete'] = 'off';
+    $form['name']['#description'] = '';
+    $form['pass']['#attributes']['placeholder'] = t('Password');
+    $form['name']['#attributes']['autocomplete'] = 'off';
+    $form['pass']['#description'] = '';
+    $form['actions']['submit']['#attributes']['class'][] = 'btn-primary';
+    $form['actions']['submit']['#attributes']['class'][] = 'pull-left';
+    $form['actions']['forgot'] = array(
+      '#markup' => l(t('Forgot your password?'), 'user/password', array('attributes' => array('class' => array('forgot-password', 'pull-right'))))
+    );
+  }elseif($form_id === 'user_pass') {
+    $form['wrapper'] = array(
+      '#markup' => '<h2>' . t('Lost Password') . '</h2>',
+      '#weight' => -10,
+    );
+    $form['name']['#attributes']['placeholder'] = t('E-mail');
+    $form['name']['#attributes']['autocomplete'] = 'off';
+    $form['actions']['submit']['#attributes']['class'][] = 'btn-primary';
+    $form['actions']['submit']['#attributes']['class'][] = 'pull-left';
+    $form['actions']['forgot'] = array(
+      '#markup' => l(t('Login'), 'user', array('attributes' => array('class' => array('login', 'pull-right'))))
+    );
+  }
+
+  // The language selector is only displayed if there is more than one language.
+  if (drupal_multilingual()) {
+
+    if ($form_id == 'user_register_form' || ($form_id == 'user_profile_form' && $form['#user_category'] == 'account')) {
+
+      if (isset($form['locale'])) {
+        $form['locale']['#access'] = FALSE;
+      }
+      if (isset($form['ckeditor'])) {
+        $form['ckeditor']['#access'] = FALSE;
+      }
+      if (isset($form['redirect'])) {
+        $form['redirect']['#access'] = FALSE;
+      }
+    }
+  }
+  // do ajax submit generic for all the webform those have no redirect option enabled
+  if(isset($form['#node']) && isset($form['#node']->webform)) {
+    if($form['#node']->webform['redirect_url'] == "<none>") {
+      $matches = array();
+      //check whether the form id have nid at the end like _nid
+      preg_match('/[\d]+$/', $form_id, $matches);
+      if(count($matches)) {
+        $nid_match = $matches[0];
+        if(strpos($form_id, 'webform_client_form_') == 0 && !empty($nid_match)) {
+          if(isset($form['submitted']['osobni_udaje'])) {
+            $form['submitted']['osobni_udaje']['phone']['#type'] = 'telfield';
+          }
+          $form['actions']['submit'] = array(
+            '#type' => 'submit',
+            '#ajax' => array(
+              'callback' => 'customize_webform_form_ajax_callback',
+              'wrapper' => str_replace('_','-',$form['#form_id']),
+              'effect' => 'fade',
+              ),
+            '#value' => $form['#node']->webform['submit_text'],
+            '#attributes' => array(
+              'class' => array('btn-primary'),
+              ),
+          );
+        }
+      }
+    }
+  }
+
+  if(strpos($form_id, 'webform_client_form') !== FALSE) {
+
+    $form['checkbox_uoou'] = array(
+      '#type' => 'checkbox',
+      '#title' => 'Souhlasím se ' . l('zpracováním osobních údajů', 'node/356', array('attributes' => array('target'=>'_blank'))) . ' <span class="form-required" title="Toto pole je vyžadováno.">*</span>',
+      '#weight' => 10,
+      '#prefix' => '<div class="col-sm-12 form-uoou">',
+      '#suffix' => '</div>',
+      '#element_validate' => array('customize_form_alter_uoou'),
+    );
+  }
+}
+
+/**
+ * Validation callback.
+ */
+function customize_form_alter_uoou($element, &$form, &$form_state) {
+  if ($element['#value'] == 0) {
+      form_error($element, 'Před odesláním musíte souhlasit se zpracováním osobních údajů.');
+    }
+}
+
+function customize_webform_form_ajax_callback($form, &$form_state) {
+  if(form_get_errors()) {
+    return $form;
+  }else{
+    return $form['#node']->webform['confirmation'];
+  }
+}
+
+/**
+ * Implements hook_ds_fields_info()
+ */
+function customize_ds_fields_info($entity_type) {
+
+  $fields = array();
+  $defaults = array(
+    'field_type' => DS_FIELD_TYPE_FUNCTION,
+    'file' => drupal_get_path('module', 'customize') . '/customize.ds.inc',
+  );
+
+  $fields['node']['customize_video_image'] = array(
+    'title' => t('Customize: Video Image'),
+    'ui_limit' => array('video|*'),
+    'function' => 'customize_video_image_render',
+  ) + $defaults;
+
+  $fields['node']['customize_video_youtube'] = array(
+    'title' => t('Customize: Video Youtube'),
+    'ui_limit' => array('video|*'),
+    'function' => 'customize_video_youtube_render',
+  ) + $defaults;
+
+  $fields['node']['customize_video_related'] = array(
+    'title' => t('Customize: Video Related'),
+    'ui_limit' => array('video|full'),
+    'function' => 'customize_video_related_render',
+  ) + $defaults;
+
+  $fields['node']['customize_product_title'] = array(
+    'title' => t('Customize: title'),
+    'ui_limit' => array('product|*'),
+    'function' => 'customize_product_title_render',
+  ) + $defaults;
+
+  $fields['node']['customize_product_price'] = array(
+    'title' => t('Customize: price'),
+    'ui_limit' => array('product|full'),
+    'function' => 'customize_product_price_render',
+  ) + $defaults;
+
+  $fields['node']['customize_product_highlight'] = array(
+    'title' => t('Customize: highlight'),
+    'ui_limit' => array('product|*'),
+    'function' => 'customize_product_highlight_render',
+  ) + $defaults;
+
+  $fields['node']['customize_product_subtitle'] = array(
+    'title' => t('Customize: subtitle'),
+    'ui_limit' => array('product|*'),
+    'function' => 'customize_product_subtitle_render',
+  ) + $defaults;
+
+  $fields['node']['customize_product_tech'] = array(
+    'title' => t('Customize: tech'),
+    'ui_limit' => array('product|full'),
+    'function' => 'customize_product_tech_render',
+  ) + $defaults;
+
+  $fields['node']['customize_product_params'] = array(
+    'title' => t('Customize: params'),
+    'ui_limit' => array('product|full'),
+    'function' => 'customize_product_params_render',
+  ) + $defaults;
+
+  $fields['node']['customize_product_related'] = array(
+    'title' => t('Customize: Product related'),
+    'ui_limit' => array('product|full'),
+    'function' => 'customize_product_related_render',
+  ) + $defaults;
+
+  $fields['taxonomy_term']['customize_product_category_title'] = array(
+    'title' => t('Customize: Product category title'),
+    'ui_limit' => array('products|*'),
+    'function' => 'customize_product_category_title_render',
+  ) + $defaults;
+
+  $fields['paragraphs_item']['customize_paragraph_timeline'] = array(
+    'title' => t('Customize: Timeline'),
+    'ui_limit' => array('*|*'),
+    'function' => 'customize_paragraph_timeline_render',
+  ) + $defaults;
+
+
+  if (isset($fields[$entity_type])) {
+    return array($entity_type => $fields[$entity_type]);
+  }
+}
+
+/**
+ * Implements hook_admin_paths().
+ *
+ * Add IMCE to admin paths.
+ */
+function customize_admin_paths() {
+  $paths = array(
+    'imce' => TRUE,
+  );
+  return $paths;
+}
+
+/**
+ * Implementation of hook_admin_paths_alter().
+ */
+function customize_admin_paths_alter(&$paths) {
+  $paths['user/*/edit'] = FALSE;
+}
+
+/**
+ * Implementation of hook_webform_select_options_info().
+ */
+function customize_webform_select_options_info() {
+
+  $items = [];
+
+  $items['vendors'] = array(
+    'title' => t('Vendors'),
+    'options callback' => 'customize_webform_options_vendors',
+  );
+
+  return $items;
+}
+
+function customize_webform_options_vendors() {
+
+  $items = [];
+
+  $query = db_select('node', 'n');
+  $query->addField('n', 'nid');
+  $query->addField('n', 'title');
+  $query->condition('type', 'vendor');
+  $query->condition('status', 1);
+  $query->orderBy('title', 'ASC');
+  $result = $query->execute()->fetchAllKeyed();
+
+  $items += $result;
+  $items[0] = 'Jiný prodejce';
+
+  return $items;
+}

@@ -1,0 +1,53 @@
+<?php
+
+/**
+ * [custom_remote_menu description]
+ * @return [type] [description]
+ */
+function custom_remote_menu() {
+  $items['custom-remote/%'] = array(
+    'page callback' => 'custom_remote_callback',
+    'page arguments' => array(1),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+function custom_remote_callback($type) {
+  if($type == 'version') {
+    print VERSION;
+  }elseif($type == 'cron') {
+    print variable_get('cron_last');
+  }elseif($type == 'errors') {
+    //get errors for last 7 days
+    //severenity adjustment
+    $query = db_select('watchdog', 'w')
+    ->fields('w',array('wid'))
+    ->condition('w.timestamp', time()-60*60*24*7, '>')
+    ->condition('w.severity',array(0,1,2),'IN');
+    $oneday = $query->countQuery()->execute()->fetchField();
+
+    $query = db_select('watchdog', 'w')
+    ->fields('w',array('wid'))
+    ->condition('w.timestamp', time()-60*60*24*7, '>')
+    ->condition('w.severity',array(3),'IN');
+    $sevenday = $query->countQuery()->execute()->fetchField();
+
+    print $oneday . ' / ' . $sevenday;
+  }elseif($type == 'modules') {
+    $module_list = system_get_info('module');
+    foreach ($module_list as $module_name => $module) {
+      //filter modules from core
+      if($module['package'] !== 'Core') {
+        //set array with version of module
+        $module_contrib[$module_name] = $module['version'];
+      }
+      //fetch from http://updates.drupal.org/release-history/drupal/7.x
+    }
+    print json_encode($module_contrib);
+  }else{
+    print "undefined";
+    exit;
+  }
+}

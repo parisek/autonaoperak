@@ -1,0 +1,4 @@
+name = Statistics information
+description = Custom module for remote access statistics information about Drupal installation
+package = Proficio
+core = 7.x

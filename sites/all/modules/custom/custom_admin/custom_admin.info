@@ -1,0 +1,12 @@
+name = Custom administration
+description = Custom module for easy administration. [developed by <a href="http://proficio.cz">Proficio marketing s.r.o.</a>]
+package = Proficio
+core = 7.x
+
+dependencies[] = entity
+dependencies[] = views
+
+; Views handlers
+files[] = views/handlers/custom_admin_handler_node_field_action.inc
+files[] = views/handlers/custom_admin_handler_taxonomy_term_field_action.inc
+files[] = views/handlers/custom_admin_handler_user_field_action.inc

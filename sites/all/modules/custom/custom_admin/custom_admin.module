@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * Implements hook_views_api().
+ */
+function custom_admin_views_api() {
+  return array(
+    'api' => 3,
+    'path' => drupal_get_path('module', 'custom_admin') . '/views',
+  );
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function custom_admin_form_alter(&$form, $form_state, $form_id) {
+
+  // add disable submit to node_form
+  if(strpos($form_id, '_node_form') !== FALSE) {
+    $form['actions']['submit']['#attributes']['onclick'] = 'this.disabled=true;this.value="' . t('Sending, please wait...') . '";this.form.submit();';
+  }
+}
