@@ -74,25 +74,34 @@
  */
 ?>
 <header id="navbar" role="banner" class="navbar navbar-default">
-  <div class="container">
-    <div class="item-list">
-      <div class="block-logo">
-        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-          <img src="<?php print $base_path . $directory; ?>/logo.png" alt="<?php print t('Home'); ?>" class="img-responsive">
-        </a>
+  <?php if (!empty($page['topbar'])): ?>
+  <div class="topbar">
+    <div class="container">
+      <?php print render($page['topbar']); ?>
+    </div>
+  </div>
+  <?php endif; ?>
+  <div class="logobar">
+    <div class="container">
+      <div class="region-header">
+        <div class="block-logo">
+          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+            <img src="<?php print $base_path . $directory; ?>/logo.png" alt="<?php print t('Home'); ?>" class="img-responsive">
+          </a>
+          <?php if (!empty($page['navigation'])): ?>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"><?php print t('Menu'); ?></button>
+          <?php endif; ?>
+        </div>
         <?php if (!empty($page['navigation'])): ?>
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"><?php print t('Menu'); ?></button>
+          <div class="block-main-menu">
+            <div class="navbar-collapse collapse">
+              <nav role="navigation">
+                <?php print render($page['navigation']); ?>
+              </nav>
+          </div>
+          </div>
         <?php endif; ?>
       </div>
-      <?php if (!empty($page['navigation'])): ?>
-        <div class="block-main-menu">
-          <div class="navbar-collapse collapse">
-            <nav role="navigation">
-              <?php print render($page['navigation']); ?>
-            </nav>
-        </div>
-        </div>
-      <?php endif; ?>
     </div>
   </div>
 </header>

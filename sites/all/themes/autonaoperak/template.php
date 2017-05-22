@@ -30,10 +30,6 @@ function autonaoperak_preprocess_page(&$vars) {
     $vars['breadcrumb'] = '';
   }
 
-  $block = block_load('search', 'form');
-  $block = _block_get_renderable_array(_block_render_blocks(array($block)));
-  $vars['search_box'] = drupal_render($block);
-
   if (!empty($vars['page']['sidebar'])) {
     $vars['content_column_class_custom'] = 'col-md-9 col-sm-12 main-content left-sidebar';
   }
@@ -193,7 +189,7 @@ function autonaoperak_textarea($element) {
 }
 
 function autonaoperak_preprocess_region(&$variables, $hook) {
-  if (in_array($variables['region'], array('content', 'footer'))) {
+  if (in_array($variables['region'], array('content'))) {
     $variables['classes_array'][] = 'row';
   }
 }

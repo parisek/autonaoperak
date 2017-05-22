@@ -9,6 +9,12 @@
 	],
 "creatorBuild": "25813",
 "files": {
+	"\/autonaoperak.info": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/autonaoperak.info",
+		"oF": 0
+		},
 	"\/css\/style.css": {
 		"aP": 0,
 		"bl": 0,
@@ -31,45 +37,15 @@
 		"oAP": "\/favicon.ico",
 		"oF": 0
 		},
-	"\/images\/banner.jpg": {
+	"\/images\/bg-testimonial.jpg": {
 		"ft": 16384,
-		"iS": 172400,
+		"iS": 210164,
 		"oA": 0,
-		"oAP": "\/images\/banner.jpg",
+		"oAP": "\/images\/bg-testimonial.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
-		},
-	"\/images\/ico-doprava.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/images\/ico-doprava.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/images\/ico-marker.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/images\/ico-marker.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/images\/ico-palka.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/images\/ico-palka.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
 		},
 	"\/images\/ico-select.svg": {
 		"ft": 2097152,
@@ -81,115 +57,21 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/images\/ico-vlajka.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/images\/ico-vlajka.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/images\/ico-youtube.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/images\/ico-youtube.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/images\/sample\/novak.jpg": {
+	"\/images\/sample\/reference-autor.jpg": {
 		"ft": 16384,
-		"iS": 12281,
+		"iS": 4752,
 		"oA": 0,
-		"oAP": "\/images\/sample\/novak.jpg",
+		"oAP": "\/images\/sample\/reference-autor.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
-	"\/images\/sample\/novinka-1.png": {
-		"ft": 32768,
-		"iS": 59867,
-		"oA": 0,
-		"oAP": "\/images\/sample\/novinka-1.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/images\/sample\/novinka-2.png": {
-		"ft": 32768,
-		"iS": 45081,
-		"oA": 0,
-		"oAP": "\/images\/sample\/novinka-2.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/images\/sample\/novinka-3.png": {
-		"ft": 32768,
-		"iS": 77097,
-		"oA": 0,
-		"oAP": "\/images\/sample\/novinka-3.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/images\/sample\/novinka-4.png": {
-		"ft": 32768,
-		"iS": 82349,
-		"oA": 0,
-		"oAP": "\/images\/sample\/novinka-4.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/images\/sample\/novotny.jpg": {
+	"\/images\/slideshow.jpg": {
 		"ft": 16384,
-		"iS": 11319,
+		"iS": 441137,
 		"oA": 0,
-		"oAP": "\/images\/sample\/novotny.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/images\/stiga-leto.jpg": {
-		"ft": 16384,
-		"iS": 47475,
-		"oA": 0,
-		"oAP": "\/images\/stiga-leto.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/images\/stiga-zima.jpg": {
-		"ft": 16384,
-		"iS": 24286,
-		"oA": 0,
-		"oAP": "\/images\/stiga-zima.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/images\/stolni-tenis.jpg": {
-		"ft": 16384,
-		"iS": 33220,
-		"oA": 0,
-		"oAP": "\/images\/stolni-tenis.jpg",
+		"oAP": "\/images\/slideshow.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -476,15 +358,16 @@
 		"sM": 0,
 		"sU": 0
 		},
-	"\/logo.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/logo.svg",
+	"\/logo.png": {
+		"ft": 32768,
+		"iS": 13023,
+		"oA": 0,
+		"oAP": "\/logo.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
+		"oT": 1,
+		"q": 100
 		},
 	"\/plugins\/animate.css\/.editorconfig": {
 		"ft": 8192,
@@ -6573,12 +6456,6 @@
 		"sC": 0,
 		"tS": 0
 		},
-	"\/stigasport.info": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/stigasport.info",
-		"oF": 0
-		},
 	"\/template.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -6645,7 +6522,7 @@
 	},
 "projectAttributes": {
 	"creationDate": 503415778,
-	"displayValue": "stigasport",
+	"displayValue": "autonaoperak",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "meme-greg"
 	},

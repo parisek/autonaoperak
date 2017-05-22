@@ -21,60 +21,30 @@ function customize_theme() {
   $module_path = drupal_get_path('module', 'customize');
 
   return array(
-    'customize_menu_dropdown' => array(
-      'template' => 'customize-menu-dropdown',
+    'customize_hp_offer' => array(
+      'template' => 'customize-hp-offer',
       'path' => $module_path . '/templates',
-      'variables' => array('data' => array()),
+      'variables' => array('cars' => array(), 'data' => array()),
     ),
-    'customize_hp_slider' => array(
-      'template' => 'customize-hp-slider',
+    'customize_hp_brand_car' => array(
+      'template' => 'customize-hp-brand-car',
       'path' => $module_path . '/templates',
-      'variables' => array('slides' => array(), 'data' => array()),
+      'variables' => array('brand' => array(), 'data' => array()),
     ),
-    'customize_hp_promotion' => array(
-      'template' => 'customize-hp-promotion',
+    'customize_hp_brand_van' => array(
+      'template' => 'customize-hp-brand-van',
       'path' => $module_path . '/templates',
-      'variables' => array('products' => array(), 'data' => array()),
+      'variables' => array('brand' => array(), 'data' => array()),
     ),
-    'customize_hp_highlight' => array(
-      'template' => 'customize-hp-highlight',
+    'customize_category_car' => array(
+      'template' => 'customize-category-car',
       'path' => $module_path . '/templates',
-      'variables' => array('data' => array()),
+      'variables' => array('brand' => array(), 'data' => array()),
     ),
-    'customize_hp_banner' => array(
-      'template' => 'customize-hp-banner',
+    'customize_category_van' => array(
+      'template' => 'customize-category-van',
       'path' => $module_path . '/templates',
-      'variables' => array('data' => array()),
-    ),
-    'customize_hp_video' => array(
-      'template' => 'customize-hp-video',
-      'path' => $module_path . '/templates',
-      'variables' => array('video' => array(), 'data' => array()),
-    ),
-    'customize_product_menu' => array(
-      'template' => 'customize-product-menu',
-      'path' => $module_path . '/templates',
-      'variables' => array('data' => array()),
-    ),
-    'customize_product_submenu' => array(
-      'template' => 'customize-product-submenu',
-      'path' => $module_path . '/templates',
-      'variables' => array('data' => array()),
-    ),
-    'customize_product_submenu2' => array(
-      'template' => 'customize-product-submenu2',
-      'path' => $module_path . '/templates',
-      'variables' => array('data' => array()),
-    ),
-    'customize_product_price' => array(
-      'template' => 'customize-product-price',
-      'path' => $module_path . '/templates',
-      'variables' => array('data' => array()),
-    ),
-    'customize_product_tech' => array(
-      'template' => 'customize-product-tech',
-      'path' => $module_path . '/templates',
-      'variables' => array('data' => array()),
+      'variables' => array('brand' => array(), 'data' => array()),
     ),
   );
 }
@@ -325,41 +295,26 @@ function customize_admin_paths() {
 }
 
 /**
- * Implementation of hook_admin_paths_alter().
+ * Get nested tree from taxonomy_tree function for sidebar menu.
  */
-function customize_admin_paths_alter(&$paths) {
-  $paths['user/*/edit'] = FALSE;
-}
-
-/**
- * Implementation of hook_webform_select_options_info().
- */
-function customize_webform_select_options_info() {
-
-  $items = [];
-
-  $items['vendors'] = array(
-    'title' => t('Vendors'),
-    'options callback' => 'customize_webform_options_vendors',
-  );
-
-  return $items;
-}
-
-function customize_webform_options_vendors() {
-
-  $items = [];
-
-  $query = db_select('node', 'n');
-  $query->addField('n', 'nid');
-  $query->addField('n', 'title');
-  $query->condition('type', 'vendor');
-  $query->condition('status', 1);
-  $query->orderBy('title', 'ASC');
-  $result = $query->execute()->fetchAllKeyed();
-
-  $items += $result;
-  $items[0] = 'Jiný prodejce';
-
-  return $items;
+function customize_get_nested_tree($flatTree) {
+  $tree = array();
+  $last_term_stack = array();
+  foreach ($flatTree as &$term) {
+      while(count($last_term_stack) > 0){
+          if(in_array(end($last_term_stack)->tid, $term->parents)) {
+                  $lastTerm = end($last_term_stack);
+                  $lastTerm->children[]=$term;
+                  array_push($last_term_stack,$term);
+                  break;
+              } else {
+                  array_pop($last_term_stack);
+              }
+      }
+      if(empty($last_term_stack)){
+          $tree[] =$term;
+          array_push($last_term_stack, $term);
+      }
+  }
+  return $tree;
 }
