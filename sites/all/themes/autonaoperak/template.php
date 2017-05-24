@@ -47,6 +47,18 @@ function autonaoperak_preprocess_html(&$vars) {
   if(arg(0) == 'search') {
     $head_title = check_plain(variable_get('site_name', 'Drupal'));
     $vars['head_title'] = t('Search', array(), array('context' => 'page_title')) . ' | ' . $head_title;
+  }elseif(arg(0) == 'node' && is_numeric(arg(1))) {
+    $current_node = menu_get_object('node', 1);
+    if($current_node) {
+      if($current_node->type == 'car') {
+        $head_title = check_plain(variable_get('site_name', 'Drupal'));
+        $anotation = '';
+        if($current_node->field_car_anotation[LANGUAGE_NONE]) {
+          $anotation = $current_node->field_car_anotation[LANGUAGE_NONE][0]['value'];
+        }
+        $vars['head_title'] = trim($current_node->title . ' ' . $anotation) . ' | ' . $head_title;
+      }
+    }
   }
 
   // complete logic is in customize_init() and customize_copyright_content()

@@ -46,6 +46,16 @@ function customize_theme() {
       'path' => $module_path . '/templates',
       'variables' => array('brand' => array(), 'data' => array()),
     ),
+    'customize_faq' => array(
+      'template' => 'customize-faq',
+      'path' => $module_path . '/templates',
+      'variables' => array('question' => array(), 'data' => array()),
+    ),
+    'customize_car_pricelist' => array(
+      'template' => 'customize-car-pricelist',
+      'path' => $module_path . '/templates',
+      'variables' => array('data' => array()),
+    ),
   );
 }
 
@@ -143,8 +153,8 @@ function customize_form_alter(&$form, $form_state, $form_id) {
       if(count($matches)) {
         $nid_match = $matches[0];
         if(strpos($form_id, 'webform_client_form_') == 0 && !empty($nid_match)) {
-          if(isset($form['submitted']['osobni_udaje'])) {
-            $form['submitted']['osobni_udaje']['phone']['#type'] = 'telfield';
+          if(isset($form['submitted']['phone'])) {
+            $form['submitted']['phone']['#type'] = 'telfield';
           }
           $form['actions']['submit'] = array(
             '#type' => 'submit',
@@ -167,9 +177,9 @@ function customize_form_alter(&$form, $form_state, $form_id) {
 
     $form['checkbox_uoou'] = array(
       '#type' => 'checkbox',
-      '#title' => 'Souhlasím se ' . l('zpracováním osobních údajů', 'node/356', array('attributes' => array('target'=>'_blank'))) . ' <span class="form-required" title="Toto pole je vyžadováno.">*</span>',
+      '#title' => 'Souhlasím se ' . l('zpracováním osobních údajů', 'node/16', array('attributes' => array('target'=>'_blank'))) . ' <span class="form-required" title="Toto pole je vyžadováno.">*</span>',
       '#weight' => 10,
-      '#prefix' => '<div class="col-sm-12 form-uoou">',
+      '#prefix' => '<div class="col-xs-12 form-uoou">',
       '#suffix' => '</div>',
       '#element_validate' => array('customize_form_alter_uoou'),
     );
@@ -204,76 +214,34 @@ function customize_ds_fields_info($entity_type) {
     'file' => drupal_get_path('module', 'customize') . '/customize.ds.inc',
   );
 
-  $fields['node']['customize_video_image'] = array(
-    'title' => t('Customize: Video Image'),
-    'ui_limit' => array('video|*'),
-    'function' => 'customize_video_image_render',
-  ) + $defaults;
-
-  $fields['node']['customize_video_youtube'] = array(
-    'title' => t('Customize: Video Youtube'),
-    'ui_limit' => array('video|*'),
-    'function' => 'customize_video_youtube_render',
-  ) + $defaults;
-
-  $fields['node']['customize_video_related'] = array(
-    'title' => t('Customize: Video Related'),
-    'ui_limit' => array('video|full'),
-    'function' => 'customize_video_related_render',
-  ) + $defaults;
-
-  $fields['node']['customize_product_title'] = array(
-    'title' => t('Customize: title'),
-    'ui_limit' => array('product|*'),
-    'function' => 'customize_product_title_render',
-  ) + $defaults;
-
-  $fields['node']['customize_product_price'] = array(
-    'title' => t('Customize: price'),
-    'ui_limit' => array('product|full'),
-    'function' => 'customize_product_price_render',
-  ) + $defaults;
-
-  $fields['node']['customize_product_highlight'] = array(
-    'title' => t('Customize: highlight'),
-    'ui_limit' => array('product|*'),
-    'function' => 'customize_product_highlight_render',
-  ) + $defaults;
-
-  $fields['node']['customize_product_subtitle'] = array(
-    'title' => t('Customize: subtitle'),
-    'ui_limit' => array('product|*'),
-    'function' => 'customize_product_subtitle_render',
-  ) + $defaults;
-
-  $fields['node']['customize_product_tech'] = array(
-    'title' => t('Customize: tech'),
-    'ui_limit' => array('product|full'),
-    'function' => 'customize_product_tech_render',
-  ) + $defaults;
-
-  $fields['node']['customize_product_params'] = array(
-    'title' => t('Customize: params'),
-    'ui_limit' => array('product|full'),
-    'function' => 'customize_product_params_render',
-  ) + $defaults;
-
-  $fields['node']['customize_product_related'] = array(
-    'title' => t('Customize: Product related'),
-    'ui_limit' => array('product|full'),
-    'function' => 'customize_product_related_render',
-  ) + $defaults;
-
-  $fields['taxonomy_term']['customize_product_category_title'] = array(
-    'title' => t('Customize: Product category title'),
-    'ui_limit' => array('products|*'),
-    'function' => 'customize_product_category_title_render',
-  ) + $defaults;
-
-  $fields['paragraphs_item']['customize_paragraph_timeline'] = array(
-    'title' => t('Customize: Timeline'),
+  $fields['node']['customize_faq'] = array(
+    'title' => t('Customize: FAQ'),
     'ui_limit' => array('*|*'),
-    'function' => 'customize_paragraph_timeline_render',
+    'function' => 'customize_faq_render',
+  ) + $defaults;
+
+  $fields['node']['customize_car_title'] = array(
+    'title' => t('Customize: Title'),
+    'ui_limit' => array('car|*'),
+    'function' => 'customize_car_title_render',
+  ) + $defaults;
+
+  $fields['node']['customize_car_description'] = array(
+    'title' => t('Customize: Description'),
+    'ui_limit' => array('car|*'),
+    'function' => 'customize_car_description_render',
+  ) + $defaults;
+
+  $fields['node']['customize_car_contact'] = array(
+    'title' => t('Customize: Contact'),
+    'ui_limit' => array('car|*'),
+    'function' => 'customize_car_contact_render',
+  ) + $defaults;
+
+  $fields['node']['customize_car_pricelist'] = array(
+    'title' => t('Customize: Pricelist'),
+    'ui_limit' => array('car|*'),
+    'function' => 'customize_car_pricelist_render',
   ) + $defaults;
 
 
