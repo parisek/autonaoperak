@@ -20,6 +20,15 @@ function customize_block_info() {
   $blocks['category_van'] = array(
     'info' => t('Customize: Category van')
   );
+  $blocks['category_stock'] = array(
+    'info' => t('Customize: Category stock')
+  );
+  $blocks['subcategory_car'] = array(
+    'info' => t('Customize: Subcategory car')
+  );
+  $blocks['subcategory_van'] = array(
+    'info' => t('Customize: Subcategory van')
+  );
   $blocks['404'] = array(
     'info' => t('Customize: 404')
   );
@@ -48,6 +57,15 @@ function customize_block_view($delta='') {
       break;
     case 'category_van':
       $block['content'] = customize_category_van_content();
+      break;
+    case 'category_stock':
+      $block['content'] = customize_category_stock_content();
+      break;
+    case 'subcategory_car':
+      $block['content'] = customize_subcategory_car_content();
+      break;
+    case 'subcategory_van':
+      $block['content'] = customize_subcategory_van_content();
       break;
     case '404':
       $block['content'] = customize_404_content();
@@ -261,7 +279,7 @@ function customize_category_car_content() {
     }
 
     $data = [];
-    $content .= theme('customize_category_car', array('brand' => $brand, 'data' => $data));
+    $content .= theme('customize_category_list', array('brand' => $brand, 'data' => $data));
 
   }catch (EntityMetadataWrapperException $exc) {
     watchdog(
@@ -319,7 +337,7 @@ function customize_category_van_content() {
     }
 
     $data = [];
-    $content .= theme('customize_category_van', array('brand' => $brand, 'data' => $data));
+    $content .= theme('customize_category_list', array('brand' => $brand, 'data' => $data));
 
   }catch (EntityMetadataWrapperException $exc) {
     watchdog(
@@ -330,6 +348,78 @@ function customize_category_van_content() {
   }
 
   return $content;
+}
+
+/**
+ * Callback for block Customize: Category Stock.
+ */
+function customize_category_stock_content() {
+
+  $content = '';
+
+  try {
+
+    $brand = [];
+
+    $tree = taxonomy_get_tree(8, 0, NULL, TRUE);
+    $items = customize_get_nested_tree($tree);
+
+    foreach ($items as $item) {
+
+      $wrapper = entity_metadata_wrapper('taxonomy_term', $item);
+      $tid =  $wrapper->getIdentifier();
+      $title = $wrapper->label();
+
+      $model = [];
+      if(isset($item->children)) {
+        foreach ($item->children as $child) {
+
+          $child_wrapper = entity_metadata_wrapper('taxonomy_term', $child);
+          $child_tid =  $child_wrapper->getIdentifier();
+          $child_title = $child_wrapper->label();
+
+          $model[] = array(
+            'tid' => $child_tid,
+            'title' => $child_title,
+            'url' => url('taxonomy/term/' . $child_tid),
+          );
+        }
+      }
+
+      $brand[] = array(
+        'tid' => $tid,
+        'title' => $title,
+        'url' => url('taxonomy/term/' . $tid),
+        'model' => $model,
+      );
+    }
+
+    $data = [];
+    $content .= theme('customize_category_list', array('brand' => $brand, 'data' => $data));
+
+  }catch (EntityMetadataWrapperException $exc) {
+    watchdog(
+      'customize',
+      'See '  . __FUNCTION__ . '() <pre>' .  $exc->getTraceAsString() . '</pre>',
+       NULL, WATCHDOG_ERROR
+    );
+  }
+
+  return $content;
+}
+
+/**
+ * Callback for block Customize: Subcategory car.
+ */
+function customize_subcategory_car_content() {
+  return _customize_subcategories('node', 4);
+}
+
+/**
+ * Callback for block Customize: Subcategory van.
+ */
+function customize_subcategory_van_content() {
+  return _customize_subcategories('node', 5);
 }
 
 /**

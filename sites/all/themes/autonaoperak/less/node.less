@@ -5,13 +5,65 @@
   }
 }
 .node-car {
+  &.node-teaser {
+    a {
+      &:hover, &:active, &:focus {
+        text-decoration: none;
+      }
+    }
+    .image {
+      position: relative;
+      margin: 0 0 @line-height-computed/2 0;
+      .stickers {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        .sticker {
+          display: inline-block;
+          font-size: @font-size-small;
+          line-height: @line-height-computed;
+          padding: 5px 10px;
+          margin: 0 0 5px 0;
+          color: #fff;
+          border-radius: @border-radius-base;
+          list-style: none;
+          float: left;
+          clear: left;
+          &.sticker-new {
+            background-color: #fdc300;
+          }
+          &.sticker-stock {
+            background-color: #11b8e1;
+          }
+          &.sticker-preorder {
+            background-color: #ba68c8;
+          }
+        }
+      }
+    }
+    h2 {
+      margin: 0 0 5px 0;
+      font-size: @font-size-large;
+      font-weight: bold;
+    }
+    .subtitle {
+      margin: 0 0 5px 0;
+      color: #7d7d7d;
+      font-weight: 300;
+    }
+    .price {
+      color: #009847;
+    }
+  }
   &.view-mode-full {
     display: flex;
     flex-wrap: wrap;
     margin-left: -15px;
     margin-right: -15px;
     .group-header,
-    .group-header {
+    .group-footer {
       flex: 0 0 100%;
       padding-left: 15px;
       padding-right: 15px;
@@ -21,6 +73,49 @@
       flex: 0 0 50%;
       padding-left: 15px;
       padding-right: 15px;
+    }
+    .group-footer {
+      margin-bottom: @line-height-computed*2;
+    }
+    .photoswipe-gallery {
+      margin-bottom: @line-height-computed;
+      max-width: 600px;
+      padding-right: 30px;
+      .clearfix();
+    }
+    .field-car-gallery {
+      a {
+        border: 1px solid @gray-lighter;
+        display: inline-block;
+        position: relative;
+      }
+      &:first-child {
+        margin-bottom: 5px;
+        a {
+          &:after {
+            color: #cacfd8;
+            font-family: 'Glyphicons Halflings';
+            content: "\e015";
+            font-size: 18px;
+            background: #f4f5f7;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 10;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+          }
+        }
+      }
+      &:not(:first-child) {
+        width: 25%;
+        padding-right: 10px;
+        a {
+          padding: 10px;
+        }
+      }
     }
     .field-customize-car-title {
       margin-bottom: @line-height-computed*2;
@@ -44,6 +139,32 @@
     }
     .field-customize-faq {
       margin-bottom: @line-height-computed*2;
+    }
+  }
+}
+
+// exposed as block to content below
+.field-customize-car-form {
+  padding: @line-height-computed*3 0;
+  background: #f8f8f7;
+  .content {
+    max-width: 800px;
+    .center-block;
+    .webform-client-form {
+      max-width: 600px;
+      .center-block;
+    }
+    h2 {
+      text-align: center;
+    }
+    .subtitle {
+      text-align: center;
+    }
+    .form-uoou {
+      margin-bottom: @line-height-computed;
+    }
+    .form-actions {
+      text-align: center;
     }
   }
 }

@@ -31,6 +31,22 @@
 		"oAP": "\/css\/style.css.map",
 		"oF": 0
 		},
+	"\/css\/taxonomy.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/css\/taxonomy-min.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/css\/taxonomy.css.map": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/css\/taxonomy.css.map",
+		"oF": 0
+		},
 	"\/favicon.ico": {
 		"ft": 8192,
 		"oA": 2,
@@ -334,6 +350,23 @@
 		"ma": 1,
 		"oA": 0,
 		"oAP": "\/css\/style.css",
+		"oF": 0,
+		"oS": 1,
+		"rU": 0,
+		"sI": 0,
+		"sM": 0,
+		"sU": 0
+		},
+	"\/less\/taxonomy.less": {
+		"aP": 1,
+		"bl": 0,
+		"dJ": 0,
+		"ft": 1,
+		"ie": 1,
+		"iI": 0,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/css\/taxonomy.css",
 		"oF": 0,
 		"oS": 1,
 		"rU": 0,

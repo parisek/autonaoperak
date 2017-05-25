@@ -49,6 +49,7 @@ function autonaoperak_preprocess_html(&$vars) {
     $vars['head_title'] = t('Search', array(), array('context' => 'page_title')) . ' | ' . $head_title;
   }elseif(arg(0) == 'node' && is_numeric(arg(1))) {
     $current_node = menu_get_object('node', 1);
+    // add title and subtitle to browser bar
     if($current_node) {
       if($current_node->type == 'car') {
         $head_title = check_plain(variable_get('site_name', 'Drupal'));
@@ -57,6 +58,22 @@ function autonaoperak_preprocess_html(&$vars) {
           $anotation = $current_node->field_car_anotation[LANGUAGE_NONE][0]['value'];
         }
         $vars['head_title'] = trim($current_node->title . ' ' . $anotation) . ' | ' . $head_title;
+      }
+    }
+  }elseif(arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2))) {
+    $current_term = menu_get_object('taxonomy_term', 2);
+    // add parent name and term name to browser bar
+    if(isset($current_term->depth) && $current_term->depth == 2) {
+      $head_title = check_plain(variable_get('site_name', 'Drupal'));
+      $title = [];
+      $parents = taxonomy_get_parents($current_term->tid);
+      if(count($parents)) {
+        foreach ($parents as $brand) {
+          $title[] = $brand->name;
+          break;
+        }
+        $title[] = $current_term->name;
+        $vars['head_title'] = implode($title, ' ') . ' | ' . $head_title;
       }
     }
   }

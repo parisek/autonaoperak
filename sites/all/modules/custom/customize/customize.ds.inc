@@ -63,6 +63,63 @@ function customize_car_description_render($field, $title = NULL) {
   return $content;
 }
 
+function customize_car_teaser_render($field, $title = NULL) {
+  $content = '';
+
+  try {
+
+    $node = $field['entity'];
+    $wrapper = entity_metadata_wrapper('node', $field['entity']);
+
+    // get first image
+    $image = '';
+    foreach ($wrapper->field_car_gallery->getIterator() as $delta => $file_wrapper) {
+      $file = $file_wrapper->value();
+      if($file) {
+        $image = theme('image_style', array('style_name' => 'large', 'path' => $file['uri']));
+      }
+      break;
+    }
+
+    $content .= '<a href="' . url('node/' . $wrapper->getIdentifier()) . '">';
+
+    if(!empty($image)) {
+      $content .= '<div class="image">';
+      $content .= $image;
+      if($wrapper->field_car_sticker->value() || $wrapper->field_car_stock->value() > 0) {
+        $content .= '<ul class="stickers">';
+        if($wrapper->field_car_sticker->value()) {
+          $content .= '<li class="sticker sticker-' . $wrapper->field_car_sticker->raw() . '">' . $wrapper->field_car_sticker->label() . '</li>';
+        }
+        if($wrapper->field_car_stock->value() > 0) {
+          $content .= '<li class="sticker sticker-stock">Ihned k dispozici</li>';
+        }
+        $content .= '</ul>';
+      }
+      $content .= '</div>';
+    }
+
+    $content .= '<h2>' . $wrapper->label() . '</h2>';
+    if(!empty($wrapper->field_car_anotation->value())) {
+      $content .= '<div class="subtitle">' . $wrapper->field_car_anotation->value() . '</div>';
+    }
+    if(!empty($wrapper->field_car_anotation->value())) {
+      $content .= '<div class="price">Od 4 095 Kč / měsíc</div>';
+    }
+
+    $content .= '</div>';
+
+  }catch (EntityMetadataWrapperException $exc) {
+    watchdog(
+      'customize',
+      'See '  . __FUNCTION__ . '() <pre>' .  $exc->getTraceAsString() . '</pre>',
+       NULL, WATCHDOG_ERROR
+    );
+  }
+
+  return $content;
+}
+
 function customize_car_contact_render($field, $title = NULL) {
   $content = '';
 
@@ -71,7 +128,20 @@ function customize_car_contact_render($field, $title = NULL) {
     $node = $field['entity'];
     $wrapper = entity_metadata_wrapper('node', $field['entity']);
 
-    $content .= '<h2>Ozvěte se nám a jezděte už brzy v novém voze Škoda OCTAVIA</h2>';
+    $title = [];
+    if($wrapper->field_car_brand->value()) {
+      $model = $wrapper->field_car_brand;
+      $parents = taxonomy_get_parents($model->getIdentifier());
+      if(count($parents)) {
+        foreach ($parents as $brand) {
+          $title[] = $brand->name;
+          break;
+        }
+        $title[] = $model->label();
+      }
+    }
+
+    $content .= '<h2>Ozvěte se nám a jezděte už brzy v novém voze ' . implode($title, ' ') . '</h2>';
     $content .= '<div class="phone">';
     $content .= '601 601 806<br>601 601 805';
     $content .= '</div>';
@@ -149,6 +219,49 @@ function customize_car_pricelist_render($field, $title = NULL) {
   return $content;
 }
 
+function customize_car_form_render($field, $title = NULL) {
+  $content = '';
+
+  try {
+
+    $node = $field['entity'];
+    $wrapper = entity_metadata_wrapper('node', $field['entity']);
+
+    $title = [];
+    if($wrapper->field_car_brand->value()) {
+      $model = $wrapper->field_car_brand;
+      $parents = taxonomy_get_parents($model->getIdentifier());
+      if(count($parents)) {
+        foreach ($parents as $brand) {
+          $title[] = $brand->name;
+          break;
+        }
+        $title[] = $model->label();
+      }
+    }
+
+    $content .= '<div class="container">';
+    $content .= '<div class="content">';
+    $content .= '<h2>Napište nám a jezděte už brzy v novém voze ' . implode($title, ' ') . '</h2>';
+    $content .= '<div class="subtitle">Ozveme se vám s nabídkou do 2 pracovních dnů</div>';
+    $block = module_invoke('webform', 'block_view', 'client-block-15');
+    if($block) {
+      $content .= render($block['content']);
+    }
+    $content .= '</div>';
+    $content .= '</div>';
+
+  }catch (EntityMetadataWrapperException $exc) {
+    watchdog(
+      'customize',
+      'See '  . __FUNCTION__ . '() <pre>' .  $exc->getTraceAsString() . '</pre>',
+       NULL, WATCHDOG_ERROR
+    );
+  }
+
+  return $content;
+}
+
 function customize_faq_render($field, $title = NULL) {
   $content = '';
 
@@ -180,6 +293,44 @@ function customize_faq_render($field, $title = NULL) {
     }
 
     $content .= theme('customize_faq', array('question' => $faq, 'data' => array()));
+
+  }catch (EntityMetadataWrapperException $exc) {
+    watchdog(
+      'customize',
+      'See '  . __FUNCTION__ . '() <pre>' .  $exc->getTraceAsString() . '</pre>',
+       NULL, WATCHDOG_ERROR
+    );
+  }
+
+  return $content;
+}
+
+function customize_term_subcategory_car_render($field, $title = NULL) {
+  $content = '';
+
+  try {
+
+    $term = $field['entity'];
+    $content .= _customize_subcategories('taxonomy_term', 4, $term);
+
+  }catch (EntityMetadataWrapperException $exc) {
+    watchdog(
+      'customize',
+      'See '  . __FUNCTION__ . '() <pre>' .  $exc->getTraceAsString() . '</pre>',
+       NULL, WATCHDOG_ERROR
+    );
+  }
+
+  return $content;
+}
+
+function customize_term_subcategory_van_render($field, $title = NULL) {
+  $content = '';
+
+  try {
+
+    $term = $field['entity'];
+    $content .= _customize_subcategories('taxonomy_term', 5, $term);
 
   }catch (EntityMetadataWrapperException $exc) {
     watchdog(
