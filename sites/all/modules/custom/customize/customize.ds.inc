@@ -107,7 +107,7 @@ function customize_car_teaser_render($field, $title = NULL) {
       $content .= '<div class="price">Od 4 095 Kč / měsíc</div>';
     }
 
-    $content .= '</div>';
+    $content .= '</a>';
 
   }catch (EntityMetadataWrapperException $exc) {
     watchdog(
@@ -331,6 +331,25 @@ function customize_term_subcategory_van_render($field, $title = NULL) {
 
     $term = $field['entity'];
     $content .= _customize_subcategories('taxonomy_term', 5, $term);
+
+  }catch (EntityMetadataWrapperException $exc) {
+    watchdog(
+      'customize',
+      'See '  . __FUNCTION__ . '() <pre>' .  $exc->getTraceAsString() . '</pre>',
+       NULL, WATCHDOG_ERROR
+    );
+  }
+
+  return $content;
+}
+
+function customize_term_subcategory_stock_render($field, $title = NULL) {
+  $content = '';
+
+  try {
+
+    $term = $field['entity'];
+    $content .= _customize_subcategories('taxonomy_term', 8, $term);
 
   }catch (EntityMetadataWrapperException $exc) {
     watchdog(

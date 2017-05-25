@@ -29,6 +29,18 @@ function customize_block_info() {
   $blocks['subcategory_van'] = array(
     'info' => t('Customize: Subcategory van')
   );
+  $blocks['subcategory_stock'] = array(
+    'info' => t('Customize: Subcategory stock')
+  );
+  $blocks['product_list_car'] = array(
+    'info' => t('Customize: Product list car')
+  );
+  $blocks['product_list_van'] = array(
+    'info' => t('Customize: Product list van')
+  );
+  $blocks['product_list_stock'] = array(
+    'info' => t('Customize: Product list stock')
+  );
   $blocks['404'] = array(
     'info' => t('Customize: 404')
   );
@@ -66,6 +78,18 @@ function customize_block_view($delta='') {
       break;
     case 'subcategory_van':
       $block['content'] = customize_subcategory_van_content();
+      break;
+    case 'subcategory_stock':
+      $block['content'] = customize_subcategory_stock_content();
+      break;
+    case 'product_list_car':
+      $block['content'] = customize_product_list_car_content();
+      break;
+    case 'product_list_van':
+      $block['content'] = customize_product_list_van_content();
+      break;
+    case 'product_list_stock':
+      $block['content'] = customize_product_list_stock_content();
       break;
     case '404':
       $block['content'] = customize_404_content();
@@ -420,6 +444,34 @@ function customize_subcategory_car_content() {
  */
 function customize_subcategory_van_content() {
   return _customize_subcategories('node', 5);
+}
+
+/**
+ * Callback for block Customize: Subcategory stock.
+ */
+function customize_subcategory_stock_content() {
+  return _customize_subcategories('node', 8);
+}
+
+/**
+ * Callback for block Customize: Product list car.
+ */
+function customize_product_list_car_content() {
+  return _customize_product_list(4);
+}
+
+/**
+ * Callback for block Customize: Product list van.
+ */
+function customize_product_list_van_content() {
+  return _customize_product_list(5);
+}
+
+/**
+ * Callback for block Customize: Product list van.
+ */
+function customize_product_list_stock_content() {
+  return _customize_product_list(8);
 }
 
 /**

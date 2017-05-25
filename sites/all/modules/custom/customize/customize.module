@@ -280,6 +280,12 @@ function customize_ds_fields_info($entity_type) {
     'function' => 'customize_term_subcategory_van_render',
   ) + $defaults;
 
+  $fields['taxonomy_term']['customize_term_subcategory_stock'] = array(
+    'title' => t('Customize: Subcategory'),
+    'ui_limit' => array('category_stock|*'),
+    'function' => 'customize_term_subcategory_stock_render',
+  ) + $defaults;
+
   if (isset($fields[$entity_type])) {
     return array($entity_type => $fields[$entity_type]);
   }
@@ -337,10 +343,15 @@ function _customize_subcategories($type, $vocabulary, $term = '') {
       // get parent to select all siblings
       $parents = taxonomy_get_parents($term->tid);
       if(count($parents)) {
+        // eg. Fabia
         $parent = key($parents);
         $children = taxonomy_get_children($parent);
+      }else{
+        // eg. Škoda
+        $children = taxonomy_get_tree($vocabulary, $term->tid, 1, TRUE);
       }
     }elseif($type == 'node') {
+      // eg. Osobní vůz
       $children = taxonomy_get_tree($vocabulary, 0, 1, TRUE);
     }
 
@@ -367,6 +378,65 @@ function _customize_subcategories($type, $vocabulary, $term = '') {
     }
 
     $content .= theme('customize_term_subcategory', array('items' => $subcategories, 'data' => array()));
+
+  }catch (EntityMetadataWrapperException $exc) {
+    watchdog(
+      'customize',
+      'See '  . __FUNCTION__ . '() <pre>' .  $exc->getTraceAsString() . '</pre>',
+       NULL, WATCHDOG_ERROR
+    );
+  }
+
+  return $content;
+}
+
+function _customize_product_list($vocabulary) {
+  $content = '';
+
+  try {
+
+    $current_node = menu_get_object('node', 1);
+    $current_term = menu_get_object('taxonomy_term', 2);
+
+    $tids = [];
+    if($current_node) {
+      // select all
+    }elseif($current_term) {
+      // add current
+      $tids[] = (int)$current_term->tid;
+      // add children terms
+      $children = taxonomy_get_children($current_term->tid);
+      if(count($children)) {
+        $tids = array_merge($tids, array_keys($children));
+      }
+    }
+
+    $query = new EntityFieldQuery();
+
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'car')
+      ->propertyCondition('status', NODE_PUBLISHED)
+      ->propertyOrderBy('title', 'ASC');
+
+    if(count($tids)) {
+      $query->fieldCondition('field_car_category', 'tid', $tids, 'IN');
+    }
+
+    $result = $query->execute();
+
+    if (isset($result['node'])) {
+      $nids = array_keys($result['node']);
+      $items = entity_load('node', $nids);
+      $content .= '<div class="row">';
+      foreach ($items as $item) {
+        $wrapper = entity_metadata_wrapper('node', $item);
+        $view = node_view($wrapper->value(), 'teaser');
+        $content .= '<div class="col-sm-4 col-xs-12 item">';
+        $content .= drupal_render($view);
+        $content .= '</div>';
+      }
+      $content .= '</div>';
+    }
 
   }catch (EntityMetadataWrapperException $exc) {
     watchdog(
