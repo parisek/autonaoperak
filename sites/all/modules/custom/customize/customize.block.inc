@@ -5,6 +5,9 @@
  */
 function customize_block_info() {
 
+  $blocks['hp_slider'] = array(
+    'info' => t('Customize: HP Slider')
+  );
   $blocks['hp_offer'] = array(
     'info' => t('Customize: HP Offer')
   );
@@ -55,6 +58,9 @@ function customize_block_view($delta='') {
   $block = array();
 
   switch($delta) {
+    case 'hp_slider':
+      $block['content'] = customize_hp_slider_content();
+      break;
     case 'hp_offer':
       $block['content'] = customize_hp_offer_content();
       break;
@@ -97,6 +103,69 @@ function customize_block_view($delta='') {
   }
 
   return $block;
+}
+
+/**
+ * Callback for block Customize: HP Slider.
+ */
+function customize_hp_slider_content() {
+
+  $content = '';
+
+  try {
+
+    $slides = [];
+
+    $query = new EntityFieldQuery();
+
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'slider')
+      ->propertyCondition('status', NODE_PUBLISHED)
+      ->propertyOrderBy('created', 'DESC');
+
+    $result = $query->execute();
+
+    if (isset($result['node'])) {
+      $nids = array_keys($result['node']);
+      $items = entity_load('node', $nids);
+
+      foreach ($items as $item) {
+        $wrapper = entity_metadata_wrapper('node', $item);
+        $nid =  $wrapper->getIdentifier();
+        $title =  $wrapper->label();
+        $body = '';
+        if($wrapper->body->value()) {
+          $body = $wrapper->body->value()['safe_value'];
+        }
+        $image = '';
+        if($wrapper->field_slider_image->value()) {
+          $image = file_create_url($wrapper->field_slider_image->value()['uri']);
+        }
+        $anotation = '';
+        if($wrapper->field_slider_anotation->value()) {
+          $anotation = $wrapper->field_slider_anotation->value();
+        }
+        $slides[] = array(
+          'nid' => $nid,
+          'title' => $title,
+          'anotation' => $anotation,
+          'body' => $body,
+          'image' => $image,
+        );
+      }
+    }
+
+    $content .= theme('customize_hp_slider', array('slides' => $slides, 'data' => array()));
+
+  }catch (EntityMetadataWrapperException $exc) {
+    watchdog(
+      'customize',
+      'See '  . __FUNCTION__ . '() <pre>' .  $exc->getTraceAsString() . '</pre>',
+       NULL, WATCHDOG_ERROR
+    );
+  }
+
+  return $content;
 }
 
 /**

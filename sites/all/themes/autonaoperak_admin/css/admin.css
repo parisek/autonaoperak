@@ -31,7 +31,8 @@
   color: #fff;
   text-shadow: 0 -1px 1px #2F88CD;
 }
-.view .views-field-status {
+.view .views-field-status,
+.view .views-field-field-weight {
   width: 80px;
 }
 .view .views-field-created,
@@ -92,4 +93,24 @@
 .view .views-field-custom-admin-action .btn.btn-delete:hover {
   background: #C03A36;
   border-color: #C03A36;
+}
+.view .view-filters {
+  margin-bottom: 10px;
+}
+.view .view-filters .views-exposed-widgets {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+.view .view-filters .views-exposed-widget {
+  display: flex;
+  float: none;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+.view .view-filters .views-exposed-widget label {
+  padding-right: 10px;
+}
+.view .view-filters .form-text, .view .view-filters .form-select {
+  max-width: 120px;
 }

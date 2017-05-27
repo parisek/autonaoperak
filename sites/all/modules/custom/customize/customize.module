@@ -21,6 +21,11 @@ function customize_theme() {
   $module_path = drupal_get_path('module', 'customize');
 
   return array(
+    'customize_hp_slider' => array(
+      'template' => 'customize-hp-slider',
+      'path' => $module_path . '/templates',
+      'variables' => array('slides' => array(), 'data' => array()),
+    ),
     'customize_hp_offer' => array(
       'template' => 'customize-hp-offer',
       'path' => $module_path . '/templates',
@@ -64,6 +69,10 @@ function customize_theme() {
  */
 function customize_menu_alter(&$items) {
   $items['node']['page callback'] = 'drupal_not_found';
+  // modify link to remove replicate button from task menu
+  if (module_exists('replicate_ui')) {
+    $items['node/%node/replicate']['type'] = MENU_CALLBACK;
+  }
 }
 
 /**
@@ -410,6 +419,8 @@ function _customize_product_list($vocabulary) {
         $tids = array_merge($tids, array_keys($children));
       }
     }
+
+    //$content .= views_embed_view('block_car_list', 'block', $current_term->tid);
 
     $query = new EntityFieldQuery();
 
