@@ -448,3 +448,36 @@ function _customize_product_list($vocabulary) {
 
   return $content;
 }
+
+/**
+ * Implements hook_node_presave().
+ * Assign price from to car.
+ */
+function customize_node_presave($node) {
+
+  if($node->type == 'car') {
+
+    try {
+
+      $wrapper = entity_metadata_wrapper('node', $node);
+
+      // find lowest price in field collection
+      $prices = [];
+      foreach ($wrapper->field_car_pricelist->getIterator() as $delta => $item_wrapper) {
+        $prices[] = (int)$item_wrapper->field_pricelist_price->value();
+        $prices[] = (int)$item_wrapper->field_pricelist_price2->value();
+      }
+
+      if(!empty($prices)) {
+        $wrapper->field_price_from = min($prices);
+      }
+
+    }catch (EntityMetadataWrapperException $exc) {
+      watchdog(
+        'customize',
+        'See '  . __FUNCTION__ . '() <pre>' .  $exc->getTraceAsString() . '</pre>',
+         NULL, WATCHDOG_ERROR
+      );
+    }
+  }
+}
