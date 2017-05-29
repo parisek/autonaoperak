@@ -3,10 +3,7 @@
   <div class="item-list">
     <?php foreach ($cars as $car): ?>
       <div class="item">
-        <a href="<?php print $car['url']; ?>">
-          <div class="image"><?php print $car['image']; ?></div>
-          <div class="title"><?php print $car['title']; ?></div>
-        </a>
+        <?php print $car['node']; ?>
       </div>
     <?php endforeach ?>
   </div>

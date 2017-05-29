@@ -145,6 +145,10 @@
             display: flex;
             li {
               list-style: none;
+              margin-right: 20px;
+              &:last-child {
+                margin-right: 0;
+              }
             }
           }
         }
@@ -173,6 +177,7 @@
     .region-header {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       .block-logo {
         display: flex;
         align-items: center;
@@ -183,6 +188,9 @@
           max-width: 303px;
         }
       }
+      .navbar-collapse {
+        padding: 0;
+      }
       .block-main-menu {
         ul.menu {
           margin: 0;
@@ -192,6 +200,9 @@
             list-style: none;
             margin: 0 15px;
             text-transform: uppercase;
+            &:last-child {
+              margin-right: 0;
+            }
             a {
               padding: 0;
               color: #d2dae0;

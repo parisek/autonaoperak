@@ -103,8 +103,9 @@ function customize_car_teaser_render($field, $title = NULL) {
     if(!empty($wrapper->field_car_anotation->value())) {
       $content .= '<div class="subtitle">' . $wrapper->field_car_anotation->value() . '</div>';
     }
-    if(!empty($wrapper->field_car_anotation->value())) {
-      $content .= '<div class="price">Od 4 095 Kč / měsíc</div>';
+
+    if(!empty($wrapper->field_price_from->value())) {
+      $content .= '<div class="price">Od ' . number_format($wrapper->field_price_from->value(), 0, ',', ' ') . ' Kč / měsíc</div>';
     }
 
     $content .= '</a>';

@@ -121,6 +121,7 @@ function customize_hp_slider_content() {
     $query->entityCondition('entity_type', 'node')
       ->entityCondition('bundle', 'slider')
       ->propertyCondition('status', NODE_PUBLISHED)
+      ->fieldOrderBy('field_weight', 'value', 'ASC')
       ->propertyOrderBy('created', 'DESC');
 
     $result = $query->execute();
@@ -206,11 +207,11 @@ function customize_hp_offer_content() {
           break;
         }
 
+        $view = node_view($wrapper->value(), 'teaser');
+
         $cars[] = array(
           'nid' => $nid,
-          'title' => $title,
-          'image' => $image,
-          'url' => url('node/' . $nid),
+          'node' => drupal_render($view),
         );
       }
     }

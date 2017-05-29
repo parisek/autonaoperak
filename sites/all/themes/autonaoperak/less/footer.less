@@ -3,11 +3,57 @@
   margin: 0;
   padding: @line-height-computed*2 0;
   color: #b5bfc9;
+  font-weight: 300;
   a {
     color: #b5bfc9;
   }
   .region-footer {
     display: flex;
     justify-content: space-between;
+  }
+  .block-footer-copyright {
+    display: flex;
+    align-items: center;
+    .divider {
+      padding: 0 10px;
+      color: #606870;
+    }
+  }
+  .block-footer-contact {
+    .content {
+      ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        li {
+          list-style: none;
+          margin-right: 20px;
+          display: flex;
+          align-items: center;
+          &:last-child {
+            margin-right: 0;
+          }
+          .divider {
+            padding: 0 10px;
+            color: #606870;
+          }
+          [class^="icon-"], [class*=" icon-"] {
+            color: #606870;
+          }
+          .facebook {
+            width: 44px;
+            height: 44px;
+            display: block;
+            background-image: url('../images/ico-facebook.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: all 0.3s;
+            &:hover {
+              transform: rotate(10deg);
+            }
+          }
+        }
+      }
+    }
   }
 }
