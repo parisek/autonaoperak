@@ -14,14 +14,8 @@ function customize_block_info() {
   $blocks['hp_brand_car'] = array(
     'info' => t('Customize: HP Brand Car')
   );
-  $blocks['hp_brand_van'] = array(
-    'info' => t('Customize: HP Brand Van')
-  );
   $blocks['category_car'] = array(
     'info' => t('Customize: Category car')
-  );
-  $blocks['category_van'] = array(
-    'info' => t('Customize: Category van')
   );
   $blocks['category_stock'] = array(
     'info' => t('Customize: Category stock')
@@ -29,17 +23,11 @@ function customize_block_info() {
   $blocks['subcategory_car'] = array(
     'info' => t('Customize: Subcategory car')
   );
-  $blocks['subcategory_van'] = array(
-    'info' => t('Customize: Subcategory van')
-  );
   $blocks['subcategory_stock'] = array(
     'info' => t('Customize: Subcategory stock')
   );
   $blocks['product_list_car'] = array(
     'info' => t('Customize: Product list car')
-  );
-  $blocks['product_list_van'] = array(
-    'info' => t('Customize: Product list van')
   );
   $blocks['product_list_stock'] = array(
     'info' => t('Customize: Product list stock')
@@ -67,14 +55,8 @@ function customize_block_view($delta='') {
     case 'hp_brand_car':
       $block['content'] = customize_hp_brand_car_content();
       break;
-    case 'hp_brand_van':
-      $block['content'] = customize_hp_brand_van_content();
-      break;
     case 'category_car':
       $block['content'] = customize_category_car_content();
-      break;
-    case 'category_van':
-      $block['content'] = customize_category_van_content();
       break;
     case 'category_stock':
       $block['content'] = customize_category_stock_content();
@@ -82,17 +64,11 @@ function customize_block_view($delta='') {
     case 'subcategory_car':
       $block['content'] = customize_subcategory_car_content();
       break;
-    case 'subcategory_van':
-      $block['content'] = customize_subcategory_van_content();
-      break;
     case 'subcategory_stock':
       $block['content'] = customize_subcategory_stock_content();
       break;
     case 'product_list_car':
       $block['content'] = customize_product_list_car_content();
-      break;
-    case 'product_list_van':
-      $block['content'] = customize_product_list_van_content();
       break;
     case 'product_list_stock':
       $block['content'] = customize_product_list_stock_content();
@@ -281,54 +257,6 @@ function customize_hp_brand_car_content() {
 }
 
 /**
- * Callback for block Customize: Brand Van.
- */
-function customize_hp_brand_van_content() {
-
-  $content = '';
-
-  try {
-
-    $brand = [];
-
-    $items = taxonomy_get_tree(5, 0, 1, TRUE);
-
-    foreach ($items as $item) {
-
-      $wrapper = entity_metadata_wrapper('taxonomy_term', $item);
-      $tid =  $wrapper->getIdentifier();
-      $title = $wrapper->label();
-      $image = '';
-      if($wrapper->field_term_image->value()) {
-        $file = $wrapper->field_term_image->value();
-        $image = theme('image_style', array('style_name' => 'thumbnail', 'path' => $file['uri']));
-      }
-
-      $brand[] = array(
-        'tid' => $tid,
-        'title' => $title,
-        'image' => $image,
-        'url' => url('taxonomy/term/' . $tid),
-      );
-    }
-
-    $data = [];
-    $data['morelink'] = url('node/3');
-
-    $content .= theme('customize_hp_brand_van', array('brand' => $brand, 'data' => $data));
-
-  }catch (EntityMetadataWrapperException $exc) {
-    watchdog(
-      'customize',
-      'See '  . __FUNCTION__ . '() <pre>' .  $exc->getTraceAsString() . '</pre>',
-       NULL, WATCHDOG_ERROR
-    );
-  }
-
-  return $content;
-}
-
-/**
  * Callback for block Customize: Category Car.
  */
 function customize_category_car_content() {
@@ -340,64 +268,6 @@ function customize_category_car_content() {
     $brand = [];
 
     $tree = taxonomy_get_tree(4, 0, NULL, TRUE);
-    $items = customize_get_nested_tree($tree);
-
-    foreach ($items as $item) {
-
-      $wrapper = entity_metadata_wrapper('taxonomy_term', $item);
-      $tid =  $wrapper->getIdentifier();
-      $title = $wrapper->label();
-
-      $model = [];
-      if(isset($item->children)) {
-        foreach ($item->children as $child) {
-
-          $child_wrapper = entity_metadata_wrapper('taxonomy_term', $child);
-          $child_tid =  $child_wrapper->getIdentifier();
-          $child_title = $child_wrapper->label();
-
-          $model[] = array(
-            'tid' => $child_tid,
-            'title' => $child_title,
-            'url' => url('taxonomy/term/' . $child_tid),
-          );
-        }
-      }
-
-      $brand[] = array(
-        'tid' => $tid,
-        'title' => $title,
-        'url' => url('taxonomy/term/' . $tid),
-        'model' => $model,
-      );
-    }
-
-    $data = [];
-    $content .= theme('customize_category_list', array('brand' => $brand, 'data' => $data));
-
-  }catch (EntityMetadataWrapperException $exc) {
-    watchdog(
-      'customize',
-      'See '  . __FUNCTION__ . '() <pre>' .  $exc->getTraceAsString() . '</pre>',
-       NULL, WATCHDOG_ERROR
-    );
-  }
-
-  return $content;
-}
-
-/**
- * Callback for block Customize: Category Van.
- */
-function customize_category_van_content() {
-
-  $content = '';
-
-  try {
-
-    $brand = [];
-
-    $tree = taxonomy_get_tree(5, 0, NULL, TRUE);
     $items = customize_get_nested_tree($tree);
 
     foreach ($items as $item) {
@@ -510,13 +380,6 @@ function customize_subcategory_car_content() {
 }
 
 /**
- * Callback for block Customize: Subcategory van.
- */
-function customize_subcategory_van_content() {
-  return _customize_subcategories('node', 5);
-}
-
-/**
  * Callback for block Customize: Subcategory stock.
  */
 function customize_subcategory_stock_content() {
@@ -528,13 +391,6 @@ function customize_subcategory_stock_content() {
  */
 function customize_product_list_car_content() {
   return _customize_product_list(4);
-}
-
-/**
- * Callback for block Customize: Product list van.
- */
-function customize_product_list_van_content() {
-  return _customize_product_list(5);
 }
 
 /**
