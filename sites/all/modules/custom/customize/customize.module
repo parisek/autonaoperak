@@ -102,6 +102,18 @@ function customize_form_taxonomy_form_term_alter(&$form, &$form_state, $form_id)
 }
 
 /**
+ * Added to modify weight of form_alter execution
+ * http://drupal.stackexchange.com/questions/99980/how-do-i-set-locale-settings-fieldset-in-the-user-profile-form-to-uncollapsi
+ */
+function customize_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'form_alter') {
+    $group = $implementations['customize'];
+    unset($implementations['customize']);
+    $implementations['customize'] = $group;
+  }
+}
+
+/**
  * Implements hook_form_alter().
  * - hide locale user edit page settings
  */
