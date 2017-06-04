@@ -108,6 +108,8 @@ function custom_export_visit($filename) {
 
     exit;
   }
+
+  return MENU_NOT_FOUND;
 }
 
 function custom_export_save($type) {
@@ -199,7 +201,7 @@ function _custom_export_generate($type) {
 
               $pricelist[] = [
                 'km' => $item_wrapper->field_pricelist_km->value(),
-                'months' => $item_wrapper->field_pricelist_year->raw()*12,
+                'months' => $item_wrapper->field_pricelist_year->raw(),
                 'price' => $item_wrapper->field_pricelist_price->value(),
               ];
             }
