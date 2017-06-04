@@ -1,0 +1,35 @@
+<?php
+/**
+ * @file
+ * Installation file for custom_export.
+ */
+
+function custom_export_install() {
+  variable_set('custom_feed_vat', 21);
+  variable_set('custom_feed_naoperak', 'naoperak.xml');
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function custom_export_uninstall() {
+  // Get global variable array
+  global $conf;
+  foreach (array_keys($conf) as $key) {
+    // Find variables that have the module prefix
+    if (strpos($key, 'custom_export_') === 0) {
+      variable_del($key);
+    }
+  }
+}
+
+/**
+ * Remove cache directory if module is disabled (or uninstalled).
+ */
+function custom_export_disable() {
+  $path = file_default_scheme() . '://custom_export';
+  if (file_exists($path)) {
+    file_unmanaged_delete($path .'/'.variable_get('custom_export_naoperak', 'naoperak.xml'));
+    rmdir($path);
+  }
+}

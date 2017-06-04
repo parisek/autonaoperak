@@ -1,0 +1,8 @@
+name = XML export for Naoperak.cz
+description = Custom module for periodically export cars to XML file [developed by <a href="http://proficio.cz">Proficio marketing s.r.o.</a>]
+package = Proficio
+core = 7.x
+
+configure = admin/config/services/custom-export
+
+dependencies[] = entity

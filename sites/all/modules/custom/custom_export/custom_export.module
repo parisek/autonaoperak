@@ -1,0 +1,267 @@
+<?php
+
+define('PATH', file_default_scheme() . "://custom_export/");
+
+/**
+ * Implementation of hook_permission().
+ */
+function custom_export_permission() {
+  return array(
+    'administer custom export' => array(
+      'title' => t('Administer custom export'),
+      'description' => t('Perform administration tasks for custom export.'),
+    ),
+  );
+}
+
+/**
+ * Implementation of hook_menu().
+ */
+function custom_export_menu() {
+
+  $items['admin/config/services/custom-export'] = array(
+    'title' => 'XML Export',
+    'description' => 'XML export configuration',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('custom_export_admin_settings_form'),
+    'access arguments' => array('administer custom export'),
+    'file' => 'custom_export.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+   );
+
+  // Insert link manually to administration page
+  $items['admin/config/services/custom-export/naoperak'] = array(
+    'title' => t('Naoperak.cz'),
+    'page callback' => 'custom_export_preview',
+    'page arguments' => array(4),
+    'access arguments' => array('administer custom export'),
+    'type' => MENU_CALLBACK,
+   );
+
+  // Provide file via wrapper
+  $items['custom-export/%'] = array(
+    'title' => t('Export'),
+    'page callback' => 'custom_export_visit',
+    'page arguments' => array(1),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+   );
+
+  return $items;
+}
+
+/**
+ * Implementation of hook_cron().
+ */
+function custom_export_cron() {
+
+  $filename = variable_get('custom_export_naoperak', 'naoperak.xml');
+
+  $status = custom_export_save('naoperak');
+
+  if($status) {
+    watchdog('custom_export', 'Byl vytvořen XML export dle standardu naoperak.cz na adrese @path.', array('@path' => file_create_url(PATH . $filename)), WATCHDOG_INFO, l('export', file_create_url(PATH . $filename)));
+  }else{
+    watchdog('custom_export', 'Nebyl vytvořen XML export dle standardu naoperak.cz na adrese @path.', array('@path' => file_create_url(PATH . $filename)), WATCHDOG_ERROR);
+  }
+
+}
+
+/**
+ * Implements hook_theme().
+ */
+function custom_export_theme() {
+
+  $module_path = drupal_get_path('module', 'custom_export');
+
+  return array(
+    'customize_export_naoperak' => array(
+      'template' => 'custom-export-naoperak',
+      'path' => $module_path . '/templates',
+      'variables' => array('items' => [], 'data' => []),
+    ),
+  );
+}
+
+function custom_export_visit($filename) {
+
+  $filename = check_plain($filename);
+  $path = PATH . $filename;
+
+  if(file_exists($path)) {
+
+    // save to our log information about source
+    $ip = ip_address();
+    $hostname = gethostbyaddr($ip);
+    $host = $ip . ' ' . $hostname . ' ' . $_SERVER['HTTP_USER_AGENT'];
+
+    watchdog('custom_export', 'XML export dle standardu naoperak.cz byl zobrazen (!source).', array('!source' => $host), WATCHDOG_INFO, l('export', file_create_url(PATH . $filename)));
+
+    // load and return file
+    $fhandle = fopen($path, 'r');
+    $result = fread($fhandle, filesize($path));
+    fclose($fhandle);
+
+    drupal_add_http_header('Content-Type', 'text/xml; utf-8');
+
+    print $result;
+
+    exit;
+  }
+}
+
+function custom_export_save($type) {
+
+  if($type == 'naoperak') {
+    $output = _custom_export_generate($type);
+    $filename = variable_get('custom_export_naoperak', 'naoperak.xml');
+
+    $directory = PATH;
+    file_prepare_directory($directory, FILE_CREATE_DIRECTORY);
+    file_save_data($output, PATH .'/'. $filename, FILE_EXISTS_REPLACE);
+
+    return true;
+  }
+
+  return false;
+
+}
+
+function custom_export_preview($type) {
+
+  $output = '';
+
+  if($type == 'naoperak') {
+    $output .= '<pre>';
+    $output .= check_plain(_custom_export_generate($type));
+    $output .= '</pre>';
+  }
+
+  return $output;
+
+}
+
+function _custom_export_generate($type) {
+
+  $vat = variable_get('custom_export_vat', 21);
+
+  $content = '';
+
+  try {
+
+    if($type == 'naoperak') {
+
+      $items = [];
+      $data = [];
+
+      //loading via node entity
+      $query = new EntityFieldQuery();
+      $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', array('car'))
+      ->propertyCondition('status', NODE_PUBLISHED);
+      $result = $query->execute();
+
+      if (isset($result['node'])) {
+        $nids = array_keys($result['node']);
+        $nodes = node_load_multiple($nids);
+
+        foreach ($nodes as $node) {
+          $wrapper = entity_metadata_wrapper('node', $node);
+
+          // find brand like ŠKODA
+          $manufacturer = '';
+          $manufacturer_parents = taxonomy_get_parents($wrapper->field_car_brand->raw());
+          if(count($manufacturer_parents)) {
+            $manufacturer_object = taxonomy_term_load(key($manufacturer_parents));
+            $manufacturer = $manufacturer_object->name;
+          }
+
+          $images = [];
+          foreach ($wrapper->field_car_gallery->getIterator() as $delta => $file_wrapper) {
+            $file = $file_wrapper->value();
+            $images[] = file_create_url($file['uri']);
+          }
+
+          $equipment = [];
+          foreach ($wrapper->field_car_equipment->getIterator() as $delta => $item_wrapper) {
+            $equipment[] = $item_wrapper->label();
+          }
+
+          $pricelist = [];
+          foreach ($wrapper->field_car_pricelist->getIterator() as $delta => $item_wrapper) {
+            if(!empty($item_wrapper->field_pricelist_km->value()) &&
+               !empty($item_wrapper->field_pricelist_year->value()) &&
+               !empty($item_wrapper->field_pricelist_price->value())
+              ) {
+              $km = $item_wrapper->field_pricelist_km->value();
+              $year = $item_wrapper->field_pricelist_year->value();
+              $deposit = $item_wrapper->field_pricelist_deposit->value();
+
+              $pricelist[] = [
+                'km' => $item_wrapper->field_pricelist_km->value(),
+                'months' => $item_wrapper->field_pricelist_year->raw()*12,
+                'price' => $item_wrapper->field_pricelist_price->value(),
+              ];
+            }
+          }
+
+          $models = [];
+          foreach ($pricelist as $pricelist_item) {
+            $models[] = [
+              'tax_payer' => 0,
+              'engine' => $wrapper->field_car_engine->value(),
+              'fuel' => $wrapper->field_car_fuel->raw(),
+              'vol' => $wrapper->field_car_vol->value(),
+              'awd' => ($wrapper->field_car_awd->raw()) ? 1 : 0,
+              'power' => $wrapper->field_car_power->raw(),
+              'body' => $wrapper->field_car_body->raw(),
+              'transmission' => $wrapper->field_car_transmission->raw(),
+              'color' => $wrapper->field_car_color_type->raw(),
+              'months' => $pricelist_item['months'],
+              'per_year' => $pricelist_item['km'],
+              'free_per_year' => $pricelist_item['km'],
+              'pneu' => ($wrapper->field_car_pneu->raw()) ? 1 : 0,
+              'insurance' => ($wrapper->field_car_insurance->raw()) ? 1 : 0,
+              'stamp' => ($wrapper->field_car_stamp->raw()) ? 1 : 0,
+              'radio' => ($wrapper->field_car_radio->raw()) ? 1 : 0,
+              'service' => ($wrapper->field_car_servis->raw()) ? 1 : 0,
+              'road_tax' => ($wrapper->field_car_roadtax->raw()) ? 1 : 0,
+              'leasing_partner' => 'Autonaoperak.cz',
+              'price' => $pricelist_item['price'],
+              'price_vat' => $pricelist_item['price']*(1+$vat/100),
+              'storage' => $wrapper->field_car_stock->raw(),
+              'url' => url('node/' . $wrapper->getIdentifier(), array('absolute' => TRUE, 'query' => array('utm_source' => 'feed', 'utm_campaign' => 'naoperak.cz'))),
+            ];
+          }
+
+          $items[] = [
+            'item_id' => $wrapper->getIdentifier(),
+            'name' => $wrapper->label(),
+            'manufacturer' => $manufacturer,
+            'class' => $wrapper->field_car_brand->name->value(),
+            'equipment' => implode($equipment, ', '),
+            'color_id' => $wrapper->field_car_color->raw(),
+            'color_name' => $wrapper->field_car_color->name->value(),
+            'color_kind' => $wrapper->field_car_color_type->raw(),
+            'images' => $images,
+            'models' => $models,
+          ];
+        }
+      }
+
+
+      $content .= theme('customize_export_naoperak', array('items' => $items, 'data' => $data));
+
+    }
+
+  }catch (EntityMetadataWrapperException $exc) {
+    watchdog(
+      'custom_export',
+      'See '  . __FUNCTION__ . '() <pre>' .  $exc->getTraceAsString() . '</pre>',
+       NULL, WATCHDOG_ERROR
+    );
+  }
+
+  return $content;
+
+}
