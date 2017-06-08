@@ -87,6 +87,7 @@ function custom_export_visit($filename) {
 
   $filename = check_plain($filename);
   $path = PATH . $filename;
+  $url = file_create_url($path);
 
   if(file_exists($path)) {
 
@@ -97,13 +98,15 @@ function custom_export_visit($filename) {
 
     watchdog('custom_export', 'XML export dle standardu naoperak.cz byl zobrazen (!source).', array('!source' => $host), WATCHDOG_INFO, l('export', file_create_url(PATH . $filename)));
 
-    // load and return file
-    $fhandle = fopen($path, 'r');
-    $result = fread($fhandle, filesize($path));
-    fclose($fhandle);
+    $request = drupal_http_request($url);
+    $result = '';
+    if (in_array($request->code, array(200, 304))) {
+      if(!empty($request->data)) {
+        $result = $request->data;
+      }
+    }
 
     drupal_add_http_header('Content-Type', 'text/xml; utf-8');
-
     print $result;
 
     exit;
@@ -232,7 +235,7 @@ function _custom_export_generate($type) {
               'price' => $pricelist_item['price'],
               'price_vat' => $pricelist_item['price']*(1+$vat/100),
               'storage' => $wrapper->field_car_stock->raw(),
-              'url' => url('node/' . $wrapper->getIdentifier(), array('absolute' => TRUE, 'query' => array('utm_source' => 'feed', 'utm_campaign' => 'naoperak.cz'))),
+              'url' => url('node/' . $wrapper->getIdentifier(), array('absolute' => TRUE, 'query' => array('utm_source' => $manufacturer, 'utm_campaign' => 'naoperak.cz', 'utm_medium' => 'feed'))),
             ];
           }
 
