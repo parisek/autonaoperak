@@ -1,6 +1,6 @@
 <div class="container">
   <h2>Přes 50 vozů ihned k dispozici</h2>
-  <div class="item-list">
+  <div class="owl-carousel owl-theme" id="offer-slider">
     <?php foreach ($cars as $car): ?>
       <div class="item">
         <?php print $car['node']; ?>

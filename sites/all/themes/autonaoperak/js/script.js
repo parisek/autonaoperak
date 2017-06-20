@@ -29,7 +29,6 @@
 
       $owl.on('initialize.owl.carousel resize.owl.carousel', function(event) {
         var width = $(window).width()-$('.container', $slider).width();
-        console.log(width);
         $('.gradient-left', $slider).css('width', width/2 + 'px');
         $('.gradient-right', $slider).css('width', width/2 + 'px');
       })
@@ -52,15 +51,29 @@
         $owl.trigger('to.owl.carousel', [$(this).index(), 300]);
       });
 
+      var $owl2 = $('#offer-slider');
+
+      $owl2.owlCarousel({
+        items:4,
+        loop:true,
+        margin:0,
+        nav:true,
+        navText: ['<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>', '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>'],
+        dots:false,
+        lazyLoad:true,
+        autoplay:true,
+        autoplayTimeout:5000,
+        autoplayHoverPause:true,
+      })
+
+
       //toggle accordion up/down icon eg. faq section
       $('.panel-group .panel-collapse').on('hide.bs.collapse', function () {
         var $link = $(this).closest('.panel').find('.panel-title a');
-        $link.find('.glyphicon').toggleClass('glyphicon-menu-down glyphicon-menu-up');
         $link.removeClass('open');
       })
       $('.panel-group .panel-collapse').on('show.bs.collapse', function () {
         var $link = $(this).closest('.panel').find('.panel-title a');
-        $link.find('.glyphicon').toggleClass('glyphicon-menu-down glyphicon-menu-up');
         $link.addClass('open');
       })
 

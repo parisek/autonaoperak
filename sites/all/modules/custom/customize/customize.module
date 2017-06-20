@@ -61,6 +61,11 @@ function customize_theme() {
       'path' => $module_path . '/templates',
       'variables' => array('items' => array(), 'data' => array()),
     ),
+    'customize_product_list' => array(
+      'template' => 'customize-product-list',
+      'path' => $module_path . '/templates',
+      'variables' => array('data' => array()),
+    ),
   );
 }
 
@@ -200,7 +205,7 @@ function customize_form_alter(&$form, $form_state, $form_id) {
       '#type' => 'checkbox',
       '#title' => 'Souhlasím se ' . l('zpracováním osobních údajů', 'node/16', array('attributes' => array('target'=>'_blank'))) . ' <span class="form-required" title="Toto pole je vyžadováno.">*</span>',
       '#weight' => 10,
-      '#prefix' => '<div class="col-xs-12 form-uoou">',
+      '#prefix' => '<div class="form-uoou">',
       '#suffix' => '</div>',
       '#element_validate' => array('customize_form_alter_uoou'),
     );
@@ -245,6 +250,12 @@ function customize_ds_fields_info($entity_type) {
     'title' => t('Customize: Title'),
     'ui_limit' => array('car|full'),
     'function' => 'customize_car_title_render',
+  ) + $defaults;
+
+  $fields['node']['customize_car_gallery'] = array(
+    'title' => t('Customize: Car gallery'),
+    'ui_limit' => array('car|full'),
+    'function' => 'customize_car_gallery_render',
   ) + $defaults;
 
   $fields['node']['customize_car_description'] = array(
@@ -422,6 +433,10 @@ function _customize_product_list($vocabulary) {
     $tids = [];
     if($current_node) {
       // select all
+      $tree = taxonomy_get_tree($vocabulary);
+      foreach ($tree as $term) {
+        $tids[] = $term->tid;
+      }
     }elseif($current_term) {
       // add current
       $tids[] = (int)$current_term->tid;
@@ -432,34 +447,29 @@ function _customize_product_list($vocabulary) {
       }
     }
 
-    //$content .= views_embed_view('block_car_list', 'block', $current_term->tid);
+    $data = [];
 
-    $query = new EntityFieldQuery();
-
-    $query->entityCondition('entity_type', 'node')
-      ->entityCondition('bundle', 'car')
-      ->propertyCondition('status', NODE_PUBLISHED)
-      ->propertyOrderBy('title', 'ASC');
-
-    if(count($tids)) {
-      $query->fieldCondition('field_car_category', 'tid', $tids, 'IN');
+    $data['form_fuel'] = [];
+    $field = field_info_field('field_car_fuel');
+    if($field) {
+      $values = $field['settings']['allowed_values'];
+      $removeValues = ['lpg', 'hybrid', 'elektro'];
+      $data['form_fuel'] = array_diff_key($values, array_flip($removeValues));
+    }
+    $data['form_transmission'] = [];
+    $field = field_info_field('field_car_transmission');
+    if($field) {
+      $data['form_transmission'] = $field['settings']['allowed_values'];
+    }
+    $data['form_body'] = ['All' => 'Nerozhoduje'];
+    $field = field_info_field('field_car_body');
+    if($field) {
+      $data['form_body'] = array_merge($data['form_body'], $field['settings']['allowed_values']);
     }
 
-    $result = $query->execute();
+    $data['product_list'] = views_embed_view('block_car_list', 'block', implode($tids, '+'));
 
-    if (isset($result['node'])) {
-      $nids = array_keys($result['node']);
-      $items = entity_load('node', $nids);
-      $content .= '<div class="row">';
-      foreach ($items as $item) {
-        $wrapper = entity_metadata_wrapper('node', $item);
-        $view = node_view($wrapper->value(), 'teaser');
-        $content .= '<div class="col-sm-4 col-xs-12 item">';
-        $content .= drupal_render($view);
-        $content .= '</div>';
-      }
-      $content .= '</div>';
-    }
+    $content .= theme('customize_product_list', array('data' => $data));
 
   }catch (EntityMetadataWrapperException $exc) {
     watchdog(

@@ -82,9 +82,9 @@ hr {
       position: relative;
       padding-left: 20px;
       &:before {
-        font-family: 'Glyphicons Halflings';
+        font-family: 'autonaoperak';
         font-size: 12px;
-        content: "\e080";
+        content: "\e908";
         color: @brand-primary;
         position: absolute;
         left: 0;
@@ -103,11 +103,6 @@ hr {
   border-radius: 3px;
   &.error {
     background-color: #fff;
-    color: @brand-primary;
-    border-color: @brand-primary;
-    .close {
-      color: @brand-primary;
-    }
   }
   &.alert-success {
     background-color: #fff;
@@ -129,10 +124,50 @@ hr {
     opacity: 1;
   }
 }
+.select-background {
+  overflow: hidden;
+  background: @input-bg url('../images/ico-select.svg') no-repeat right center;
+  border: 1px solid @input-border;
+  border-radius: @border-radius-base;
+  select.form-control {
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+    padding-right: 39px!important;
+    height: 42px;
+    // firefox hack to disable dotted border around active select
+    &:-moz-focusring {
+      color: transparent;
+      text-shadow: 0 0 0 #000;
+    }
+    // hide in IE
+    &::-ms-expand {
+      display: none;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
 .btn {
   &:active,
   &.active {
     .box-shadow(none);
+  }
+  &.btn-dark-blue {
+    background-color: #0d47a1;
+    border-color: #0d47a1;
+    color: #fff;
+    &:hover, &:focus {
+      background-color: darken(#0d47a1, 5%);
+      border-color: darken(#0d47a1, 5%);
+    }
+    &:active {
+      background-color: darken(#0d47a1, 10%);
+      border-color: darken(#0d47a1, 10%);
+    }
   }
   &.btn-lg {
     font-size: @font-size-small;
@@ -140,6 +175,50 @@ hr {
     font-weight: bold;
     padding: 15px 30px;
     text-transform: uppercase;
+  }
+}
+.btn-group {
+  border: 1px solid #d7d7d7;
+  background-color: #fff;
+  padding: 3px;
+  border-radius: @border-radius-base;
+  label {
+    input {
+      display: none;
+    }
+  }
+  .btn+.btn {
+    margin-left: 3px;
+  }
+  .btn-default {
+    background-color: #fff;
+    border: none;
+    color: @headings-color;
+    border-radius: @border-radius-base;
+    padding: 0;
+    &:hover, &:focus, &:active {
+      background: none;
+      border: 0;
+    }
+    span {
+      display: block;
+      padding: 6px 12px;
+      border: 1px solid #fff;
+      border-radius: @border-radius-base;
+      transition: all 0.3s;
+    }
+    &:hover span, &:focus span, input:checked+span {
+      background-color: @brand-primary;
+      border-color: @brand-primary;
+      color: #fff;
+      border-radius: @border-radius-base;
+    }
+    &:active span {
+      background-color: darken(@brand-primary, 10%);
+      border-color: darken(@brand-primary, 10%);
+      color: #fff;
+      border-radius: @border-radius-base;
+    }
   }
 }
 form {
@@ -151,33 +230,7 @@ form {
   }
   .form-control {
     box-shadow: none;
-    &.error {
-      border-color: @brand-primary;
-    }
-  }
-  .select-background {
-    border: 1px solid #dde2e6;
-    border-radius: 0;
-    background: url('../images/ico-select.svg') no-repeat right center;
-    display: inline-block;
-    select {
-      background: transparent;
-      border: 0;
-      border-radius: 0;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      cursor: pointer;
-      padding-right: 39px;
-      // firefox hack to disable dotted border around active select
-      &:-moz-focusring {
-        color: transparent;
-        text-shadow: 0 0 0 #000;
-      }
-      // hide in IE
-      &::-ms-expand {
-        display: none;
-      }
-    }
+    height: 50px;
   }
 }
 // eg. search page
@@ -354,31 +407,41 @@ form {
 .panel-group {
   .panel {
     box-shadow: none;
+    border: 0;
     .panel-heading {
-      background-color: #f9fafb;
-      border: 1px solid #dde2e6;
+      background-color: transparent;
+      border: 0;
       border-radius: 0;
       padding: 0;
       a {
         display: block;
         position: relative;
-        color: @gray-base;
-        padding: 10px 30px 10px 15px;
+        color: @brand-primary;
+        padding: 10px 20px 10px 0;
+        font-size: @font-size-medium;
         &:hover, &:active, &:focus {
           text-decoration: none;
         }
-        .glyphicon {
-          color: #909fab;
+        [class^="icon-"], [class*=" icon-"] {
+          color: @brand-primary;
           position: absolute;
-          right: 10px;
-          top: 14px;
-          font-size: 12px;
+          right: 0;
+          top: 10px;
+        }
+        &.open {
+          [class^="icon-"], [class*=" icon-"] {
+            transform: rotate(180deg);
+          }
         }
       }
     }
     .panel-body {
       border: 0!important;
+      padding: 0 0 @line-height-computed 0;
     }
+  }
+  .panel+.panel {
+    margin-top: 0;
   }
 }
 

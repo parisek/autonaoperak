@@ -138,16 +138,6 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/images\/ico-pdf.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/images\/ico-pdf.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
 	"\/images\/ico-select.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -476,16 +466,15 @@
 		"sM": 0,
 		"sU": 0
 		},
-	"\/logo.png": {
-		"ft": 32768,
-		"iS": 13023,
+	"\/logo.svg": {
+		"ft": 2097152,
+		"miP": 0,
 		"oA": 0,
-		"oAP": "\/logo.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
+		"oAP": "\/logo.svg",
+		"oF": 1,
+		"opt": 1,
+		"plM": 3758088159,
+		"prP": 0
 		},
 	"\/plugins\/animate.css\/.editorconfig": {
 		"ft": 8192,
@@ -6612,7 +6601,7 @@
 		},
 	"\/templates\/swiftmailer\/logo.png": {
 		"ft": 32768,
-		"iS": 45878,
+		"iS": 6621,
 		"oA": 0,
 		"oAP": "\/templates\/swiftmailer\/logo.png",
 		"oF": 0,

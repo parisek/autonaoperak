@@ -24,6 +24,73 @@ function customize_car_title_render($field, $title = NULL) {
   return $content;
 }
 
+function customize_car_gallery_render($field, $title = NULL) {
+
+  $content = '';
+
+  photoswipe_load_assets();
+
+  try {
+
+    $node = $field['entity'];
+    $wrapper = entity_metadata_wrapper('node', $field['entity']);
+
+    $images = [];
+    foreach ($wrapper->field_car_gallery->getIterator() as $delta => $image_wrapper) {
+      $uri = $image_wrapper->value()['uri'];
+      $title = $image_wrapper->value()['title'];
+      $image_info = image_get_info($uri);
+
+      $images[] = array(
+        'image' => theme('photoswipe_imagefield', array(
+            'image' => array(
+              'path' => $uri,
+              'style_name' => ($delta) ? 'product-small' : 'product-full',
+            ),
+            'path' => file_create_url($uri),
+            'dimensions' => $image_info['width'] . 'x' . $image_info['height'],
+            'caption' => $title . ' - ' . $wrapper->label(),
+        )),
+      );
+    }
+
+    if(count($images)) {
+      $content .= '<div class="photoswipe-gallery">';
+      // main image
+      foreach ($images as $key => $image) {
+        $content .= '<div class="product-image-full-container">';
+        $content .= $image['image'];
+        $content .= '<span class="glyphicon glyphicon-search" aria-hidden="true"></span>';
+        $content .= '</div>';
+        break;
+      }
+      // small images
+      if(count($images) > 1) {
+        $content .= '<div class="product-image-small-container">';
+        foreach ($images as $key => $image) {
+          if($key > 0) {
+            $content .= '<div class="item">';
+            $content .= $image['image'];
+            $content .= '</div>';
+          }
+        }
+        $content .= '</div>';
+      }
+      $content .= '</div>';
+    }
+
+  }catch (EntityMetadataWrapperException $exc) {
+    watchdog(
+      'customize',
+      'See '  . __FUNCTION__ . '() <pre>' .  $exc->getTraceAsString() . '</pre>',
+       NULL, WATCHDOG_ERROR
+    );
+  }
+
+  return $content;
+
+}
+
 function customize_car_description_render($field, $title = NULL) {
   $content = '';
 
@@ -48,7 +115,9 @@ function customize_car_description_render($field, $title = NULL) {
       $filesize = format_size($file['filesize']);
       $url = file_create_url($file['uri']);
       $content .= '<div class="file">';
-      $content .= l('Podrobná specifikace vozu (PDF, ' . $filesize .')', $url);
+      $title = '<span class="icon-pdf"></span>';
+      $title .= '<span class="text">Podrobná specifikace vozu <span class="size">(PDF, ' . $filesize .')</span></span>';
+      $content .= l($title, $url, ['html' => TRUE]);
       $content .= '</div>';
     }
 
@@ -144,7 +213,11 @@ function customize_car_contact_render($field, $title = NULL) {
 
     $content .= '<h2>Ozvěte se nám a jezděte už brzy v novém voze ' . implode($title, ' ') . '</h2>';
     $content .= '<div class="phone">';
-    $content .= '601 601 806<br>601 601 805';
+    $content .= '<span class="icon-phone-huge"></span>';
+    $content .= '<span class="text">';
+    $content .= '<a href="tel:+420601601806">601 601 806</a><br>';
+    $content .= '<a href="tel:+420601601805">601 601 805</a>';
+    $content .= '</span>';
     $content .= '</div>';
     $content .= '<div class="morelink">';
     $content .= '<a href="#contact" class="btn btn-primary btn-lg">Mám zájem o tento vůz</a>';
@@ -243,7 +316,7 @@ function customize_car_form_render($field, $title = NULL) {
 
     $content .= '<div class="container">';
     $content .= '<div class="content">';
-    $content .= '<h2>Napište nám a jezděte už brzy v novém voze ' . implode($title, ' ') . '</h2>';
+    $content .= '<h2><a name="contact"></a>Napište nám a jezděte už brzy v novém voze ' . implode($title, ' ') . '</h2>';
     $content .= '<div class="subtitle">Ozveme se vám s nabídkou do 2 pracovních dnů</div>';
     $block = module_invoke('webform', 'block_view', 'client-block-15');
     if($block) {

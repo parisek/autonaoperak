@@ -68,10 +68,28 @@ function customize_block_view($delta='') {
       $block['content'] = customize_subcategory_stock_content();
       break;
     case 'product_list_car':
-      $block['content'] = customize_product_list_car_content();
+      $block['content'] = array(
+        '#markup' => customize_product_list_car_content(),
+        '#attached' => array(
+          'js' => array(
+            array(
+              'data' => drupal_get_path('module', 'customize') . '/js/product-list.js',
+            ),
+          )
+        ),
+      );
       break;
     case 'product_list_stock':
-      $block['content'] = customize_product_list_stock_content();
+      $block['content'] = array(
+        '#markup' => customize_product_list_stock_content(),
+        '#attached' => array(
+          'js' => array(
+            array(
+              'data' => drupal_get_path('module', 'customize') . '/js/product-list.js',
+            ),
+          )
+        ),
+      );
       break;
     case '404':
       $block['content'] = customize_404_content();
@@ -263,6 +281,8 @@ function customize_category_car_content() {
 
   $content = '';
 
+  $current_term = menu_get_object('taxonomy_term', 2);
+
   try {
 
     $brand = [];
@@ -284,12 +304,25 @@ function customize_category_car_content() {
           $child_tid =  $child_wrapper->getIdentifier();
           $child_title = $child_wrapper->label();
 
+          $class = [];
+          if($current_term && $current_term->tid == $child_tid) {
+            $class[] = 'active';
+          }
+
           $model[] = array(
             'tid' => $child_tid,
             'title' => $child_title,
             'url' => url('taxonomy/term/' . $child_tid),
+            'class' => $class,
           );
         }
+      }
+
+      $class = [];
+      $status = 'closed';
+      if($current_term && $current_term->tid == $tid) {
+        $class[] = 'active';
+        $status = 'open';
       }
 
       $brand[] = array(
@@ -297,6 +330,8 @@ function customize_category_car_content() {
         'title' => $title,
         'url' => url('taxonomy/term/' . $tid),
         'model' => $model,
+        'class' => $class,
+        'status' => $status,
       );
     }
 
@@ -321,6 +356,8 @@ function customize_category_stock_content() {
 
   $content = '';
 
+  $current_term = menu_get_object('taxonomy_term', 2);
+
   try {
 
     $brand = [];
@@ -342,12 +379,25 @@ function customize_category_stock_content() {
           $child_tid =  $child_wrapper->getIdentifier();
           $child_title = $child_wrapper->label();
 
+          $class = [];
+          if($current_term && $current_term->tid == $child_tid) {
+            $class[] = 'active';
+          }
+
           $model[] = array(
             'tid' => $child_tid,
             'title' => $child_title,
             'url' => url('taxonomy/term/' . $child_tid),
+            'class' => $class,
           );
         }
+      }
+
+      $class = [];
+      $status = 'closed';
+      if($current_term && $current_term->tid == $tid) {
+        $class[] = 'active';
+        $status = 'open';
       }
 
       $brand[] = array(
@@ -355,6 +405,8 @@ function customize_category_stock_content() {
         'title' => $title,
         'url' => url('taxonomy/term/' . $tid),
         'model' => $model,
+        'class' => $class,
+        'status' => $status,
       );
     }
 

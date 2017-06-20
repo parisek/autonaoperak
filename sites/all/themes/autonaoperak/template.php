@@ -448,3 +448,8 @@ function autonaoperak_form_alter(array &$form, array &$form_state = array(), $fo
     $form['search_block_form']['#attributes']['placeholder'] = t('Search for', array(), array('context' => 'Search placeholder'));
   }
 }
+
+function autonaoperak_menu_link(array $variables) {
+  $variables['element']['#attributes']['class'][] = 'menu-' . $variables['element']['#original_link']['mlid'];
+  return theme_menu_link($variables);
+}

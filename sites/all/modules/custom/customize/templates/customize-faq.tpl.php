@@ -6,6 +6,7 @@
         <h4 class="panel-title">
           <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php print $q['id']; ?>" aria-expanded="true" aria-controls="collapse<?php print $q['id']; ?>">
             <?php print $q['title']; ?>
+            <span class="icon-down"></span>
           </a>
         </h4>
       </div>
