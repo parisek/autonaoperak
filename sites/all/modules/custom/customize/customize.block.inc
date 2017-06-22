@@ -32,6 +32,15 @@ function customize_block_info() {
   $blocks['product_list_stock'] = array(
     'info' => t('Customize: Product list stock')
   );
+  $blocks['faq'] = array(
+    'info' => t('Customize: FAQ')
+  );
+  $blocks['howto'] = array(
+    'info' => t('Customize: How to')
+  );
+  $blocks['sidebar_contact'] = array(
+    'info' => t('Customize: Contact form - sidebar')
+  );
   $blocks['404'] = array(
     'info' => t('Customize: 404')
   );
@@ -90,6 +99,15 @@ function customize_block_view($delta='') {
           )
         ),
       );
+      break;
+    case 'sidebar_contact':
+      $block['content'] = customize_sidebar_contact_content();
+      break;
+    case 'faq':
+      $block['content'] = customize_faq_content();
+      break;
+    case 'howto':
+      $block['content'] = customize_howto_content();
       break;
     case '404':
       $block['content'] = customize_404_content();
@@ -197,7 +215,7 @@ function customize_hp_offer_content() {
         // get first image from gallery
         foreach ($wrapper->field_car_gallery->getIterator() as $delta => $image_wrapper) {
           $file = $image_wrapper->value();
-          $image = theme('image_style', array('style_name' => 'thumbnail', 'path' => $file['uri']));
+          $image = theme('image_style', array('style_name' => 'product-small', 'path' => $file['uri']));
           break;
         }
 
@@ -210,7 +228,17 @@ function customize_hp_offer_content() {
       }
     }
 
+    $query = db_select('node', 'n');
+    $query->join('field_data_field_car_stock', 's', 'n.nid = %alias.entity_id');
+    $query
+      ->fields('n', array('nid'))
+      ->condition('n.type', 'car')
+      ->condition('n.status', NODE_PUBLISHED);
+    $result = $query->execute();
+    $carCount = $result->rowCount();
+
     $data = [];
+    $data['count'] = $carCount;
     $data['morelink'] = url('node/4');
 
     $content .= theme('customize_hp_offer', array('cars' => $cars, 'data' => $data));
@@ -247,7 +275,7 @@ function customize_hp_brand_car_content() {
       $image = '';
       if($wrapper->field_term_image->value()) {
         $file = $wrapper->field_term_image->value();
-        $image = theme('image_style', array('style_name' => 'thumbnail', 'path' => $file['uri']));
+        $image = theme('image_style', array('style_name' => 'logo', 'path' => $file['uri']));
       }
 
       $brand[] = array(
@@ -297,6 +325,7 @@ function customize_category_car_content() {
       $title = $wrapper->label();
 
       $model = [];
+      $active_model = FALSE; // check if some child model is active
       if(isset($item->children)) {
         foreach ($item->children as $child) {
 
@@ -307,6 +336,7 @@ function customize_category_car_content() {
           $class = [];
           if($current_term && $current_term->tid == $child_tid) {
             $class[] = 'active';
+            $active_model = TRUE;
           }
 
           $model[] = array(
@@ -319,8 +349,8 @@ function customize_category_car_content() {
       }
 
       $class = [];
-      $status = 'closed';
-      if($current_term && $current_term->tid == $tid) {
+      $status = '';
+      if($current_term && ($current_term->tid == $tid || $active_model)) {
         $class[] = 'active';
         $status = 'open';
       }
@@ -372,6 +402,7 @@ function customize_category_stock_content() {
       $title = $wrapper->label();
 
       $model = [];
+      $active_model = FALSE; // check if some child model is active
       if(isset($item->children)) {
         foreach ($item->children as $child) {
 
@@ -382,6 +413,7 @@ function customize_category_stock_content() {
           $class = [];
           if($current_term && $current_term->tid == $child_tid) {
             $class[] = 'active';
+            $active_model = TRUE;
           }
 
           $model[] = array(
@@ -394,8 +426,8 @@ function customize_category_stock_content() {
       }
 
       $class = [];
-      $status = 'closed';
-      if($current_term && $current_term->tid == $tid) {
+      $status = '';
+      if($current_term && ($current_term->tid == $tid || $active_model)) {
         $class[] = 'active';
         $status = 'open';
       }
@@ -450,6 +482,83 @@ function customize_product_list_car_content() {
  */
 function customize_product_list_stock_content() {
   return _customize_product_list(8);
+}
+
+/**
+ * Callback for block Customize: Sidebar Contact.
+ */
+function customize_sidebar_contact_content() {
+  $content = '';
+
+  $content .= '<div class="content">';
+  $content .= '<h2>Nenašli jste, co jste hledali?</h2>';
+  $content .= '<div class="subtitle">Napište nám a my se vám ozveme</div>';
+  $block = module_invoke('webform', 'block_view', 'client-block-15');
+  if($block) {
+    $content .= render($block['content']);
+  }
+  $content .= '</div>';
+
+  return $content;
+}
+
+/**
+ * Callback for block Customize: FAQ.
+ */
+function customize_faq_content() {
+  $content = '';
+
+  try {
+
+    // Select all FAQs
+    $query = new EntityFieldQuery();
+
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'faq')
+      ->propertyCondition('status', NODE_PUBLISHED)
+      ->propertyOrderBy('title', 'ASC');
+
+    $result = $query->execute();
+
+    $faq = [];
+    if (isset($result['node'])) {
+      $nids = array_keys($result['node']);
+      $items = entity_load('node', $nids);
+
+      foreach ($items as $item) {
+        $wrapper = entity_metadata_wrapper('node', $item);
+        $faq[] = [
+          'id' => $wrapper->getIdentifier(),
+          'title' => $wrapper->label(),
+          'description' => $wrapper->body->value()['safe_value'],
+        ];
+      }
+    }
+
+    $content .= theme('customize_faq', array('question' => $faq, 'data' => array()));
+
+  }catch (EntityMetadataWrapperException $exc) {
+    watchdog(
+      'customize',
+      'See '  . __FUNCTION__ . '() <pre>' .  $exc->getTraceAsString() . '</pre>',
+       NULL, WATCHDOG_ERROR
+    );
+  }
+
+  return $content;
+}
+
+/**
+ * Callback for block Customize: How To.
+ */
+function customize_howto_content() {
+
+  $content = '<div class="content">';
+  $content .= '<h2>...to je vše. Začněte s výběrem vozu.</h2>';
+  $content .= '<a href="' . url('node/2') . '" class="btn btn-primary btn-lg">Osobní vozy</a>';
+  $content .= '</div>';
+
+  return $content;
 }
 
 /**

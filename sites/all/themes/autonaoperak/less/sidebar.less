@@ -8,14 +8,15 @@
     li {
       list-style: none;
       border-bottom: 1px solid @input-border;
+      position: relative;
       &:last-child {
         border-bottom: 0;
       }
       a {
-        padding: 15px 10px 15px 30px;
+        padding: 15px 40px 15px 30px;
         display: block;
         background: #fbfbfc;
-        transition: all 0.3s;
+        transition: background-color 0.1s;
         font-weight: bold;
         color: @headings-color;
         &:hover, &:focus, &.active {
@@ -27,32 +28,90 @@
           background: darken(@brand-primary, 5%);
         }
       }
-      &.closed {
+      .submenu-toggle {
+        width: 40px;
+        height: 52px;
+        line-height: 52px;
+        text-align: center;
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+        transition: all 0.1s;
+        &:hover {
+          background: darken(@brand-primary, 5%);
+        }
+      }
+      &.open {
         ul {
-          display: none;
+          display: block;
         }
       }
       ul {
         background: #fff;
+        display: none;
         li {
           border-bottom: 0;
           list-style: none;
           a {
             background: none;
-            padding: 10px 10px 10px 60px;
-            color: @text-color;
+            padding: 10px 10px 10px 45px;
+            color: @headings-color;
             font-weight: normal;
+            position: relative;
             &:hover, &:focus, &.active {
               background: none;
               color: @brand-primary;
               font-weight: normal;
+              &:before {
+                color: @brand-primary;
+              }
             }
             &:active {
               background: none;
             }
+            &:before {
+              font-family: 'autonaoperak';
+              content: "\e908";
+              position: absolute;
+              left: 25px;
+              top: 10px;
+            }
           }
         }
       }
+    }
+  }
+}
+.block-sidebar-contact-form {
+  background: #f4f4f4;
+  padding: 30px;
+  margin: 0 0 @line-height-computed 0;
+  h2 {
+    margin: 0;
+    font-size: @font-size-large;
+  }
+  .subtitle {
+    font-size: @font-size-medium;
+    margin: 0 0 @line-height-computed 0;
+  }
+  .form-uoou {
+    margin: 0 0 @line-height-computed 0;
+    label {
+      color: @text-color;
+    }
+    a {
+      color: @text-color;
+    }
+  }
+  .form-actions {
+    text-align: center;
+    .btn {
+      font-size: @font-size-small;
+      line-height: 20px;
+      font-weight: bold;
+      padding: 15px 30px;
+      text-transform: uppercase;
     }
   }
 }
@@ -76,7 +135,7 @@
         margin-bottom: 0;
       }
       a {
-        color: @text-color;
+        color: @headings-color;
         &:hover, &:focus {
           text-decoration: none;
         }

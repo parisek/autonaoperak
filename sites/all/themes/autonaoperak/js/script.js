@@ -77,6 +77,21 @@
         $link.addClass('open');
       })
 
+      // submenu open/close
+      $submenu = $('.block-sidebar-category');
+      $('ul.menu li span.submenu-toggle', $submenu).on('click', function(e) {
+        e.preventDefault();
+        var $parent = $(this).closest('li');
+        if($parent.hasClass('open')) {
+          $parent.removeClass('open');
+          $parent.find('li').removeClass('open');
+          $('span.submenu-toggle', $parent).removeClass('icon-up').addClass('icon-down');
+        }else{
+          $parent.addClass('open');
+          $('span.submenu-toggle', $parent).removeClass('icon-down').addClass('icon-up');
+        }
+      });
+
     }
   };
 

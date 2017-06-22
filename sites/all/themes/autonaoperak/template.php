@@ -28,10 +28,27 @@ function autonaoperak_preprocess_page(&$vars) {
 
     $vars['title'] = t('Search', array(), array('context' => 'page_title'));
     $vars['breadcrumb'] = '';
+  }elseif(arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2))) {
+    $current_term = menu_get_object('taxonomy_term', 2);
+    // add parent name and term name to browser bar
+    if(isset($current_term->depth) && $current_term->depth == 2) {
+      $title = [];
+      $parents = taxonomy_get_parents($current_term->tid);
+      if(count($parents)) {
+        foreach ($parents as $brand) {
+          $title[] = $brand->name;
+          break;
+        }
+        $title[] = $current_term->name;
+        $vars['title'] = implode($title, ' ') . ' na operativní leasing';
+      }
+    }
   }
 
-  if (!empty($vars['page']['sidebar'])) {
+  if (!empty($vars['page']['sidebar_first'])) {
     $vars['content_column_class_custom'] = 'col-md-9 col-sm-12 main-content left-sidebar';
+  }elseif (!empty($vars['page']['sidebar_second'])) {
+    $vars['content_column_class_custom'] = 'col-md-7 col-sm-12 main-content right-sidebar';
   }
   else {
     $vars['content_column_class_custom'] = 'col-sm-12 main-content';
@@ -73,7 +90,7 @@ function autonaoperak_preprocess_html(&$vars) {
           break;
         }
         $title[] = $current_term->name;
-        $vars['head_title'] = implode($title, ' ') . ' | ' . $head_title;
+        $vars['head_title'] = implode($title, ' ') . ' na operativní leasing | ' . $head_title;
       }
     }
   }

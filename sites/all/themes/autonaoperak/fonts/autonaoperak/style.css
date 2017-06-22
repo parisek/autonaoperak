@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'autonaoperak';
   src:
-    url('fonts/autonaoperak.ttf?sio5du') format('truetype'),
-    url('fonts/autonaoperak.woff?sio5du') format('woff'),
-    url('fonts/autonaoperak.svg?sio5du#autonaoperak') format('svg');
+    url('fonts/autonaoperak.ttf?610fdp') format('truetype'),
+    url('fonts/autonaoperak.woff?610fdp') format('woff'),
+    url('fonts/autonaoperak.svg?610fdp#autonaoperak') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -34,6 +34,9 @@
 }
 .icon-down:before {
   content: "\e904";
+}
+.icon-up:before {
+  content: "\e903";
 }
 .icon-email-big:before {
   content: "\e905";

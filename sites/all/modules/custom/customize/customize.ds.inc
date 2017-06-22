@@ -366,6 +366,7 @@ function customize_faq_render($field, $title = NULL) {
       }
     }
 
+    $content .= '<h2>Nejčastější dotazy</h2>';
     $content .= theme('customize_faq', array('question' => $faq, 'data' => array()));
 
   }catch (EntityMetadataWrapperException $exc) {

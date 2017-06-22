@@ -137,6 +137,7 @@ hr {
     -webkit-appearance: none;
     padding-right: 39px!important;
     height: 42px;
+    color: @headings-color;
     // firefox hack to disable dotted border around active select
     &:-moz-focusring {
       color: transparent;
@@ -175,6 +176,7 @@ hr {
     font-weight: bold;
     padding: 15px 30px;
     text-transform: uppercase;
+    border-radius: @border-radius-base;
   }
 }
 .btn-group {
@@ -231,6 +233,43 @@ form {
   .form-control {
     box-shadow: none;
     height: 50px;
+  }
+}
+.slider-wrapper {
+  margin: 0 10px;
+  .slider-horizontal {
+    width: 100%;
+    margin-bottom: @line-height-computed/2;
+    .slider-track {
+      border: 1px solid @input-border;
+      background: #fff;
+      box-shadow: none;
+      border-radius: @border-radius-base;
+      .slider-selection {
+        background: @input-border;
+        box-shadow: none;
+      }
+    }
+    .slider-handle {
+      background: @btn-primary-bg;
+      border: 1px solid @btn-primary-border;
+      box-shadow: none;
+      border-radius: @border-radius-base;
+      &:hover, &:active {
+        background: darken(@btn-primary-bg, 5%);
+      }
+    }
+  }
+  .info {
+    display: flex;
+    justify-content: space-between;
+    margin-left: -10px;
+    margin-right: -10px;
+    .slider-from,
+    .slider-to {
+      font-size: @font-size-small;
+      color: @headings-color;
+    }
   }
 }
 // eg. search page

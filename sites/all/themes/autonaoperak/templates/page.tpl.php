@@ -120,9 +120,9 @@
         <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
         </div>
       <?php endif; ?>
-      <?php if (!empty($page['sidebar'])): ?>
-        <aside class="col-md-3 col-sm-12 sidebar" role="complementary">
-          <?php print render($page['sidebar']); ?>
+      <?php if (!empty($page['sidebar_first'])): ?>
+        <aside class="col-md-3 hidden-sm hidden-xs sidebar-first" role="complementary">
+          <?php print render($page['sidebar_first']); ?>
         </aside>  <!-- /#sidebar -->
       <?php endif; ?>
       <section class="<?php print $content_column_class_custom; ?>">
@@ -144,6 +144,11 @@
         <?php endif; ?>
         <?php print render($page['content']); ?>
       </section>
+      <?php if (!empty($page['sidebar_second'])): ?>
+        <aside class="col-md-5 col-sm-12 sidebar-second" role="complementary">
+          <?php print render($page['sidebar_second']); ?>
+        </aside>  <!-- /#sidebar -->
+      <?php endif; ?>
     </div>
   </div>
   <a href="#content-scroll"><span class="icon-scroll"></span></a>

@@ -3,6 +3,13 @@
   Drupal.behaviors.customize_product_list = {
     attach: function (context, settings) {
 
+      function number_format(number) {
+        if (typeof number != 'undefined') {
+          number = Math.round(number);
+          return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + ' Kč';
+        }
+      }
+
       var $filter = $('.category-list-form', context);
 
       $('.item-fuel input[type=checkbox]', $filter).on('change', function() {
@@ -80,6 +87,35 @@
       $('#categoryAdvancedFilters', $filter).on('hide.bs.collapse', function () {
         $('.morelink .text', $filter).text('Zobrazit rozšířené filtry');
       })
+
+      $('input.input-slider', $filter).slider({
+        tooltip_split: true,
+        handle: 'square',
+        tooltip: 'hide'
+      })
+
+      // define outside of scope
+      var submitTimeout = '';
+
+      $('input.input-slider', $filter).on('slide', function(event) {
+        var from = event.value[0];
+        var to = event.value[1];
+        // show to user
+        $('.slider-from', $filter).text(number_format(from));
+        $('.slider-to', $filter).text(number_format(to));
+        // pass to view
+        $('.view-block-car-list #edit-field-price-from-value-min').val(from);
+        $('.view-block-car-list #edit-field-price-from-value-max').val(to);
+
+        // Reset timelimit
+        clearTimeout(submitTimeout);
+
+        // Delay submit for 1s to allow tuning of pricing
+        submitTimeout = setTimeout(function() {
+          $('.view-block-car-list .view-filters .form-submit').trigger('click');
+        }, 1000);
+
+      });
 
     }
   }

@@ -37,51 +37,10 @@
 		"oAP": "\/favicon.ico",
 		"oF": 0
 		},
-	"\/fonts\/autonaoperak\/demo-files\/demo.css": {
-		"aP": 0,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 2,
-		"oAP": "\/fonts\/autonaoperak\/demo-files\/demo-min.css",
-		"oF": 0,
-		"oS": 0
-		},
-	"\/fonts\/autonaoperak\/demo-files\/demo.js": {
-		"ft": 64,
-		"mi": 0,
-		"oA": 1,
-		"oAP": "\/fonts\/autonaoperak\/demo-files\/min\/demo-min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 0
-		},
 	"\/fonts\/autonaoperak\/demo.html": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/autonaoperak\/demo.html",
-		"oF": 0
-		},
-	"\/fonts\/autonaoperak\/fonts\/autonaoperak.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/fonts\/autonaoperak\/fonts\/autonaoperak.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/fonts\/autonaoperak\/fonts\/autonaoperak.ttf": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/fonts\/autonaoperak\/fonts\/autonaoperak.ttf",
-		"oF": 0
-		},
-	"\/fonts\/autonaoperak\/fonts\/autonaoperak.woff": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/fonts\/autonaoperak\/fonts\/autonaoperak.woff",
 		"oF": 0
 		},
 	"\/fonts\/autonaoperak\/Read Me.txt": {
@@ -133,6 +92,16 @@
 		"miP": 0,
 		"oA": 2,
 		"oAP": "\/images\/ico-facebook.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/images\/ico-pdf.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/images\/ico-pdf.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -1334,6 +1303,665 @@
 		"oAP": "\/plugins\/animate.css\/source\/zooming_exits\/zoomOutUp-min.css",
 		"oF": 0,
 		"oS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/.codeclimate.yml": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/.codeclimate.yml",
+		"oF": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/.github\/CONTRIBUTING.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/.github\/CONTRIBUTING.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/.github\/ISSUE_TEMPLATE.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/.github\/ISSUE_TEMPLATE.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/.github\/PULL_REQUEST_TEMPLATE.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/.github\/PULL_REQUEST_TEMPLATE.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/.gitignore": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/.gitignore",
+		"oF": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/.npmignore": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/.npmignore",
+		"oF": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/.nvmrc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/.nvmrc",
+		"oF": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/.sass-lint.yml": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/.sass-lint.yml",
+		"oF": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/.travis.yml": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/.travis.yml",
+		"oF": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/bower.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/bower-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/CHANGELOG.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/CHANGELOG.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/composer.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/composer-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/dependencies\/css\/bootstrap.min.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/dependencies\/css\/bootstrap.min-min.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/dependencies\/css\/highlightjs-github-theme.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/dependencies\/css\/highlightjs-github-theme-min.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/dependencies\/js\/highlight.min.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/dependencies\/js\/min\/highlight.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/dependencies\/js\/jquery.min.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/dependencies\/js\/min\/jquery.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/dependencies\/js\/modernizr.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/dependencies\/js\/min\/modernizr-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/dist\/bootstrap-slider.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/dist\/min\/bootstrap-slider-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/dist\/bootstrap-slider.min.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/dist\/min\/bootstrap-slider.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/dist\/css\/bootstrap-slider.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/dist\/css\/bootstrap-slider-min.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/dist\/css\/bootstrap-slider.min.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/dist\/css\/bootstrap-slider.min-min.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/Gruntfile.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/min\/Gruntfile-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/LICENSE.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/LICENSE.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/package.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/package-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/README.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/README.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/scripts\/release.sh": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/scripts\/release.sh",
+		"oF": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/scripts\/update-gh-pages.sh": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/scripts\/update-gh-pages.sh",
+		"oF": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/src\/js\/bootstrap-slider.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/src\/js\/min\/bootstrap-slider-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/src\/less\/bootstrap-slider.less": {
+		"aP": 1,
+		"bl": 0,
+		"dJ": 0,
+		"ft": 1,
+		"ie": 1,
+		"iI": 0,
+		"ma": 1,
+		"oA": 0,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/src\/css\/bootstrap-slider.css",
+		"oF": 0,
+		"oS": 1,
+		"rU": 0,
+		"sI": 0,
+		"sM": 0,
+		"sU": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/src\/less\/rules.less": {
+		"aP": 1,
+		"bl": 0,
+		"dJ": 0,
+		"ft": 1,
+		"ie": 1,
+		"iI": 0,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/src\/css\/rules.css",
+		"oF": 0,
+		"oS": 1,
+		"rU": 0,
+		"sI": 0,
+		"sM": 0,
+		"sU": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/src\/less\/variables.less": {
+		"aP": 1,
+		"bl": 0,
+		"dJ": 0,
+		"ft": 1,
+		"ie": 1,
+		"iI": 0,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/src\/css\/variables.css",
+		"oF": 0,
+		"oS": 1,
+		"rU": 0,
+		"sI": 0,
+		"sM": 0,
+		"sU": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/src\/sass\/_mixins.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/src\/css\/_mixins.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/src\/sass\/_rules.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/src\/css\/_rules.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/src\/sass\/_variables.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/src\/css\/_variables.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/src\/sass\/bootstrap-slider.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/src\/css\/bootstrap-slider.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/phantom_bind_polyfill.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/min\/phantom_bind_polyfill-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/AccessibilitySpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/AccessibilitySpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/AriaValueTextFormatterSpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/AriaValueTextFormatterSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/AutoRegisterDataProvideSpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/AutoRegisterDataProvideSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/ConflictingOptionsSpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/ConflictingOptionsSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/DestroyMethodTests.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/DestroyMethodTests-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/DraggingHandlesSpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/DraggingHandlesSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/ElementDataAttributesSpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/ElementDataAttributesSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/EventsSpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/EventsSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/FocusOptionSpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/FocusOptionSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/KeyboardSupportSpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/KeyboardSupportSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/LogarithmicScaleSpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/LogarithmicScaleSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/LowAndHighTrackSpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/LowAndHighTrackSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/NamespaceSpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/NamespaceSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/offMethodSpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/offMethodSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/OrientationSpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/OrientationSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/PublicMethodsSpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/PublicMethodsSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/RangeHighlightsSpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/RangeHighlightsSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/RefreshMethodSpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/RefreshMethodSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/ResizeSpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/ResizeSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/RtlOptionsSpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/RtlOptionsSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/ScrollableBodySpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/ScrollableBodySpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/ScrollableContainerSpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/ScrollableContainerSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/TickClickingBehaviorSpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/TickClickingBehaviorSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/TickLabelSpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/TickLabelSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/TickMarksSpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/TickMarksSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/TooltipMouseOverOptionSpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/TooltipMouseOverOptionSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/TooltipPositionOptionSpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/TooltipPositionOptionSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/TooltipSplitOptionSpec.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/test\/specs\/min\/TooltipSplitOptionSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/tpl\/index.tpl": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/tpl\/index.tpl",
+		"oF": 0
+		},
+	"\/plugins\/bootstrap-slider-9.8.0\/tpl\/SpecRunner.tpl": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/bootstrap-slider-9.8.0\/tpl\/SpecRunner.tpl",
+		"oF": 0
 		},
 	"\/plugins\/bootstrap\/.editorconfig": {
 		"ft": 8192,

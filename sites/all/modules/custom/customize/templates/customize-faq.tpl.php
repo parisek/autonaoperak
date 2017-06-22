@@ -1,4 +1,3 @@
-<h2>Nejčastější dotazy</h2>
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <?php foreach ($question as $q): ?>
     <div class="panel panel-default">

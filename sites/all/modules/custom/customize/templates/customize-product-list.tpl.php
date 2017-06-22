@@ -39,8 +39,13 @@
       </div>
       <div class="item item-advanced collapse" id="categoryAdvancedFilters">
         <div class="item-price">
-          <input type="number" value="0" id="price-from">
-          <input type="number" value="99999" id="price-to">
+          <div class="slider-wrapper">
+            <input type="text" name="price" class="input-slider" value="" data-slider-min="0" data-slider-max="50000" data-slider-step="1000" data-slider-value="[0,50000]">
+            <div class="info">
+              <div class="slider-from">0 Kč</div>
+              <div class="slider-to">50 000 Kč</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
