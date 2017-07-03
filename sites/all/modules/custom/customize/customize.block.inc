@@ -197,7 +197,7 @@ function customize_hp_offer_content() {
     $query->entityCondition('entity_type', 'node')
       ->entityCondition('bundle', 'car')
       ->propertyCondition('status', NODE_PUBLISHED)
-      ->fieldCondition('field_car_stock', 'value', 0, '>')
+      ->fieldCondition('field_car_type', 'value', 'stock')
       ->propertyOrderBy('created', 'DESC')
       ->range(0, 10);
 
@@ -228,11 +228,13 @@ function customize_hp_offer_content() {
       }
     }
 
+    // assign value to main menu
     $query = db_select('node', 'n');
-    $query->join('field_data_field_car_stock', 's', 'n.nid = %alias.entity_id');
+    $query->join('field_data_field_car_type', 's', 'n.nid = %alias.entity_id');
     $query
       ->fields('n', array('nid'))
       ->condition('n.type', 'car')
+      ->condition('s.field_car_type_value', 'stock')
       ->condition('n.status', NODE_PUBLISHED);
     $result = $query->execute();
     $carCount = $result->rowCount();
@@ -241,7 +243,9 @@ function customize_hp_offer_content() {
     $data['count'] = $carCount;
     $data['morelink'] = url('node/4');
 
-    $content .= theme('customize_hp_offer', array('cars' => $cars, 'data' => $data));
+    if($carCount) {
+      $content .= theme('customize_hp_offer', array('cars' => $cars, 'data' => $data));
+    }
 
   }catch (EntityMetadataWrapperException $exc) {
     watchdog(
@@ -287,7 +291,7 @@ function customize_hp_brand_car_content() {
     }
 
     $data = [];
-    $data['morelink'] = url('node/3');
+    $data['morelink'] = url('node/2');
 
     $content .= theme('customize_hp_brand_car', array('brand' => $brand, 'data' => $data));
 
