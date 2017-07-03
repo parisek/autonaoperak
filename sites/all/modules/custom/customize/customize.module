@@ -317,6 +317,11 @@ function customize_ds_fields_info($entity_type) {
     'ui_limit' => array('category_stock|*'),
     'function' => 'customize_term_subcategory_stock_render',
   ) + $defaults;
+  $fields['paragraphs_item']['customize_paragraph_bullets'] = array(
+    'title' => t('Customize: Bullets'),
+    'ui_limit' => array('*|*'),
+    'function' => 'customize_paragraph_bullets_render',
+  ) + $defaults;
 
   if (isset($fields[$entity_type])) {
     return array($entity_type => $fields[$entity_type]);
@@ -447,6 +452,13 @@ function _customize_product_list($vocabulary) {
       }
     }
 
+    $type = '';
+    if($vocabulary == 4) {
+      $type = 'catalog';
+    }elseif($vocabulary == 8) {
+      $type = 'stock';
+    }
+
     $data = [];
 
     $data['form_fuel'] = [];
@@ -467,7 +479,8 @@ function _customize_product_list($vocabulary) {
       $data['form_body'] = array_merge($data['form_body'], $field['settings']['allowed_values']);
     }
 
-    $data['product_list'] = views_embed_view('block_car_list', 'block', implode($tids, '+'));
+    // pass category ids and car type (stock/catalog)
+    $data['product_list'] = views_embed_view('block_car_list', 'block', implode($tids, '+'), $type);
 
     $content .= theme('customize_product_list', array('data' => $data));
 

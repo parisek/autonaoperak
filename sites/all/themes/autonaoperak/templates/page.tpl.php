@@ -94,6 +94,11 @@
         </div>
         <?php if (!empty($page['navigation'])): ?>
           <div class="block-main-menu">
+            <style type="text/css">
+              .block-main-menu ul.menu li.menu-580 a:after {
+                content: '<?php print $cars_stock; ?>'!important;
+              }
+            </style>
             <div class="navbar-collapse collapse">
               <nav role="navigation">
                 <?php print render($page['navigation']); ?>

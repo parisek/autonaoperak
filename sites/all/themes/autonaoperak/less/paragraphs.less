@@ -1,0 +1,28 @@
+.field-customize-paragraph-bullets {
+  margin-bottom: @line-height-computed*3;
+  .item {
+    display: flex;
+    margin: 0 0 @line-height-computed 0;
+    .image {
+      flex: 0 0 150px;
+      span {
+        width: 120px;
+        height: 120px;
+        line-height: 120px;
+        border: 1px dotted #ddd;
+        border-radius: 50%;
+        text-align: center;
+        display: block;
+        font-size: 40px;
+        font-weight: bold;
+        color: @brand-primary;
+      }
+    }
+    .description {
+      h2 {
+        margin: 0 0 @line-height-computed 0;
+        font-size: @font-size-large;
+      }
+    }
+  }
+}

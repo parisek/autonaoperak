@@ -117,7 +117,7 @@ function customize_car_description_render($field, $title = NULL) {
       $content .= '<div class="file">';
       $title = '<span class="icon-pdf"></span>';
       $title .= '<span class="text">Podrobná specifikace vozu <span class="size">(PDF, ' . $filesize .')</span></span>';
-      $content .= l($title, $url, ['html' => TRUE]);
+      $content .= l($title, $url, ['html' => TRUE, 'attributes' => ['target'=>'_blank']]);
       $content .= '</div>';
     }
 
@@ -145,7 +145,7 @@ function customize_car_teaser_render($field, $title = NULL) {
     foreach ($wrapper->field_car_gallery->getIterator() as $delta => $file_wrapper) {
       $file = $file_wrapper->value();
       if($file) {
-        $image = theme('image_style', array('style_name' => 'large', 'path' => $file['uri']));
+        $image = theme('image_style', array('style_name' => 'product-list', 'path' => $file['uri']));
       }
       break;
     }
@@ -161,7 +161,7 @@ function customize_car_teaser_render($field, $title = NULL) {
           $content .= '<li class="sticker sticker-' . $wrapper->field_car_sticker->raw() . '">' . $wrapper->field_car_sticker->label() . '</li>';
         }
         if($wrapper->field_car_stock->value() > 0) {
-          $content .= '<li class="sticker sticker-stock">Ihned k dispozici</li>';
+          $content .= '<li class="sticker sticker-stock">Skladem</li>';
         }
         $content .= '</ul>';
       }
@@ -317,7 +317,7 @@ function customize_car_form_render($field, $title = NULL) {
     $content .= '<div class="container">';
     $content .= '<div class="content">';
     $content .= '<h2><a name="contact"></a>Napište nám a jezděte už brzy v novém voze ' . implode($title, ' ') . '</h2>';
-    $content .= '<div class="subtitle">Ozveme se vám s nabídkou do 2 pracovních dnů</div>';
+    $content .= '<div class="subtitle">Ozveme se vám s nabídkou nejpozději následující pracovní den</div>';
     $block = module_invoke('webform', 'block_view', 'client-block-15');
     if($block) {
       $content .= render($block['content']);
@@ -435,4 +435,36 @@ function customize_term_subcategory_stock_render($field, $title = NULL) {
   }
 
   return $content;
+}
+
+function customize_paragraph_bullets_render($field, $title = NULL) {
+
+  $content = '';
+
+  try {
+
+    $node = $field['entity'];
+    $wrapper = entity_metadata_wrapper('paragraphs_item', $field['entity']);
+
+    foreach ($wrapper->field_paragraph_bullet->value() as $delta => $bullet) {
+      $content .= '<div class="item">';
+      $content .= '<div class="image">';
+      $content .= '<span class="number">' . ($delta+1) . '.</span>';
+      $content .= '</div>';
+      $content .= '<div class="description">';
+      $content .= $bullet['safe_value'];
+      $content .= '</div>';
+      $content .= '</div>';
+    }
+
+  }catch (EntityMetadataWrapperException $exc) {
+    watchdog(
+      'customize',
+      'See '  . __FUNCTION__ . '() <pre>' .  $exc->getTraceAsString() . '</pre>',
+       NULL, WATCHDOG_ERROR
+    );
+  }
+
+  return $content;
+
 }

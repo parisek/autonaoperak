@@ -54,6 +54,19 @@ function autonaoperak_preprocess_page(&$vars) {
     $vars['content_column_class_custom'] = 'col-sm-12 main-content';
   }
 
+  // assign value to main menu
+  $query = db_select('node', 'n');
+  $query->join('field_data_field_car_stock', 's', 'n.nid = %alias.entity_id');
+  $query
+    ->fields('n', array('nid'))
+    ->condition('n.type', 'car')
+    ->condition('n.status', NODE_PUBLISHED);
+  $result = $query->execute();
+  $carCount = $result->rowCount();
+
+  $data = [];
+  $vars['cars_stock'] = $carCount;
+
 }
 
 /**

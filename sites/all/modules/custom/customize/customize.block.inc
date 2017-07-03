@@ -474,14 +474,22 @@ function customize_subcategory_stock_content() {
  * Callback for block Customize: Product list car.
  */
 function customize_product_list_car_content() {
-  return _customize_product_list(4);
+  $content = '';
+  $content .= '<div class="product-list-car">';
+  $content .= _customize_product_list(4);
+  $content .= '</div>';
+  return $content;
 }
 
 /**
  * Callback for block Customize: Product list van.
  */
 function customize_product_list_stock_content() {
-  return _customize_product_list(8);
+  $content = '';
+  $content .= '<div class="product-list-stock">';
+  $content .= _customize_product_list(8);
+  $content .= '</div>';
+  return $content;
 }
 
 /**
