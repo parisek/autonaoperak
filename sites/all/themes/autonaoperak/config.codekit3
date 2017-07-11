@@ -37,51 +37,10 @@
 		"oAP": "\/favicon.ico",
 		"oF": 0
 		},
-	"\/fonts\/autonaoperak\/demo-files\/demo.css": {
-		"aP": 0,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 2,
-		"oAP": "\/fonts\/autonaoperak\/demo-files\/demo-min.css",
-		"oF": 0,
-		"oS": 0
-		},
-	"\/fonts\/autonaoperak\/demo-files\/demo.js": {
-		"ft": 64,
-		"mi": 0,
-		"oA": 1,
-		"oAP": "\/fonts\/autonaoperak\/demo-files\/min\/demo-min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 0
-		},
 	"\/fonts\/autonaoperak\/demo.html": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/autonaoperak\/demo.html",
-		"oF": 0
-		},
-	"\/fonts\/autonaoperak\/fonts\/autonaoperak.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/fonts\/autonaoperak\/fonts\/autonaoperak.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/fonts\/autonaoperak\/fonts\/autonaoperak.ttf": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/fonts\/autonaoperak\/fonts\/autonaoperak.ttf",
-		"oF": 0
-		},
-	"\/fonts\/autonaoperak\/fonts\/autonaoperak.woff": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/fonts\/autonaoperak\/fonts\/autonaoperak.woff",
 		"oF": 0
 		},
 	"\/fonts\/autonaoperak\/Read Me.txt": {

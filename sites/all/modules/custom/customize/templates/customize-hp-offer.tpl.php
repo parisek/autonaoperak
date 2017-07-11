@@ -10,4 +10,7 @@
   <div class="morelink">
     <a href="<?php print $data['morelink']; ?>" class="btn btn-primary btn-lg">Zobrazit všechny vozy skladem</a>
   </div>
+  <div class="block-highlight">
+    <?php print $data['highlight']; ?>
+  </div>
 </div>

@@ -1,61 +1,47 @@
 @media(max-width: @grid-float-breakpoint-max) {
+  .navbar-open {
+    .page-wrapper {
+      display: none;
+    }
+  }
   .navbar {
-    background: #000;
+    background-image: linear-gradient(to bottom, #2a6175 0%, #4eb1d8 100%);
     margin-bottom: 0;
     border-bottom: 0;
     min-height: 0;
     z-index: 2;
+    .topbar {
+      display: none;
+    }
     &.open {
       height: 100vh;
+      overflow: hidden;
     }
     .container {
       position: relative;
       z-index: 2;
     }
-    .item-list {
-      display: block;
-    }
     .block-logo {
-      width: 250px;
       float: left;
       margin: 15px 0;
       img {
-        height: 30px!important;
+        height: 40px!important;
       }
-    }
-    .block-info {
-      display: none;
     }
     .navbar-toggle {
       position: absolute;
       right: 15px;
-      top: 10px;
+      top: 15px;
       margin: 0;
       z-index: 10;
       float: none;
       text-transform: uppercase;
       border: 0;
-      background: #000;
+      background: @btn-primary-bg;
       color: #fff;
-      &:hover, &:focus, &:active {
-        background: #000;
-      }
-    }
-    .block-search {
-      max-width: 200px;
-      margin: 0 auto @line-height-computed auto!important;
-      .search-form {
-        position: relative;
-        .form-control {
-          padding-right: 30px;
-        }
-        .btn {
-          position: absolute;
-          top: 1px;
-          right: 0;
-          background: none;
-          border: none;
-        }
+      &:hover, &:focus {
+        background-color: darken(@btn-primary-bg, 5%);
+        border-color: darken(@btn-primary-bg, 5%);
       }
     }
     .navbar-collapse {
@@ -84,20 +70,6 @@
             }
           }
         }
-      }
-    }
-  }
-  @media(max-width: 374px) {
-    .navbar {
-      .block-logo {
-        width: 200px;
-        img {
-          max-width: 200px;
-        }
-      }
-      .navbar-toggle {
-        font-size: @font-size-small;
-        padding: 6px 7px;
       }
     }
   }
@@ -245,6 +217,15 @@
             &.menu-580 {
               a {
                 padding-right: 35px;
+                padding-left: 30px;
+                &:before {
+                  font-family: 'autonaoperak' !important;
+                  content: "\e909";
+                  font-size: 22px;
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                }
                 &:after {
                   content: ''; // dynamically filled in template.php
                   font-size: @font-size-tiny;

@@ -168,7 +168,10 @@ function customize_hp_slider_content() {
       }
     }
 
-    $content .= theme('customize_hp_slider', array('slides' => $slides, 'data' => array()));
+    $data = [];
+    $data['highlight'] = theme('customize_highlight', array('data' => array()));
+
+    $content .= theme('customize_hp_slider', array('slides' => $slides, 'data' => $data));
 
   }catch (EntityMetadataWrapperException $exc) {
     watchdog(
@@ -242,6 +245,7 @@ function customize_hp_offer_content() {
     $data = [];
     $data['count'] = $carCount;
     $data['morelink'] = url('node/4');
+    $data['highlight'] = theme('customize_highlight', array('data' => array()));
 
     if($carCount) {
       $content .= theme('customize_hp_offer', array('cars' => $cars, 'data' => $data));

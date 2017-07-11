@@ -112,7 +112,7 @@
     </div>
   </div>
 </header>
-
+<div class="page-wrapper">
 <?php if (!empty($page['content_above'])): ?>
   <div class="content-above">
     <?php print render($page['content_above']); ?>
@@ -174,4 +174,4 @@
     </div>
   </footer>
 <?php endif; ?>
-
+</div>

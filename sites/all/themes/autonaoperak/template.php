@@ -42,6 +42,8 @@ function autonaoperak_preprocess_page(&$vars) {
         $title[] = $current_term->name;
         $vars['title'] = implode($title, ' ') . ' na operativní leasing';
       }
+    }else{
+      $vars['title'] = $current_term->name . ' na operativní leasing';
     }
   }
 

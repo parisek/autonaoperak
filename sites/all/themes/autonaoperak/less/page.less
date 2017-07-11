@@ -8,6 +8,9 @@
 }
 .not-front .main-content {
   padding-bottom: @line-height-computed*3;
+  @media(min-width: @screen-sm-min) {
+    padding-bottom: @line-height-computed;
+  }
 }
 
 a,
@@ -29,6 +32,7 @@ h1.page-header {
   margin: 0 0 30px 0;
   padding: 0;
   @media(max-width: @screen-xs-max) {
+    margin-top: @line-height-computed;
     margin-bottom: @line-height-computed;
     font-size: @font-size-h2;
   }
@@ -289,28 +293,29 @@ form {
 }
 .block-breadcrumbs {
   margin: 30px 0;
-}
-.breadcrumb {
-  background: none;
-  padding: 0;
-  margin: 0;
-  font-size: @font-size-small;
-  a {
-    color: @text-color;
-  }
-  li {
-    span:first-letter {
-      text-transform: uppercase;
+  .breadcrumb {
+    background: none;
+    padding: 0;
+    margin: 0;
+    font-size: @font-size-small;
+    a {
+      color: @text-color;
     }
-    &.last {
+    li {
+      span:first-letter {
+        text-transform: uppercase;
+      }
+      &.last {
+        color: #acacac;
+      }
+    }
+    >li+li:before {
       color: #acacac;
+      font-family: 'Glyphicons Halflings';
+      content: "\e258";
+      font-size: 10px;
     }
-  }
-  >li+li:before {
-    color: #acacac;
-    font-family: 'Glyphicons Halflings';
-    content: "\e258";
-    font-size: 10px;
+
   }
   @media(max-width: @screen-xs-max) {
     display: none;

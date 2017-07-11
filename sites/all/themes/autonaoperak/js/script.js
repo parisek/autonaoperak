@@ -11,6 +11,7 @@
       // menu on mobile/tablet
       $('.navbar-toggle').on('click',function ( event ) {
         $('.navbar').toggleClass('open');
+        $('body').toggleClass('navbar-open');
       });
 
       // dynamically disable/enable iframe move
@@ -24,37 +25,37 @@
         $('iframe', this).addClass('disable-iframe-move-js');
       });
 
-      var $slider = $('.slider-nav');
-      var $owl = $('#main-slider');
+      if (window.matchMedia("(min-width: 768px)").matches) {
+        var $slider = $('.slider-nav');
+        var $owl = $('#main-slider');
 
-      $owl.on('initialize.owl.carousel resize.owl.carousel', function(event) {
-        var width = $(window).width()-$('.container', $slider).width();
-        $('.gradient-left', $slider).css('width', width/2 + 'px');
-        $('.gradient-right', $slider).css('width', width/2 + 'px');
-      })
+        $owl.on('initialize.owl.carousel resize.owl.carousel', function(event) {
+          var width = $(window).width()-$('.container', $slider).width();
+          $('.gradient-left', $slider).css('width', width/2 + 'px');
+          $('.gradient-right', $slider).css('width', width/2 + 'px');
+        })
 
-      $owl.owlCarousel({
-        items:1,
-        loop:true,
-        margin:0,
-        nav:true,
-        navText: ['<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>', '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>'],
-        dots:true,
-        lazyLoad:true,
-        autoplay:true,
-        autoplayTimeout:5000,
-        autoplayHoverPause:true,
-        dotsContainer: '#carousel-custom-dots',
-      })
+        $owl.owlCarousel({
+          items:1,
+          loop:true,
+          margin:0,
+          nav:true,
+          navText: ['<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>', '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>'],
+          dots:true,
+          lazyLoad:true,
+          autoplay:true,
+          autoplayTimeout:5000,
+          autoplayHoverPause:true,
+          dotsContainer: '#carousel-custom-dots',
+        })
 
-      $('.owl-dot').on('click', function () {
-        $owl.trigger('to.owl.carousel', [$(this).index(), 300]);
-      });
+        $('.owl-dot').on('click', function () {
+          $owl.trigger('to.owl.carousel', [$(this).index(), 300]);
+        });
+      }
 
-      var $owl2 = $('#offer-slider');
-
-      $owl2.owlCarousel({
-        items:4,
+      var $slider_offer = $('#offer-slider');
+      $slider_offer.owlCarousel({
         loop:true,
         margin:0,
         nav:true,
@@ -64,8 +65,15 @@
         autoplay:true,
         autoplayTimeout:5000,
         autoplayHoverPause:true,
+        responsive:{
+          0:{
+              items:3
+          },
+          600:{
+              items:4
+          },
+        }
       })
-
 
       //toggle accordion up/down icon eg. faq section
       $('.panel-group .panel-collapse').on('hide.bs.collapse', function () {

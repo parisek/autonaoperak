@@ -46,6 +46,11 @@ function customize_theme() {
       'path' => $module_path . '/templates',
       'variables' => array('brand' => array(), 'data' => array()),
     ),
+    'customize_highlight' => array(
+      'template' => 'customize-highlight',
+      'path' => $module_path . '/templates',
+      'variables' => array('data' => array()),
+    ),
     'customize_faq' => array(
       'template' => 'customize-faq',
       'path' => $module_path . '/templates',
@@ -381,8 +386,8 @@ function _customize_subcategories($type, $vocabulary, $term = '') {
       $parents = taxonomy_get_parents($term->tid);
       if(count($parents)) {
         // eg. Fabia
-        $parent = key($parents);
-        $children = taxonomy_get_children($parent);
+        //$parent = key($parents);
+        //$children = taxonomy_get_children($parent);
       }else{
         // eg. Škoda
         $children = taxonomy_get_tree($vocabulary, $term->tid, 1, TRUE);
@@ -412,9 +417,9 @@ function _customize_subcategories($type, $vocabulary, $term = '') {
           'active' => $active,
         ];
       }
-    }
 
-    $content .= theme('customize_term_subcategory', array('items' => $subcategories, 'data' => array()));
+      $content .= theme('customize_term_subcategory', array('items' => $subcategories, 'data' => array()));
+    }
 
   }catch (EntityMetadataWrapperException $exc) {
     watchdog(

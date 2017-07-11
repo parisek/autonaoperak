@@ -25,4 +25,18 @@
       }
     }
   }
+  @media(max-width: @screen-xs-max) {
+    .item {
+      margin-bottom: @line-height-computed*2;
+      .image {
+        flex: 0 0 70px;
+        span {
+          width: 60px;
+          height: 60px;
+          line-height: 60px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
 }
