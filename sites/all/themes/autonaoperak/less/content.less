@@ -461,15 +461,15 @@
   ul {
     display: flex;
     flex-wrap: wrap;
-    margin-left: -10px;
-    margin-right: -10px;
+    margin-left: -5px;
+    margin-right: -5px;
     padding: 0;
     li {
       list-style: none;
       flex: 0 0 33.3%;
-      padding-left: 10px;
-      padding-right: 10px;
-      margin-bottom: 20px;
+      padding-left: 5px;
+      padding-right: 5px;
+      margin-bottom: 10px;
     }
     .item {
       display: block;
@@ -477,8 +477,8 @@
       border-radius: @border-radius-base;
       padding: 10px 20px;
       display: flex;
-      min-height: 100px;
       transition: all 0.3s;
+      min-height: 72px;
       &:hover, &:active, &:focus, &.item-active {
         text-decoration: none;
         border-color: #11b8e1;
@@ -487,12 +487,12 @@
         }
       }
       .image {
-        flex: 0 0 40%;
+        flex: 0 0 70px;
         display: flex;
         align-items: center;
         img {
-          max-width: 100px;
-          max-height: 66px;
+          max-width: 60px;
+          max-height: 50px;
         }
       }
       .title {
@@ -557,6 +557,9 @@
         color: @headings-color;
       }
     }
+    .item-sort {
+      display: none;
+    }
     .item-action {
       align-self: flex-end;
     }
@@ -565,6 +568,9 @@
       .item-price {
         padding: @line-height-computed 0 0 0;
       }
+    }
+    .morelink-mobile {
+      display: none;
     }
   }
   .category-list-sort {
@@ -607,11 +613,30 @@
   @media(max-width: @screen-xs-max) {
     .category-list-filter {
       padding: 20px;
+      .item {
+        margin-bottom: @line-height-computed/4;
+        flex: 0 0 100%;
+      }
+      .item-body,
+      .item-sort {
+        .select-background {
+          float: left;
+        }
+      }
+      .item-sort {
+        display: block;
+      }
+      .item-action {
+        display: none;
+      }
+      .morelink {
+        display: none;
+      }
+      .morelink-mobile {
+        display: block;
+      }
     }
-    .item {
-      margin-bottom: @line-height-computed/4;
-    }
-    .form-submit {
+    .category-list-sort {
       display: none;
     }
   }
@@ -723,6 +748,16 @@
     }
     .item-map {
       margin-bottom: @line-height-computed*2;
+    }
+  }
+  @media(max-width: @screen-xs-max) {
+    ul {
+      &.initials {
+        li {
+          flex: 0 0 100%;
+          margin: 0 0 @line-height-computed 0;
+        }
+      }
     }
   }
 }

@@ -39,7 +39,7 @@
         $('.view-block-car-list .view-filters .form-submit').trigger('click');
       });
 
-      $('.item-sort input[type=radio]', $filter).on('change', function(event) {
+      $('.item-sort input[type=radio],.item-sort select', $filter).on('change', function(event) {
         var type = $(this).val();
         var $orderby = $('.view-block-car-list #edit-sort-by'); // field_price_from_value, field_weight_value
         var $order = $('.view-block-car-list #edit-sort-order'); // ASC, DESC
@@ -116,6 +116,18 @@
         }, 1000);
 
       });
+
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        $('#categoryMobileFilters', $filter).addClass('collapse');
+      }
+
+      // toggle text for mobile morelink button
+      $('#categoryMobileFilters', $filter).on('hide.bs.collapse', function () {
+        $('.morelink-mobile .text', $filter).text('Zobrazit filtry');
+      })
+      $('#categoryMobileFilters', $filter).on('show.bs.collapse', function () {
+        $('.morelink-mobile .text', $filter).text('Skrýt filtry');
+      })
 
     }
   }

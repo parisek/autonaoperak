@@ -158,7 +158,6 @@
       <?php endif; ?>
     </div>
   </div>
-  <a href="#content-scroll"><span class="icon-scroll"></span></a>
 </div>
 <?php if (!empty($page['content_below'])): ?>
   <div class="content-below">

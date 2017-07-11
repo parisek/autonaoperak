@@ -316,7 +316,7 @@ function customize_car_form_render($field, $title = NULL) {
 
     $content .= '<div class="container">';
     $content .= '<div class="content">';
-    $content .= '<h2><a name="contact"></a>Napište nám a jezděte už brzy v novém voze ' . implode($title, ' ') . '</h2>';
+    $content .= '<h2><a name="contact" id="contact"></a>Napište nám a jezděte už brzy v novém voze ' . implode($title, ' ') . '</h2>';
     $content .= '<div class="subtitle">Ozveme se vám s nabídkou nejpozději následující pracovní den</div>';
     $block = module_invoke('webform', 'block_view', 'client-block-15');
     if($block) {

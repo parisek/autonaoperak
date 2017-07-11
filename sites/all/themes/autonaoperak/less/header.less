@@ -1,5 +1,6 @@
 @media(max-width: @grid-float-breakpoint-max) {
   .navbar-open {
+    overflow: hidden;
     .page-wrapper {
       display: none;
     }
@@ -7,7 +8,7 @@
   .navbar {
     background-image: linear-gradient(to bottom, #2a6175 0%, #4eb1d8 100%);
     margin-bottom: 0;
-    border-bottom: 0;
+    border: 0;
     min-height: 0;
     z-index: 2;
     .topbar {
@@ -49,8 +50,8 @@
       text-align: center;
       padding-bottom: @line-height-computed;
       box-shadow: none;
+      overflow: scroll;
       &.in {
-        height: 100vh;
         max-height: 100%;
       }
       ul.menu {

@@ -6,9 +6,12 @@
     font-size: 18px;
   }
 }
+.page-wrapper {
+  overflow: hidden;
+}
 .not-front .main-content {
   padding-bottom: @line-height-computed*3;
-  @media(min-width: @screen-sm-min) {
+  @media(max-width: @screen-xs-max) {
     padding-bottom: @line-height-computed;
   }
 }

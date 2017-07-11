@@ -142,7 +142,8 @@
         }
       }
     }
-    .field-customize-car-title {
+    .field-customize-car-title,
+    .field-customize-car-title-mobile {
       margin-bottom: @line-height-computed*2;
       h1.page-header {
         margin: 0;
@@ -152,6 +153,9 @@
         font-weight: bold;
         color: @brand-primary;
       }
+    }
+    .field-customize-car-title-mobile {
+      display: none;
     }
     .field-customize-car-description {
       margin-bottom: @line-height-computed*2;
@@ -291,6 +295,26 @@
         margin: 0 0 @line-height-computed 0;
         font-size: 24px;
       }
+      .panel-group {
+        margin-bottom: 0;
+      }
+    }
+    @media(max-width: @screen-xs-max) {
+      .group-left,
+      .group-right {
+        flex: 0 0 100%;
+      }
+      .group-left {
+        margin-bottom: @line-height-computed;
+      }
+      .field-customize-car-title {
+        display: none;
+      }
+      .field-customize-car-title-mobile {
+        display: block;
+        margin-top: @line-height-computed;
+        margin-bottom: @line-height-computed;
+      }
     }
   }
 }
@@ -343,6 +367,16 @@
       }
       a {
         color: @text-color;
+        text-decoration: underline;
+        transition: all 0.3s;
+        &:hover, &:focus {
+          color: @headings-color;
+        }
+      }
+    }
+    .webform-component-textarea {
+      textarea {
+        height: auto;
       }
     }
     .form-actions {
@@ -353,6 +387,13 @@
         font-weight: bold;
         padding: 15px 30px;
         text-transform: uppercase;
+      }
+    }
+  }
+  @media(max-width: @screen-xs-max) {
+    .content {
+      h2 {
+        font-size: 30px;
       }
     }
   }

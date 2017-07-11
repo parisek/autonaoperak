@@ -100,6 +100,22 @@
         }
       });
 
+      //links anchor on product detail page
+      if($('.node').length) {
+        $('a[href^="#"]').on('click',function ( event ) {
+          var anchor = $(this).attr('href');
+          if(anchor.length && $('[name=' + anchor.replace('#', '') + ']').length) {
+            event.preventDefault();
+            anchor = anchor.replace('#', '');
+            $('html, body').animate({
+                scrollTop: $('[name=' + anchor + ']').offset().top-50,
+            }, 500, function(){
+              $('#edit-submitted-name').focus();
+            });
+          }
+        });
+      }
+
     }
   };
 

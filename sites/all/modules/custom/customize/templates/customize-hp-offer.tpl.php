@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Přes <?php print $data['count']; ?> vozů ihned k dispozici</h2>
+  <h2><span class="count"><?php print $data['count']; ?></span> vozů ihned k dispozici</h2>
   <div class="owl-carousel owl-theme" id="offer-slider">
     <?php foreach ($cars as $car): ?>
       <div class="item">
