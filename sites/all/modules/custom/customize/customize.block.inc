@@ -41,6 +41,9 @@ function customize_block_info() {
   $blocks['sidebar_contact'] = array(
     'info' => t('Customize: Contact form - sidebar')
   );
+  $blocks['responsive_switch'] = array(
+    'info' => t('Customize: Responsive Switch')
+  );
   $blocks['404'] = array(
     'info' => t('Customize: 404')
   );
@@ -108,6 +111,9 @@ function customize_block_view($delta='') {
       break;
     case 'howto':
       $block['content'] = customize_howto_content();
+      break;
+    case 'responsive_switch':
+      $block['content'] = customize_responsive_switch_content();
       break;
     case '404':
       $block['content'] = customize_404_content();
@@ -575,6 +581,25 @@ function customize_howto_content() {
   $content .= '</div>';
 
   return $content;
+}
+
+/**
+ * Callback for block Customize: Responsive switch.
+ */
+function customize_responsive_switch_content() {
+
+  $content = '';
+
+  $content .= '<div class="version-toggle">';
+  $content .= '<div class="visible-xs visible-sm version-desktop">' . l(t('Version for PC'), current_path(), array('query' => array('desktop' => 1))) . '</div>';
+  // only when user manually set version to desktop
+  if(isset($_SESSION['autonaoperakdesktop']) && $_SESSION['autonaoperakdesktop']) {
+    $content .= '<div class="version-mobile">' . l(t('Mobile version'), current_path(), array('query' => array('desktop' => 0))) . '</div>';
+  }
+  $content .= '</div>';
+
+  return $content;
+
 }
 
 /**

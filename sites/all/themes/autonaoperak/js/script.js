@@ -102,7 +102,7 @@
 
       //links anchor on product detail page
       if($('.node').length) {
-        $('a[href^="#"]').on('click',function ( event ) {
+        $('.node a[href^="#"]').on('click',function ( event ) {
           var anchor = $(this).attr('href');
           if(anchor.length && $('[name=' + anchor.replace('#', '') + ']').length) {
             event.preventDefault();

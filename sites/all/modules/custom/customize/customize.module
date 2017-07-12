@@ -14,6 +14,39 @@ function customize_views_api() {
 }
 
 /**
+ * Implementation of hook_init().
+ */
+function customize_init() {
+
+    global $user, $theme_key;
+
+    // resolves issue https://www.drupal.org/node/2156371
+    if (strpos($theme_key, 'bootstrap') === FALSE) {
+      include_once(drupal_get_path('theme', 'bootstrap') . '/includes/process.inc');
+    }
+
+   // Redirect user from overview page to edit page
+   if(arg(0) == 'user' && is_numeric(arg(1)) && empty(arg(2))) {
+     if (user_is_logged_in()) {
+      drupal_goto('user/' . arg(1) . '/edit');
+     }
+   }
+
+   $params = drupal_get_query_parameters();
+
+   if(isset($params['desktop'])) {
+     if($params['desktop'] == 1) {
+       drupal_session_start();
+       $_SESSION['autonaoperakdesktop'] = TRUE;
+     }else{
+       drupal_session_start();
+       $_SESSION['autonaoperakdesktop'] = FALSE;
+     }
+   }
+
+}
+
+/**
  * Implements hook_theme().
  */
 function customize_theme() {

@@ -30,21 +30,41 @@ function autonaoperak_preprocess_page(&$vars) {
     $vars['breadcrumb'] = '';
   }elseif(arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2))) {
     $current_term = menu_get_object('taxonomy_term', 2);
-    // add parent name and term name to browser bar
-    if(isset($current_term->depth) && $current_term->depth == 2) {
-      $title = [];
-      $parents = taxonomy_get_parents($current_term->tid);
-      if(count($parents)) {
-        foreach ($parents as $brand) {
-          $title[] = $brand->name;
-          break;
+    $vocabulary = $current_term->vocabulary_machine_name;
+    if($vocabulary == 'category_stock') {
+      // add parent name and term name to browser bar
+      if(isset($current_term->depth) && $current_term->depth == 2) {
+        $title = [];
+        $parents = taxonomy_get_parents($current_term->tid);
+        if(count($parents)) {
+          foreach ($parents as $brand) {
+            $title[] = $brand->name;
+            break;
+          }
+          $title[] = $current_term->name;
+          $vars['title'] = implode($title, ' ') . ' skladem na operativní leasing';
         }
-        $title[] = $current_term->name;
-        $vars['title'] = implode($title, ' ') . ' na operativní leasing';
+      }else{
+        $vars['title'] = $current_term->name . ' skladem na operativní leasing';
       }
-    }else{
-      $vars['title'] = $current_term->name . ' na operativní leasing';
+    }elseif($vocabulary == 'category_car') {
+      // add parent name and term name to browser bar
+      if(isset($current_term->depth) && $current_term->depth == 2) {
+        $title = [];
+        $parents = taxonomy_get_parents($current_term->tid);
+        if(count($parents)) {
+          foreach ($parents as $brand) {
+            $title[] = $brand->name;
+            break;
+          }
+          $title[] = $current_term->name;
+          $vars['title'] = implode($title, ' ') . ' na operativní leasing';
+        }
+      }else{
+        $vars['title'] = $current_term->name . ' na operativní leasing';
+      }
     }
+
   }
 
   if (!empty($vars['page']['sidebar_first'])) {
@@ -95,23 +115,45 @@ function autonaoperak_preprocess_html(&$vars) {
     }
   }elseif(arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2))) {
     $current_term = menu_get_object('taxonomy_term', 2);
-    // add parent name and term name to browser bar
-    if(isset($current_term->depth) && $current_term->depth == 2) {
+    $vocabulary = $current_term->vocabulary_machine_name;
+    if($vocabulary == 'category_stock') {
       $head_title = check_plain(variable_get('site_name', 'Drupal'));
-      $title = [];
-      $parents = taxonomy_get_parents($current_term->tid);
-      if(count($parents)) {
-        foreach ($parents as $brand) {
-          $title[] = $brand->name;
-          break;
+      // add parent name and term name to browser bar
+      if(isset($current_term->depth) && $current_term->depth == 2) {
+        $title = [];
+        $parents = taxonomy_get_parents($current_term->tid);
+        if(count($parents)) {
+          foreach ($parents as $brand) {
+            $title[] = $brand->name;
+            break;
+          }
+          $title[] = $current_term->name;
+          $vars['head_title'] = implode($title, ' ') . ' skladem na operativní leasing | ' . $head_title;
         }
-        $title[] = $current_term->name;
-        $vars['head_title'] = implode($title, ' ') . ' na operativní leasing | ' . $head_title;
+      }else{
+        $vars['head_title'] = $current_term->name . ' skladem na operativní leasing | ' . $head_title;
+      }
+    }elseif($vocabulary == 'category_car') {
+      $head_title = check_plain(variable_get('site_name', 'Drupal'));
+      // add parent name and term name to browser bar
+      if(isset($current_term->depth) && $current_term->depth == 2) {
+        $title = [];
+        $parents = taxonomy_get_parents($current_term->tid);
+        if(count($parents)) {
+          foreach ($parents as $brand) {
+            $title[] = $brand->name;
+            break;
+          }
+          $title[] = $current_term->name;
+          $vars['head_title'] = implode($title, ' ') . ' na operativní leasing | ' . $head_title;
+        }
+      }else{
+        $vars['head_title'] = $current_term->name . ' na operativní leasing | ' . $head_title;
       }
     }
   }
 
-  // complete logic is in customize_init() and customize_copyright_content()
+  // complete logic is in customize_init() and customize_responsive_switch_content()
   if(isset($_SESSION['autonaoperakdesktop']) && $_SESSION['autonaoperakdesktop']) {
     $viewport = array(
       '#tag' => 'meta',

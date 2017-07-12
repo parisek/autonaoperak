@@ -1,7 +1,7 @@
 <div class="owl-carousel owl-theme" id="main-slider">
   <?php foreach ($slides as $slide): ?>
     <div class="item" style="background-image:url('<?php print $slide['image']; ?>')">
-      <div class="item-inner">
+      <div class="container">
         <div class="text">
           <div class="inner">
             <?php print $slide['body']; ?>
