@@ -57,8 +57,9 @@
     }
     h2 {
       margin: 0 0 5px 0;
-      font-size: @font-size-large;
+      font-size: @font-size-medium;
       font-weight: bold;
+      text-align: left;
     }
     .subtitle {
       margin: 0 0 5px 0;
@@ -79,15 +80,13 @@
       flex: 0 0 100%;
       padding-left: 25px;
       padding-right: 25px;
+      max-width: 100%;
     }
     .group-left,
     .group-right {
       flex: 0 0 50%;
       padding-left: 25px;
       padding-right: 25px;
-    }
-    .group-footer {
-      margin-bottom: @line-height-computed*2;
     }
     .field-customize-car-gallery {
       margin-bottom: 30px;
@@ -299,10 +298,81 @@
         margin-bottom: 0;
       }
     }
+    .field-customize-car-related {
+      margin: @line-height-computed*3 0 0 0;
+      h2.block-title {
+        font-size: 40px;
+        text-align: center;
+        margin: 0 0 30px 0;
+      }
+      .owl-carousel {
+        margin: 0;
+      }
+      .item {
+        margin: 1px 15px;
+        .stickers {
+          .sticker-stock {
+            display: none!important;
+          }
+        }
+      }
+      .owl-nav {
+        .owl-prev,
+        .owl-next {
+          position: absolute;
+          top:0;
+          bottom: 0;
+          left: -70px;
+          display: flex;
+          align-items: center;
+          transition: all 0.3s;
+          opacity: 1;
+          .glyphicon {
+            font-size: 40px;
+            text-align: center;
+            line-height: 50px;
+            color: @brand-primary;
+          }
+          &.disabled {
+            opacity: 0;
+          }
+        }
+        .owl-next {
+          left: auto;
+          right: -70px;
+        }
+      }
+      @media(max-width: @screen-xs-max) {
+        margin: @line-height-computed*2 -25px;
+        overflow: hidden;
+        h2.block-title {
+          font-size: 30px;
+        }
+        .owl-carousel {
+          margin-left: -100px;
+          margin-right: -100px;
+          width: auto;
+        }
+        .owl-nav {
+          .owl-prev,
+          .owl-next {
+            display: block;
+            padding-top: 30px;
+          }
+          .owl-prev {
+            left: 108px;
+          }
+          .owl-next {
+            right: 108px;
+          }
+        }
+      }
+    }
     @media(max-width: @screen-xs-max) {
       .group-left,
       .group-right {
         flex: 0 0 100%;
+        max-width: 100%;
       }
       .group-left {
         margin-bottom: @line-height-computed;

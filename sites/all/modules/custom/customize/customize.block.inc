@@ -207,8 +207,8 @@ function customize_hp_offer_content() {
       ->entityCondition('bundle', 'car')
       ->propertyCondition('status', NODE_PUBLISHED)
       ->fieldCondition('field_car_type', 'value', 'stock')
-      ->propertyOrderBy('created', 'DESC')
-      ->range(0, 10);
+      ->fieldOrderBy('field_weight', 'value', 'ASC')
+      ->range(0, 15);
 
     $result = $query->execute();
 

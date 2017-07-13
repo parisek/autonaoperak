@@ -259,20 +259,20 @@ function customize_car_pricelist_render($field, $title = NULL) {
 
         }
         if(!empty($deposit) && !isset($pricelist[$km]['deposit'])) {
-          $pricelist[$km]['deposit'][$deposit]['name'] = number_format($deposit, 0, ',', ' ') . '&nbsp;Kč';
+          $pricelist[$km]['deposit'][$deposit]['name'] = number_format($deposit, 0, ',', '&nbsp;') . '&nbsp;Kč';
         }
 
         $pricelist[$km]['year'][$year] = [
           'value' => $item_wrapper->field_pricelist_year->label(),
         ];
         $pricelist[$km]['price'][$year] = [
-          'value' => number_format($item_wrapper->field_pricelist_price->value(), 0, ',', ' ') . '&nbsp;Kč',
+          'value' => number_format($item_wrapper->field_pricelist_price->value(), 0, ',', '&nbsp;') . '&nbsp;Kč',
         ];
 
         // deposit is not required
         if(!empty($deposit)) {
           $pricelist[$km]['deposit'][$deposit]['items'][$year] = [
-            'value' => number_format($item_wrapper->field_pricelist_price2->value(), 0, ',', ' ') . '&nbsp;Kč',
+            'value' => number_format($item_wrapper->field_pricelist_price2->value(), 0, ',', '&nbsp;') . '&nbsp;Kč',
           ];
         }
       }
@@ -291,6 +291,79 @@ function customize_car_pricelist_render($field, $title = NULL) {
   }
 
   return $content;
+}
+
+function customize_car_related_render($field, $title = NULL) {
+
+  $content = '';
+
+  try {
+
+    $node = $field['entity'];
+    $wrapper = entity_metadata_wrapper('node', $field['entity']);
+
+    $data = [];
+    $type = $wrapper->field_car_type->value();
+    $brand_tid = $wrapper->field_car_brand->raw();
+    if($type == 'catalog') {
+      $car_type = 'stock';
+      $data['title'] = 'Vozy ihned k dispozici';
+    }elseif($type == 'stock') {
+      $car_type = 'catalog';
+      $data['title'] = 'Jiné konfigurace v nabídce';
+    }
+
+    $cars = [];
+
+    $query = new EntityFieldQuery();
+
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'car')
+      ->propertyCondition('status', NODE_PUBLISHED)
+      ->fieldCondition('field_car_brand', 'tid', $brand_tid)
+      ->fieldCondition('field_car_type', 'value', $car_type)
+      ->fieldOrderBy('field_weight', 'value', 'ASC');
+
+    $result = $query->execute();
+
+    if (isset($result['node'])) {
+      $nids = array_keys($result['node']);
+      $items = entity_load('node', $nids);
+
+      foreach ($items as $item) {
+        $wrapper = entity_metadata_wrapper('node', $item);
+        $nid =  $wrapper->getIdentifier();
+        $title = $wrapper->label();
+        $image = '';
+        // get first image from gallery
+        foreach ($wrapper->field_car_gallery->getIterator() as $delta => $image_wrapper) {
+          $file = $image_wrapper->value();
+          $image = theme('image_style', array('style_name' => 'product-small', 'path' => $file['uri']));
+          break;
+        }
+
+        $view = node_view($wrapper->value(), 'teaser');
+
+        $cars[] = array(
+          'nid' => $nid,
+          'node' => drupal_render($view),
+        );
+      }
+
+      $data['count'] = count($items);
+      $content .= theme('customize_car_related', array('cars' => $cars, 'data' => $data));
+    }
+
+  }catch (EntityMetadataWrapperException $exc) {
+    watchdog(
+      'customize',
+      'See '  . __FUNCTION__ . '() <pre>' .  $exc->getTraceAsString() . '</pre>',
+       NULL, WATCHDOG_ERROR
+    );
+  }
+
+  return $content;
+
 }
 
 function customize_car_form_render($field, $title = NULL) {
@@ -387,25 +460,6 @@ function customize_term_subcategory_car_render($field, $title = NULL) {
 
     $term = $field['entity'];
     $content .= _customize_subcategories('taxonomy_term', 4, $term);
-
-  }catch (EntityMetadataWrapperException $exc) {
-    watchdog(
-      'customize',
-      'See '  . __FUNCTION__ . '() <pre>' .  $exc->getTraceAsString() . '</pre>',
-       NULL, WATCHDOG_ERROR
-    );
-  }
-
-  return $content;
-}
-
-function customize_term_subcategory_van_render($field, $title = NULL) {
-  $content = '';
-
-  try {
-
-    $term = $field['entity'];
-    $content .= _customize_subcategories('taxonomy_term', 5, $term);
 
   }catch (EntityMetadataWrapperException $exc) {
     watchdog(

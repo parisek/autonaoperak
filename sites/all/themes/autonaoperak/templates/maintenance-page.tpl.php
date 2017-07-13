@@ -29,7 +29,7 @@
     <div class="container">
       <div class="block-logo">
         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-          <img src="<?php print $base_path . $directory; ?>/logo.svg" alt="<?php print t('Home'); ?>" class="img-responsive">
+          <img src="<?php print $base_path . $directory; ?>/logo.png" alt="<?php print t('Home'); ?>" class="img-responsive">
         </a>
       </div>
     </div>

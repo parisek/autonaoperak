@@ -75,6 +75,30 @@
         }
       })
 
+      var $slider_related = $('#related-slider');
+      $slider_related.owlCarousel({
+        loop:false,
+        navRewind:false,
+        margin:0,
+        nav:true,
+        navText: ['<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>', '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>'],
+        dots:false,
+        lazyLoad:true,
+        autoplay:true,
+        autoplayTimeout:5000,
+        autoplayHoverPause:true,
+        responsive:{
+          0:{
+              items:3,
+              loop:true,
+              navRewind:true,
+          },
+          600:{
+              items:4
+          },
+        }
+      })
+
       //toggle accordion up/down icon eg. faq section
       $('.panel-group .panel-collapse').on('hide.bs.collapse', function () {
         var $link = $(this).closest('.panel').find('.panel-title a');

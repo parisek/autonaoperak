@@ -69,11 +69,6 @@ function customize_theme() {
       'path' => $module_path . '/templates',
       'variables' => array('brand' => array(), 'data' => array()),
     ),
-    'customize_hp_brand_van' => array(
-      'template' => 'customize-hp-brand-van',
-      'path' => $module_path . '/templates',
-      'variables' => array('brand' => array(), 'data' => array()),
-    ),
     'customize_category_list' => array(
       'template' => 'customize-category-list',
       'path' => $module_path . '/templates',
@@ -93,6 +88,11 @@ function customize_theme() {
       'template' => 'customize-car-pricelist',
       'path' => $module_path . '/templates',
       'variables' => array('data' => array()),
+    ),
+    'customize_car_related' => array(
+      'template' => 'customize-car-related',
+      'path' => $module_path . '/templates',
+      'variables' => array('cars' => array(), 'data' => array()),
     ),
     'customize_term_subcategory' => array(
       'template' => 'customize-term-subcategory',
@@ -320,6 +320,12 @@ function customize_ds_fields_info($entity_type) {
     'function' => 'customize_car_pricelist_render',
   ) + $defaults;
 
+  $fields['node']['customize_car_related'] = array(
+    'title' => t('Customize: Related cars'),
+    'ui_limit' => array('car|full'),
+    'function' => 'customize_car_related_render',
+  ) + $defaults;
+
   $fields['node']['customize_car_form'] = array(
     'title' => t('Customize: Form'),
     'ui_limit' => array('car|full'),
@@ -338,22 +344,10 @@ function customize_ds_fields_info($entity_type) {
     'function' => 'customize_node_subcategory_car_render',
   ) + $defaults;
 
-  $fields['node']['customize_node_subcategory_van'] = array(
-    'title' => t('Customize: Subcategory Vans'),
-    'ui_limit' => array('*|*'),
-    'function' => 'customize_node_subcategory_van_render',
-  ) + $defaults;
-
   $fields['taxonomy_term']['customize_term_subcategory_car'] = array(
     'title' => t('Customize: Subcategory'),
     'ui_limit' => array('category_car|*'),
     'function' => 'customize_term_subcategory_car_render',
-  ) + $defaults;
-
-  $fields['taxonomy_term']['customize_term_subcategory_van'] = array(
-    'title' => t('Customize: Subcategory'),
-    'ui_limit' => array('category_van|*'),
-    'function' => 'customize_term_subcategory_van_render',
   ) + $defaults;
 
   $fields['taxonomy_term']['customize_term_subcategory_stock'] = array(
