@@ -8,7 +8,7 @@
     <?php endforeach ?>
   </div>
   <div class="morelink">
-    <a href="<?php print $data['morelink']; ?>" class="btn btn-primary btn-lg">Zobrazit všechny vozy skladem</a>
+    <a href="<?php print $data['morelink']; ?>" class="btn btn-primary btn-lg"><span class="visible-sm-inline visible-md-inline visible-lg-inline">Zobrazit </span>všechny vozy skladem</a>
   </div>
   <div class="block-highlight">
     <?php print $data['highlight']; ?>

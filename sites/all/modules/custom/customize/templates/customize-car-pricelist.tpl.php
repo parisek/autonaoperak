@@ -1,38 +1,61 @@
 <h2>Vzorová cena operativního leasingu</h2>
 <p>Konečnou cenu vám rádi spočítáme na základě vašich požadavků a úprav.</p>
-<div class="pricelist">
+<div class="pricelist hidden-xs">
   <?php foreach($data['pricelist'] as $item): ?>
     <div class="pricelist-item">
       <h3>Roční nájezd: <?php print $item['name']; ?></h3>
-      <div class="table-responsive">
-        <table class="table">
-          <tbody>
-          <tr class="year">
-            <td class="name">Celková doba operativního leasingu</td>
-            <?php foreach($item['year'] as $year): ?>
-              <td class="value"><?php print $year['value']; ?></td>
-            <?php endforeach; ?>
-          </tr>
-          <tr class="price">
-            <td class="name">Měsíční splátka bez akontace</td>
-            <?php foreach($item['price'] as $price): ?>
-              <td class="value"><?php print $price['value']; ?></td>
-            <?php endforeach; ?>
-          </tr>
-          <?php foreach($item['deposit'] as $deposit): ?>
-            <tr class="deposit">
-              <td class="name">Měsíční splátka s akontací <?php print $deposit['name']; ?></td>
-              <?php foreach($deposit['items'] as $dep): ?>
-                <td class="value"><?php print $dep['value']; ?></td>
-              <?php endforeach; ?>
-            </tr>
+      <table class="table">
+        <tbody>
+        <tr class="year">
+          <td class="name">Celková doba operativního leasingu</td>
+          <?php foreach($item['year'] as $year): ?>
+            <td class="value"><?php print $year['value']; ?></td>
           <?php endforeach; ?>
-          </tbody>
-        </table>
-      </div>
+        </tr>
+        <tr class="price">
+          <td class="name">Měsíční splátka bez akontace</td>
+          <?php foreach($item['price'] as $price): ?>
+            <td class="value"><?php print $price['value']; ?></td>
+          <?php endforeach; ?>
+        </tr>
+        <?php foreach($item['deposit'] as $deposit): ?>
+          <tr class="deposit">
+            <td class="name">Měsíční splátka s akontací <?php print $deposit['name']; ?></td>
+            <?php foreach($deposit['items'] as $dep): ?>
+              <td class="value"><?php print $dep['value']; ?></td>
+            <?php endforeach; ?>
+          </tr>
+        <?php endforeach; ?>
+        </tbody>
+      </table>
       <p><small>Ceny jsou uvedeny bez DPH.</small></p>
     </div>
   <?php endforeach; ?>
+</div>
+<div class="pricelist-mobile visible-xs">
+  <?php foreach($data['pricelist_mobile'] as $item): ?>
+    <div class="pricelist-item">
+      <div class="item item-km">
+        <div class="item-label">Roční nájezd:</div>
+        <div class="item-value"><?php print $item['km']; ?></div>
+      </div>
+      <div class="item item-year">
+        <div class="item-label">Celková doba operativního leasingu:</div>
+        <div class="item-value"><?php print $item['year']; ?></div>
+      </div>
+      <div class="item item-price">
+        <div class="item-label">Měsíční splátka bez akontace:</div>
+        <div class="item-value"><?php print $item['price']; ?></div>
+      </div>
+      <?php if(!empty($item['deposit'])): ?>
+        <div class="item item-deposit">
+          <div class="item-label">Měsíční splátka s akontací <?php print $item['deposit']; ?>:</div>
+          <div class="item-value"><?php print $item['price2'] ?></div>
+        </div>
+      <?php endif; ?>
+    </div>
+  <?php endforeach; ?>
+  <p><small>Ceny jsou uvedeny bez DPH.</small></p>
 </div>
 <div class="pricelist-description">
   <div class="row">

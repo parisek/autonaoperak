@@ -54,18 +54,30 @@ function customize_car_gallery_render($field, $title = NULL) {
       );
     }
 
-    if(count($images)) {
+    $imageCount = count($images);
+    if($imageCount) {
       $content .= '<div class="photoswipe-gallery">';
       // main image
       foreach ($images as $key => $image) {
         $content .= '<div class="product-image-full-container">';
         $content .= $image['image'];
-        $content .= '<span class="glyphicon glyphicon-search" aria-hidden="true"></span>';
         $content .= '</div>';
         break;
       }
       // small images
-      if(count($images) > 1) {
+      if($imageCount > 1) {
+        $content .= '<div class="product-image-small-container">';
+        foreach ($images as $key => $image) {
+          if($key > 0 && $key < 5) {
+            $content .= '<div class="item">';
+            $content .= $image['image'];
+            $content .= '</div>';
+          }
+        }
+        $content .= '</div>';
+      }
+      if($imageCount > 5) {
+        $content .= '<div id="showall" class="collapse">';
         $content .= '<div class="product-image-small-container">';
         foreach ($images as $key => $image) {
           if($key > 0) {
@@ -75,7 +87,11 @@ function customize_car_gallery_render($field, $title = NULL) {
           }
         }
         $content .= '</div>';
+        $content .= '</div>';
       }
+      $content .= '</div>';
+      $content .= '<div class="morelink">';
+      $content .= '<a data-toggle="collapse" data-target="#showall">Zobrazit všechny fotky</a>';
       $content .= '</div>';
     }
 
@@ -243,42 +259,61 @@ function customize_car_pricelist_render($field, $title = NULL) {
     $wrapper = entity_metadata_wrapper('node', $field['entity']);
 
     $pricelist = [];
+    $pricelist_mobile = [];
     foreach ($wrapper->field_car_pricelist->getIterator() as $delta => $item_wrapper) {
       if(!empty($item_wrapper->field_pricelist_km->value()) &&
          !empty($item_wrapper->field_pricelist_year->value()) &&
          !empty($item_wrapper->field_pricelist_price->value())
         ) {
         $km = $item_wrapper->field_pricelist_km->value();
+        $km_label = $item_wrapper->field_pricelist_km->label();
         $year = $item_wrapper->field_pricelist_year->value();
+        $year_label = $item_wrapper->field_pricelist_year->label();
         $deposit = $item_wrapper->field_pricelist_deposit->value();
+        $deposit_formatted = '';
+        if($deposit>0) {
+          $deposit_formatted = number_format($deposit, 0, ',', '&nbsp;') . '&nbsp;Kč';
+        }
+        $price = number_format($item_wrapper->field_pricelist_price->value(), 0, ',', '&nbsp;') . '&nbsp;Kč';
+        $price2 = number_format($item_wrapper->field_pricelist_price2->value(), 0, ',', '&nbsp;') . '&nbsp;Kč';
+
+        $pricelist_mobile[] = [
+          'km' => $km_label,
+          'year' => $year_label,
+          'deposit' => $deposit_formatted,
+          'price' => $price,
+          'price2' => $price2,
+        ];
 
         if(!isset($pricelist[$km])) {
-          $pricelist[$km]['name'] = $item_wrapper->field_pricelist_km->label();
+          $pricelist[$km]['name'] = $km_label;
           $pricelist[$km]['year'] = [];
           $pricelist[$km]['price'] = [];
 
         }
         if(!empty($deposit) && !isset($pricelist[$km]['deposit'])) {
-          $pricelist[$km]['deposit'][$deposit]['name'] = number_format($deposit, 0, ',', '&nbsp;') . '&nbsp;Kč';
+          $pricelist[$km]['deposit'][$deposit]['name'] = $deposit_formatted;
         }
 
         $pricelist[$km]['year'][$year] = [
-          'value' => $item_wrapper->field_pricelist_year->label(),
+          'value' => $year_label,
         ];
         $pricelist[$km]['price'][$year] = [
-          'value' => number_format($item_wrapper->field_pricelist_price->value(), 0, ',', '&nbsp;') . '&nbsp;Kč',
+          'value' => $price,
         ];
 
         // deposit is not required
         if(!empty($deposit)) {
           $pricelist[$km]['deposit'][$deposit]['items'][$year] = [
-            'value' => number_format($item_wrapper->field_pricelist_price2->value(), 0, ',', '&nbsp;') . '&nbsp;Kč',
+            'value' => $price2,
           ];
         }
       }
     }
+
     $data = [];
     $data['pricelist'] = $pricelist;
+    $data['pricelist_mobile'] = $pricelist_mobile;
 
     $content .= theme('customize_car_pricelist', array('data' => $data));
 
