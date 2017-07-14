@@ -218,12 +218,8 @@
       color: #fff;
     }
   }
-  @media(max-width: @screen-xs-max) {
-    margin-bottom: @line-height-computed*2;
-    .item {
-      height: 240px;
-    }
-    .owl-dots {
+  @media(max-width: @screen-md-max) {
+    .owl-nav {
       display: none;
     }
   }
@@ -284,6 +280,16 @@
       padding-top: @line-height-computed*2;
     }
   }
+  @media(max-width: @screen-md-max) {
+    .owl-nav {
+      .owl-prev {
+        left: -25px;
+      }
+      .owl-next {
+        right: -25px;
+      }
+    }
+  }
   @media(max-width: @screen-xs-max) {
     margin: 0 0 15px 0;
     overflow: hidden;
@@ -338,9 +344,10 @@
     justify-content: center;
     margin-left: -25px;
     margin-right: -25px;
+    margin-bottom: @line-height-computed;
     .item {
-      flex: 0 0 16.6%;
-      padding: 0 25px;
+      flex: 0 0 12.5%;
+      padding: 0 15px;
       text-align: center;
       margin-bottom: @line-height-computed;
       a {
@@ -364,7 +371,7 @@
       }
       .image {
         position: relative;
-        padding: 10px 0;
+        padding: 10px;
         img {
           display: inline-block;
         }
@@ -389,6 +396,16 @@
   .morelink {
     text-align: center;
   }
+  @media(max-width: @screen-sm-max) {
+    .item-list {
+      margin-left: -10px;
+      margin-right: -10px;
+      .item {
+        flex: 0 0 25%;
+        padding: 0 10px;
+      }
+    }
+  }
   @media(max-width: @screen-xs-max) {
     padding: @line-height-computed*2 0;
     h2 {
@@ -398,7 +415,7 @@
       margin-left: -10px;
       margin-right: -10px;
       .item {
-        flex: 0 0 50%;
+        flex: 0 0 33.3%;
         padding: 0 10px;
       }
     }
@@ -470,7 +487,6 @@
 }
 
 .field-customize-term-subcategory-car,
-.field-customize-term-subcategory-van,
 .field-customize-term-subcategory-stock,
 .block-subcategory {
   ul {
@@ -544,6 +560,20 @@
         }
         .title {
           flex: 0 0 auto;
+        }
+      }
+      // eg. Škoda page
+      &.level-2 {
+        .item {
+          height: 100%;
+          .image {
+            display: none;
+          }
+          .title {
+            flex: 0 0 100%;
+            font-size: @font-size-base;
+            align-items: center;
+          }
         }
       }
     }
@@ -625,6 +655,13 @@
       }
     }
   }
+  @media(max-width: @screen-md-max) {
+    .category-list-filter {
+      .item-action {
+        display: none;
+      }
+    }
+  }
   @media(max-width: @screen-xs-max) {
     .category-list-filter {
       padding: 20px;
@@ -640,9 +677,6 @@
       }
       .item-sort {
         display: block;
-      }
-      .item-action {
-        display: none;
       }
       .morelink {
         display: none;

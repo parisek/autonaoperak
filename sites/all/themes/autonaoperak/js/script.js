@@ -25,7 +25,7 @@
         $('iframe', this).addClass('disable-iframe-move-js');
       });
 
-      if (window.matchMedia("(min-width: 768px)").matches) {
+      if (window.matchMedia("(min-width: 769px)").matches) {
         var $slider = $('.slider-nav');
         var $owl = $('#main-slider');
 
