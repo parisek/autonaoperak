@@ -90,9 +90,11 @@ function customize_car_gallery_render($field, $title = NULL) {
         $content .= '</div>';
       }
       $content .= '</div>';
-      $content .= '<div class="morelink">';
-      $content .= '<a data-toggle="collapse" data-target="#showall">Zobrazit všechny fotky</a>';
-      $content .= '</div>';
+      if($imageCount > 5) {
+        $content .= '<div class="morelink">';
+        $content .= '<a data-toggle="collapse" data-target="#showall">Zobrazit všechny fotky</a>';
+        $content .= '</div>';
+      }
     }
 
   }catch (EntityMetadataWrapperException $exc) {
@@ -123,7 +125,9 @@ function customize_car_description_render($field, $title = NULL) {
       $content .= '<h2>Příplatková výbava v ceně vozu</h2>';
       $content .= '<div class="gear">';
       $content .= $wrapper->field_car_gear->value()['safe_value'];
-      $content .= '<p>Výbavu vozu je možné upravit na míru vašim požadavkům.</p>';
+      if($wrapper->field_car_type->value() == 'catalog') {
+        $content .= '<p>Výbavu vozu je možné upravit na míru vašim požadavkům.</p>';
+      }
       $content .= '</div>';
     }
     if(!empty($wrapper->field_car_pdf->value())) {

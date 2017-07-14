@@ -413,21 +413,25 @@ function _customize_subcategories($type, $vocabulary, $term = '') {
 
     $subcategories = [];
     $children = [];
+    $level = '';
 
     if($type == 'taxonomy_term') {
       // get parent to select all siblings
       $parents = taxonomy_get_parents($term->tid);
       if(count($parents)) {
+        $level = 3;
         // eg. Fabia
         //$parent = key($parents);
         //$children = taxonomy_get_children($parent);
       }else{
         // eg. Škoda
         $children = taxonomy_get_tree($vocabulary, $term->tid, 1, TRUE);
+        $level = 2;
       }
     }elseif($type == 'node') {
       // eg. Osobní vůz
       $children = taxonomy_get_tree($vocabulary, 0, 1, TRUE);
+      $level = 1;
     }
 
     if(count($children)) {
@@ -451,7 +455,10 @@ function _customize_subcategories($type, $vocabulary, $term = '') {
         ];
       }
 
-      $content .= theme('customize_term_subcategory', array('items' => $subcategories, 'data' => array()));
+      $data = [];
+      $data['level'] = $level;
+
+      $content .= theme('customize_term_subcategory', array('items' => $subcategories, 'data' => $data));
     }
 
   }catch (EntityMetadataWrapperException $exc) {

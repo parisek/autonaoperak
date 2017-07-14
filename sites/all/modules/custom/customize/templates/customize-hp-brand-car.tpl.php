@@ -4,7 +4,6 @@
     <?php foreach ($brand as $b): ?>
       <div class="item">
         <a href="<?php print $b['url']; ?>">
-          <div class="title"><?php print $b['title']; ?></div>
           <div class="image">
             <?php print $b['image']; ?>
             <div class="image-hover"><span>Nabídka</span></div>

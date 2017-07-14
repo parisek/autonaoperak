@@ -1,4 +1,4 @@
-<ul>
+<ul class="level-<?php print $data['level']; ?>">
   <?php foreach ($items as $item): ?>
     <li>
       <a href="<?php print $item['url']; ?>" class="item<?php print ($item['active']) ? ' item-active': ''; ?>">
