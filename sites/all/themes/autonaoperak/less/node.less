@@ -72,6 +72,29 @@
     .price {
       color: #009847;
     }
+    @media(max-width: @screen-xs-max) {
+      h2 {
+        font-size: @font-size-small;
+        margin-bottom: 0;
+      }
+      .subtitle {
+        font-size: @font-size-small;
+      }
+      .image {
+        margin: 0 0 @line-height-computed/4 0;
+        .stickers {
+          .sticker {
+            padding: 3px 7px;
+            font-size: @font-size-tiny;
+            line-height: 16px;
+            text-transform: uppercase;
+          }
+        }
+      }
+      .price {
+        font-size: @font-size-tiny;
+      }
+    }
   }
   &.view-mode-full {
     display: flex;
@@ -431,6 +454,12 @@
       .group-left {
         margin-bottom: @line-height-computed;
       }
+      .field-customize-car-contact {
+        padding: @line-height-computed;
+        h2 {
+          font-size: @font-size-large;
+        }
+      }
       .field-customize-car-title {
         display: none;
       }
@@ -438,6 +467,9 @@
         display: block;
         margin-top: @line-height-computed;
         margin-bottom: @line-height-computed;
+        .subtitle {
+          font-size: 20px;
+        }
       }
     }
   }
@@ -517,7 +549,7 @@
   @media(max-width: @screen-xs-max) {
     .content {
       h2 {
-        font-size: 30px;
+        font-size: @font-size-large;
       }
     }
   }

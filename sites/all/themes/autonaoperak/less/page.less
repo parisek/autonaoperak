@@ -46,7 +46,7 @@ h1.page-header {
   @media(max-width: @screen-xs-max) {
     margin-top: @line-height-computed;
     margin-bottom: @line-height-computed;
-    font-size: @font-size-h2;
+    font-size: @font-size-h3;
   }
 }
 // adjust for administrator tabs
@@ -324,7 +324,10 @@ form {
 
   }
   @media(max-width: @screen-xs-max) {
-    display: none;
+    margin: 15px 0 0 0;
+    .breadcrumb {
+      font-size: @font-size-tiny;
+    }
   }
 }
 .nav-tabs.tabs--primary {

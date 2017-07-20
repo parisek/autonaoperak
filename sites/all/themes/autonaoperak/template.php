@@ -68,12 +68,12 @@ function autonaoperak_preprocess_page(&$vars) {
   }
 
   if (!empty($vars['page']['sidebar_first'])) {
-    $vars['content_column_class_custom'] = 'col-md-9 col-sm-12 main-content left-sidebar';
+    $vars['content_column_class_custom'] = 'col-md-9 col-xs-12 main-content left-sidebar';
   }elseif (!empty($vars['page']['sidebar_second'])) {
-    $vars['content_column_class_custom'] = 'col-md-7 col-sm-12 main-content right-sidebar';
+    $vars['content_column_class_custom'] = 'col-md-7 col-xs-12 main-content right-sidebar';
   }
   else {
-    $vars['content_column_class_custom'] = 'col-sm-12 main-content';
+    $vars['content_column_class_custom'] = 'col-xs-12 main-content';
   }
 
   // assign value to main menu

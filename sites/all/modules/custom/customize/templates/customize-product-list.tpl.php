@@ -1,7 +1,7 @@
 <div class="category-list-form">
   <div class="category-list-filter">
     <div id="categoryMobileFilters">
-    <h2>Vyberte si vůz podle vašich představ</h2>
+    <h2 class="hidden-xs">Vyberte si vůz podle vašich představ</h2>
       <div class="item-list">
         <?php if(count($data['form_fuel'])): ?>
         <div class="item item-fuel">
