@@ -140,6 +140,21 @@
         });
       }
 
+      // HP Offer block to animate counting of stock cars
+      var $offer = $('.block-hp-offer');
+      if($offer.length) {
+        var $counter = $('.count', $offer);
+        var count = $counter.data('count');
+        var options = {
+          useEasing : true,
+          useGrouping : true,
+          separator : '',
+          decimal : ',',
+        };
+        var countup = new CountUp('offer-count', 0, count, 0, 2.5, options);
+        countup.start();
+      }
+
     }
   };
 

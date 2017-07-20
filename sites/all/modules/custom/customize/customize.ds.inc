@@ -80,7 +80,7 @@ function customize_car_gallery_render($field, $title = NULL) {
         $content .= '<div id="showall" class="collapse">';
         $content .= '<div class="product-image-small-container">';
         foreach ($images as $key => $image) {
-          if($key > 0) {
+          if($key > 5) {
             $content .= '<div class="item">';
             $content .= $image['image'];
             $content .= '</div>';

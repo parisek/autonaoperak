@@ -206,8 +206,9 @@ function customize_hp_offer_content() {
     $query->entityCondition('entity_type', 'node')
       ->entityCondition('bundle', 'car')
       ->propertyCondition('status', NODE_PUBLISHED)
+      ->propertyCondition('promote', NODE_PROMOTED)
       ->fieldCondition('field_car_type', 'value', 'stock')
-      ->fieldOrderBy('field_weight', 'value', 'ASC')
+      ->propertyOrderBy('created', 'DESC')
       ->range(0, 15);
 
     $result = $query->execute();
@@ -244,7 +245,8 @@ function customize_hp_offer_content() {
       ->fields('n', array('nid'))
       ->condition('n.type', 'car')
       ->condition('s.field_car_type_value', 'stock')
-      ->condition('n.status', NODE_PUBLISHED);
+      ->condition('n.status', NODE_PUBLISHED)
+      ->condition('n.promote', NODE_PROMOTED);
     $result = $query->execute();
     $carCount = $result->rowCount();
 
