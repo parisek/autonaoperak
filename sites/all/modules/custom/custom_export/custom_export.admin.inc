@@ -24,18 +24,26 @@ function custom_export_admin_settings_form() {
       19 => '19 %',
       20 => '20 %',
       21 => '21 %',
+      22 => '22 %',
     ),
     '#default_value' => $vat,
   );
 
-  $filename = variable_get('custom_export_naoperak', 'naoperak.xml');
-  $form['details']['custom_export_naoperak'] = array(
-    '#type' => 'textfield',
-    '#title' => t('For @name', ['@name' => 'Naoperak.cz']),
-    '#default_value' => $filename,
-    '#description' => t('File will be located at <a href="@path">@path</a> (do not forget to use xml file name extension). You can view live preview <a href="@preview">here</a>', array('@path' => url('custom-export/' . $filename, array('absolute' => TRUE)), '@preview' => url('admin/config/services/custom-export/naoperak'))),
-    '#maxlength' => 20,
-  );
+  $type = [
+    'stock' => 'Vozy skladem',
+    'catalog' => 'Katalog vozů',
+  ];
+
+  foreach ($type as $key => $name) {
+    $filename = variable_get('custom_export_' . $key, $key . '.xml');
+    $form['details']['custom_export_' . $key] = array(
+      '#type' => 'textfield',
+      '#title' => t('For @name', ['@name' => $name]),
+      '#default_value' => $filename,
+      '#description' => t('File will be located at <a href="@path">@path</a> (do not forget to use xml file name extension). You can view live preview <a href="@preview">here</a>', array('@path' => url('custom-export/' . $filename, array('absolute' => TRUE)), '@preview' => url('admin/config/services/custom-export/' . $key))),
+      '#maxlength' => 20,
+    );
+  }
 
   return system_settings_form($form);
 

@@ -5,8 +5,9 @@
  */
 
 function custom_export_install() {
-  variable_set('custom_feed_vat', 21);
-  variable_set('custom_feed_naoperak', 'naoperak.xml');
+  variable_set('custom_export_vat', 21);
+  variable_set('custom_export_stock', 'stock.xml');
+  variable_set('custom_export_catalog', 'catalog.xml');
 }
 
 /**
@@ -29,7 +30,8 @@ function custom_export_uninstall() {
 function custom_export_disable() {
   $path = file_default_scheme() . '://custom_export';
   if (file_exists($path)) {
-    file_unmanaged_delete($path .'/'.variable_get('custom_export_naoperak', 'naoperak.xml'));
+    file_unmanaged_delete($path . '/'. variable_get('custom_export_stock', 'stock.xml'));
+    file_unmanaged_delete($path . '/'. variable_get('custom_export_catalog', 'catalog.xml'));
     rmdir($path);
   }
 }
