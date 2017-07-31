@@ -123,7 +123,7 @@
   <div class="container">
     <div class="row">
       <?php if (!drupal_is_front_page()): ?>
-        <div class="col-xs-12 block-breadcrumbs">
+        <div class="col-xs-12 hidden-print block-breadcrumbs">
         <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
         </div>
       <?php endif; ?>

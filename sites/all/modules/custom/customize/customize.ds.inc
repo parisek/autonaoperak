@@ -24,6 +24,40 @@ function customize_car_title_render($field, $title = NULL) {
   return $content;
 }
 
+function customize_car_sold_render($field, $title = NULL) {
+  $content = '';
+
+  try {
+
+    $node = $field['entity'];
+    $wrapper = entity_metadata_wrapper('node', $field['entity']);
+
+    if($wrapper->field_car_status->value() == 'end') {
+      $type = $wrapper->field_car_type->value();
+      $tid = 0;
+      if($type == 'stock') {
+        $tid = $wrapper->field_car_category2->raw();
+      }elseif($type == 'catalog') {
+        $tid = $wrapper->field_car_category->raw();
+      }
+      if(drupal_valid_path('taxonomy/term/' . $tid)) {
+        $content .= '<div class="alert alert-warning">';
+        $content .= 'Tento vůz již není v nabídce, vyberte si jiný z ' . l('naší nabídky', 'taxonomy/term/' . $tid) . '.';
+        $content .= '</div>';
+      }
+    }
+
+  }catch (EntityMetadataWrapperException $exc) {
+    watchdog(
+      'customize',
+      'See '  . __FUNCTION__ . '() <pre>' .  $exc->getTraceAsString() . '</pre>',
+       NULL, WATCHDOG_ERROR
+    );
+  }
+
+  return $content;
+}
+
 function customize_car_gallery_render($field, $title = NULL) {
 
   $content = '';
@@ -194,7 +228,7 @@ function customize_car_teaser_render($field, $title = NULL) {
     }
 
     if(!empty($wrapper->field_price_from->value())) {
-      $content .= '<div class="price">Od ' . number_format($wrapper->field_price_from->value(), 0, ',', ' ') . ' Kč / měsíc</div>';
+      $content .= '<div class="price">Od <span class="value">' . number_format($wrapper->field_price_from->value(), 0, ',', ' ') . ' Kč</span> / měsíc</div>';
     }
 
     $content .= '</a>';

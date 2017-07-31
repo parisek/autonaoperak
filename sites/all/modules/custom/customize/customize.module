@@ -296,6 +296,12 @@ function customize_ds_fields_info($entity_type) {
     'function' => 'customize_car_title_render',
   ) + $defaults;
 
+  $fields['node']['customize_car_sold'] = array(
+    'title' => t('Customize: Sold (alert with link)'),
+    'ui_limit' => array('car|full'),
+    'function' => 'customize_car_sold_render',
+  ) + $defaults;
+
   $fields['node']['customize_car_gallery'] = array(
     'title' => t('Customize: Car gallery'),
     'ui_limit' => array('car|full'),

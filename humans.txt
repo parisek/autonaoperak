@@ -1,6 +1,6 @@
 ﻿/ CZ /
 
-Tento web s entuziasmem vytvořila digitální agentura PROFICIO v roce 2016.
+Tento web s entuziasmem vytvořila digitální agentura PROFICIO v roce 2017.
 
 
 /* Tvůrčí tým */
@@ -9,14 +9,11 @@ Tento web s entuziasmem vytvořila digitální agentura PROFICIO v roce 2016.
 	E-mail: info@proficio.cz
 	Twitter: @petrhalik
 
-	Webdesign doplňujících stránek: Ondřej Janus
+	Webdesign: Ondřej Janus
 	Twitter: @OndrejJanus
 
-	Texty doplňujících stránek: Martin Smutek
-	Twitter: @Smutkovo
-
-	Grafika doplňujících stránek: Žaneta Kučarová
-	Twitter: @ZanetaKucarova
+	Grafika: Martin Janoušek
+	Twitter: @exarion_cz
 
 	Programování: Petr Parimucha
 	Twitter: @parisek
@@ -32,7 +29,7 @@ Tento web s entuziasmem vytvořila digitální agentura PROFICIO v roce 2016.
 / EN /
 
 
-This web was created by enthusiastic digital agency PROFICIO in 2016.
+This web was created by enthusiastic digital agency PROFICIO in 2017.
 
 
 /* Creative team */
@@ -41,14 +38,11 @@ This web was created by enthusiastic digital agency PROFICIO in 2016.
 	E-mail: info@proficio.cz
 	Twitter: @petrhalik
 
-	Additional webdesign: Ondrej Janus
+	Webdesign: Ondřej Janus
 	Twitter: @OndrejJanus
 
-	Additional copywriting: Martin Smutek
-	Twitter: @Smutkovo
-
-	Additional graphics: Zaneta Kucarova
-	Twitter: @ZanetaKucarova
+	Graphics: Martin Janoušek
+	Twitter: @exarion_cz
 
 	Programming: Petr Parimucha
 	Twitter: @parisek

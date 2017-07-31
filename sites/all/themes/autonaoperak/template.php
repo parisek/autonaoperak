@@ -174,36 +174,21 @@ function autonaoperak_preprocess_html(&$vars) {
 
   drupal_add_html_head($viewport, 'viewport');
 
-  drupal_add_css('https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic,100,100italic,900,900italic&subset=latin,latin-ext', array('group' => CSS_THEME));
+  drupal_add_css('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,700,700i&subset=latin,latin-ext', array('group' => CSS_THEME));
 
   $path = base_path() . path_to_theme() . '/images/touch/';
 
-  $icons = array('57x57', '60x60', '72x72', '76x76', '114x114', '120x120', '144x144', '152x152', '180x180');
-  foreach ($icons as $icon) {
-    $iconpath = $path . 'apple-touch-icon-' . $icon . '.png';
-    $apple_icon = array(
-      '#tag' => 'link',
-      '#attributes' => array(
-        'rel' => 'apple-touch-icon',
-        'href' => $iconpath,
-        'sizes' => $icon,
-      ),
-    );
-    drupal_add_html_head($apple_icon, 'apple_icon_' . $icon);
-  }
-
-  $favicon_16 = array(
+  $apple_icon = array(
     '#tag' => 'link',
     '#attributes' => array(
-      'rel' => 'icon',
-      'type' => 'image/png',
-      'href' => $path . 'favicon-16x16.png',
-      'sizes' => '16x16',
+      'rel' => 'apple-touch-icon',
+      'href' => $path . 'apple-touch-icon.png',
+      'sizes' => '180x180',
     ),
   );
-  drupal_add_html_head($favicon_16, 'favicon_16');
+  drupal_add_html_head($apple_icon, 'apple_icon_180x180');
 
-  $favicon_32 = array(
+  $favicon = array(
     '#tag' => 'link',
     '#attributes' => array(
       'rel' => 'icon',
@@ -212,65 +197,64 @@ function autonaoperak_preprocess_html(&$vars) {
       'sizes' => '32x32',
     ),
   );
-  drupal_add_html_head($favicon_32, 'favicon_32');
+  drupal_add_html_head($favicon, 'favicon_32x32');
 
-  $favicon_96 = array(
+  $favicon = array(
     '#tag' => 'link',
     '#attributes' => array(
       'rel' => 'icon',
       'type' => 'image/png',
-      'href' => $path . 'favicon-96x96.png',
-      'sizes' => '96x96',
+      'href' => $path . 'favicon-16x16.png',
+      'sizes' => '16x16',
     ),
   );
-  drupal_add_html_head($favicon_96, 'favicon_96');
+  drupal_add_html_head($favicon, 'favicon_16x16');
 
-  $favicon_192 = array(
+  $favicon = array(
     '#tag' => 'link',
     '#attributes' => array(
-      'rel' => 'icon',
-      'type' => 'image/png',
-      'href' => $path . 'android-chrome-192x192.png',
-      'sizes' => '192x192',
+      'rel' => 'shortcut icon',
+      'href' => $path . 'favicon.ico',
     ),
   );
-  drupal_add_html_head($favicon_192, 'favicon_192');
+  drupal_add_html_head($favicon, 'favicon');
 
-  $meta_70 = array(
+  $manifest = array(
+    '#tag' => 'link',
+    '#attributes' => array(
+      'rel' => 'manifest',
+      'href' => $path . 'manifest.json',
+    ),
+  );
+  drupal_add_html_head($manifest, 'manifest');
+
+  $mask_icon = array(
+    '#tag' => 'link',
+    '#attributes' => array(
+      'rel' => 'mask-icon',
+      'href' => $path . 'safari-pinned-tab.svg',
+      'color' => '#161616',
+    ),
+  );
+  drupal_add_html_head($mask_icon, 'mask_icon');
+
+  $browserconfig = array(
     '#tag' => 'meta',
     '#attributes' => array(
-      'name' => 'msapplication-square70x70logo',
-      'href' => $path . 'smalltile.png',
+      'name' => 'msapplication-config',
+      'content' => $path . 'browserconfig.xml',
     ),
   );
-  drupal_add_html_head($meta_70, 'meta_70');
+  drupal_add_html_head($browserconfig, 'browserconfig');
 
-  $meta_150 = array(
+  $theme_color = array(
     '#tag' => 'meta',
     '#attributes' => array(
-      'name' => 'msapplication-square150x150logo',
-      'href' => $path . 'mediumtile.png',
+      'name' => 'theme-color',
+      'content' => '#ffffff',
     ),
   );
-  drupal_add_html_head($meta_150, 'meta_150');
-
-  $meta_310 = array(
-    '#tag' => 'meta',
-    '#attributes' => array(
-      'name' => 'msapplication-wide310x150logo',
-      'href' => $path . 'widetile.png',
-    ),
-  );
-  drupal_add_html_head($meta_310, 'meta_310');
-
-  $meta_310_2 = array(
-    '#tag' => 'meta',
-    '#attributes' => array(
-      'name' => 'msapplication-square310x310logo',
-      'href' => $path . 'largetile.png',
-    ),
-  );
-  drupal_add_html_head($meta_310_2, 'meta_310_2');
+  drupal_add_html_head($theme_color, 'theme_color');
 
   $humans = array(
     '#tag' => 'link',

@@ -457,19 +457,20 @@
   .item-list {
     display: flex;
     flex-wrap: wrap;
-    margin-left: -40px;
-    margin-right: -40px;
+    margin-left: -@line-height-computed*3;
+    margin-right: -@line-height-computed*3;
     .item {
       flex: 0 0 50%;
       max-width: 50%;
-      display: flex;
-      padding: 0 40px;
+      padding: 0 @line-height-computed*3;
     }
     .image {
-      flex: 0 0 20%;
-      padding-right: @line-height-computed;
+      margin-bottom: @line-height-computed;
+      display: flex;
+      flex-align: center;
+      min-height: 45px;
       img {
-        border-radius: 50%;
+        max-height: 45px!important;
       }
     }
     .text {
@@ -484,6 +485,15 @@
   }
   .morelink {
     text-align: center;
+  }
+  @media(max-width: @screen-md-max) {
+    .item-list {
+      margin-left: -@line-height-computed;
+      margin-right: -@line-height-computed;
+      .item {
+        padding: 0 @line-height-computed;
+      }
+    }
   }
   @media(max-width: @screen-xs-max) {
     padding: @line-height-computed 0 @line-height-computed 0;

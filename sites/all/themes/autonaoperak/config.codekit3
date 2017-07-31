@@ -158,6 +158,26 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/images\/logo-estheticon.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/images\/logo-estheticon.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/images\/logo-survio.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/images\/logo-survio.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/images\/sample\/reference-autor.jpg": {
 		"ft": 16384,
 		"iS": 4752,
@@ -412,6 +432,23 @@
 		"ma": 1,
 		"oA": 1,
 		"oAP": "\/css\/paragraphs.css",
+		"oF": 0,
+		"oS": 1,
+		"rU": 0,
+		"sI": 0,
+		"sM": 0,
+		"sU": 0
+		},
+	"\/less\/print.less": {
+		"aP": 1,
+		"bl": 0,
+		"dJ": 0,
+		"ft": 1,
+		"ie": 1,
+		"iI": 0,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/print.css",
 		"oF": 0,
 		"oS": 1,
 		"rU": 0,

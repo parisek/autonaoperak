@@ -208,6 +208,7 @@ function customize_hp_offer_content() {
       ->propertyCondition('status', NODE_PUBLISHED)
       ->propertyCondition('promote', NODE_PROMOTED)
       ->fieldCondition('field_car_type', 'value', 'stock')
+      ->fieldCondition('field_car_status', 'value', 'sale')
       ->propertyOrderBy('created', 'DESC')
       ->range(0, 15);
 
