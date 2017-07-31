@@ -440,7 +440,11 @@ function _customize_subcategories($type, $vocabulary, $term = '') {
         $image_themed = '';
         $image = $item_wrapper->field_term_image->value();
         if(!empty($image)) {
-          $image_themed = theme('image_style', array('style_name' => 'thumbnail', 'path' => $image['uri']));
+          $style_name = 'category-brand-list';
+          if($level > 1) {
+            $style_name = 'category-car-list';
+          }
+          $image_themed = theme('image_style', array('style_name' => $style_name, 'path' => $image['uri']));
         }
         $active = FALSE;
         if(isset($term->tid) && $term->tid == $item->tid) {

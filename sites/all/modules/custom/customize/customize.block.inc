@@ -238,15 +238,14 @@ function customize_hp_offer_content() {
       }
     }
 
-    // assign value to main menu
+    // assign value to title
     $query = db_select('node', 'n');
     $query->join('field_data_field_car_type', 's', 'n.nid = %alias.entity_id');
     $query
       ->fields('n', array('nid'))
       ->condition('n.type', 'car')
       ->condition('s.field_car_type_value', 'stock')
-      ->condition('n.status', NODE_PUBLISHED)
-      ->condition('n.promote', NODE_PROMOTED);
+      ->condition('n.status', NODE_PUBLISHED);
     $result = $query->execute();
     $carCount = $result->rowCount();
 
@@ -517,7 +516,7 @@ function customize_sidebar_contact_content() {
   $content .= '<div class="content">';
   $content .= '<h2>Nenašli jste, co jste hledali?</h2>';
   $content .= '<div class="subtitle">Napište nám a my se vám ozveme</div>';
-  $block = module_invoke('webform', 'block_view', 'client-block-15');
+  $block = module_invoke('webform', 'block_view', 'client-block-194');
   if($block) {
     $content .= render($block['content']);
   }
@@ -578,7 +577,7 @@ function customize_faq_content() {
 function customize_howto_content() {
 
   $content = '<div class="content">';
-  $content .= '<h2>...to je vše. Začněte s výběrem vozu.</h2>';
+  $content .= '<h2>Jednoduché, že? Začněte s výběrem vozu.</h2>';
   $content .= '<a href="' . url('node/2') . '" class="btn btn-primary btn-lg">Osobní vozy</a>';
   $content .= '</div>';
 
