@@ -120,7 +120,7 @@
 		},
 	"\/images\/bg-form.jpg": {
 		"ft": 16384,
-		"iS": 189785,
+		"iS": 38669,
 		"oA": 0,
 		"oAP": "\/images\/bg-form.jpg",
 		"oF": 0,
@@ -130,7 +130,7 @@
 		},
 	"\/images\/bg-testimonial.jpg": {
 		"ft": 16384,
-		"iS": 210164,
+		"iS": 43572,
 		"oA": 0,
 		"oAP": "\/images\/bg-testimonial.jpg",
 		"oF": 0,
@@ -195,7 +195,7 @@
 		"oAP": "\/images\/open-graph-default.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/images\/sample\/reference-autor.jpg": {
@@ -203,16 +203,6 @@
 		"iS": 4752,
 		"oA": 0,
 		"oAP": "\/images\/sample\/reference-autor.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/images\/slideshow.jpg": {
-		"ft": 16384,
-		"iS": 441137,
-		"oA": 0,
-		"oAP": "\/images\/slideshow.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -552,7 +542,7 @@
 		},
 	"\/logo.png": {
 		"ft": 32768,
-		"iS": 6621,
+		"iS": 6732,
 		"oA": 0,
 		"oAP": "\/logo.png",
 		"oF": 0,
@@ -564,10 +554,10 @@
 	"\/logo.svg": {
 		"ft": 2097152,
 		"miP": 0,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/logo.svg",
-		"oF": 1,
-		"opt": 1,
+		"oF": 0,
+		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
@@ -7575,23 +7565,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/templates\/page.tpl.php",
-		"oF": 0
-		},
-	"\/templates\/swiftmailer\/logo.png": {
-		"ft": 32768,
-		"iS": 6621,
-		"oA": 0,
-		"oAP": "\/templates\/swiftmailer\/logo.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/templates\/swiftmailer\/swiftmailer.tpl.php": {
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/templates\/swiftmailer\/swiftmailer.tpl.php",
 		"oF": 0
 		},
 	"\/templates\/views\/views-view-unformatted--search-results.tpl.php": {
