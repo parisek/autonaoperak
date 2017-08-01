@@ -756,6 +756,25 @@
     }
   }
 }
+// hide from vozy skladem
+// we dont have prices yet
+.product-list-stock {
+  .category-list-form {
+    .category-list-filter {
+      margin-bottom: @line-height-computed*2;
+      .item-sort {
+        display: none;
+      }
+    }
+    .category-list-sort {
+      display: none;
+    }
+    #categoryAdvancedFilters,
+    .morelink {
+      display: none;
+    }
+  }
+}
 
 .view-block-car-list {
   .views-exposed-form {
