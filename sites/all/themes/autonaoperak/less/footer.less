@@ -79,6 +79,26 @@
   .block-footer-responsive-switch {
     clear: both;
     text-align: center;
+    .version-desktop,
+    .version-mobile {
+      margin-bottom: @line-height-computed;
+    }
+    .proficio-copyright {
+      a {
+        transition: all 0.3s;
+        opacity: 0.6;
+        &:not(:hover) {
+          path,
+          polygon,
+          rect {
+            fill: #fff;
+          }
+        }
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
   }
   @media(max-width: @screen-xs-max) {
     padding: @line-height-computed 0;
