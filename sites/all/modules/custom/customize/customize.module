@@ -266,7 +266,12 @@ function customize_webform_form_ajax_callback($form, &$form_state) {
   if(form_get_errors()) {
     return $form;
   }else{
-    return $form['#node']->webform['confirmation'];
+    // added to correctly process AJAX with GTM events
+    $commands = [];
+    $form_id = '#' . $form['#id'];
+    $commands[] = ajax_command_replace($form_id, $form['#node']->webform['confirmation']);
+    $commands[] = ajax_command_invoke(NULL, 'customize_webform_submitted', [$form_id]);
+    return ['#type' => 'ajax', '#commands' => $commands];
   }
 }
 
