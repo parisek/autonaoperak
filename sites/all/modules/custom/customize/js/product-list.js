@@ -94,6 +94,16 @@
         tooltip: 'hide'
       })
 
+      // load price value from URL
+      // useful when hitting back button
+      var price_from = parseInt($('.view-block-car-list #edit-field-price-from-value-min').val());
+      var price_to = parseInt($('.view-block-car-list #edit-field-price-from-value-max').val());
+      if(price_from>0 && price_to>0) {
+        $('.slider-from', $filter).text(number_format(price_from));
+        $('.slider-to', $filter).text(number_format(price_to));
+        $('input.input-slider', $filter).slider('setValue', [price_from, price_to]);
+      }
+
       // define outside of scope
       var submitTimeout = '';
 
