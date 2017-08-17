@@ -12,6 +12,16 @@
 
       var $filter = $('.category-list-form', context);
 
+      // if parameter passed from URL
+      var fuel = $('.view-block-car-list #edit-field-car-fuel-value');
+      if(fuel.val()) {
+        fuel = fuel.val();
+        $('.item-fuel input[type=checkbox]', $filter).each(function() {
+          if(fuel.indexOf($(this).val()) !== -1) {
+            $(this).attr('checked', 'checked');
+          }
+        });
+      }
       $('.item-fuel input[type=checkbox]', $filter).on('change', function() {
         var items = [];
         $('.item-fuel input[type=checkbox]:checked', $filter).each(function() {
@@ -22,6 +32,16 @@
         $('.view-block-car-list .view-filters .form-submit').trigger('click');
       });
 
+      // if parameter passed from URL
+      var trans = $('.view-block-car-list #edit-field-car-transmission-value');
+      if(trans.val()) {
+        trans = trans.val();
+        $('.item-transmission input[type=checkbox]', $filter).each(function() {
+          if(trans.indexOf($(this).val()) !== -1) {
+            $(this).attr('checked', 'checked');
+          }
+        });
+      }
       $('.item-transmission input[type=checkbox]', $filter).on('change', function() {
         var items = [];
         $('.item-transmission input[type=checkbox]:checked', $filter).each(function() {
@@ -32,6 +52,10 @@
         $('.view-block-car-list .view-filters .form-submit').trigger('click');
       });
 
+      var body = $('.view-block-car-list #edit-field-car-body-value').val();
+      if(body != 'All') {
+        $('.item-body select', $filter).val(body);
+      }
       $('.item-body select', $filter).on('change', function(event) {
         var $this = $(this);
         $('.view-block-car-list #edit-field-car-body-value').val($this.val());
@@ -98,7 +122,7 @@
       // useful when hitting back button
       var price_from = parseInt($('.view-block-car-list #edit-field-price-from-value-min').val());
       var price_to = parseInt($('.view-block-car-list #edit-field-price-from-value-max').val());
-      if(price_from>0 && price_to>0) {
+      if(price_from>0 || price_to>0) {
         $('.slider-from', $filter).text(number_format(price_from));
         $('.slider-to', $filter).text(number_format(price_to));
         $('input.input-slider', $filter).slider('setValue', [price_from, price_to]);
