@@ -242,10 +242,12 @@ function customize_hp_offer_content() {
     // assign value to title
     $query = db_select('node', 'n');
     $query->join('field_data_field_car_type', 's', 'n.nid = %alias.entity_id');
+    $query->join('field_data_field_car_status', 't', 'n.nid = %alias.entity_id');
     $query
       ->fields('n', array('nid'))
       ->condition('n.type', 'car')
       ->condition('s.field_car_type_value', 'stock')
+      ->condition('t.field_car_status_value', 'sale')
       ->condition('n.status', NODE_PUBLISHED);
     $result = $query->execute();
     $carCount = $result->rowCount();
