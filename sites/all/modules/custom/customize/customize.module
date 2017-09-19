@@ -232,9 +232,7 @@ function customize_form_alter(&$form, $form_state, $form_id) {
               'class' => array('btn-primary'),
               ),
           );
-          $form['#attached']['js'] = array(
-            drupal_get_path('module', 'customize') . '/js/webform.js',
-          );
+          $form['#attached']['js'][] = drupal_get_path('module', 'customize') . '/js/webform.js';
         }
       }
     }
