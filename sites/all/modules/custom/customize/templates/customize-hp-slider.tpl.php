@@ -7,7 +7,6 @@
             <?php print $slide['body']; ?>
           </div>
         </div>
-        <?php print $data['highlight']; ?>
       </div>
     </div>
   <?php endforeach; ?>
