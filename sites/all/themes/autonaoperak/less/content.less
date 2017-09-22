@@ -460,12 +460,13 @@
   .item-list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin-left: -@line-height-computed*3;
     margin-right: -@line-height-computed*3;
     .item {
-      flex: 0 0 50%;
-      max-width: 50%;
-      padding: 0 @line-height-computed*3;
+      flex: 0 0 33.3%;
+      max-width: 33.3%;
+      padding: 0 @line-height-computed;
     }
     .image {
       margin-bottom: @line-height-computed;
@@ -483,6 +484,13 @@
       line-height: 1.5;
       .author {
         font-weight: normal;
+        a {
+          text-decoration: none;
+          color: @text-color;
+          &:hover, &:focus, &:active {
+            text-decoration: underline;
+          }
+        }
       }
     }
   }
@@ -494,7 +502,9 @@
       margin-left: -@line-height-computed;
       margin-right: -@line-height-computed;
       .item {
-        padding: 0 @line-height-computed;
+        flex: 0 0 50%;
+        max-width: 50%;
+        margin-bottom: @line-height-computed*2;
       }
     }
   }

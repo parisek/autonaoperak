@@ -7,7 +7,7 @@
 		"uuidString": "5DC96726-7AB5-40B5-9D6D-577BDCB8E5A3"
 		}
 	],
-"creatorBuild": "25849",
+"creatorBuild": "25900",
 "files": {
 	"\/autonaoperak.info": {
 		"ft": 8192,
@@ -59,6 +59,7 @@
 		},
 	"\/fonts\/autonaoperak\/demo-files\/demo.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/fonts\/autonaoperak\/demo-files\/min\/demo-min.js",
@@ -173,6 +174,16 @@
 		"miP": 0,
 		"oA": 2,
 		"oAP": "\/images\/logo-estheticon.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/images\/logo-medicom.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/images\/logo-medicom.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -304,8 +315,29 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/js\/eucookie.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/js\/min\/eucookie-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/js\/js.cookie.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/js\/min\/js.cookie-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"\/js\/script.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/js\/min\/script-min.js",
@@ -611,6 +643,7 @@
 		},
 	"\/plugins\/animate.css\/gulpfile.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/animate.css\/min\/gulpfile-min.js",
@@ -1566,6 +1599,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/dependencies\/js\/highlight.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/dependencies\/js\/min\/highlight.min-min.js",
@@ -1575,6 +1609,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/dependencies\/js\/jquery.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/dependencies\/js\/min\/jquery.min-min.js",
@@ -1584,6 +1619,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/dependencies\/js\/modernizr.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/dependencies\/js\/min\/modernizr-min.js",
@@ -1593,6 +1629,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/dist\/bootstrap-slider.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/dist\/min\/bootstrap-slider-min.js",
@@ -1602,6 +1639,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/dist\/bootstrap-slider.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/dist\/min\/bootstrap-slider.min-min.js",
@@ -1631,6 +1669,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/Gruntfile.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/min\/Gruntfile-min.js",
@@ -1696,6 +1735,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/src\/js\/bootstrap-slider.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/src\/js\/min\/bootstrap-slider-min.js",
@@ -1808,6 +1848,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/phantom_bind_polyfill.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/min\/phantom_bind_polyfill-min.js",
@@ -1817,6 +1858,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/AccessibilitySpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/AccessibilitySpec-min.js",
@@ -1826,6 +1868,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/AriaValueTextFormatterSpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/AriaValueTextFormatterSpec-min.js",
@@ -1835,6 +1878,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/AutoRegisterDataProvideSpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/AutoRegisterDataProvideSpec-min.js",
@@ -1844,6 +1888,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/ConflictingOptionsSpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/ConflictingOptionsSpec-min.js",
@@ -1853,6 +1898,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/DestroyMethodTests.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/DestroyMethodTests-min.js",
@@ -1862,6 +1908,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/DraggingHandlesSpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/DraggingHandlesSpec-min.js",
@@ -1871,6 +1918,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/ElementDataAttributesSpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/ElementDataAttributesSpec-min.js",
@@ -1880,6 +1928,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/EventsSpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/EventsSpec-min.js",
@@ -1889,6 +1938,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/FocusOptionSpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/FocusOptionSpec-min.js",
@@ -1898,6 +1948,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/KeyboardSupportSpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/KeyboardSupportSpec-min.js",
@@ -1907,6 +1958,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/LogarithmicScaleSpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/LogarithmicScaleSpec-min.js",
@@ -1916,6 +1968,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/LowAndHighTrackSpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/LowAndHighTrackSpec-min.js",
@@ -1925,6 +1978,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/NamespaceSpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/NamespaceSpec-min.js",
@@ -1934,6 +1988,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/offMethodSpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/offMethodSpec-min.js",
@@ -1943,6 +1998,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/OrientationSpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/OrientationSpec-min.js",
@@ -1952,6 +2008,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/PublicMethodsSpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/PublicMethodsSpec-min.js",
@@ -1961,6 +2018,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/RangeHighlightsSpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/RangeHighlightsSpec-min.js",
@@ -1970,6 +2028,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/RefreshMethodSpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/RefreshMethodSpec-min.js",
@@ -1979,6 +2038,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/ResizeSpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/ResizeSpec-min.js",
@@ -1988,6 +2048,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/RtlOptionsSpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/RtlOptionsSpec-min.js",
@@ -1997,6 +2058,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/ScrollableBodySpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/ScrollableBodySpec-min.js",
@@ -2006,6 +2068,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/ScrollableContainerSpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/ScrollableContainerSpec-min.js",
@@ -2015,6 +2078,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/TickClickingBehaviorSpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/TickClickingBehaviorSpec-min.js",
@@ -2024,6 +2088,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/TickLabelSpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/TickLabelSpec-min.js",
@@ -2033,6 +2098,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/TickMarksSpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/TickMarksSpec-min.js",
@@ -2042,6 +2108,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/TooltipMouseOverOptionSpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/TooltipMouseOverOptionSpec-min.js",
@@ -2051,6 +2118,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/TooltipPositionOptionSpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/TooltipPositionOptionSpec-min.js",
@@ -2060,6 +2128,7 @@
 		},
 	"\/plugins\/bootstrap-slider\/test\/specs\/TooltipSplitOptionSpec.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap-slider\/test\/specs\/min\/TooltipSplitOptionSpec-min.js",
@@ -2273,6 +2342,7 @@
 		},
 	"\/plugins\/bootstrap\/dist\/js\/bootstrap.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/dist\/js\/min\/bootstrap-min.js",
@@ -2282,6 +2352,7 @@
 		},
 	"\/plugins\/bootstrap\/dist\/js\/bootstrap.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/dist\/js\/min\/bootstrap.min-min.js",
@@ -2291,6 +2362,7 @@
 		},
 	"\/plugins\/bootstrap\/dist\/js\/npm.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/dist\/js\/min\/npm-min.js",
@@ -2980,6 +3052,7 @@
 		},
 	"\/plugins\/bootstrap\/docs\/assets\/js\/customize.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/docs\/assets\/js\/min\/customize.min-min.js",
@@ -2989,6 +3062,7 @@
 		},
 	"\/plugins\/bootstrap\/docs\/assets\/js\/docs.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/docs\/assets\/js\/min\/docs.min-min.js",
@@ -2998,6 +3072,7 @@
 		},
 	"\/plugins\/bootstrap\/docs\/assets\/js\/ie-emulation-modes-warning.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/docs\/assets\/js\/min\/ie-emulation-modes-warning-min.js",
@@ -3007,6 +3082,7 @@
 		},
 	"\/plugins\/bootstrap\/docs\/assets\/js\/ie10-viewport-bug-workaround.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/docs\/assets\/js\/min\/ie10-viewport-bug-workaround-min.js",
@@ -3016,6 +3092,7 @@
 		},
 	"\/plugins\/bootstrap\/docs\/assets\/js\/ie8-responsive-file-warning.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/docs\/assets\/js\/min\/ie8-responsive-file-warning-min.js",
@@ -3025,6 +3102,7 @@
 		},
 	"\/plugins\/bootstrap\/docs\/assets\/js\/raw-files.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/docs\/assets\/js\/min\/raw-files.min-min.js",
@@ -3034,6 +3112,7 @@
 		},
 	"\/plugins\/bootstrap\/docs\/assets\/js\/src\/application.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/docs\/assets\/js\/src\/min\/application-min.js",
@@ -3043,6 +3122,7 @@
 		},
 	"\/plugins\/bootstrap\/docs\/assets\/js\/src\/customizer.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/docs\/assets\/js\/src\/min\/customizer-min.js",
@@ -3052,6 +3132,7 @@
 		},
 	"\/plugins\/bootstrap\/docs\/assets\/js\/vendor\/anchor.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/docs\/assets\/js\/vendor\/min\/anchor.min-min.js",
@@ -3061,6 +3142,7 @@
 		},
 	"\/plugins\/bootstrap\/docs\/assets\/js\/vendor\/autoprefixer.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/docs\/assets\/js\/vendor\/min\/autoprefixer-min.js",
@@ -3070,6 +3152,7 @@
 		},
 	"\/plugins\/bootstrap\/docs\/assets\/js\/vendor\/Blob.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/docs\/assets\/js\/vendor\/min\/Blob-min.js",
@@ -3079,6 +3162,7 @@
 		},
 	"\/plugins\/bootstrap\/docs\/assets\/js\/vendor\/FileSaver.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/docs\/assets\/js\/vendor\/min\/FileSaver-min.js",
@@ -3088,6 +3172,7 @@
 		},
 	"\/plugins\/bootstrap\/docs\/assets\/js\/vendor\/holder.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/docs\/assets\/js\/vendor\/min\/holder.min-min.js",
@@ -3097,6 +3182,7 @@
 		},
 	"\/plugins\/bootstrap\/docs\/assets\/js\/vendor\/jquery.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/docs\/assets\/js\/vendor\/min\/jquery.min-min.js",
@@ -3106,6 +3192,7 @@
 		},
 	"\/plugins\/bootstrap\/docs\/assets\/js\/vendor\/jszip.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/docs\/assets\/js\/vendor\/min\/jszip.min-min.js",
@@ -3115,6 +3202,7 @@
 		},
 	"\/plugins\/bootstrap\/docs\/assets\/js\/vendor\/less.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/docs\/assets\/js\/vendor\/min\/less.min-min.js",
@@ -3124,6 +3212,7 @@
 		},
 	"\/plugins\/bootstrap\/docs\/assets\/js\/vendor\/uglify.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/docs\/assets\/js\/vendor\/min\/uglify.min-min.js",
@@ -3133,6 +3222,7 @@
 		},
 	"\/plugins\/bootstrap\/docs\/assets\/js\/vendor\/ZeroClipboard.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/docs\/assets\/js\/vendor\/min\/ZeroClipboard.min-min.js",
@@ -3264,6 +3354,7 @@
 		},
 	"\/plugins\/bootstrap\/docs\/dist\/js\/bootstrap.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/docs\/dist\/js\/min\/bootstrap-min.js",
@@ -3273,6 +3364,7 @@
 		},
 	"\/plugins\/bootstrap\/docs\/dist\/js\/bootstrap.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/docs\/dist\/js\/min\/bootstrap.min-min.js",
@@ -3282,6 +3374,7 @@
 		},
 	"\/plugins\/bootstrap\/docs\/dist\/js\/npm.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/docs\/dist\/js\/min\/npm-min.js",
@@ -3499,6 +3592,7 @@
 		},
 	"\/plugins\/bootstrap\/docs\/examples\/offcanvas\/offcanvas.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/offcanvas\/min\/offcanvas-min.js",
@@ -3794,6 +3888,7 @@
 		},
 	"\/plugins\/bootstrap\/docs\/examples\/tooltip-viewport\/tooltip-viewport.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/tooltip-viewport\/min\/tooltip-viewport-min.js",
@@ -3897,6 +3992,7 @@
 		},
 	"\/plugins\/bootstrap\/grunt\/bs-commonjs-generator.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/grunt\/min\/bs-commonjs-generator-min.js",
@@ -3906,6 +4002,7 @@
 		},
 	"\/plugins\/bootstrap\/grunt\/bs-glyphicons-data-generator.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/grunt\/min\/bs-glyphicons-data-generator-min.js",
@@ -3915,6 +4012,7 @@
 		},
 	"\/plugins\/bootstrap\/grunt\/bs-lessdoc-parser.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/grunt\/min\/bs-lessdoc-parser-min.js",
@@ -3924,6 +4022,7 @@
 		},
 	"\/plugins\/bootstrap\/grunt\/bs-raw-files-generator.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/grunt\/min\/bs-raw-files-generator-min.js",
@@ -3933,6 +4032,7 @@
 		},
 	"\/plugins\/bootstrap\/grunt\/change-version.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/grunt\/min\/change-version-min.js",
@@ -3964,6 +4064,7 @@
 		},
 	"\/plugins\/bootstrap\/Gruntfile.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/min\/Gruntfile-min.js",
@@ -4003,6 +4104,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/affix.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/min\/affix-min.js",
@@ -4012,6 +4114,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/alert.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/min\/alert-min.js",
@@ -4021,6 +4124,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/button.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/min\/button-min.js",
@@ -4030,6 +4134,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/carousel.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/min\/carousel-min.js",
@@ -4039,6 +4144,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/collapse.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/min\/collapse-min.js",
@@ -4048,6 +4154,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/dropdown.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/min\/dropdown-min.js",
@@ -4057,6 +4164,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/modal.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/min\/modal-min.js",
@@ -4066,6 +4174,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/popover.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/min\/popover-min.js",
@@ -4075,6 +4184,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/scrollspy.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/min\/scrollspy-min.js",
@@ -4084,6 +4194,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/tab.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/min\/tab-min.js",
@@ -4123,6 +4234,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/tests\/unit\/affix.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/unit\/min\/affix-min.js",
@@ -4132,6 +4244,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/tests\/unit\/alert.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/unit\/min\/alert-min.js",
@@ -4141,6 +4254,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/tests\/unit\/button.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/unit\/min\/button-min.js",
@@ -4150,6 +4264,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/tests\/unit\/carousel.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/unit\/min\/carousel-min.js",
@@ -4159,6 +4274,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/tests\/unit\/collapse.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/unit\/min\/collapse-min.js",
@@ -4168,6 +4284,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/tests\/unit\/dropdown.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/unit\/min\/dropdown-min.js",
@@ -4177,6 +4294,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/tests\/unit\/modal.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/unit\/min\/modal-min.js",
@@ -4186,6 +4304,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/tests\/unit\/phantom.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/unit\/min\/phantom-min.js",
@@ -4195,6 +4314,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/tests\/unit\/popover.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/unit\/min\/popover-min.js",
@@ -4204,6 +4324,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/tests\/unit\/scrollspy.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/unit\/min\/scrollspy-min.js",
@@ -4213,6 +4334,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/tests\/unit\/tab.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/unit\/min\/tab-min.js",
@@ -4222,6 +4344,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/tests\/unit\/tooltip.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/unit\/min\/tooltip-min.js",
@@ -4231,6 +4354,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/tests\/vendor\/jquery.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/vendor\/min\/jquery.min-min.js",
@@ -4250,6 +4374,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/tests\/vendor\/qunit.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/vendor\/min\/qunit-min.js",
@@ -4331,6 +4456,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/tooltip.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/min\/tooltip-min.js",
@@ -4340,6 +4466,7 @@
 		},
 	"\/plugins\/bootstrap\/js\/transition.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/js\/min\/transition-min.js",
@@ -5594,6 +5721,7 @@
 		},
 	"\/plugins\/bootstrap\/package.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/min\/package-min.js",
@@ -5627,68 +5755,71 @@
 		"rFN": 0,
 		"uCM": 0
 		},
-	"\/plugins\/countup.js\/.editorconfig": {
+	"\/plugins\/countUp.js\/.editorconfig": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/plugins\/countup.js\/.editorconfig",
+		"oAP": "\/plugins\/countUp.js\/.editorconfig",
 		"oF": 0
 		},
-	"\/plugins\/countup.js\/.gitignore": {
+	"\/plugins\/countUp.js\/.gitignore": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/plugins\/countup.js\/.gitignore",
+		"oAP": "\/plugins\/countUp.js\/.gitignore",
 		"oF": 0
 		},
-	"\/plugins\/countup.js\/.npmignore": {
+	"\/plugins\/countUp.js\/.npmignore": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/plugins\/countup.js\/.npmignore",
+		"oAP": "\/plugins\/countUp.js\/.npmignore",
 		"oF": 0
 		},
-	"\/plugins\/countup.js\/angular-countUp.js": {
+	"\/plugins\/countUp.js\/angular-countUp.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
-		"oAP": "\/plugins\/countup.js\/min\/angular-countUp-min.js",
+		"oAP": "\/plugins\/countUp.js\/min\/angular-countUp-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
 		},
-	"\/plugins\/countup.js\/bower.json": {
+	"\/plugins\/countUp.js\/bower.json": {
 		"ft": 524288,
 		"oA": 1,
-		"oAP": "\/plugins\/countup.js\/bower-min.json",
+		"oAP": "\/plugins\/countUp.js\/bower-min.json",
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
 		},
-	"\/plugins\/countup.js\/component.json": {
+	"\/plugins\/countUp.js\/component.json": {
 		"ft": 524288,
 		"oA": 1,
-		"oAP": "\/plugins\/countup.js\/component-min.json",
+		"oAP": "\/plugins\/countUp.js\/component-min.json",
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
 		},
-	"\/plugins\/countup.js\/countUp-jquery.js": {
+	"\/plugins\/countUp.js\/countUp-jquery.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
-		"oAP": "\/plugins\/countup.js\/min\/countUp-jquery-min.js",
+		"oAP": "\/plugins\/countUp.js\/min\/countUp-jquery-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
 		},
-	"\/plugins\/countup.js\/countUp.js": {
+	"\/plugins\/countUp.js\/countUp.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
-		"oAP": "\/plugins\/countup.js\/min\/countUp-min.js",
+		"oAP": "\/plugins\/countUp.js\/min\/countUp-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
 		},
-	"\/plugins\/countup.js\/countUp.module.ts": {
+	"\/plugins\/countUp.js\/countUp.module.ts": {
 		"cDF": 0,
 		"ft": 128,
 		"jxM": 0,
@@ -5698,50 +5829,54 @@
 		"moT": 0,
 		"nIA": 0,
 		"oA": 0,
-		"oAP": "\/plugins\/countup.js\/js\/countUp.module.js",
+		"oAP": "\/plugins\/countUp.js\/js\/countUp.module.js",
 		"oF": 0,
 		"pCE": 0,
 		"rC": 0,
 		"sIE": 0,
 		"tEC": 0
 		},
-	"\/plugins\/countup.js\/dist\/angular-countUp.js": {
+	"\/plugins\/countUp.js\/dist\/angular-countUp.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
-		"oAP": "\/plugins\/countup.js\/dist\/min\/angular-countUp-min.js",
+		"oAP": "\/plugins\/countUp.js\/dist\/min\/angular-countUp-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
 		},
-	"\/plugins\/countup.js\/dist\/angular-countUp.min.js": {
+	"\/plugins\/countUp.js\/dist\/angular-countUp.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
-		"oAP": "\/plugins\/countup.js\/dist\/min\/angular-countUp.min-min.js",
+		"oAP": "\/plugins\/countUp.js\/dist\/min\/angular-countUp.min-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
 		},
-	"\/plugins\/countup.js\/dist\/countUp.js": {
+	"\/plugins\/countUp.js\/dist\/countUp.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
-		"oAP": "\/plugins\/countup.js\/dist\/min\/countUp-min.js",
+		"oAP": "\/plugins\/countUp.js\/dist\/min\/countUp-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
 		},
-	"\/plugins\/countup.js\/dist\/countUp.min.js": {
+	"\/plugins\/countUp.js\/dist\/countUp.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
-		"oAP": "\/plugins\/countup.js\/dist\/min\/countUp.min-min.js",
+		"oAP": "\/plugins\/countUp.js\/dist\/min\/countUp.min-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
 		},
-	"\/plugins\/countup.js\/dist\/countUp.module.d.ts": {
+	"\/plugins\/countUp.js\/dist\/countUp.module.d.ts": {
 		"cDF": 0,
 		"ft": 128,
 		"jxM": 0,
@@ -5751,32 +5886,34 @@
 		"moT": 0,
 		"nIA": 0,
 		"oA": 0,
-		"oAP": "\/plugins\/countup.js\/dist\/js\/countUp.module.d.js",
+		"oAP": "\/plugins\/countUp.js\/dist\/js\/countUp.module.d.js",
 		"oF": 0,
 		"pCE": 0,
 		"rC": 0,
 		"sIE": 0,
 		"tEC": 0
 		},
-	"\/plugins\/countup.js\/dist\/countUp.module.js": {
+	"\/plugins\/countUp.js\/dist\/countUp.module.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
-		"oAP": "\/plugins\/countup.js\/dist\/min\/countUp.module-min.js",
+		"oAP": "\/plugins\/countUp.js\/dist\/min\/countUp.module-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
 		},
-	"\/plugins\/countup.js\/gulpfile.js": {
+	"\/plugins\/countUp.js\/gulpfile.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
-		"oAP": "\/plugins\/countup.js\/min\/gulpfile-min.js",
+		"oAP": "\/plugins\/countUp.js\/min\/gulpfile-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
 		},
-	"\/plugins\/countup.js\/index.d.ts": {
+	"\/plugins\/countUp.js\/index.d.ts": {
 		"cDF": 0,
 		"ft": 128,
 		"jxM": 0,
@@ -5786,20 +5923,20 @@
 		"moT": 0,
 		"nIA": 0,
 		"oA": 0,
-		"oAP": "\/plugins\/countup.js\/js\/index.d.js",
+		"oAP": "\/plugins\/countUp.js\/js\/index.d.js",
 		"oF": 0,
 		"pCE": 0,
 		"rC": 0,
 		"sIE": 0,
 		"tEC": 0
 		},
-	"\/plugins\/countup.js\/index.html": {
+	"\/plugins\/countUp.js\/index.html": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/plugins\/countup.js\/index.html",
+		"oAP": "\/plugins\/countUp.js\/index.html",
 		"oF": 0
 		},
-	"\/plugins\/countup.js\/LICENSE.md": {
+	"\/plugins\/countUp.js\/LICENSE.md": {
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
@@ -5808,7 +5945,7 @@
 		"eSQ": 1,
 		"ft": 4096,
 		"oA": 1,
-		"oAP": "\/plugins\/countup.js\/LICENSE.html",
+		"oAP": "\/plugins\/countUp.js\/LICENSE.html",
 		"oF": 0,
 		"oFM": 0,
 		"oS": 0,
@@ -5817,15 +5954,15 @@
 		"rFN": 0,
 		"uCM": 0
 		},
-	"\/plugins\/countup.js\/package.json": {
+	"\/plugins\/countUp.js\/package.json": {
 		"ft": 524288,
 		"oA": 1,
-		"oAP": "\/plugins\/countup.js\/package-min.json",
+		"oAP": "\/plugins\/countUp.js\/package-min.json",
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
 		},
-	"\/plugins\/countup.js\/README.md": {
+	"\/plugins\/countUp.js\/README.md": {
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
@@ -5834,7 +5971,7 @@
 		"eSQ": 1,
 		"ft": 4096,
 		"oA": 1,
-		"oAP": "\/plugins\/countup.js\/README.html",
+		"oAP": "\/plugins\/countUp.js\/README.html",
 		"oF": 0,
 		"oFM": 0,
 		"oS": 0,
@@ -5843,10 +5980,10 @@
 		"rFN": 0,
 		"uCM": 0
 		},
-	"\/plugins\/countup.js\/tsconfig.json": {
+	"\/plugins\/countUp.js\/tsconfig.json": {
 		"ft": 524288,
 		"oA": 1,
-		"oAP": "\/plugins\/countup.js\/tsconfig-min.json",
+		"oAP": "\/plugins\/countUp.js\/tsconfig-min.json",
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
@@ -5873,6 +6010,7 @@
 		},
 	"\/plugins\/jquery-viewport-checker\/dist\/jquery.viewportchecker.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/jquery-viewport-checker\/dist\/min\/jquery.viewportchecker.min-min.js",
@@ -5888,6 +6026,7 @@
 		},
 	"\/plugins\/jquery-viewport-checker\/Gruntfile.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/jquery-viewport-checker\/min\/Gruntfile-min.js",
@@ -5929,6 +6068,7 @@
 		},
 	"\/plugins\/jquery-viewport-checker\/src\/jquery.viewportchecker.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/jquery-viewport-checker\/src\/min\/jquery.viewportchecker-min.js",
@@ -6075,6 +6215,7 @@
 		},
 	"\/plugins\/owlcarousel\/dist\/owl.carousel.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/dist\/min\/owl.carousel-min.js",
@@ -6084,6 +6225,7 @@
 		},
 	"\/plugins\/owlcarousel\/dist\/owl.carousel.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/dist\/min\/owl.carousel.min-min.js",
@@ -6241,6 +6383,7 @@
 		},
 	"\/plugins\/owlcarousel\/docs\/assets\/js\/app.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/docs\/assets\/js\/min\/app-min.js",
@@ -6250,6 +6393,7 @@
 		},
 	"\/plugins\/owlcarousel\/docs\/assets\/js\/foundation.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/docs\/assets\/js\/min\/foundation.min-min.js",
@@ -6338,6 +6482,7 @@
 		},
 	"\/plugins\/owlcarousel\/docs\/assets\/owlcarousel\/owl.carousel.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/docs\/assets\/owlcarousel\/min\/owl.carousel-min.js",
@@ -6347,6 +6492,7 @@
 		},
 	"\/plugins\/owlcarousel\/docs\/assets\/owlcarousel\/owl.carousel.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/docs\/assets\/owlcarousel\/min\/owl.carousel.min-min.js",
@@ -6374,6 +6520,7 @@
 		},
 	"\/plugins\/owlcarousel\/docs\/assets\/vendors\/foundation.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/docs\/assets\/vendors\/min\/foundation.min-min.js",
@@ -6383,6 +6530,7 @@
 		},
 	"\/plugins\/owlcarousel\/docs\/assets\/vendors\/highlight.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/docs\/assets\/vendors\/min\/highlight-min.js",
@@ -6392,6 +6540,7 @@
 		},
 	"\/plugins\/owlcarousel\/docs\/assets\/vendors\/jquery.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/docs\/assets\/vendors\/min\/jquery.min-min.js",
@@ -6407,6 +6556,7 @@
 		},
 	"\/plugins\/owlcarousel\/docs\/assets\/vendors\/jquery.mousewheel.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/docs\/assets\/vendors\/min\/jquery.mousewheel.min-min.js",
@@ -6722,6 +6872,7 @@
 		},
 	"\/plugins\/owlcarousel\/docs_src\/assets\/js\/app.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/assets\/js\/min\/app-min.js",
@@ -6731,6 +6882,7 @@
 		},
 	"\/plugins\/owlcarousel\/docs_src\/assets\/js\/foundation.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/assets\/js\/min\/foundation.min-min.js",
@@ -6818,6 +6970,7 @@
 		},
 	"\/plugins\/owlcarousel\/docs_src\/assets\/vendors\/foundation.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/assets\/vendors\/min\/foundation.min-min.js",
@@ -6827,6 +6980,7 @@
 		},
 	"\/plugins\/owlcarousel\/docs_src\/assets\/vendors\/highlight.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/assets\/vendors\/min\/highlight-min.js",
@@ -6836,6 +6990,7 @@
 		},
 	"\/plugins\/owlcarousel\/docs_src\/assets\/vendors\/jquery.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/assets\/vendors\/min\/jquery.min-min.js",
@@ -6851,6 +7006,7 @@
 		},
 	"\/plugins\/owlcarousel\/docs_src\/assets\/vendors\/jquery.mousewheel.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/assets\/vendors\/min\/jquery.mousewheel.min-min.js",
@@ -6892,6 +7048,7 @@
 		},
 	"\/plugins\/owlcarousel\/docs_src\/helpers\/modulo.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/helpers\/min\/modulo-min.js",
@@ -6901,6 +7058,7 @@
 		},
 	"\/plugins\/owlcarousel\/docs_src\/helpers\/test.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/helpers\/min\/test-min.js",
@@ -7186,6 +7344,7 @@
 		},
 	"\/plugins\/owlcarousel\/Gruntfile.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/min\/Gruntfile-min.js",
@@ -7276,6 +7435,7 @@
 		},
 	"\/plugins\/owlcarousel\/src\/js\/owl.animate.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/src\/js\/min\/owl.animate-min.js",
@@ -7285,6 +7445,7 @@
 		},
 	"\/plugins\/owlcarousel\/src\/js\/owl.autoheight.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/src\/js\/min\/owl.autoheight-min.js",
@@ -7294,6 +7455,7 @@
 		},
 	"\/plugins\/owlcarousel\/src\/js\/owl.autoplay.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/src\/js\/min\/owl.autoplay-min.js",
@@ -7303,6 +7465,7 @@
 		},
 	"\/plugins\/owlcarousel\/src\/js\/owl.autorefresh.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/src\/js\/min\/owl.autorefresh-min.js",
@@ -7312,6 +7475,7 @@
 		},
 	"\/plugins\/owlcarousel\/src\/js\/owl.carousel.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/src\/js\/min\/owl.carousel-min.js",
@@ -7321,6 +7485,7 @@
 		},
 	"\/plugins\/owlcarousel\/src\/js\/owl.hash.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/src\/js\/min\/owl.hash-min.js",
@@ -7330,6 +7495,7 @@
 		},
 	"\/plugins\/owlcarousel\/src\/js\/owl.lazyload.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/src\/js\/min\/owl.lazyload-min.js",
@@ -7339,6 +7505,7 @@
 		},
 	"\/plugins\/owlcarousel\/src\/js\/owl.navigation.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/src\/js\/min\/owl.navigation-min.js",
@@ -7348,6 +7515,7 @@
 		},
 	"\/plugins\/owlcarousel\/src\/js\/owl.support.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/src\/js\/min\/owl.support-min.js",
@@ -7357,6 +7525,7 @@
 		},
 	"\/plugins\/owlcarousel\/src\/js\/owl.support.modernizr.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/src\/js\/min\/owl.support.modernizr-min.js",
@@ -7366,6 +7535,7 @@
 		},
 	"\/plugins\/owlcarousel\/src\/js\/owl.video.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/src\/js\/min\/owl.video-min.js",
@@ -7524,6 +7694,7 @@
 		},
 	"\/plugins\/owlcarousel\/test\/unit\/core.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/plugins\/owlcarousel\/test\/unit\/min\/core-min.js",
@@ -7553,6 +7724,12 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/templates\/ds\/ds-2col.tpl.php",
+		"oF": 0
+		},
+	"\/templates\/html.tpl.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/templates\/html.tpl.php",
 		"oF": 0
 		},
 	"\/templates\/maintenance-page.tpl.php": {
@@ -7986,6 +8163,10 @@
 			"active": 0,
 			"optionString": "{'setWithoutGet': true, 'getWithoutSet': false}"
 			},
+		"array-bracket-newline": {
+			"active": 0,
+			"optionString": "{'multiline': true, 'minItems': null}"
+			},
 		"array-bracket-spacing": {
 			"active": 0,
 			"optionString": "'never', {'singleValue': false, 'objectsInArrays': false, 'arraysInArrays': false}"
@@ -7993,6 +8174,10 @@
 		"array-callback-return": {
 			"active": 0,
 			"optionString": ""
+			},
+		"array-element-newline": {
+			"active": 0,
+			"optionString": "'always'"
 			},
 		"arrow-body-style": {
 			"active": 0,
@@ -8090,6 +8275,10 @@
 			"active": 0,
 			"optionString": "'always', {'null': 'always'}"
 			},
+		"for-direction": {
+			"active": 0,
+			"optionString": ""
+			},
 		"func-call-spacing": {
 			"active": 0,
 			"optionString": "'never'"
@@ -8109,6 +8298,10 @@
 		"generator-star-spacing": {
 			"active": 0,
 			"optionString": "{'before': true, 'after': false}"
+			},
+		"getter-return": {
+			"active": 0,
+			"optionString": "{'allowImplicit': false}"
 			},
 		"global-require": {
 			"active": 0,
@@ -8237,6 +8430,10 @@
 		"no-bitwise": {
 			"active": 0,
 			"optionString": "{'allow': ['~'], 'int32Hint': true}"
+			},
+		"no-buffer-constructor": {
+			"active": 0,
+			"optionString": ""
 			},
 		"no-caller": {
 			"active": 0,
@@ -8782,6 +8979,10 @@
 			"active": 0,
 			"optionString": "{'blocks': 'always', 'switches': 'always', 'classes': 'always'}"
 			},
+		"padding-line-between-statements": {
+			"active": 0,
+			"optionString": "{blankLine: 'always', prev:'*', next:'return'}"
+			},
 		"prefer-arrow-callback": {
 			"active": 0,
 			"optionString": ""
@@ -8850,6 +9051,10 @@
 			"active": 0,
 			"optionString": "{'before': false, 'after': true}"
 			},
+		"semi-style": {
+			"active": 0,
+			"optionString": "'last'"
+			},
 		"sort-imports": {
 			"active": 0,
 			"optionString": "{'ignoreCase': false, 'ignoreMemberSort': true, 'memberSyntaxSortOrder': ['none', 'all', 'multiple', 'single']}"
@@ -8889,6 +9094,10 @@
 		"strict": {
 			"active": 0,
 			"optionString": "'safe'"
+			},
+		"switch-colon-spacing": {
+			"active": 0,
+			"optionString": "{'after': true, 'before': false}"
 			},
 		"symbol-description": {
 			"active": 0,
@@ -9522,6 +9731,7 @@
 	"previewPathAddition": "",
 	"skippedFoldersString": "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules",
 	"sourceFolderName": "source",
+	"susyVersion": 3,
 	"uglifyDefinesString": "",
 	"uglifyFlags2": {
 		"ascii-only": {
