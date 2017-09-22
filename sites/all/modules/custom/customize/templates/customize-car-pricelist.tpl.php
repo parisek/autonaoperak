@@ -63,26 +63,11 @@
   <div class="row">
     <div class="col-sm-6 col-xs-12 item-left">
       <h3>Splátka obsahuje:</h3>
-      <ul>
-        <li>leasingovou splátku</li>
-        <li>zákonné pojištění</li>
-        <li>pojištění čelního skla</li>
-        <li>havarijní pojištění se spoluúčastí 10%</li>
-        <li>pojištění finanční ztráty GAP</li>
-        <li>silniční daň</li>
-        <li>koncesionářský poplatek za rádio</li>
-        <li>poplatek za registraci vozidla</li>
-      </ul>
+      <?php print $data['service_included']; ?>
     </div>
     <div class="col-sm-6 col-xs-12 item-right">
       <h3>Splátka neobsahuje:</h3>
-      <ul>
-        <li>Náklady na servis na dobu pronájmu</li>
-        <li>Výměnu letních a zimních pneu</li>
-        <li>Monitoring firemního vozidla</li>
-        <li>Tankovací kartu</li>
-        <li>Nadstandardní asistenci</li>
-      </ul>
+      <?php print $data['service_excluded']; ?>
     </div>
   </div>
   <p><strong>Při výběru vozu si můžete vybrat služby navíc, které chcete využívat.</strong></p>
