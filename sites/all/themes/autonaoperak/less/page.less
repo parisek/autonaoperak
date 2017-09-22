@@ -645,3 +645,32 @@ img {
 .visible {
   opacity: 1;
 }
+
+.eu-cookies {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(48, 48, 48, 0.95);
+  font-size: @font-size-small;
+  z-index: 1000;
+  padding: @line-height-computed 0;
+  color: #fff;
+  a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  .cookie-text-inner {
+    max-width: 700px;
+    @media(max-width: @screen-xs-max) {
+      text-align: center;
+    }
+  }
+  .cookie-button {
+    text-align: right;
+    @media(max-width: @screen-xs-max) {
+      text-align: center;
+      padding-top: 10px;
+    }
+  }
+}
