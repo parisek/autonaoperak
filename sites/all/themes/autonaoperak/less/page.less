@@ -324,9 +324,33 @@ form {
 
   }
   @media(max-width: @screen-xs-max) {
-    margin: 15px 0 0 0;
+    margin: 0;
+    border-bottom: 1px solid @input-border;
     .breadcrumb {
-      font-size: @font-size-tiny;
+      li {
+        display: none;
+        &:nth-last-child(2) {
+          width: 100%;
+          display: block;
+          padding: @line-height-computed/2 0;
+          a {
+            display: block;
+            &:before {
+              color: #acacac;
+              font-family: 'Glyphicons Halflings';
+              content: "\e257";
+              font-size: 10px;
+              padding-right: @line-height-computed/4;
+            }
+            &:hover, &:active, &:focus {
+              text-decoration: none;
+            }
+          }
+          &:before {
+            display: none;
+          }
+        }
+      }
     }
   }
 }

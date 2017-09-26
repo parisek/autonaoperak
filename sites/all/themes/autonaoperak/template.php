@@ -25,7 +25,6 @@ function autonaoperak_preprocess_page(&$vars) {
     // hide default content from 404 page
     unset($vars['page']['content']['system_main']);
   }elseif(arg(0) == 'search') {
-
     $vars['title'] = t('Search', array(), array('context' => 'page_title'));
     $vars['breadcrumb'] = '';
   }elseif(arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2))) {
