@@ -242,7 +242,7 @@ function customize_form_alter(&$form, $form_state, $form_id) {
 
     $form['checkbox_uoou'] = array(
       '#type' => 'checkbox',
-      '#title' => t('I agree with the <a href="@url" target="_blank">processing of personal data</a>', ['@url' => url('node/16')]) . ' <span class="form-required" title="' . t('This field is required.') . '">*</span>',
+      '#title' => t('I agree with the <a href="@url" target="_blank">processing of personal data</a>', ['@url' => customize_get_translate_link('node/16', TRUE)]) . ' <span class="form-required" title="' . t('This field is required.') . '">*</span>',
       '#weight' => 10,
       '#prefix' => '<div class="form-uoou">',
       '#suffix' => '</div>',
@@ -256,7 +256,7 @@ function customize_form_alter(&$form, $form_state, $form_id) {
  */
 function customize_form_alter_uoou($element, &$form, &$form_state) {
   if ($element['#value'] == 0) {
-      form_error($element, 'Before sending you must agree to the processing of personal data.');
+      form_error($element, t('Before sending you must agree to the processing of personal data.'));
     }
 }
 
@@ -585,4 +585,27 @@ function customize_node_presave($node) {
       );
     }
   }
+}
+
+/**
+ * Return translated url address.
+ * alias - use url() to return aliased url address
+ */
+function customize_get_translate_link($url, $alias = FALSE) {
+
+  global $language;
+
+  $translatable = translation_path_get_translations($url);
+
+  if($translatable) {
+    if(isset($translatable[$language->language])) {
+      $url = $translatable[$language->language];
+    }
+  }
+
+  if($alias) {
+    $url = url($url);
+  }
+
+  return $url;
 }
