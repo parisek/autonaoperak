@@ -128,6 +128,8 @@ function customize_block_view($delta='') {
  */
 function customize_hp_slider_content() {
 
+  global $language;
+
   $content = '';
 
   try {
@@ -139,6 +141,7 @@ function customize_hp_slider_content() {
     $query->entityCondition('entity_type', 'node')
       ->entityCondition('bundle', 'slider')
       ->propertyCondition('status', NODE_PUBLISHED)
+      ->propertyCondition('language', $language->language)
       ->fieldOrderBy('field_weight', 'value', 'ASC')
       ->propertyOrderBy('created', 'DESC');
 
@@ -195,6 +198,8 @@ function customize_hp_slider_content() {
  */
 function customize_hp_offer_content() {
 
+  global $language;
+
   $content = '';
 
   try {
@@ -207,6 +212,7 @@ function customize_hp_offer_content() {
       ->entityCondition('bundle', 'car')
       ->propertyCondition('status', NODE_PUBLISHED)
       ->propertyCondition('promote', NODE_PROMOTED)
+      ->propertyCondition('language', $language->language)
       ->fieldCondition('field_car_type', 'value', 'stock')
       ->fieldCondition('field_car_status', 'value', 'sale')
       ->propertyOrderBy('created', 'DESC')
@@ -246,6 +252,7 @@ function customize_hp_offer_content() {
     $query
       ->fields('n', array('nid'))
       ->condition('n.type', 'car')
+      ->condition('n.language', $language->language)
       ->condition('s.field_car_type_value', 'stock')
       ->condition('t.field_car_status_value', 'sale')
       ->condition('n.status', NODE_PUBLISHED);
@@ -254,7 +261,7 @@ function customize_hp_offer_content() {
 
     $data = [];
     $data['count'] = $carCount;
-    $data['morelink'] = url('node/4');
+    $data['morelink'] = customize_get_translate_link('node/4', TRUE);
     $data['highlight'] = theme('customize_highlight', array('data' => array()));
 
     if($carCount) {
@@ -305,7 +312,7 @@ function customize_hp_brand_car_content() {
     }
 
     $data = [];
-    $data['morelink'] = url('node/2');
+    $data['morelink'] = customize_get_translate_link('node/2', TRUE);
 
     $content .= theme('customize_hp_brand_car', array('brand' => $brand, 'data' => $data));
 
@@ -532,6 +539,9 @@ function customize_sidebar_contact_content() {
  * Callback for block Customize: FAQ.
  */
 function customize_faq_content() {
+
+  global $language;
+
   $content = '';
 
   try {
@@ -542,6 +552,7 @@ function customize_faq_content() {
     $query->entityCondition('entity_type', 'node')
       ->entityCondition('bundle', 'faq')
       ->propertyCondition('status', NODE_PUBLISHED)
+      ->propertyCondition('language', $language->language)
       ->propertyOrderBy('title', 'ASC');
 
     $result = $query->execute();
@@ -581,7 +592,7 @@ function customize_howto_content() {
 
   $content = '<div class="content">';
   $content .= '<h2>Jednoduché, že? Začněte s výběrem vozu.</h2>';
-  $content .= '<a href="' . url('node/2') . '" class="btn btn-primary btn-lg">Osobní vozy</a>';
+  $content .= '<a href="' . customize_get_translate_link('node/2', TRUE) . '" class="btn btn-primary btn-lg">Osobní vozy</a>';
   $content .= '</div>';
 
   return $content;
@@ -624,19 +635,16 @@ c2.683,0,4.471,1.887,4.471,5.066c0,3.278-1.788,5.166-4.471,5.166C337.488,426.359
  */
 function customize_404_content() {
 
-  $string = request_path();
-  $site_mail = variable_get('site_mail', '');
   $content = '';
 
-  $content .= '<div class="path">' . url($string, array('absolute' => TRUE)) . '</div>';
-  $content .= 'Je nám líto, požadovaná stránka neexistuje. Zřejmě byla odstraněna, přemístěna nebo přejmenována. Na těchto stránkách průběžně dochází k drobným úpravám a je proto možné, že některé vnější odkazy na ně nyní nefungují.';
-  $content .= '<h3>Co můžete udělat?</h3>';
-  $content .= '<ul>';
-  $content .= '<li>pokud jste zapsali adresu ručně, zkontrolujte překlepy</li>';
-  $content .= '<li>přejděte na <a href="' . url('<front>') . '">úvodní stránku webu</a> a dál pokračujte odtud</li>';
-  $content .= '<li>zkuste stránku vyhledat prostřednictvím vyhledávače <a href="https://www.google.cz/#&q=' . $string . '+site:autonaoperak.cz">Google</a></li>';
-  $content .= '</ul>';
-  $content .= '<p>Pokud problém trvá, <a href="' . url('node/5') . '">kontaktujte nás</a>.</p>';
+  $domain = $_SERVER['HTTP_HOST'];
+  if(substr($domain, 0, 4) == 'www.') {
+    $domain = substr($domain, 4);
+  }
+
+  $string = request_path();
+
+  $content .= t('<span class="path">@path</span><p>We are sorry but the page you requested does not exist. It may have been deleted, relocated or renamed. This site is regularly updated and it is possible that currently some external links do not work.</p><h3>What can you do?</h3><ul><li>check the address for typing errors</li><li>return to <a href="@home">home page</a> and start over</li><li>try searching for the page using <a href="@google">Google search engine</a></li></ul><p>If the problem persists, <a href="@contact">contact us</a>.</p>', ['@path' => url($string, array('absolute' => TRUE)), '@home' => url('<front>'), '@google' => 'https://www.google.cz/#&q=' . $string . '+site:' . $domain, '@contact' => customize_get_translate_link('node/5', TRUE)]);
 
   return $content;
 }
