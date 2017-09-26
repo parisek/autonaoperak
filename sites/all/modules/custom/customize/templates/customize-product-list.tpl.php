@@ -6,10 +6,12 @@
         <?php if(count($data['form_fuel'])): ?>
         <div class="item item-fuel">
           <label>Palivo</label>
-          <div class="btn-group" role="group" aria-label="Palivo">
+          <div class="select-background">
+          <select class="form-control">
             <?php foreach($data['form_fuel'] as $key => $name): ?>
-            <label class="btn btn-default"><input type="checkbox" name="fuel[]" value="<?php print $key; ?>"><span><?php print $name; ?></span></label>
+            <option value="<?php print $key; ?>"><?php print $name; ?></option>
             <?php endforeach; ?>
+          </select>
           </div>
         </div>
         <?php endif; ?>

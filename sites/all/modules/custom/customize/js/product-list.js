@@ -13,21 +13,13 @@
       var $filter = $('.category-list-form', context);
 
       // if parameter passed from URL
-      var fuel = $('.view-block-car-list #edit-field-car-fuel-value');
-      if(fuel.val()) {
-        fuel = fuel.val();
-        $('.item-fuel input[type=checkbox]', $filter).each(function() {
-          if(fuel.indexOf($(this).val()) !== -1) {
-            $(this).attr('checked', 'checked');
-          }
-        });
+      var fuel = $('.view-block-car-list #edit-field-car-fuel-value').val();
+      if(fuel != 'All') {
+        $('.item-fuel select', $filter).val(body);
       }
-      $('.item-fuel input[type=checkbox]', $filter).on('change', function() {
-        var items = [];
-        $('.item-fuel input[type=checkbox]:checked', $filter).each(function() {
-          items.push($(this).val());
-        });
-        $('.view-block-car-list #edit-field-car-fuel-value').val(items);
+      $('.item-fuel select', $filter).on('change', function(event) {
+        var $this = $(this);
+        $('.view-block-car-list #edit-field-car-fuel-value').val($this.val());
 
         $('.view-block-car-list .view-filters .form-submit').trigger('click');
       });

@@ -242,7 +242,7 @@ function customize_form_alter(&$form, $form_state, $form_id) {
 
     $form['checkbox_uoou'] = array(
       '#type' => 'checkbox',
-      '#title' => 'Souhlasím se ' . l('zpracováním osobních údajů', 'node/16', array('attributes' => array('target'=>'_blank'))) . ' <span class="form-required" title="Toto pole je vyžadováno.">*</span>',
+      '#title' => t('I agree with the <a href="@url" target="_blank">processing of personal data</a>', ['@url' => url('node/16')]) . ' <span class="form-required" title="' . t('This field is required.') . '">*</span>',
       '#weight' => 10,
       '#prefix' => '<div class="form-uoou">',
       '#suffix' => '</div>',
@@ -256,7 +256,7 @@ function customize_form_alter(&$form, $form_state, $form_id) {
  */
 function customize_form_alter_uoou($element, &$form, &$form_state) {
   if ($element['#value'] == 0) {
-      form_error($element, 'Před odesláním musíte souhlasit se zpracováním osobních údajů.');
+      form_error($element, 'Before sending you must agree to the processing of personal data.');
     }
 }
 
@@ -522,19 +522,17 @@ function _customize_product_list($vocabulary) {
 
     $data = [];
 
-    $data['form_fuel'] = [];
+    $data['form_fuel'] = ['All' => t('Any', [], ['context' => 'car:filter'])];
     $field = field_info_field('field_car_fuel');
     if($field) {
-      $values = $field['settings']['allowed_values'];
-      $removeValues = ['lpg', 'hybrid', 'elektro'];
-      $data['form_fuel'] = array_diff_key($values, array_flip($removeValues));
+      $data['form_fuel'] = array_merge($data['form_fuel'], $field['settings']['allowed_values']);
     }
     $data['form_transmission'] = [];
     $field = field_info_field('field_car_transmission');
     if($field) {
       $data['form_transmission'] = $field['settings']['allowed_values'];
     }
-    $data['form_body'] = ['All' => 'Nerozhoduje'];
+    $data['form_body'] = ['All' => t('Any', [], ['context' => 'car:filter'])];
     $field = field_info_field('field_car_body');
     if($field) {
       $data['form_body'] = array_merge($data['form_body'], $field['settings']['allowed_values']);
