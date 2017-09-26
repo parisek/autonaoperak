@@ -5,6 +5,8 @@
  */
 function autonaoperak_preprocess_page(&$vars) {
 
+  global $language;
+
   if ($vars['is_front']) {
     $vars['title'] = '';
     $vars['breadcrumb'] = '';
@@ -82,6 +84,7 @@ function autonaoperak_preprocess_page(&$vars) {
   $query
     ->fields('n', array('nid'))
     ->condition('n.type', 'car')
+    ->condition('n.language', $language->language)
     ->condition('s.field_car_type_value', 'stock')
     ->condition('t.field_car_status_value', 'sale')
     ->condition('n.status', NODE_PUBLISHED);

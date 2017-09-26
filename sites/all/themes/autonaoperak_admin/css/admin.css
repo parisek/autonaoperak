@@ -49,6 +49,10 @@
   width: 150px;
   padding: 5px!important;
 }
+.view-administration-cars .views-field-custom-admin-action {
+  width: 190px;
+  padding: 5px!important;
+}
 .view .views-field-custom-admin-action .btn {
   line-height: 30px;
   height: 30px;

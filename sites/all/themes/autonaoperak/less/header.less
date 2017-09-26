@@ -1,3 +1,45 @@
+.block-language {
+  ul.language-switcher-locale-url {
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    li {
+      display: inline-block;
+      list-style: none;
+      width: auto;
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0;
+      }
+      .locale-untranslated {
+        display: none;
+      }
+      a {
+        display: inline-block;
+        .text-hide;
+        width: 22px;
+        height: 14px;
+        opacity: 0.6;
+        &:hover, &:focus, &:active {
+          opacity: 1.0;
+        }
+        &.active {
+          opacity: 1.0;
+        }
+      }
+      &.cs a {
+        background-image: url('../images/flags/flag-cs.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      &.sk a {
+        background-image: url('../images/flags/flag-sk.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
 @media(max-width: @grid-float-breakpoint-max) {
   .navbar-open {
     overflow: hidden;
@@ -209,7 +251,7 @@
                 border-bottom-color: darken(#fff, 5%);
               }
             }
-            &.menu-578 {
+            &.menu-578, &.menu-933 {
               a {
                 padding-left: 40px;
                 &:before {
@@ -222,7 +264,7 @@
                 }
               }
             }
-            &.menu-580 {
+            &.menu-580, &.menu-934 {
               a {
                 padding-right: 40px;
                 padding-left: 40px;
