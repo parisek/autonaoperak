@@ -489,6 +489,9 @@ function _customize_subcategories($type, $vocabulary, $term = '') {
 }
 
 function _customize_product_list($vocabulary) {
+
+  global $language;
+
   $content = '';
 
   try {
@@ -522,20 +525,27 @@ function _customize_product_list($vocabulary) {
 
     $data = [];
 
+    $data['currency_symbol'] = 'Kč';
+    if($language->language == 'sk') {
+      $data['currency_symbol'] = '€';
+    }
+
     $data['form_fuel'] = ['All' => t('Any', [], ['context' => 'car:filter'])];
     $field = field_info_field('field_car_fuel');
     if($field) {
-      $data['form_fuel'] = array_merge($data['form_fuel'], $field['settings']['allowed_values']);
+      $allowed_values = i18n_field_translate_allowed_values($field);
+      $data['form_fuel'] = array_merge($data['form_fuel'], $allowed_values);
     }
     $data['form_transmission'] = [];
     $field = field_info_field('field_car_transmission');
     if($field) {
-      $data['form_transmission'] = $field['settings']['allowed_values'];
+      $data['form_transmission'] = i18n_field_translate_allowed_values($field);
     }
     $data['form_body'] = ['All' => t('Any', [], ['context' => 'car:filter'])];
     $field = field_info_field('field_car_body');
     if($field) {
-      $data['form_body'] = array_merge($data['form_body'], $field['settings']['allowed_values']);
+      $allowed_values = i18n_field_translate_allowed_values($field);
+      $data['form_body'] = array_merge($data['form_body'], $allowed_values);
     }
 
     // pass category ids and car type (stock/catalog)

@@ -521,12 +521,20 @@ function customize_product_list_stock_content() {
  * Callback for block Customize: Sidebar Contact.
  */
 function customize_sidebar_contact_content() {
+
+  global $language;
+
+  $webform_nid = 194;
+  if($language->language == 'sk') {
+    $webform_nid = 313;
+  }
+
   $content = '';
 
   $content .= '<div class="content">';
-  $content .= '<h2>Nenašli jste, co jste hledali?</h2>';
-  $content .= '<div class="subtitle">Napište nám a my se vám ozveme</div>';
-  $block = module_invoke('webform', 'block_view', 'client-block-194');
+  $content .= '<h2>' . t('Did not find what you were looking for?') . '</h2>';
+  $content .= '<div class="subtitle">' . t('Write to us and we will contact you') . '</div>';
+  $block = module_invoke('webform', 'block_view', 'client-block-' . $webform_nid);
   if($block) {
     $content .= render($block['content']);
   }
@@ -591,7 +599,7 @@ function customize_faq_content() {
 function customize_howto_content() {
 
   $content = '<div class="content">';
-  $content .= '<h2>Jednoduché, že? Začněte s výběrem vozu.</h2>';
+  $content .= '<h2>' . t('Simple, right? Start with your car selection.') . '</h2>';
   $content .= '<a href="' . customize_get_translate_link('node/2', TRUE) . '" class="btn btn-primary btn-lg">Osobní vozy</a>';
   $content .= '</div>';
 

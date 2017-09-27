@@ -42,7 +42,7 @@ function customize_car_sold_render($field, $title = NULL) {
       }
       if(drupal_valid_path('taxonomy/term/' . $tid)) {
         $content .= '<div class="alert alert-warning">';
-        $content .= 'Tento vůz již není v nabídce, vyberte si jiný z ' . l('naší nabídky', 'taxonomy/term/' . $tid) . '.';
+        $content .= t('This car is no longer on offer, choose <a href="@url">another one</a>.', ['@url' => url('taxonomy/term/' . $tid)]);
         $content .= '</div>';
       }
     }
@@ -126,7 +126,7 @@ function customize_car_gallery_render($field, $title = NULL) {
       $content .= '</div>';
       if($imageCount > 5) {
         $content .= '<div class="morelink">';
-        $content .= '<a data-toggle="collapse" data-target="#showall">Zobrazit všechny fotky</a>';
+        $content .= '<a data-toggle="collapse" data-target="#showall">' . t('Show all photos') . '</a>';
         $content .= '</div>';
       }
     }
@@ -144,6 +144,7 @@ function customize_car_gallery_render($field, $title = NULL) {
 }
 
 function customize_car_description_render($field, $title = NULL) {
+
   $content = '';
 
   try {
@@ -152,15 +153,15 @@ function customize_car_description_render($field, $title = NULL) {
     $wrapper = entity_metadata_wrapper('node', $field['entity']);
 
     if(!empty($wrapper->field_car_description->value()['safe_value'])) {
-      $content .= '<h2>Popis vozu</h2>';
+      $content .= '<h2>' . t('Car description') . '</h2>';
       $content .= '<div class="description">' . $wrapper->field_car_description->value()['safe_value'] . '</div>';
     }
     if(!empty($wrapper->field_car_gear->value()['safe_value'])) {
-      $content .= '<h2>Příplatková výbava v ceně vozu</h2>';
+      $content .= '<h2>' . t('Additional equipment included in the price') . '</h2>';
       $content .= '<div class="gear">';
       $content .= $wrapper->field_car_gear->value()['safe_value'];
       if($wrapper->field_car_type->value() == 'catalog') {
-        $content .= '<p>Výbavu vozu je možné upravit na míru vašim požadavkům.</p>';
+        $content .= '<p>' . t('The equipment of the car can be tailored to your requirements.') . '</p>';
       }
       $content .= '</div>';
     }
@@ -170,7 +171,7 @@ function customize_car_description_render($field, $title = NULL) {
       $url = file_create_url($file['uri']);
       $content .= '<div class="file">';
       $title = '<span class="icon-pdf"></span>';
-      $title .= '<span class="text">Podrobná specifikace vozu <span class="size">(PDF, ' . $filesize .')</span></span>';
+      $title .= '<span class="text">' . t('Detailed vehicle specification') . ' <span class="size">(PDF, ' . $filesize .')</span></span>';
       $content .= l($title, $url, ['html' => TRUE, 'attributes' => ['target'=>'_blank']]);
       $content .= '</div>';
     }
@@ -187,12 +188,20 @@ function customize_car_description_render($field, $title = NULL) {
 }
 
 function customize_car_teaser_render($field, $title = NULL) {
+
+  global $language;
+
   $content = '';
 
   try {
 
     $node = $field['entity'];
     $wrapper = entity_metadata_wrapper('node', $field['entity']);
+
+    $currency_symbol = 'Kč';
+    if($wrapper->language->value() == 'sk') {
+      $currency_symbol = '€';
+    }
 
     // get first image
     $image = '';
@@ -215,7 +224,7 @@ function customize_car_teaser_render($field, $title = NULL) {
           $content .= '<li class="sticker sticker-' . $wrapper->field_car_sticker->raw() . '">' . $wrapper->field_car_sticker->label() . '</li>';
         }
         if($wrapper->field_car_stock->value() > 0) {
-          $content .= '<li class="sticker sticker-stock">Skladem</li>';
+          $content .= '<li class="sticker sticker-stock">' . t('In stock') . '</li>';
         }
         $content .= '</ul>';
       }
@@ -228,7 +237,7 @@ function customize_car_teaser_render($field, $title = NULL) {
     }
 
     if(!empty($wrapper->field_price_from->value())) {
-      $content .= '<div class="price">Od <span class="value">' . number_format($wrapper->field_price_from->value(), 0, ',', ' ') . ' Kč</span> / měsíc</div>';
+      $content .= '<div class="price">' . t('From') . ' <span class="value">' . number_format($wrapper->field_price_from->value(), 0, ',', ' ') . '&nbsp;' . $currency_symbol . '</span> / ' . t('month') . '</div>';
     }
 
     $content .= '</a>';
@@ -245,6 +254,9 @@ function customize_car_teaser_render($field, $title = NULL) {
 }
 
 function customize_car_contact_render($field, $title = NULL) {
+
+  global $language;
+
   $content = '';
 
   try {
@@ -265,7 +277,7 @@ function customize_car_contact_render($field, $title = NULL) {
       }
     }
 
-    $content .= '<h2>Ozvěte se nám a jezděte už brzy v novém voze ' . implode($title, ' ') . '</h2>';
+    $content .= '<h2>' . t('Write to us and drive soon in a new car @title', ['@title' => implode($title, ' ')]) . '</h2>';
     $content .= '<div class="phone">';
     $content .= '<span class="icon-phone-huge"></span>';
     $content .= '<span class="text">';
@@ -274,7 +286,7 @@ function customize_car_contact_render($field, $title = NULL) {
     $content .= '</span>';
     $content .= '</div>';
     $content .= '<div class="morelink">';
-    $content .= '<a href="#contact" class="btn btn-primary btn-lg">Mám zájem o tento vůz</a>';
+    $content .= '<a href="#contact" class="btn btn-primary btn-lg">' . t('I\'m interested in this car') . '</a>';
     $content .= '</div>';
 
   }catch (EntityMetadataWrapperException $exc) {
@@ -289,12 +301,20 @@ function customize_car_contact_render($field, $title = NULL) {
 }
 
 function customize_car_pricelist_render($field, $title = NULL) {
+
+  global $language;
+
   $content = '';
 
   try {
 
     $node = $field['entity'];
     $wrapper = entity_metadata_wrapper('node', $field['entity']);
+
+    $currency_symbol = 'Kč';
+    if($wrapper->language->value() == 'sk') {
+      $currency_symbol = '€';
+    }
 
     $pricelist = [];
     $pricelist_mobile = [];
@@ -310,10 +330,10 @@ function customize_car_pricelist_render($field, $title = NULL) {
         $deposit = $item_wrapper->field_pricelist_deposit->value();
         $deposit_formatted = '';
         if($deposit>0) {
-          $deposit_formatted = number_format($deposit, 0, ',', '&nbsp;') . '&nbsp;Kč';
+          $deposit_formatted = number_format($deposit, 0, ',', '&nbsp;') . '&nbsp;' . $currency_symbol;
         }
-        $price = number_format($item_wrapper->field_pricelist_price->value(), 0, ',', '&nbsp;') . '&nbsp;Kč';
-        $price2 = number_format($item_wrapper->field_pricelist_price2->value(), 0, ',', '&nbsp;') . '&nbsp;Kč';
+        $price = number_format($item_wrapper->field_pricelist_price->value(), 0, ',', '&nbsp;') . '&nbsp;' . $currency_symbol;
+        $price2 = number_format($item_wrapper->field_pricelist_price2->value(), 0, ',', '&nbsp;') . '&nbsp;' . $currency_symbol;
 
         $pricelist_mobile[] = [
           'km' => $km_label,
@@ -370,6 +390,8 @@ function customize_car_pricelist_render($field, $title = NULL) {
 
 function customize_car_related_render($field, $title = NULL) {
 
+  global $language;
+
   $content = '';
 
   try {
@@ -382,10 +404,10 @@ function customize_car_related_render($field, $title = NULL) {
     $brand_tid = $wrapper->field_car_brand->raw();
     if($type == 'catalog') {
       $car_type = 'stock';
-      $data['title'] = 'Vozy ihned k dispozici';
+      $data['title'] = t('Cars immediately available');
     }elseif($type == 'stock') {
       $car_type = 'catalog';
-      $data['title'] = 'Jiné konfigurace v nabídce';
+      $data['title'] = t('Other configurations');
     }
 
     $cars = [];
@@ -395,6 +417,7 @@ function customize_car_related_render($field, $title = NULL) {
     $query->entityCondition('entity_type', 'node')
       ->entityCondition('bundle', 'car')
       ->propertyCondition('status', NODE_PUBLISHED)
+      ->propertyCondition('status', $language->language)
       ->fieldCondition('field_car_brand', 'tid', $brand_tid)
       ->fieldCondition('field_car_type', 'value', $car_type)
       ->fieldOrderBy('field_weight', 'value', 'ASC');
@@ -442,12 +465,18 @@ function customize_car_related_render($field, $title = NULL) {
 }
 
 function customize_car_form_render($field, $title = NULL) {
+
   $content = '';
 
   try {
 
     $node = $field['entity'];
     $wrapper = entity_metadata_wrapper('node', $field['entity']);
+
+    $webform_nid = 15;
+    if($wrapper->language->value() == 'sk') {
+      $webform_nid = 314;
+    }
 
     $title = [];
     if($wrapper->field_car_brand->value()) {
@@ -464,9 +493,9 @@ function customize_car_form_render($field, $title = NULL) {
 
     $content .= '<div class="container">';
     $content .= '<div class="content">';
-    $content .= '<h2><a name="contact" id="contact"></a>Napište nám a jezděte už brzy v novém voze ' . implode($title, ' ') . '</h2>';
-    $content .= '<div class="subtitle">Ozveme se vám s nabídkou nejpozději následující pracovní den</div>';
-    $block = module_invoke('webform', 'block_view', 'client-block-15');
+    $content .= '<h2><a name="contact" id="contact"></a>' . t('Write to us and drive soon in a new car @title', ['@title' => implode($title, ' ')]) . '</h2>';
+    $content .= '<div class="subtitle">' . t('We will contact you with the offer no later than the next business day') . '</div>';
+    $block = module_invoke('webform', 'block_view', 'client-block-' . $webform_nid);
     if($block) {
       $content .= render($block['content']);
     }
@@ -485,6 +514,9 @@ function customize_car_form_render($field, $title = NULL) {
 }
 
 function customize_faq_render($field, $title = NULL) {
+
+  global $language;
+
   $content = '';
 
   try {
@@ -495,6 +527,7 @@ function customize_faq_render($field, $title = NULL) {
     $query->entityCondition('entity_type', 'node')
       ->entityCondition('bundle', 'faq')
       ->propertyCondition('status', NODE_PUBLISHED)
+      ->propertyCondition('language', $language->language)
       ->propertyOrderBy('title', 'ASC');
 
     $result = $query->execute();
@@ -514,7 +547,7 @@ function customize_faq_render($field, $title = NULL) {
       }
     }
 
-    $content .= '<h2>Nejčastější dotazy</h2>';
+    $content .= '<h2>' . t('Frequently Asked Questions') . '</h2>';
     $content .= theme('customize_faq', array('question' => $faq, 'data' => array()));
 
   }catch (EntityMetadataWrapperException $exc) {

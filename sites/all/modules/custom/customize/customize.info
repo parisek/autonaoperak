@@ -1,5 +1,5 @@
 name = Custom modification
-description = Custom modification to alter basic functionality. [developed by <a href="http://proficio.cz">Proficio marketing s.r.o.</a>]
+description = Custom modification to alter basic functionality. [developed by <a href="https://proficio.cz">Proficio marketing s.r.o.</a>]
 core = 7.x
 package = Proficio
 
@@ -8,6 +8,11 @@ dependencies[] = ds
 dependencies[] = views
 dependencies[] = token
 dependencies[] = taxonomy_term_depth
+dependencies[] = i18n
+dependencies[] = i18n_field
+dependencies[] = i18n_block
+dependencies[] = i18nviews
+dependencies[] = pathauto_i18n_taxonomy
 
 ; Views handlers
 files[] = views/handlers/customize_handler_area_search_block.inc

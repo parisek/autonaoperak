@@ -43,10 +43,10 @@ function autonaoperak_preprocess_page(&$vars) {
             break;
           }
           $title[] = $current_term->name;
-          $vars['title'] = implode($title, ' ') . ' skladem na operativní leasing';
+          $vars['title'] = t('@title operating lease (in stock)', ['@title' => implode($title, ' ')]);
         }
       }else{
-        $vars['title'] = $current_term->name . ' skladem na operativní leasing';
+        $vars['title'] = t('@title operating lease (in stock)', ['@title' => $current_term->name]);
       }
     }elseif($vocabulary == 'category_car') {
       // add parent name and term name to browser bar
@@ -59,10 +59,10 @@ function autonaoperak_preprocess_page(&$vars) {
             break;
           }
           $title[] = $current_term->name;
-          $vars['title'] = implode($title, ' ') . ' na operativní leasing';
+          $vars['title'] = t('@title operating lease', ['@title' => implode($title, ' ')]);
         }
       }else{
-        $vars['title'] = $current_term->name . ' na operativní leasing';
+        $vars['title'] = t('@title operating lease', ['@title' => $current_term->name]);
       }
     }
 
@@ -119,10 +119,10 @@ function autonaoperak_preprocess_html(&$vars) {
             break;
           }
           $title[] = $current_term->name;
-          $vars['head_title'] = implode($title, ' ') . ' skladem na operativní leasing | ' . $head_title;
+          $vars['head_title'] = t('@title operating lease (in stock)', ['@title' => implode($title, ' ')]) . ' | ' . $head_title;
         }
       }else{
-        $vars['head_title'] = $current_term->name . ' skladem na operativní leasing | ' . $head_title;
+        $vars['head_title'] = t('@title operating lease (in stock)', ['@title' => $current_term->name]) . ' | ' . $head_title;
       }
     }elseif($vocabulary == 'category_car') {
       $head_title = check_plain(variable_get('site_name', 'Drupal'));
@@ -136,10 +136,10 @@ function autonaoperak_preprocess_html(&$vars) {
             break;
           }
           $title[] = $current_term->name;
-          $vars['head_title'] = implode($title, ' ') . ' na operativní leasing | ' . $head_title;
+          $vars['head_title'] = t('@title operating lease', ['@title' => implode($title, ' ')]) . ' | ' . $head_title;
         }
       }else{
-        $vars['head_title'] = $current_term->name . ' na operativní leasing | ' . $head_title;
+        $vars['head_title'] = t('@title operating lease', ['@title' => $current_term->name]) . ' | ' . $head_title;
       }
     }
   }
