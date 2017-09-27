@@ -145,6 +145,8 @@ function custom_export_preview($type) {
 
 function _custom_export_generate($type) {
 
+  global $language;
+
   $vat = variable_get('custom_export_vat', 21);
 
   $content = '';
@@ -160,6 +162,7 @@ function _custom_export_generate($type) {
     $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', array('car'))
     ->propertyCondition('status', NODE_PUBLISHED)
+    ->propertyCondition('status', $language->language)
     ->fieldCondition('field_car_type', 'value', $type)
     ->propertyOrderBy('created', 'DESC');
     $result = $query->execute();
