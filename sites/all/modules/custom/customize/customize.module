@@ -619,3 +619,12 @@ function customize_get_translate_link($url, $alias = FALSE) {
 
   return $url;
 }
+
+/**
+ * Return language as object
+ * needs for URL address
+ */
+function customize_get_langugage_object($language) {
+  $installed_languages = language_list();
+  return $installed_languages[$language];
+}

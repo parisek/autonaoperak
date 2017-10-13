@@ -48,17 +48,19 @@ class custom_admin_handler_node_field_action extends views_handler_field_entity 
     $content = '';
 
     if ($node = $this->get_value($values)) {
+      // redirect to language specific url
+      $language = customize_get_langugage_object($node->language);
       if($this->options['update'] && node_access('update', $node)) {
-        $content .= l('<i class="fa fa-pencil-square-o" title="' . t('Edit') . '"></i>', 'node/' . $node->nid . '/edit', array('html' => TRUE, 'attributes' => array('class' => array('btn', 'btn-edit')), 'query' => drupal_get_destination()));
+        $content .= l('<i class="fa fa-pencil-square-o" title="' . t('Edit') . '"></i>', 'node/' . $node->nid . '/edit', array('html' => TRUE, 'attributes' => array('class' => array('btn', 'btn-edit')), 'query' => drupal_get_destination(), 'language' => $language));
       }
       if($this->options['replicate'] && drupal_valid_path('replicate/node/' . $node->nid)) {
-        $content .= l('<i class="fa fa-clone" title="' . t('Replicate') . '"></i>', '/replicate/node/' . $node->nid . '', array('html' => TRUE, 'attributes' => array('class' => array('btn', 'btn-replicate')), 'query' => drupal_get_destination()));
+        $content .= l('<i class="fa fa-clone" title="' . t('Replicate') . '"></i>', '/replicate/node/' . $node->nid . '', array('html' => TRUE, 'attributes' => array('class' => array('btn', 'btn-replicate')), 'query' => drupal_get_destination(), 'language' => $language));
       }
       if($this->options['translate'] && module_exists('i18n_node')) {
-        $content .= l('<i class="fa fa-language" title="' . t('Translate') . '"></i>', 'node/' . $node->nid . '/translate', array('html' => TRUE, 'attributes' => array('class' => array('btn', 'btn-translate')), 'query' => drupal_get_destination()));
+        $content .= l('<i class="fa fa-language" title="' . t('Translate') . '"></i>', 'node/' . $node->nid . '/translate', array('html' => TRUE, 'attributes' => array('class' => array('btn', 'btn-translate')), 'query' => drupal_get_destination(), 'language' => $language));
       }
       if($this->options['delete'] && node_access('delete', $node)) {
-        $content .= l('<i class="fa fa-trash-o" title="' . t('Delete') . '"></i>', 'node/' . $node->nid . '/delete', array('html' => TRUE, 'attributes' => array('class' => array('btn', 'btn-delete')), 'query' => drupal_get_destination()));
+        $content .= l('<i class="fa fa-trash-o" title="' . t('Delete') . '"></i>', 'node/' . $node->nid . '/delete', array('html' => TRUE, 'attributes' => array('class' => array('btn', 'btn-delete')), 'query' => drupal_get_destination(), 'language' => $language));
       }
     }
 
