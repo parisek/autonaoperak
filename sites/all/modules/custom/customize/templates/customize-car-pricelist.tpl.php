@@ -5,6 +5,9 @@
     <?php foreach($data['pricelist'] as $item): ?>
       <div class="pricelist-item">
         <h3><?php print t('Annual raid'); ?>: <?php print $item['name']; ?></h3>
+        <?php if($data['pricelist_type'] == 'company'): ?>
+        <div class="alert alert-danger"><span class="icon-exclamation-triangle"></span> <?php print t('This pricelist is only for companies'); ?></div>
+        <?php endif; ?>
         <table class="table">
           <tbody>
           <tr class="year">

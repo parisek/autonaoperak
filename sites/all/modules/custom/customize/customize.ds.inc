@@ -371,6 +371,7 @@ function customize_car_pricelist_render($field, $title = NULL) {
 
     $data = [];
     $data['pricelist'] = $pricelist;
+    $data['pricelist_type'] = $wrapper->field_car_pricelist_type->value();
     $data['pricelist_mobile'] = $pricelist_mobile;
     $data['service_included'] = $wrapper->field_car_included->value()['safe_value'];
     $data['service_excluded'] = $wrapper->field_car_excluded->value()['safe_value'];

@@ -7,9 +7,10 @@
 		"uuidString": "5DC96726-7AB5-40B5-9D6D-577BDCB8E5A3"
 		}
 	],
-"creatorBuild": "25900",
+"creatorBuild": "26097",
 "files": {
 	"\/autonaoperak.info": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/autonaoperak.info",
@@ -36,88 +37,18 @@
 		"oS": 0
 		},
 	"\/css\/style.css.map": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/css\/style.css.map",
 		"oF": 0
 		},
 	"\/favicon.ico": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/favicon.ico",
 		"oF": 0
-		},
-	"\/fonts\/autonaoperak\/demo-files\/demo.css": {
-		"aP": 0,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 2,
-		"oAP": "\/fonts\/autonaoperak\/demo-files\/demo-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"\/fonts\/autonaoperak\/demo-files\/demo.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 1,
-		"oAP": "\/fonts\/autonaoperak\/demo-files\/min\/demo-min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 0
-		},
-	"\/fonts\/autonaoperak\/demo.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/fonts\/autonaoperak\/demo.html",
-		"oF": 0
-		},
-	"\/fonts\/autonaoperak\/fonts\/autonaoperak.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/fonts\/autonaoperak\/fonts\/autonaoperak.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/fonts\/autonaoperak\/fonts\/autonaoperak.ttf": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/fonts\/autonaoperak\/fonts\/autonaoperak.ttf",
-		"oF": 0
-		},
-	"\/fonts\/autonaoperak\/fonts\/autonaoperak.woff": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/fonts\/autonaoperak\/fonts\/autonaoperak.woff",
-		"oF": 0
-		},
-	"\/fonts\/autonaoperak\/Read Me.txt": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/fonts\/autonaoperak\/Read Me.txt",
-		"oF": 0
-		},
-	"\/fonts\/autonaoperak\/selection.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "\/fonts\/autonaoperak\/selection-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
-	"\/fonts\/autonaoperak\/style.css": {
-		"aP": 0,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/fonts\/autonaoperak\/style-min.css",
-		"oF": 0,
-		"oS": 3
 		},
 	"\/images\/bg-form.jpg": {
 		"ft": 16384,
@@ -283,6 +214,7 @@
 		"q": 100
 		},
 	"\/images\/touch\/browserconfig.xml": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/images\/touch\/browserconfig.xml",
@@ -311,6 +243,7 @@
 		"q": 100
 		},
 	"\/images\/touch\/favicon.ico": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/images\/touch\/favicon.ico",
@@ -529,6 +462,7 @@
 		"sU": 0
 		},
 	"\/less\/README.txt": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/less\/README.txt",
@@ -624,12 +558,14 @@
 		"prP": 0
 		},
 	"\/plugins\/animate.css\/.editorconfig": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/animate.css\/.editorconfig",
 		"oF": 0
 		},
 	"\/plugins\/animate.css\/.gitignore": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/animate.css\/.gitignore",
@@ -682,6 +618,7 @@
 		"tS": 0
 		},
 	"\/plugins\/animate.css\/LICENSE": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/animate.css\/LICENSE",
@@ -696,10 +633,10 @@
 		"oS": 1
 		},
 	"\/plugins\/animate.css\/README.md": {
+		"cB": 0,
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
-		"eLB": 0,
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
@@ -1484,16 +1421,17 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap-slider\/.codeclimate.yml": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap-slider\/.codeclimate.yml",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap-slider\/.github\/CONTRIBUTING.md": {
+		"cB": 0,
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
-		"eLB": 0,
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
@@ -1508,10 +1446,10 @@
 		"uCM": 0
 		},
 	"\/plugins\/bootstrap-slider\/.github\/ISSUE_TEMPLATE.md": {
+		"cB": 0,
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
-		"eLB": 0,
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
@@ -1526,10 +1464,10 @@
 		"uCM": 0
 		},
 	"\/plugins\/bootstrap-slider\/.github\/PULL_REQUEST_TEMPLATE.md": {
+		"cB": 0,
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
-		"eLB": 0,
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
@@ -1544,30 +1482,35 @@
 		"uCM": 0
 		},
 	"\/plugins\/bootstrap-slider\/.gitignore": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap-slider\/.gitignore",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap-slider\/.npmignore": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap-slider\/.npmignore",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap-slider\/.nvmrc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap-slider\/.nvmrc",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap-slider\/.sass-lint.yml": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap-slider\/.sass-lint.yml",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap-slider\/.travis.yml": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap-slider\/.travis.yml",
@@ -1582,10 +1525,10 @@
 		"oS": 1
 		},
 	"\/plugins\/bootstrap-slider\/CHANGELOG.md": {
+		"cB": 0,
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
-		"eLB": 0,
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
@@ -1708,10 +1651,10 @@
 		"tS": 0
 		},
 	"\/plugins\/bootstrap-slider\/LICENSE.md": {
+		"cB": 0,
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
-		"eLB": 0,
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
@@ -1734,10 +1677,10 @@
 		"oS": 1
 		},
 	"\/plugins\/bootstrap-slider\/README.md": {
+		"cB": 0,
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
-		"eLB": 0,
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
@@ -1752,12 +1695,14 @@
 		"uCM": 0
 		},
 	"\/plugins\/bootstrap-slider\/scripts\/release.sh": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap-slider\/scripts\/release.sh",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap-slider\/scripts\/update-gh-pages.sh": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap-slider\/scripts\/update-gh-pages.sh",
@@ -2167,48 +2112,56 @@
 		"tS": 0
 		},
 	"\/plugins\/bootstrap-slider\/tpl\/index.tpl": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap-slider\/tpl\/index.tpl",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap-slider\/tpl\/SpecRunner.tpl": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap-slider\/tpl\/SpecRunner.tpl",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/.editorconfig": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/.editorconfig",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/.gitattributes": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/.gitattributes",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/.gitignore": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/.gitignore",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/.hound.yml": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/.hound.yml",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/.travis.yml": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/.travis.yml",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/_config.yml": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/plugins\/bootstrap\/_config.yml",
@@ -2223,10 +2176,10 @@
 		"oS": 1
 		},
 	"\/plugins\/bootstrap\/CHANGELOG.md": {
+		"cB": 0,
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
-		"eLB": 0,
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
@@ -2241,6 +2194,7 @@
 		"uCM": 0
 		},
 	"\/plugins\/bootstrap\/CNAME": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/CNAME",
@@ -2255,10 +2209,10 @@
 		"oS": 1
 		},
 	"\/plugins\/bootstrap\/CONTRIBUTING.md": {
+		"cB": 0,
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
-		"eLB": 0,
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
@@ -2283,6 +2237,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/dist\/css\/bootstrap-theme.css.map": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/dist\/css\/bootstrap-theme.css.map",
@@ -2299,6 +2254,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/dist\/css\/bootstrap-theme.min.css.map": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/dist\/css\/bootstrap-theme.min.css.map",
@@ -2315,6 +2271,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/dist\/css\/bootstrap.css.map": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/dist\/css\/bootstrap.css.map",
@@ -2331,12 +2288,14 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/dist\/css\/bootstrap.min.css.map": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/dist\/css\/bootstrap.min.css.map",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/dist\/fonts\/glyphicons-halflings-regular.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/dist\/fonts\/glyphicons-halflings-regular.eot",
@@ -2353,18 +2312,21 @@
 		"prP": 0
 		},
 	"\/plugins\/bootstrap\/dist\/fonts\/glyphicons-halflings-regular.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/dist\/fonts\/glyphicons-halflings-regular.ttf",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/dist\/fonts\/glyphicons-halflings-regular.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/dist\/fonts\/glyphicons-halflings-regular.woff",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/dist\/fonts\/glyphicons-halflings-regular.woff2": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/dist\/fonts\/glyphicons-halflings-regular.woff2",
@@ -2401,498 +2363,581 @@
 		"tS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_data\/browser-bugs.yml": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_data\/browser-bugs.yml",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_data\/browser-features.yml": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_data\/browser-features.yml",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_data\/core-team.yml": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_data\/core-team.yml",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_data\/glyphicons.yml": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_data\/glyphicons.yml",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_data\/sass-team.yml": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_data\/sass-team.yml",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_data\/showcase.yml": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_data\/showcase.yml",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_data\/translations.yml": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_data\/translations.yml",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/ads.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/ads.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/components\/alerts.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/components\/alerts.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/components\/badges.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/components\/badges.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/components\/breadcrumbs.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/components\/breadcrumbs.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/components\/button-dropdowns.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/components\/button-dropdowns.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/components\/button-groups.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/components\/button-groups.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/components\/dropdowns.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/components\/dropdowns.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/components\/glyphicons.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/components\/glyphicons.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/components\/input-groups.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/components\/input-groups.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/components\/jumbotron.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/components\/jumbotron.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/components\/labels.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/components\/labels.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/components\/list-group.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/components\/list-group.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/components\/media.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/components\/media.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/components\/navbar.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/components\/navbar.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/components\/navs.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/components\/navs.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/components\/page-header.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/components\/page-header.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/components\/pagination.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/components\/pagination.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/components\/panels.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/components\/panels.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/components\/progress-bars.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/components\/progress-bars.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/components\/responsive-embed.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/components\/responsive-embed.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/components\/thumbnails.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/components\/thumbnails.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/components\/wells.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/components\/wells.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/css\/buttons.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/css\/buttons.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/css\/code.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/css\/code.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/css\/forms.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/css\/forms.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/css\/grid.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/css\/grid.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/css\/helpers.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/css\/helpers.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/css\/images.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/css\/images.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/css\/less.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/css\/less.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/css\/overview.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/css\/overview.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/css\/responsive-utilities.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/css\/responsive-utilities.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/css\/sass.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/css\/sass.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/css\/tables.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/css\/tables.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/css\/type.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/css\/type.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/customizer-variables.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/customizer-variables.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/footer.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/footer.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/getting-started\/accessibility.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/getting-started\/accessibility.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/getting-started\/browser-device-support.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/getting-started\/browser-device-support.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/getting-started\/community.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/getting-started\/community.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/getting-started\/disabling-responsiveness.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/getting-started\/disabling-responsiveness.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/getting-started\/download.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/getting-started\/download.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/getting-started\/examples.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/getting-started\/examples.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/getting-started\/grunt.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/getting-started\/grunt.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/getting-started\/license.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/getting-started\/license.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/getting-started\/template.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/getting-started\/template.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/getting-started\/third-party-support.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/getting-started\/third-party-support.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/getting-started\/tools.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/getting-started\/tools.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/getting-started\/translations.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/getting-started\/translations.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/getting-started\/whats-included.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/getting-started\/whats-included.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/header.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/header.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/js\/affix.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/js\/affix.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/js\/alerts.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/js\/alerts.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/js\/buttons.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/js\/buttons.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/js\/carousel.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/js\/carousel.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/js\/collapse.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/js\/collapse.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/js\/dropdowns.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/js\/dropdowns.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/js\/modal.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/js\/modal.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/js\/overview.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/js\/overview.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/js\/popovers.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/js\/popovers.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/js\/scrollspy.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/js\/scrollspy.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/js\/tabs.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/js\/tabs.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/js\/tooltips.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/js\/tooltips.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/js\/transitions.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/js\/transitions.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/nav\/about.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/nav\/about.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/nav\/components.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/nav\/components.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/nav\/css.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/nav\/css.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/nav\/customize.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/nav\/customize.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/nav\/getting-started.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/nav\/getting-started.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/nav\/javascript.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/nav\/javascript.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/nav\/main.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/nav\/main.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_includes\/nav\/migration.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_includes\/nav\/migration.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_layouts\/default.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_layouts\/default.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_layouts\/home.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_layouts\/home.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_plugins\/bridge.rb": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_plugins\/bridge.rb",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_plugins\/bugify.rb": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/_plugins\/bugify.rb",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_pug\/customizer-nav.pug": {
+		"cB": 0,
 		"cOD": 1,
 		"ft": 512,
 		"oA": 0,
@@ -2901,6 +2946,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/_pug\/customizer-variables.pug": {
+		"cB": 0,
 		"cOD": 1,
 		"ft": 512,
 		"oA": 0,
@@ -2909,6 +2955,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/about.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/about.html",
@@ -2966,6 +3013,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/assets\/css\/docs.min.css.map": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/assets\/css\/docs.min.css.map",
@@ -3002,6 +3050,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/assets\/flash\/ZeroClipboard.swf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/assets\/flash\/ZeroClipboard.swf",
@@ -3261,24 +3310,28 @@
 		"tS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/browser-bugs.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/browser-bugs.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/components.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/components.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/css.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/css.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/customize.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/customize.html",
@@ -3295,6 +3348,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/dist\/css\/bootstrap-theme.css.map": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/dist\/css\/bootstrap-theme.css.map",
@@ -3311,6 +3365,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/dist\/css\/bootstrap-theme.min.css.map": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/dist\/css\/bootstrap-theme.min.css.map",
@@ -3327,6 +3382,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/dist\/css\/bootstrap.css.map": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/dist\/css\/bootstrap.css.map",
@@ -3343,12 +3399,14 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/dist\/css\/bootstrap.min.css.map": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/dist\/css\/bootstrap.min.css.map",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/dist\/fonts\/glyphicons-halflings-regular.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/dist\/fonts\/glyphicons-halflings-regular.eot",
@@ -3365,18 +3423,21 @@
 		"prP": 0
 		},
 	"\/plugins\/bootstrap\/docs\/dist\/fonts\/glyphicons-halflings-regular.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/dist\/fonts\/glyphicons-halflings-regular.ttf",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/dist\/fonts\/glyphicons-halflings-regular.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/dist\/fonts\/glyphicons-halflings-regular.woff",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/dist\/fonts\/glyphicons-halflings-regular.woff2": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/dist\/fonts\/glyphicons-halflings-regular.woff2",
@@ -3423,6 +3484,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/examples\/blog\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/blog\/index.html",
@@ -3439,6 +3501,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/examples\/carousel\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/carousel\/index.html",
@@ -3455,6 +3518,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/examples\/cover\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/cover\/index.html",
@@ -3471,6 +3535,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/examples\/dashboard\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/dashboard\/index.html",
@@ -3487,12 +3552,14 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/examples\/grid\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/grid\/index.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/examples\/jumbotron-narrow\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/jumbotron-narrow\/index.html",
@@ -3509,6 +3576,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/examples\/jumbotron\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/jumbotron\/index.html",
@@ -3525,6 +3593,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/examples\/justified-nav\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/justified-nav\/index.html",
@@ -3541,6 +3610,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/examples\/navbar-fixed-top\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/navbar-fixed-top\/index.html",
@@ -3557,6 +3627,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/examples\/navbar-static-top\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/navbar-static-top\/index.html",
@@ -3573,6 +3644,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/examples\/navbar\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/navbar\/index.html",
@@ -3589,6 +3661,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/examples\/non-responsive\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/non-responsive\/index.html",
@@ -3605,6 +3678,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/examples\/offcanvas\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/offcanvas\/index.html",
@@ -3821,6 +3895,7 @@
 		"q": 100
 		},
 	"\/plugins\/bootstrap\/docs\/examples\/signin\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/signin\/index.html",
@@ -3837,6 +3912,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/examples\/starter-template\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/starter-template\/index.html",
@@ -3853,6 +3929,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/examples\/sticky-footer-navbar\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/sticky-footer-navbar\/index.html",
@@ -3869,6 +3946,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/examples\/sticky-footer\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/sticky-footer\/index.html",
@@ -3885,6 +3963,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/examples\/theme\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/theme\/index.html",
@@ -3901,6 +3980,7 @@
 		"oS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/examples\/tooltip-viewport\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/tooltip-viewport\/index.html",
@@ -3927,48 +4007,56 @@
 		"tS": 0
 		},
 	"\/plugins\/bootstrap\/docs\/favicon.ico": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/favicon.ico",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/getting-started.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/getting-started.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/index.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/javascript.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/javascript.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/LICENSE": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/LICENSE",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/migration.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/migration.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/docs\/robots.txt": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/docs\/robots.txt",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/fonts\/glyphicons-halflings-regular.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/fonts\/glyphicons-halflings-regular.eot",
@@ -3985,36 +4073,42 @@
 		"prP": 0
 		},
 	"\/plugins\/bootstrap\/fonts\/glyphicons-halflings-regular.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/fonts\/glyphicons-halflings-regular.ttf",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/fonts\/glyphicons-halflings-regular.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/fonts\/glyphicons-halflings-regular.woff",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/fonts\/glyphicons-halflings-regular.woff2": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/fonts\/glyphicons-halflings-regular.woff2",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/Gemfile": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/Gemfile",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/Gemfile.lock": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/Gemfile.lock",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/grunt\/.jshintrc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/grunt\/.jshintrc",
@@ -4087,6 +4181,7 @@
 		"oS": 1
 		},
 	"\/plugins\/bootstrap\/grunt\/sauce_browsers.yml": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/grunt\/sauce_browsers.yml",
@@ -4103,10 +4198,10 @@
 		"tS": 0
 		},
 	"\/plugins\/bootstrap\/ISSUE_TEMPLATE.md": {
+		"cB": 0,
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
-		"eLB": 0,
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
@@ -4121,12 +4216,14 @@
 		"uCM": 0
 		},
 	"\/plugins\/bootstrap\/js\/.jscsrc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/js\/.jscsrc",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/js\/.jshintrc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/js\/.jshintrc",
@@ -4233,16 +4330,17 @@
 		"tS": 0
 		},
 	"\/plugins\/bootstrap\/js\/tests\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/index.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/js\/tests\/README.md": {
+		"cB": 0,
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
-		"eLB": 0,
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
@@ -4257,6 +4355,7 @@
 		"uCM": 0
 		},
 	"\/plugins\/bootstrap\/js\/tests\/unit\/.jshintrc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/unit\/.jshintrc",
@@ -4413,72 +4512,84 @@
 		"tS": 0
 		},
 	"\/plugins\/bootstrap\/js\/tests\/visual\/affix-with-sticky-footer.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/visual\/affix-with-sticky-footer.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/js\/tests\/visual\/affix.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/visual\/affix.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/js\/tests\/visual\/alert.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/visual\/alert.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/js\/tests\/visual\/button.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/visual\/button.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/js\/tests\/visual\/carousel.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/visual\/carousel.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/js\/tests\/visual\/collapse.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/visual\/collapse.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/js\/tests\/visual\/dropdown.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/visual\/dropdown.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/js\/tests\/visual\/modal.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/visual\/modal.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/js\/tests\/visual\/popover.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/visual\/popover.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/js\/tests\/visual\/scrollspy.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/visual\/scrollspy.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/js\/tests\/visual\/tab.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/visual\/tab.html",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/js\/tests\/visual\/tooltip.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/js\/tests\/visual\/tooltip.html",
@@ -4513,6 +4624,7 @@
 		"oS": 1
 		},
 	"\/plugins\/bootstrap\/less\/.csslintrc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/less\/.csslintrc",
@@ -5726,24 +5838,28 @@
 		"sU": 0
 		},
 	"\/plugins\/bootstrap\/LICENSE": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/LICENSE",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/nuget\/bootstrap.less.nuspec": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/nuget\/bootstrap.less.nuspec",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/nuget\/bootstrap.nuspec": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/nuget\/bootstrap.nuspec",
 		"oF": 0
 		},
 	"\/plugins\/bootstrap\/nuget\/MyGet.ps1": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/bootstrap\/nuget\/MyGet.ps1",
@@ -5768,10 +5884,10 @@
 		"oS": 1
 		},
 	"\/plugins\/bootstrap\/README.md": {
+		"cB": 0,
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
-		"eLB": 0,
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
@@ -5786,18 +5902,21 @@
 		"uCM": 0
 		},
 	"\/plugins\/countUp.js\/.editorconfig": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/countUp.js\/.editorconfig",
 		"oF": 0
 		},
 	"\/plugins\/countUp.js\/.gitignore": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/countUp.js\/.gitignore",
 		"oF": 0
 		},
 	"\/plugins\/countUp.js\/.npmignore": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/countUp.js\/.npmignore",
@@ -5961,16 +6080,17 @@
 		"tEC": 0
 		},
 	"\/plugins\/countUp.js\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/countUp.js\/index.html",
 		"oF": 0
 		},
 	"\/plugins\/countUp.js\/LICENSE.md": {
+		"cB": 0,
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
-		"eLB": 0,
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
@@ -5993,10 +6113,10 @@
 		"oS": 1
 		},
 	"\/plugins\/countUp.js\/README.md": {
+		"cB": 0,
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
-		"eLB": 0,
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
@@ -6019,6 +6139,7 @@
 		"oS": 1
 		},
 	"\/plugins\/jquery-viewport-checker\/.gitignore": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/jquery-viewport-checker\/.gitignore",
@@ -6033,6 +6154,7 @@
 		"oS": 1
 		},
 	"\/plugins\/jquery-viewport-checker\/demo\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/jquery-viewport-checker\/demo\/index.html",
@@ -6049,6 +6171,7 @@
 		"tS": 0
 		},
 	"\/plugins\/jquery-viewport-checker\/dist\/jquery.viewportchecker.min.js.map": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/jquery-viewport-checker\/dist\/jquery.viewportchecker.min.js.map",
@@ -6065,6 +6188,7 @@
 		"tS": 0
 		},
 	"\/plugins\/jquery-viewport-checker\/LICENSE": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/jquery-viewport-checker\/LICENSE",
@@ -6079,10 +6203,10 @@
 		"oS": 1
 		},
 	"\/plugins\/jquery-viewport-checker\/README.md": {
+		"cB": 0,
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
-		"eLB": 0,
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
@@ -6107,18 +6231,21 @@
 		"tS": 0
 		},
 	"\/plugins\/owlcarousel\/.gitattributes": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/.gitattributes",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/.gitignore": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/.gitignore",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/.travis.yml": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/.travis.yml",
@@ -6141,10 +6268,10 @@
 		"oS": 1
 		},
 	"\/plugins\/owlcarousel\/CONTRIBUTING.md": {
+		"cB": 0,
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
-		"eLB": 0,
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
@@ -6238,6 +6365,7 @@
 		"q": 100
 		},
 	"\/plugins\/owlcarousel\/dist\/LICENSE": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/dist\/LICENSE",
@@ -6264,10 +6392,10 @@
 		"tS": 0
 		},
 	"\/plugins\/owlcarousel\/dist\/README.md": {
+		"cB": 0,
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
-		"eLB": 0,
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
@@ -6531,10 +6659,10 @@
 		"tS": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/assets\/owlcarousel\/README.md": {
+		"cB": 0,
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
-		"eLB": 0,
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
@@ -6579,6 +6707,7 @@
 		"tS": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/assets\/vendors\/jquery.min.map": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/assets\/vendors\/jquery.min.map",
@@ -6595,186 +6724,217 @@
 		"tS": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/demos\/animate.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/demos\/animate.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/demos\/autoheight.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/demos\/autoheight.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/demos\/autoplay.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/demos\/autoplay.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/demos\/autowidth.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/demos\/autowidth.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/demos\/basic.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/demos\/basic.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/demos\/center.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/demos\/center.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/demos\/demos.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/demos\/demos.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/demos\/events.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/demos\/events.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/demos\/lazyLoad.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/demos\/lazyLoad.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/demos\/merge.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/demos\/merge.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/demos\/mousewheel.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/demos\/mousewheel.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/demos\/responsive.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/demos\/responsive.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/demos\/rtl.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/demos\/rtl.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/demos\/stagepadding.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/demos\/stagepadding.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/demos\/test.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/demos\/test.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/demos\/urlhashnav.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/demos\/urlhashnav.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/demos\/video.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/demos\/video.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/docs\/api-classes.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/docs\/api-classes.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/docs\/api-events.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/docs\/api-events.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/docs\/api-options.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/docs\/api-options.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/docs\/dev-buildin-plugins.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/docs\/dev-buildin-plugins.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/docs\/dev-external.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/docs\/dev-external.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/docs\/dev-plugin-api.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/docs\/dev-plugin-api.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/docs\/dev-styles.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/docs\/dev-styles.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/docs\/started-faq.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/docs\/started-faq.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/docs\/started-installation.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/docs\/started-installation.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/docs\/started-welcome.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/docs\/started-welcome.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/docs\/support-changelog.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/docs\/support-changelog.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/docs\/support-contact.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/docs\/support-contact.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/docs\/support-contributing.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/docs\/support-contributing.html",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs\/index.html",
@@ -7029,6 +7189,7 @@
 		"tS": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/assets\/vendors\/jquery.min.map": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/assets\/vendors\/jquery.min.map",
@@ -7097,276 +7258,322 @@
 		"tS": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/layouts\/demos.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/layouts\/demos.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/layouts\/docs.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/layouts\/docs.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/layouts\/home.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/layouts\/home.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/animate.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/animate.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/autoheight.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/autoheight.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/autoplay.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/autoplay.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/autowidth.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/autowidth.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/basic.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/basic.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/center.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/center.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/demos.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/demos.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/events.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/events.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/lazyLoad.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/lazyLoad.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/merge.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/merge.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/mousewheel.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/mousewheel.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/responsive.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/responsive.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/rtl.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/rtl.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/stagepadding.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/stagepadding.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/test.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/test.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/urlhashnav.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/urlhashnav.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/video.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/demos\/video.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/api-classes.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/api-classes.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/api-events.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/api-events.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/api-options.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/api-options.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/dev-buildin-plugins.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/dev-buildin-plugins.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/dev-external.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/dev-external.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/dev-plugin-api.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/dev-plugin-api.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/dev-styles.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/dev-styles.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/started-faq.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/started-faq.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/started-installation.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/started-installation.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/started-welcome.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/started-welcome.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/support-changelog.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/support-changelog.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/support-contact.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/support-contact.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/support-contributing.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/docs\/support-contributing.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/pages\/index.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/pages\/index.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/partials\/footer.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/partials\/footer.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/partials\/head.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/partials\/head.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/partials\/header.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/partials\/header.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/partials\/home-carousel.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/partials\/home-carousel.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/partials\/home-features.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/partials\/home-features.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/partials\/home-hero.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/partials\/home-hero.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/partials\/home-teaser-text.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/partials\/home-teaser-text.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/partials\/javascripts.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/partials\/javascripts.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/partials\/releated-docs.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/partials\/releated-docs.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/partials\/sidenav-docs.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/partials\/sidenav-docs.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/partials\/title.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/partials\/title.hbs",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/docs_src\/templates\/partials\/vendors.hbs": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/docs_src\/templates\/partials\/vendors.hbs",
@@ -7383,6 +7590,7 @@
 		"tS": 0
 		},
 	"\/plugins\/owlcarousel\/LICENSE": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/LICENSE",
@@ -7397,10 +7605,10 @@
 		"oS": 1
 		},
 	"\/plugins\/owlcarousel\/README.md": {
+		"cB": 0,
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
-		"eLB": 0,
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
@@ -7415,10 +7623,10 @@
 		"uCM": 0
 		},
 	"\/plugins\/owlcarousel\/ROADMAP.md": {
+		"cB": 0,
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
-		"eLB": 0,
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
@@ -7452,12 +7660,14 @@
 		"q": 100
 		},
 	"\/plugins\/owlcarousel\/src\/js\/.jscsrc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/src\/js\/.jscsrc",
 		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/src\/js\/.jshintrc": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/src\/js\/.jshintrc",
@@ -7717,6 +7927,7 @@
 		"uL": 1
 		},
 	"\/plugins\/owlcarousel\/test\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/plugins\/owlcarousel\/test\/index.html",
@@ -7733,48 +7944,56 @@
 		"tS": 0
 		},
 	"\/template.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/template.php",
 		"oF": 0
 		},
 	"\/templates\/block.tpl.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/templates\/block.tpl.php",
 		"oF": 0
 		},
 	"\/templates\/ds\/ds-2col-stacked.tpl.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/templates\/ds\/ds-2col-stacked.tpl.php",
 		"oF": 0
 		},
 	"\/templates\/ds\/ds-2col.tpl.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/templates\/ds\/ds-2col.tpl.php",
 		"oF": 0
 		},
 	"\/templates\/html.tpl.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/templates\/html.tpl.php",
 		"oF": 0
 		},
 	"\/templates\/maintenance-page.tpl.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/templates\/maintenance-page.tpl.php",
 		"oF": 0
 		},
 	"\/templates\/page.tpl.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/templates\/page.tpl.php",
 		"oF": 0
 		},
 	"\/templates\/views\/views-view-unformatted--search-results.tpl.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/templates\/views\/views-view-unformatted--search-results.tpl.php",
@@ -8325,6 +8544,10 @@
 			"active": 0,
 			"optionString": "'expression'"
 			},
+		"function-paren-newline": {
+			"active": 0,
+			"optionString": "'multiline'"
+			},
 		"generator-star-spacing": {
 			"active": 0,
 			"optionString": "{'before': true, 'after': false}"
@@ -8389,9 +8612,9 @@
 			"active": 0,
 			"optionString": "{'beforeBlockComment': true}"
 			},
-		"lines-around-directive": {
+		"lines-between-class-members": {
 			"active": 0,
-			"optionString": "{'before': 'always', 'after': 'always'}"
+			"optionString": "'always', {exceptAfterSingleLine: false}"
 			},
 		"max-depth": {
 			"active": 0,
@@ -8421,6 +8644,10 @@
 			"active": 0,
 			"optionString": "{'max': 1}"
 			},
+		"multiline-comment-style": {
+			"active": 0,
+			"optionString": "'starred-block'"
+			},
 		"multiline-ternary": {
 			"active": 0,
 			"optionString": "'always'"
@@ -8430,14 +8657,6 @@
 			"optionString": "{'newIsCap': true, 'capIsNew': true, 'newIsCapExceptions': [], 'capIsNewExceptions': ['Array', 'Boolean', 'Date', 'Error', 'Function', 'Number', 'Object', 'RegExp', 'String', 'Symbol'], 'properties': true}"
 			},
 		"new-parens": {
-			"active": 0,
-			"optionString": ""
-			},
-		"newline-after-var": {
-			"active": 0,
-			"optionString": "'always'"
-			},
-		"newline-before-return": {
 			"active": 0,
 			"optionString": ""
 			},
@@ -9541,7 +9760,8 @@
 		"createSourceMap": 0,
 		"minifyOutput": 1,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 1,
+		"transpilerStyle": 1
 		},
 	"languageDefaultsCSS": {
 		"autoOutputAction": 2,
@@ -9574,6 +9794,7 @@
 		"noEscapeInAttributes": 0,
 		"outputFormat": 2,
 		"outputStyle": 0,
+		"shouldRunCacheBuster": 0,
 		"useCDATA": 0,
 		"useDoubleQuotes": 0,
 		"useUnixNewlines": 0
@@ -9615,7 +9836,8 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"shouldRunCacheBuster": 0
 		},
 	"languageDefaultsLESS": {
 		"allowInsecureImports": 0,
@@ -9647,13 +9869,13 @@
 		"enableFootnotes": 1,
 		"enableLabels": 1,
 		"enableSmartQuotes": 1,
-		"escapeLineBreaks": 0,
 		"maskEmailAddresses": 1,
 		"outputFormat": 0,
 		"outputStyle": 0,
 		"parseMetadata": 1,
 		"processHTML": 0,
 		"randomFootnoteNumbers": 0,
+		"shouldRunCacheBuster": 0,
 		"useCompatibilityMode": 0
 		},
 	"languageDefaultsOTHER": {
@@ -9662,7 +9884,8 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"shouldRunCacheBuster": 0
 		},
 	"languageDefaultsPNG": {
 		"autoOutputAction": 0,
@@ -9682,7 +9905,8 @@
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
 		"compileDebug": 1,
-		"outputStyle": 0
+		"outputStyle": 0,
+		"shouldRunCacheBuster": 0
 		},
 	"languageDefaultsSASS": {
 		"autoOutputAction": 0,
@@ -9710,7 +9934,8 @@
 		"logicless": 0,
 		"outputFormat": 0,
 		"outputStyle": 1,
-		"railsCompatible": 0
+		"railsCompatible": 0,
+		"shouldRunCacheBuster": 0
 		},
 	"languageDefaultsSTYLUS": {
 		"autoOutputAction": 0,
