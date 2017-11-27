@@ -7,7 +7,7 @@
 		"uuidString": "5DC96726-7AB5-40B5-9D6D-577BDCB8E5A3"
 		}
 	],
-"creatorBuild": "26097",
+"creatorBuild": "26148",
 "files": {
 	"\/autonaoperak.info": {
 		"cB": 0,
@@ -49,6 +49,82 @@
 		"oA": 2,
 		"oAP": "\/favicon.ico",
 		"oF": 0
+		},
+	"\/fonts\/autonaoperak\/demo-files\/demo.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/fonts\/autonaoperak\/demo-files\/demo-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/fonts\/autonaoperak\/demo-files\/demo.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/fonts\/autonaoperak\/demo-files\/min\/demo-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/fonts\/autonaoperak\/demo.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/fonts\/autonaoperak\/demo.html",
+		"oF": 0
+		},
+	"\/fonts\/autonaoperak\/fonts\/autonaoperak.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/fonts\/autonaoperak\/fonts\/autonaoperak.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/fonts\/autonaoperak\/fonts\/autonaoperak.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/fonts\/autonaoperak\/fonts\/autonaoperak.ttf",
+		"oF": 0
+		},
+	"\/fonts\/autonaoperak\/fonts\/autonaoperak.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/fonts\/autonaoperak\/fonts\/autonaoperak.woff",
+		"oF": 0
+		},
+	"\/fonts\/autonaoperak\/Read Me.txt": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/fonts\/autonaoperak\/Read Me.txt",
+		"oF": 0
+		},
+	"\/fonts\/autonaoperak\/selection.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/fonts\/autonaoperak\/selection-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/fonts\/autonaoperak\/style.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/fonts\/autonaoperak\/style-min.css",
+		"oF": 0,
+		"oS": 3
 		},
 	"\/images\/bg-form.jpg": {
 		"ft": 16384,

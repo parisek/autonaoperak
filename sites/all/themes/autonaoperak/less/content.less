@@ -546,6 +546,7 @@
 
 .field-customize-term-subcategory-car,
 .field-customize-term-subcategory-stock,
+.field-customize-term-subcategory-used,
 .block-subcategory {
   ul {
     display: flex;
@@ -906,6 +907,32 @@
           flex: 0 0 100%;
           margin: 0 0 @line-height-computed 0;
         }
+      }
+    }
+  }
+}
+
+.block-banner-cars-used {
+  background: #f4f4f4;
+  padding: @line-height-computed;
+  margin-bottom: @line-height-computed;
+  h2 {
+    font-size: @font-size-large;
+    margin: 0 0 @line-height-computed/2 0;
+  }
+  ul {
+    padding-left: 0;
+    li {
+      list-style: none;
+      position: relative;
+      padding-left: 20px;
+      &:before {
+        font-family: autonaoperak;
+        content: "\e908";
+        color: #11b8e1;
+        position: absolute;
+        left: 0;
+        top: 0;
       }
     }
   }

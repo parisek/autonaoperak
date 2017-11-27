@@ -20,17 +20,26 @@ function customize_block_info() {
   $blocks['category_stock'] = array(
     'info' => t('Customize: Category stock')
   );
+  $blocks['category_used'] = array(
+    'info' => t('Customize: Category used')
+  );
   $blocks['subcategory_car'] = array(
     'info' => t('Customize: Subcategory car')
   );
   $blocks['subcategory_stock'] = array(
     'info' => t('Customize: Subcategory stock')
   );
+  $blocks['subcategory_used'] = array(
+    'info' => t('Customize: Subcategory used')
+  );
   $blocks['product_list_car'] = array(
     'info' => t('Customize: Product list car')
   );
   $blocks['product_list_stock'] = array(
     'info' => t('Customize: Product list stock')
+  );
+  $blocks['product_list_used'] = array(
+    'info' => t('Customize: Product list used')
   );
   $blocks['faq'] = array(
     'info' => t('Customize: FAQ')
@@ -73,11 +82,17 @@ function customize_block_view($delta='') {
     case 'category_stock':
       $block['content'] = customize_category_stock_content();
       break;
+    case 'category_used':
+      $block['content'] = customize_category_used_content();
+      break;
     case 'subcategory_car':
       $block['content'] = customize_subcategory_car_content();
       break;
     case 'subcategory_stock':
       $block['content'] = customize_subcategory_stock_content();
+      break;
+    case 'subcategory_used':
+      $block['content'] = customize_subcategory_used_content();
       break;
     case 'product_list_car':
       $block['content'] = array(
@@ -94,6 +109,18 @@ function customize_block_view($delta='') {
     case 'product_list_stock':
       $block['content'] = array(
         '#markup' => customize_product_list_stock_content(),
+        '#attached' => array(
+          'js' => array(
+            array(
+              'data' => drupal_get_path('module', 'customize') . '/js/product-list.js',
+            ),
+          )
+        ),
+      );
+      break;
+    case 'product_list_used':
+      $block['content'] = array(
+        '#markup' => customize_product_list_used_content(),
         '#attached' => array(
           'js' => array(
             array(
@@ -482,6 +509,83 @@ function customize_category_stock_content() {
 }
 
 /**
+ * Callback for block Customize: Category Used.
+ */
+function customize_category_used_content() {
+
+  $content = '';
+
+  $current_term = menu_get_object('taxonomy_term', 2);
+
+  try {
+
+    $brand = [];
+
+    $tree = taxonomy_get_tree(9, 0, NULL, TRUE);
+    $items = customize_get_nested_tree($tree);
+
+    foreach ($items as $item) {
+
+      $wrapper = entity_metadata_wrapper('taxonomy_term', $item);
+      $tid =  $wrapper->getIdentifier();
+      $title = $wrapper->label();
+
+      $model = [];
+      $active_model = FALSE; // check if some child model is active
+      if(isset($item->children)) {
+        foreach ($item->children as $child) {
+
+          $child_wrapper = entity_metadata_wrapper('taxonomy_term', $child);
+          $child_tid =  $child_wrapper->getIdentifier();
+          $child_title = $child_wrapper->label();
+
+          $class = [];
+          if($current_term && $current_term->tid == $child_tid) {
+            $class[] = 'active';
+            $active_model = TRUE;
+          }
+
+          $model[] = array(
+            'tid' => $child_tid,
+            'title' => $child_title,
+            'url' => url('taxonomy/term/' . $child_tid),
+            'class' => $class,
+          );
+        }
+      }
+
+      $class = [];
+      $status = '';
+      if($current_term && ($current_term->tid == $tid || $active_model)) {
+        $class[] = 'active';
+        $status = 'open';
+      }
+
+      $brand[] = array(
+        'tid' => $tid,
+        'title' => $title,
+        'url' => url('taxonomy/term/' . $tid),
+        'model' => $model,
+        'class' => $class,
+        'status' => $status,
+      );
+    }
+
+    $data = [];
+    $content .= theme('customize_category_list', array('brand' => $brand, 'data' => $data));
+
+  }catch (EntityMetadataWrapperException $exc) {
+    watchdog(
+      'customize',
+      'See '  . __FUNCTION__ . '() <pre>' .  $exc->getTraceAsString() . '</pre>',
+       NULL, WATCHDOG_ERROR
+    );
+  }
+
+  return $content;
+}
+
+/**
  * Callback for block Customize: Subcategory car.
  */
 function customize_subcategory_car_content() {
@@ -496,6 +600,13 @@ function customize_subcategory_stock_content() {
 }
 
 /**
+ * Callback for block Customize: Subcategory used.
+ */
+function customize_subcategory_used_content() {
+  return _customize_subcategories('node', 9);
+}
+
+/**
  * Callback for block Customize: Product list car.
  */
 function customize_product_list_car_content() {
@@ -507,12 +618,23 @@ function customize_product_list_car_content() {
 }
 
 /**
- * Callback for block Customize: Product list van.
+ * Callback for block Customize: Product list stock.
  */
 function customize_product_list_stock_content() {
   $content = '';
   $content .= '<div class="product-list-stock">';
   $content .= _customize_product_list(8);
+  $content .= '</div>';
+  return $content;
+}
+
+/**
+ * Callback for block Customize: Product list used.
+ */
+function customize_product_list_used_content() {
+  $content = '';
+  $content .= '<div class="product-list-used">';
+  $content .= _customize_product_list(9);
   $content .= '</div>';
   return $content;
 }

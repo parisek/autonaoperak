@@ -367,6 +367,13 @@ function customize_ds_fields_info($entity_type) {
     'ui_limit' => array('category_stock|*'),
     'function' => 'customize_term_subcategory_stock_render',
   ) + $defaults;
+
+  $fields['taxonomy_term']['customize_term_subcategory_used'] = array(
+    'title' => t('Customize: Subcategory'),
+    'ui_limit' => array('category_used|*'),
+    'function' => 'customize_term_subcategory_used_render',
+  ) + $defaults;
+
   $fields['paragraphs_item']['customize_paragraph_bullets'] = array(
     'title' => t('Customize: Bullets'),
     'ui_limit' => array('*|*'),
@@ -521,6 +528,8 @@ function _customize_product_list($vocabulary) {
       $type = 'catalog';
     }elseif($vocabulary == 8) {
       $type = 'stock';
+    }elseif($vocabulary == 9) {
+      $type = 'used';
     }
 
     $data = [];

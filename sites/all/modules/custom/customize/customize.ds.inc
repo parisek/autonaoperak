@@ -600,6 +600,25 @@ function customize_term_subcategory_stock_render($field, $title = NULL) {
   return $content;
 }
 
+function customize_term_subcategory_used_render($field, $title = NULL) {
+  $content = '';
+
+  try {
+
+    $term = $field['entity'];
+    $content .= _customize_subcategories('taxonomy_term', 9, $term);
+
+  }catch (EntityMetadataWrapperException $exc) {
+    watchdog(
+      'customize',
+      'See '  . __FUNCTION__ . '() <pre>' .  $exc->getTraceAsString() . '</pre>',
+       NULL, WATCHDOG_ERROR
+    );
+  }
+
+  return $content;
+}
+
 function customize_paragraph_bullets_render($field, $title = NULL) {
 
   $content = '';
