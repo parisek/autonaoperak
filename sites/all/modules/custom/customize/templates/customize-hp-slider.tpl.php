@@ -2,11 +2,21 @@
   <?php foreach ($slides as $slide): ?>
     <div class="item" style="background-image:url('<?php print $slide['image']; ?>')">
       <div class="container">
-        <div class="text">
-          <div class="inner">
-            <?php print $slide['body']; ?>
+        <?php if(!empty($slide['link'])): ?>
+        <a href="<?php print $slide['link']; ?>" class="link">
+          <div class="text">
+            <div class="inner">
+              <?php print $slide['body']; ?>
+            </div>
           </div>
-        </div>
+        </a>
+        <?php else: ?>
+          <div class="text">
+            <div class="inner">
+              <?php print $slide['body']; ?>
+            </div>
+          </div>
+        <?php endif; ?>
       </div>
     </div>
   <?php endforeach; ?>

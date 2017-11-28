@@ -194,10 +194,15 @@ function customize_hp_slider_content() {
         if($wrapper->field_slider_anotation->value()) {
           $anotation = $wrapper->field_slider_anotation->value();
         }
+        $link = '';
+        if($wrapper->field_slider_link->value()) {
+          $link = url($wrapper->field_slider_link->value()['url']);
+        }
         $slides[] = array(
           'nid' => $nid,
           'title' => $title,
           'anotation' => $anotation,
+          'link' => $link,
           'body' => $body,
           'image' => $image,
         );
