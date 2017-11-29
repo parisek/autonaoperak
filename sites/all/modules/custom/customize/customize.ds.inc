@@ -114,7 +114,7 @@ function customize_car_gallery_render($field, $title = NULL) {
         $content .= '<div id="showall" class="collapse">';
         $content .= '<div class="product-image-small-container">';
         foreach ($images as $key => $image) {
-          if($key > 5) {
+          if($key >= 5) {
             $content .= '<div class="item">';
             $content .= $image['image'];
             $content .= '</div>';
@@ -373,6 +373,7 @@ function customize_car_pricelist_render($field, $title = NULL) {
     $data['pricelist'] = $pricelist;
     $data['pricelist_type'] = $wrapper->field_car_pricelist_type->value();
     $data['pricelist_mobile'] = $pricelist_mobile;
+    $data['car_type'] = $wrapper->field_car_type->raw();
     $data['service_included'] = $wrapper->field_car_included->value()['safe_value'];
     $data['service_excluded'] = $wrapper->field_car_excluded->value()['safe_value'];
 

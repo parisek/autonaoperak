@@ -246,6 +246,16 @@
 		"opt": 1,
 		"q": 100
 		},
+	"\/images\/rocni-vozy.jpg": {
+		"ft": 16384,
+		"iS": 27469,
+		"oA": 0,
+		"oAP": "\/images\/rocni-vozy.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/images\/sample\/reference-autor.jpg": {
 		"ft": 16384,
 		"iS": 4752,

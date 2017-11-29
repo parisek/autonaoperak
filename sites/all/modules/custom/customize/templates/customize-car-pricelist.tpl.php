@@ -17,14 +17,22 @@
             <?php endforeach; ?>
           </tr>
           <tr class="price">
-            <td class="name"><?php print t('Monthly installment without down payment'); ?></td>
+            <?php if($data['car_type'] == 'used'): ?>
+              <td class="name"><?php print t('Monthly installment without service'); ?></td>
+            <?php else: ?>
+              <td class="name"><?php print t('Monthly installment without down payment'); ?></td>
+            <?php endif; ?>
             <?php foreach($item['price'] as $price): ?>
               <td class="value"><?php print $price['value']; ?></td>
             <?php endforeach; ?>
           </tr>
           <?php foreach($item['deposit'] as $deposit): ?>
             <tr class="deposit">
-              <td class="name"><?php print t('Monthly installment with down payment'); ?> <?php print $deposit['name']; ?></td>
+              <?php if($data['car_type'] == 'used'): ?>
+                <td class="name"><?php print t('Monthly installment with service'); ?> <?php print $deposit['name']; ?></td>
+              <?php else: ?>
+                <td class="name"><?php print t('Monthly installment with down payment'); ?> <?php print $deposit['name']; ?></td>
+              <?php endif; ?>
               <?php foreach($deposit['items'] as $dep): ?>
                 <td class="value"><?php print $dep['value']; ?></td>
               <?php endforeach; ?>
@@ -48,12 +56,20 @@
           <div class="item-value"><?php print $item['km']; ?></div>
         </div>
         <div class="item item-price">
-          <div class="item-label"><?php print t('Monthly installment without down payment'); ?>:</div>
+          <?php if($data['car_type'] == 'used'): ?>
+            <div class="item-label"><?php print t('Monthly installment without service'); ?>:</div>
+          <?php else: ?>
+            <div class="item-label"><?php print t('Monthly installment without down payment'); ?>:</div>
+          <?php endif; ?>
           <div class="item-value"><?php print $item['price']; ?></div>
         </div>
         <?php if(!empty($item['deposit'])): ?>
           <div class="item item-deposit">
-            <div class="item-label"><?php print t('Monthly installment with down payment'); ?> <?php print $item['deposit']; ?>:</div>
+            <?php if($data['car_type'] == 'used'): ?>
+              <div class="item-label"><?php print t('Monthly installment with service'); ?> <?php print $item['deposit']; ?>:</div>
+            <?php else: ?>
+              <div class="item-label"><?php print t('Monthly installment with down payment'); ?> <?php print $item['deposit']; ?>:</div>
+            <?php endif; ?>
             <div class="item-value"><?php print $item['price2'] ?></div>
           </div>
         <?php endif; ?>

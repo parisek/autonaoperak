@@ -256,8 +256,8 @@ function customize_form_alter(&$form, $form_state, $form_id) {
  */
 function customize_form_alter_uoou($element, &$form, &$form_state) {
   if ($element['#value'] == 0) {
-      form_error($element, t('Before sending you must agree to the processing of personal data.'));
-    }
+    form_error($element, t('Before sending you must agree to the processing of personal data.'));
+  }
 }
 
 function customize_webform_form_ajax_callback($form, &$form_state) {

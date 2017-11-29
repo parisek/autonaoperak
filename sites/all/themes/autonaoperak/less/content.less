@@ -919,15 +919,32 @@
 }
 
 .block-banner-cars-used {
-  background: #f4f4f4;
+  border: 1px solid @input-border;
+  border-radius: @border-radius-base;
   padding: @line-height-computed;
   margin-bottom: @line-height-computed;
+  .item-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .image,
+  .text {
+    flex: 0 0 50%;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   h2 {
     font-size: @font-size-large;
     margin: 0 0 @line-height-computed/2 0;
   }
   ul {
     padding-left: 0;
+    margin: @line-height-computed 0;
     li {
       list-style: none;
       position: relative;
@@ -940,6 +957,14 @@
         left: 0;
         top: 0;
       }
+    }
+  }
+  @media(max-width: @screen-xs-max) {
+    .text {
+      flex: 0 0 100%;
+    }
+    .image {
+      display: none;
     }
   }
 }
