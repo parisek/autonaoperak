@@ -165,7 +165,7 @@ function autonaoperak_preprocess_html(&$vars) {
 
   drupal_add_html_head($viewport, 'viewport');
 
-  drupal_add_css('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,700,700i&subset=latin,latin-ext', array('group' => CSS_THEME));
+  drupal_add_css('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&subset=latin-ext', array('group' => CSS_THEME));
 
   $path = base_path() . path_to_theme() . '/images/touch/';
 
