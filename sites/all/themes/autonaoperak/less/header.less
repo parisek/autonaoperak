@@ -41,21 +41,27 @@
   }
 }
 @media(max-width: @grid-float-breakpoint-max) {
+  .topbar {
+    display: none;
+  }
   .navbar-open {
     overflow: hidden;
     .page-wrapper {
       display: none;
     }
   }
-  .navbar {
+  .header {
     background-image: linear-gradient(to bottom, #2a6175 0%, #4eb1d8 100%);
+    min-height: 70px;
+    position: relative;
+  }
+  .navbar {
     margin-bottom: 0;
     border: 0;
     min-height: 0;
     z-index: 2;
-    .topbar {
-      display: none;
-    }
+    box-shadow: none;
+    background-image: linear-gradient(to bottom, #2a6175 0%, #4eb1d8 100%);
     &.open {
       height: 100vh;
       overflow: hidden;
@@ -119,38 +125,26 @@
 }
 
 @media(min-width: @grid-float-breakpoint) {
-  .front {
-    .navbar {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: none;
-    }
-  }
-  .navbar {
-    background-size: cover;
-    border: 0;
-    margin-bottom: 0;
-    border-radius: 0;
-    z-index: 10;
+  .header {
     background-image: linear-gradient(to bottom, #2a6175 0%, #4eb1d8 100%);
-    .container {
-      position: relative;
-      padding: 0;
-    }
-    .topbar {
-      min-height: 40px;
-      border-bottom: 1px solid rgba(225, 225, 225, 0.2);
-      margin-bottom: 15px;
-    }
+    min-height: 130px;
+    position: relative;
+  }
+  .topbar {
+    height: 40px;
+    border-bottom: 1px solid rgba(225, 225, 225, 0.2);
     .region-topbar {
-      padding: 10px 15px;
+      padding: 10px 0;
       display: flex;
       justify-content: space-between;
-      color: #fff;
+      color: rgb(183, 202, 209);
+      font-weight: 300;
       a {
-        color: #fff;
+        color: rgb(183, 202, 209);
+        transition: all 0.3s;
+        &:hover, &:active, &:focus {
+          color: #fff;
+        }
       }
       .block-contact-info {
         .content {
@@ -203,8 +197,31 @@
         }
       }
     }
-    .logobar {
-      margin-bottom: 15px;
+  }
+  .navbar {
+    border: 0;
+    margin-bottom: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    transition: all .3s;
+    padding: 15px 0;
+    &.navbar-fixed-top {
+      top: 40px;
+    }
+    &.is-scrolling {
+      background-image: linear-gradient(to bottom, #2a6175 0%, #4eb1d8 100%);
+      box-shadow: 0 2px 42px rgba(0, 0, 0, 0.1);
+      top: 0;
+      .block-logo {
+        img {
+          max-width: 200px;
+        }
+      }
+    }
+    .container {
+      position: relative;
+      padding: 0;
     }
     .region-header {
       display: flex;
@@ -212,127 +229,129 @@
       align-items: center;
       padding-left: 15px;
       padding-right: 15px;
-      .block-logo {
-        display: flex;
-        align-items: center;
-        a {
-          display: inline-block;
-        }
-        img {
-          max-width: 303px;
-        }
-      }
       .navbar-collapse {
         padding: 0;
       }
-      .block-main-menu {
-        ul.menu {
-          margin: 0;
-          padding: 0;
-          display: flex;
-          li {
-            list-style: none;
-            margin: 0 10px;
-            text-transform: uppercase;
-            &:last-child {
-              margin-right: 0;
+    }
+    .block-logo {
+      display: flex;
+      align-items: center;
+      a {
+        display: inline-block;
+      }
+      img {
+        max-width: 303px;
+        transition: all 0.3s;
+      }
+    }
+    .block-main-menu {
+      ul.menu {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        li {
+          list-style: none;
+          margin: 0 10px;
+          text-transform: uppercase;
+          &:last-child {
+            margin-right: 0;
+          }
+          a {
+            padding: 0;
+            color: #fff;
+            padding-bottom: 8px;
+            border-bottom: 2px solid transparent;
+            line-height: 30px;
+            font-size: 16px;
+            font-weight: 300;
+            transition: all 0.3s;
+            &:hover, &:active, &:focus, &.active {
+              background: none;
+              color: darken(#fff, 5%);
+              border-bottom-color: darken(#fff, 5%);
             }
+          }
+          &.menu-578, &.menu-933 {
             a {
-              padding: 0;
-              color: #fff;
-              padding-bottom: 8px;
-              border-bottom: 2px solid transparent;
-              line-height: 30px;
-              font-size: 16px;
-              font-weight: 300;
-              &:hover, &:active, &:focus, &.active {
-                background: none;
-                color: darken(#fff, 5%);
-                border-bottom-color: darken(#fff, 5%);
-              }
-            }
-            &.menu-578, &.menu-933 {
-              a {
-                padding-left: 40px;
-                &:before {
-                  font-family: 'autonaoperak' !important;
-                  content: "\e902";
-                  font-size: 30px;
-                  position: absolute;
-                  left: 0;
-                  top: 0;
-                }
-              }
-            }
-            &.menu-580, &.menu-934 {
-              a {
-                padding-right: 40px;
-                padding-left: 40px;
-                &:before {
-                  font-family: 'autonaoperak' !important;
-                  content: "\e909";
-                  font-size: 30px;
-                  position: absolute;
-                  left: 0;
-                  top: 0;
-                }
-                &:after {
-                  content: ''; // dynamically filled in template.php
-                  font-size: @font-size-small;
-                  line-height: 25px;
-                  color: #fff;
-                  position: absolute;
-                  right: 0;
-                  top: 2.5px;
-                  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
-                  background-color: #0d47a1;
-                  border-radius: 8px;
-                  padding: 0 5px;
-                  min-width: 34px;
-                  text-align: center;
-                }
-              }
-            }
-            &.menu-1058 {
-              a {
-                padding-right: 60px;
-                padding-left: 40px;
-                &:before {
-                  font-family: 'autonaoperak' !important;
-                  content: "\e909";
-                  font-size: 30px;
-                  position: absolute;
-                  left: 0;
-                  top: 0;
-                }
-                &:after {
-                  content: 'novinka';
-                  text-transform: none;
-                  font-size: @font-size-small;
-                  line-height: 25px;
-                  color: #fff;
-                  position: absolute;
-                  right: 0;
-                  top: 2.5px;
-                  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
-                  background-color: @brand-danger;
-                  border-radius: 8px;
-                  padding: 0 5px;
-                  min-width: 34px;
-                  text-align: center;
-                }
+              padding-left: 40px;
+              &:before {
+                font-family: 'autonaoperak' !important;
+                content: "\e902";
+                font-size: 30px;
+                position: absolute;
+                left: 0;
+                top: 0;
               }
             }
           }
-          @media(max-width: @screen-md-max) {
-            li {
-              a {
-                padding-left: 0!important;
-                padding-right: 0!important;
-                &:before,
-                &:after {
-                  display: none!important;
-                }
+          &.menu-580, &.menu-934 {
+            a {
+              padding-right: 40px;
+              padding-left: 40px;
+              &:before {
+                font-family: 'autonaoperak' !important;
+                content: "\e909";
+                font-size: 30px;
+                position: absolute;
+                left: 0;
+                top: 0;
+              }
+              &:after {
+                content: ''; // dynamically filled in template.php
+                font-size: @font-size-small;
+                line-height: 25px;
+                color: #fff;
+                position: absolute;
+                right: 0;
+                top: 2.5px;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+                background-color: #0d47a1;
+                border-radius: 8px;
+                padding: 0 5px;
+                min-width: 34px;
+                text-align: center;
+              }
+            }
+          }
+          &.menu-1058 {
+            a {
+              padding-right: 60px;
+              padding-left: 40px;
+              &:before {
+                font-family: 'autonaoperak' !important;
+                content: "\e909";
+                font-size: 30px;
+                position: absolute;
+                left: 0;
+                top: 0;
+              }
+              &:after {
+                content: 'novinka';
+                text-transform: none;
+                font-size: @font-size-small;
+                line-height: 25px;
+                color: #fff;
+                position: absolute;
+                right: 0;
+                top: 2.5px;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+                background-color: @brand-danger;
+                border-radius: 8px;
+                padding: 0 5px;
+                min-width: 34px;
+                text-align: center;
+              }
+            }
+          }
+        }
+        @media(max-width: @screen-md-max) {
+          li {
+            a {
+              padding-left: 0!important;
+              padding-right: 0!important;
+              &:before,
+              &:after {
+                display: none!important;
               }
             }
           }

@@ -3,6 +3,17 @@
   Drupal.behaviors.autonaoperak = {
     attach: function (context, settings) {
 
+      // Navbar scroll effect
+      $(window).on('scroll load', function(event) {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 10) {
+            $(".navbar-default").addClass("is-scrolling");
+        } else {
+            $(".navbar-default").removeClass("is-scrolling");
+        }
+      });
+
       // add class external to external links
       $('a').filter(function() {
          return this.hostname && this.hostname !== location.hostname;

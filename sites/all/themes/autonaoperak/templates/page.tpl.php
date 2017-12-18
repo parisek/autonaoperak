@@ -73,7 +73,7 @@
  * @ingroup themeable
  */
 ?>
-<header id="navbar" role="banner" class="navbar navbar-default">
+<header role="banner" class="header">
   <?php if (!empty($page['topbar'])): ?>
   <div class="topbar">
     <div class="container">
@@ -81,7 +81,7 @@
     </div>
   </div>
   <?php endif; ?>
-  <div class="logobar">
+  <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="region-header">
         <div class="block-logo">
@@ -110,7 +110,7 @@
         <?php endif; ?>
       </div>
     </div>
-  </div>
+  </nav>
 </header>
 <div class="page-wrapper">
 <?php if (!empty($page['content_above'])): ?>
