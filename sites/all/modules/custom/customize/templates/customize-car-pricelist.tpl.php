@@ -29,7 +29,7 @@
           <?php foreach($item['deposit'] as $deposit): ?>
             <tr class="deposit">
               <?php if($data['car_type'] == 'used'): ?>
-                <td class="name"><?php print t('Monthly installment with service'); ?> <?php print $deposit['name']; ?></td>
+                <td class="name"><?php print t('Monthly installment with service'); ?></td>
               <?php else: ?>
                 <td class="name"><?php print t('Monthly installment with down payment'); ?> <?php print $deposit['name']; ?></td>
               <?php endif; ?>
@@ -66,7 +66,7 @@
         <?php if(!empty($item['deposit'])): ?>
           <div class="item item-deposit">
             <?php if($data['car_type'] == 'used'): ?>
-              <div class="item-label"><?php print t('Monthly installment with service'); ?> <?php print $item['deposit']; ?>:</div>
+              <div class="item-label"><?php print t('Monthly installment with service'); ?>:</div>
             <?php else: ?>
               <div class="item-label"><?php print t('Monthly installment with down payment'); ?> <?php print $item['deposit']; ?>:</div>
             <?php endif; ?>

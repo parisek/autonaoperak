@@ -373,7 +373,7 @@ function customize_car_pricelist_render($field, $title = NULL) {
     $data['pricelist'] = $pricelist;
     $data['pricelist_type'] = $wrapper->field_car_pricelist_type->value();
     $data['pricelist_mobile'] = $pricelist_mobile;
-    $data['car_type'] = $wrapper->field_car_type->raw();
+    $data['car_type'] = $wrapper->field_car_type->value();
     $data['service_included'] = $wrapper->field_car_included->value()['safe_value'];
     $data['service_excluded'] = $wrapper->field_car_excluded->value()['safe_value'];
 
@@ -404,6 +404,7 @@ function customize_car_related_render($field, $title = NULL) {
     $data = [];
     $type = $wrapper->field_car_type->value();
     $brand_tid = $wrapper->field_car_brand->raw();
+    $car_type = '';
     if($type == 'catalog') {
       $car_type = 'stock';
       $data['title'] = t('Cars immediately available');
