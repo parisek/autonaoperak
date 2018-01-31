@@ -162,7 +162,7 @@ function _custom_export_generate($type) {
     $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', array('car'))
     ->propertyCondition('status', NODE_PUBLISHED)
-    ->propertyCondition('status', $language->language)
+    ->propertyCondition('language', $language->language)
     ->fieldCondition('field_car_type', 'value', $type)
     ->propertyOrderBy('created', 'DESC');
     $result = $query->execute();

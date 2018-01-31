@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <CARS>
+    <ITEM>
+      <ITEM_ID>5894</ITEM_ID><!-- (int) - NEPOVINNÉ - interní id položky - pokud je poskytnuto slouží pro zjednodušení aktualizace nabídek -->
+      <NAME>Mercedes-Benz Třída A</NAME><!-- (string) - POVINNÉ - celý název modelu -->
+      <MANUFACTURER>Mercedes-Benz</MANUFACTURER><!-- (string) - POVINNÉ - tovární značka -->
+      <CLASS>A</CLASS><!-- (string) - POVINNÉ - název třídy vozu (např.: Superb, Octavia...) -->
+      <EQUIPMENT><![CDATA[Posilovač řízení, klimatizace, GPS navigace]]></EQUIPMENT><!-- (string) - NEPOVINNÉ - výbava - nepovinné - může obsahovat html značky  -->
+      <COLORS><!--  NEPOVINNÉ - dostupné barvy modelu -->
+        <COLOR>
+          <ID>5</ID><!-- (int) interní id barvy -->
+          <NAME>Červená</NAME><!-- (int) název barvy (např. perleťová bílá) -->
+          <KIND>stand</KIND><!-- (string) typ bavy - nabývá hodnot "stand" (standardní) nebo "metal" (metalíza) -->
+        </COLOR>
+        <COLOR><!-- ..... --></COLOR>
+      </COLORS>
+      <IMAGES>
+        <IMG>http://www.dealer.cz/img.jpg</IMG><!-- (string) - POVINNÉ - celá url obrázku - první obrázek je použit jako hlavní obrázek nabídky -->
+        <IMG><!-- ..... --></IMG>
+      </IMAGES>
+      <MODELS>
+        <MODEL>
+          <TAX_PAYER>0</TAX_PAYER><!-- (bool) - NEPOVINNÉ - nabídka pro plátce - pokud je true je nabídka pouze pro plátce daně, pokud je false je i pro fyzické osoby -->
+          <ENGINE>160 d</ENGINE><!-- (string) - NEPOVINNÉ - označení motorizace-->
+          <FUEL>nafta</FUEL><!-- (string) - POVINNÉ - palivo, možné hodnoty (nafta/benzin/elektro/hybrid/cng/lpg) -->
+          <VOL>1996</VOL><!-- (int) - NEPOVINNÉ - objem ccm  -->
+          <AWD>1</AWD><!-- (bool) - NEPOVINNÉ - pohon 4X4  -->
+          <POWER>66</POWER><!-- (int) - NEPOVINNÉ - výkon(kW)) -->
+          <BODY>liftback</BODY><!-- (string) - NEPOVINNÉ - karoserie  -->
+          <CAR_CLASS>malé vozy</CAR_CLASS><!-- (string) - NEPOVINNÉ - třída -->
+          <TRANSMISSION>man</TRANSMISSION><!-- (string) - POVINNÉ - převodovka, možné hodnoty (man/aut) -->
+          <COLOR>metal</COLOR><!-- (string) - NEPOVINNÉ - typ barvy, nabývá hodnot "stand" (standardní) nebo "metal" (metalíza) -->
+          <MONTHS>12</MONTHS><!-- (int) - POVINNÉ - délka leasingu -->
+          <PER_YEAR>20000</PER_YEAR><!-- (int) - POVINNÉ - počet km/rok -->
+          <FREE_PER_YEAR>3000</FREE_PER_YEAR><!-- (int) - NEPOVINNÉ - volná hranice km/rok -->
+          <PNEU>0</PNEU><!-- (bool) - NEPOVINNÉ - v ceně zahrnut pneuservis -->
+          <INSURANCE>1</INSURANCE><!-- (bool) - NEPOVINNÉ - v ceně zahrnuto pojištění vozu -->
+          <STAMP>1</STAMP><!-- (bool) - NEPOVINNÉ - v ceně zahrnuta dálniční známka -->
+          <RADIO>1</RADIO><!-- (bool) - NEPOVINNÉ - v ceně zahrnuty poplatky za rádio -->
+          <SERVICE>1</SERVICE><!-- (bool) - NEPOVINNÉ - v ceně zahrnut servis vozu -->
+          <ROAD_TAX>1</ROAD_TAX><!-- (bool) - NEPOVINNÉ - v ceně zahrnuta silniční daň -->
+          <LEASING_PARTNER>Unicredit Fleet Management</LEASING_PARTNER><!-- (string) - POVINNÉ - Název poskytovatele leasingu -->
+          <PROMO>0</PROMO><!-- (bool) - NEPOVINNÉ - Akční nabádka -->
+          <PRICE>1000.00</PRICE><!-- (decimal) - POVINNÉ - koncová sena bez DPH -->
+          <PRICE_VAT>1210.00</PRICE_VAT><!-- (decimal) - POVINNÉ - koncová cena s DPH -->
+          <STORAGE>8</STORAGE><!-- (string) - NEPOVINNÉ - počet vozů skladem -->
+          <URL>http://www.dealer.cz/odkaznanabidku</URL><!-- (string) - POVINNÉ - URL detailu nabídky u dealera/partnera -->
+        </MODEL>
+        <MODEL>
+        <!-- popis druhé varianty nabídky... -->
+        </MODEL>
+      </MODELS>
+    </ITEM>
+    <ITEM>
+      <!-- popis druhé nabídky... -->
+    </ITEM>
+    <!-- ... -->
+  </CARS>
