@@ -1,10 +1,29 @@
 <h2><?php print t('Sample price of operating leases'); ?></h2>
 <p><?php print t('The final price will be calculated based on your requirements and adjustments.'); ?></p>
 <?php if(count($data['pricelist'])): ?>
+  <?php if(count($data['pricelist']) > 1): ?>
+    <form class="pricelist-select">
+      <div class="form-group">
+        <label for="raid"><?php print t('Annual raid'); ?></label>
+        <div class="select-background">
+        <select class="form-control" id="raid">
+          <?php $first = TRUE; ?>
+          <?php foreach($data['pricelist'] as $key => $item): ?>
+            <option value="<?php print $key; ?>" <?php print ($first) ? 'selected="selected"' : '' ?>><?php print $item['name']; ?></option>
+            <?php $first = FALSE; ?>
+          <?php endforeach; ?>
+        </select>
+        </div>
+      </div>
+    </form>
+  <?php endif; ?>
   <div class="pricelist hidden-xs hidden-sm">
-    <?php foreach($data['pricelist'] as $item): ?>
-      <div class="pricelist-item">
+    <?php $first = TRUE; ?>
+    <?php foreach($data['pricelist'] as $key => $item): ?>
+      <?php if(count($data['pricelist']) == 1): ?>
         <h3><?php print t('Annual raid'); ?>: <?php print $item['name']; ?></h3>
+      <?php endif; ?>
+      <div class="pricelist-item pricelist-item-<?php print $key; ?> <?php print ($first) ? 'show' : 'hide' ?>">
         <?php if($data['pricelist_type'] == 'company'): ?>
         <div class="alert alert-danger"><?php print t('This pricelist is only for companies'); ?></div>
         <?php endif; ?>
@@ -42,18 +61,20 @@
         </table>
         <p><small><?php print t('Prices are without VAT.'); ?></small></p>
       </div>
+      <?php $first = FALSE; ?>
     <?php endforeach; ?>
   </div>
   <div class="pricelist-mobile visible-xs visible-sm">
-    <?php foreach($data['pricelist_mobile'] as $item): ?>
-      <div class="pricelist-item">
+    <?php $first = TRUE; ?>
+    <?php foreach($data['pricelist_mobile'] as $key => $group): ?>
+      <?php if(count($data['pricelist_mobile']) == 1): ?>
+        <h3><?php print t('Annual raid'); ?>: <?php print $group[0]['km_label']; ?></h3>
+      <?php endif; ?>
+      <?php foreach($group as $item): ?>
+      <div class="pricelist-item pricelist-item-<?php print $item['km']; ?> <?php print ($first) ? 'show' : 'hide' ?>">
         <div class="item item-year">
           <div class="item-label"><?php print t('Total operating lease period'); ?>:</div>
           <div class="item-value"><strong><?php print $item['year']; ?></strong></div>
-        </div>
-        <div class="item item-km">
-          <div class="item-label"><?php print t('Annual raid'); ?>:</div>
-          <div class="item-value"><?php print $item['km']; ?></div>
         </div>
         <div class="item item-price">
           <?php if($data['car_type'] == 'used'): ?>
@@ -74,6 +95,8 @@
           </div>
         <?php endif; ?>
       </div>
+      <?php endforeach; ?>
+      <?php $first = FALSE; ?>
     <?php endforeach; ?>
     <p><small><?php print t('Prices are without VAT.'); ?></small></p>
   </div>

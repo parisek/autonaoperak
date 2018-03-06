@@ -166,6 +166,13 @@
         countup.start();
       }
 
+      // Pricelist selector
+      $( 'select#raid' ).on( 'change', function() {
+        var raid = $( this ).val();
+        $( '.pricelist .pricelist-item, .pricelist-mobile .pricelist-item' ).addClass('hide').removeClass('show');
+        $( '.pricelist .pricelist-item-' + raid + ', .pricelist-mobile .pricelist-item-' + raid ).addClass('show').removeClass('hide');
+      });
+
     }
   };
 

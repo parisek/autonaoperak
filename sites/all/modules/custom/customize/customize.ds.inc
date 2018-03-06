@@ -335,8 +335,9 @@ function customize_car_pricelist_render($field, $title = NULL) {
         $price = number_format($item_wrapper->field_pricelist_price->value(), 0, ',', '&nbsp;') . '&nbsp;' . $currency_symbol;
         $price2 = number_format($item_wrapper->field_pricelist_price2->value(), 0, ',', '&nbsp;') . '&nbsp;' . $currency_symbol;
 
-        $pricelist_mobile[] = [
-          'km' => $km_label,
+        $pricelist_mobile[$km][] = [
+          'km' => $km,
+          'km_label' => $km_label,
           'year' => $year_label,
           'deposit' => $deposit_formatted,
           'price' => $price,
