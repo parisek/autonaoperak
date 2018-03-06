@@ -12,9 +12,9 @@ dependencies[] = mailsystem (>=2.x)
 ; For the tests the Maillog module is also required.
 test_dependencies[] = maillog
 
-; Information added by Drupal.org packaging script on 2017-03-18
-version = "7.x-1.1+21-dev"
+; Information added by Drupal.org packaging script on 2017-12-11
+version = "7.x-1.2"
 core = "7.x"
 project = "sendgrid_integration"
-datestamp = "1489805887"
+datestamp = "1512958988"
 
