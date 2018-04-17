@@ -1,0 +1,25 @@
+name = Taxonomy term depth
+description = Provides field for storing taxonomy depth value and some wrappers integration with modules
+core = 7.x
+package = Taxonomy
+
+; Autoload
+
+; Views autoload
+
+; Drush
+
+; Dependencies
+dependencies[] = taxonomy
+dependencies[] = entity
+
+files[] = includes/taxonomy_term_depth_handler_field_taxonomy.inc
+files[] = includes/taxonomy_term_depth_handler_filter_has_children.inc
+files[] = taxonomy_term_depth.test
+
+; Information added by Drupal.org packaging script on 2018-03-22
+version = "7.x-1.4"
+core = "7.x"
+project = "taxonomy_term_depth"
+datestamp = "1521746284"
+
