@@ -324,7 +324,7 @@ function customize_car_pricelist_render($field, $title = NULL) {
          !empty($item_wrapper->field_pricelist_price->value())
         ) {
         $km = $item_wrapper->field_pricelist_km->value();
-        $km_label = $item_wrapper->field_pricelist_km->label();
+        $km_label = number_format($item_wrapper->field_pricelist_km->value(), 0, ',', ' ') . '&nbsp;km';
         $year = $item_wrapper->field_pricelist_year->value();
         $year_label = $item_wrapper->field_pricelist_year->label();
         $deposit = $item_wrapper->field_pricelist_deposit->value();
