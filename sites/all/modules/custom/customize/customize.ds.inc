@@ -8,9 +8,17 @@ function customize_car_title_render($field, $title = NULL) {
     $node = $field['entity'];
     $wrapper = entity_metadata_wrapper('node', $field['entity']);
 
+    $currency_symbol = 'Kč';
+    if($wrapper->language->value() == 'sk') {
+      $currency_symbol = '€';
+    }
+
     $content .= '<h1 class="page-header">' . $wrapper->label() . '</h1>';
     if(!empty($wrapper->field_car_anotation->value())) {
       $content .= '<div class="subtitle">' . $wrapper->field_car_anotation->value() . '</div>';
+    }
+    if(!empty($wrapper->field_price_from->value())) {
+      $content .= '<div class="price">' . t('From') . ' <span class="value">' . number_format($wrapper->field_price_from->value(), 0, ',', ' ') . '&nbsp;' . $currency_symbol . '</span> / ' . t('month') . '</div>';
     }
 
   }catch (EntityMetadataWrapperException $exc) {
@@ -92,12 +100,23 @@ function customize_car_gallery_render($field, $title = NULL) {
     if($imageCount) {
       $content .= '<div class="photoswipe-gallery">';
       // main image
+      $content .= '<div class="product-image-full-container">';
       foreach ($images as $key => $image) {
-        $content .= '<div class="product-image-full-container">';
         $content .= $image['image'];
-        $content .= '</div>';
         break;
       }
+      if($wrapper->field_car_sticker->value() || $wrapper->field_car_stock->value() > 0) {
+        $content .= '<ul class="stickers">';
+        if($wrapper->field_car_sticker->value()) {
+          $content .= '<li class="sticker sticker-' . $wrapper->field_car_sticker->raw() . '">' . $wrapper->field_car_sticker->label() . '</li>';
+        }
+        if($wrapper->field_car_stock->value() > 0) {
+          $content .= '<li class="sticker sticker-stock">' . t('In stock') . '</li>';
+        }
+        $content .= '</ul>';
+      }
+      $content .= '</div>';
+
       // small images
       if($imageCount > 1) {
         $content .= '<div class="product-image-small-container">';

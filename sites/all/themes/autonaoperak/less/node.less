@@ -5,6 +5,34 @@
   }
 }
 .node-car {
+  .stickers {
+    margin: 0;
+    padding: 0;
+    .sticker {
+      display: inline-block;
+      font-size: @font-size-small;
+      line-height: @line-height-computed;
+      padding: 5px 10px;
+      margin: 0 0 5px 0;
+      color: #fff;
+      border-radius: @border-radius-base;
+      list-style: none;
+      float: left;
+      clear: left;
+      &.sticker-new {
+        background-color: #fdc300;
+      }
+      &.sticker-stock {
+        background-color: #11b8e1;
+      }
+      &.sticker-preorder {
+        background-color: #ba68c8;
+      }
+      &.sticker-reservation {
+        background-color: @brand-danger;
+      }
+    }
+  }
   &.node-teaser {
     border: 1px solid transparent;
     transition: all 0.6s;
@@ -20,43 +48,18 @@
         text-decoration: none;
       }
     }
+    .stickers {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+    }
     .field-customize-car-teaser {
       transition: all 0.6s;
     }
     .image {
       position: relative;
       margin: 0 0 @line-height-computed/2 0;
-      .stickers {
-        position: absolute;
-        top: 0;
-        left: 0;
-        margin: 0;
-        padding: 0;
-        .sticker {
-          display: inline-block;
-          font-size: @font-size-small;
-          line-height: @line-height-computed;
-          padding: 5px 10px;
-          margin: 0 0 5px 0;
-          color: #fff;
-          border-radius: @border-radius-base;
-          list-style: none;
-          float: left;
-          clear: left;
-          &.sticker-new {
-            background-color: #fdc300;
-          }
-          &.sticker-stock {
-            background-color: #11b8e1;
-          }
-          &.sticker-preorder {
-            background-color: #ba68c8;
-          }
-          &.sticker-reservation {
-            background-color: @brand-danger;
-          }
-        }
-      }
+
     }
     h2 {
       margin: 0 0 5px 0;
@@ -141,6 +144,7 @@
       }
       .product-image-full-container {
         margin-bottom: @line-height-computed/4;
+        position: relative;
         a {
           position: relative;
           &:after {
@@ -162,6 +166,21 @@
             &:after {
               color: @link-color;
             }
+          }
+        }
+        .stickers {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+        }
+        .price {
+          color: #009847;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          .value {
+            font-weight: bold;
+            font-size: 18px;
           }
         }
       }
@@ -196,11 +215,19 @@
       margin-bottom: @line-height-computed*2;
       h1.page-header {
         margin: 0;
+        font-size: 38px;
       }
       .subtitle {
         font-size: 30px;
         font-weight: bold;
         color: @brand-primary;
+      }
+      .price {
+        color: #009847;
+        .value {
+          font-weight: bold;
+          font-size: 18px;
+        }
       }
     }
     .field-customize-car-title-mobile {
@@ -474,6 +501,13 @@
       }
       .group-left {
         margin-bottom: @line-height-computed;
+      }
+      .field-customize-car-gallery {
+        .product-image-full-container {
+          .price {
+            display: none;
+          }
+        }
       }
       .field-customize-car-contact {
         padding: @line-height-computed;
