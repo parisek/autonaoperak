@@ -7,7 +7,7 @@
 		"uuidString": "5DC96726-7AB5-40B5-9D6D-577BDCB8E5A3"
 		}
 	],
-"creatorBuild": "26330",
+"creatorBuild": "26680",
 "files": {
 	"\/autonaoperak.info": {
 		"cB": 0,
@@ -129,6 +129,7 @@
 	"\/images\/bg-form.jpg": {
 		"ft": 16384,
 		"iS": 38669,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/images\/bg-form.jpg",
 		"oF": 0,
@@ -139,6 +140,7 @@
 	"\/images\/bg-testimonial.jpg": {
 		"ft": 16384,
 		"iS": 43572,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/images\/bg-testimonial.jpg",
 		"oF": 0,
@@ -239,6 +241,7 @@
 	"\/images\/open-graph-default.jpg": {
 		"ft": 16384,
 		"iS": 329282,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/images\/open-graph-default.jpg",
 		"oF": 0,
@@ -249,6 +252,7 @@
 	"\/images\/rocni-vozy.jpg": {
 		"ft": 16384,
 		"iS": 27469,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/images\/rocni-vozy.jpg",
 		"oF": 0,
@@ -259,6 +263,7 @@
 	"\/images\/sample\/reference-autor.jpg": {
 		"ft": 16384,
 		"iS": 4752,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/images\/sample\/reference-autor.jpg",
 		"oF": 0,
@@ -3167,6 +3172,7 @@
 	"\/plugins\/bootstrap\/docs\/assets\/img\/expo-lyft.jpg": {
 		"ft": 16384,
 		"iS": 159273,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/plugins\/bootstrap\/docs\/assets\/img\/expo-lyft.jpg",
 		"oF": 0,
@@ -3177,6 +3183,7 @@
 	"\/plugins\/bootstrap\/docs\/assets\/img\/expo-newsweek.jpg": {
 		"ft": 16384,
 		"iS": 201647,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/plugins\/bootstrap\/docs\/assets\/img\/expo-newsweek.jpg",
 		"oF": 0,
@@ -3187,6 +3194,7 @@
 	"\/plugins\/bootstrap\/docs\/assets\/img\/expo-riot.jpg": {
 		"ft": 16384,
 		"iS": 161715,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/plugins\/bootstrap\/docs\/assets\/img\/expo-riot.jpg",
 		"oF": 0,
@@ -3197,6 +3205,7 @@
 	"\/plugins\/bootstrap\/docs\/assets\/img\/expo-vogue.jpg": {
 		"ft": 16384,
 		"iS": 198624,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/plugins\/bootstrap\/docs\/assets\/img\/expo-vogue.jpg",
 		"oF": 0,
@@ -3793,6 +3802,7 @@
 	"\/plugins\/bootstrap\/docs\/examples\/screenshots\/blog.jpg": {
 		"ft": 16384,
 		"iS": 122280,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/screenshots\/blog.jpg",
 		"oF": 0,
@@ -3803,6 +3813,7 @@
 	"\/plugins\/bootstrap\/docs\/examples\/screenshots\/carousel.jpg": {
 		"ft": 16384,
 		"iS": 82270,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/screenshots\/carousel.jpg",
 		"oF": 0,
@@ -3813,6 +3824,7 @@
 	"\/plugins\/bootstrap\/docs\/examples\/screenshots\/cover.jpg": {
 		"ft": 16384,
 		"iS": 36580,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/screenshots\/cover.jpg",
 		"oF": 0,
@@ -3823,6 +3835,7 @@
 	"\/plugins\/bootstrap\/docs\/examples\/screenshots\/dashboard.jpg": {
 		"ft": 16384,
 		"iS": 105325,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/screenshots\/dashboard.jpg",
 		"oF": 0,
@@ -3833,6 +3846,7 @@
 	"\/plugins\/bootstrap\/docs\/examples\/screenshots\/equal-height-columns.jpg": {
 		"ft": 16384,
 		"iS": 129265,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/screenshots\/equal-height-columns.jpg",
 		"oF": 0,
@@ -3843,6 +3857,7 @@
 	"\/plugins\/bootstrap\/docs\/examples\/screenshots\/grid.jpg": {
 		"ft": 16384,
 		"iS": 99951,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/screenshots\/grid.jpg",
 		"oF": 0,
@@ -3853,6 +3868,7 @@
 	"\/plugins\/bootstrap\/docs\/examples\/screenshots\/jumbotron-narrow.jpg": {
 		"ft": 16384,
 		"iS": 68573,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/screenshots\/jumbotron-narrow.jpg",
 		"oF": 0,
@@ -3863,6 +3879,7 @@
 	"\/plugins\/bootstrap\/docs\/examples\/screenshots\/jumbotron.jpg": {
 		"ft": 16384,
 		"iS": 101076,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/screenshots\/jumbotron.jpg",
 		"oF": 0,
@@ -3873,6 +3890,7 @@
 	"\/plugins\/bootstrap\/docs\/examples\/screenshots\/justified-nav.jpg": {
 		"ft": 16384,
 		"iS": 79037,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/screenshots\/justified-nav.jpg",
 		"oF": 0,
@@ -3883,6 +3901,7 @@
 	"\/plugins\/bootstrap\/docs\/examples\/screenshots\/navbar-fixed.jpg": {
 		"ft": 16384,
 		"iS": 37932,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/screenshots\/navbar-fixed.jpg",
 		"oF": 0,
@@ -3893,6 +3912,7 @@
 	"\/plugins\/bootstrap\/docs\/examples\/screenshots\/navbar-static.jpg": {
 		"ft": 16384,
 		"iS": 39654,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/screenshots\/navbar-static.jpg",
 		"oF": 0,
@@ -3903,6 +3923,7 @@
 	"\/plugins\/bootstrap\/docs\/examples\/screenshots\/navbar.jpg": {
 		"ft": 16384,
 		"iS": 40956,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/screenshots\/navbar.jpg",
 		"oF": 0,
@@ -3913,6 +3934,7 @@
 	"\/plugins\/bootstrap\/docs\/examples\/screenshots\/non-responsive.jpg": {
 		"ft": 16384,
 		"iS": 61060,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/screenshots\/non-responsive.jpg",
 		"oF": 0,
@@ -3923,6 +3945,7 @@
 	"\/plugins\/bootstrap\/docs\/examples\/screenshots\/offcanvas.jpg": {
 		"ft": 16384,
 		"iS": 112527,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/screenshots\/offcanvas.jpg",
 		"oF": 0,
@@ -3933,6 +3956,7 @@
 	"\/plugins\/bootstrap\/docs\/examples\/screenshots\/sign-in.jpg": {
 		"ft": 16384,
 		"iS": 13596,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/screenshots\/sign-in.jpg",
 		"oF": 0,
@@ -3943,6 +3967,7 @@
 	"\/plugins\/bootstrap\/docs\/examples\/screenshots\/starter-template.jpg": {
 		"ft": 16384,
 		"iS": 22571,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/screenshots\/starter-template.jpg",
 		"oF": 0,
@@ -3953,6 +3978,7 @@
 	"\/plugins\/bootstrap\/docs\/examples\/screenshots\/sticky-footer-navbar.jpg": {
 		"ft": 16384,
 		"iS": 39249,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/screenshots\/sticky-footer-navbar.jpg",
 		"oF": 0,
@@ -3963,6 +3989,7 @@
 	"\/plugins\/bootstrap\/docs\/examples\/screenshots\/sticky-footer.jpg": {
 		"ft": 16384,
 		"iS": 25002,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/screenshots\/sticky-footer.jpg",
 		"oF": 0,
@@ -3973,6 +4000,7 @@
 	"\/plugins\/bootstrap\/docs\/examples\/screenshots\/theme.jpg": {
 		"ft": 16384,
 		"iS": 85405,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/plugins\/bootstrap\/docs\/examples\/screenshots\/theme.jpg",
 		"oF": 0,
@@ -8094,7 +8122,8 @@
 	"creationDate": 503415778,
 	"displayValue": "autonaoperak",
 	"displayValueWasSetByUser": 1,
-	"iconImageName": "meme-greg"
+	"iconImageName": "\/plugins\/bootstrap\/docs\/apple-touch-icon.png",
+	"iconImageWasSetByUser": 0
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -9897,6 +9926,7 @@
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
+		"outputFormat": 0,
 		"quality": 100
 		},
 	"languageDefaultsJS": {
