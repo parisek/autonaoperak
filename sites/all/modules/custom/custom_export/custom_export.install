@@ -5,7 +5,6 @@
  */
 
 function custom_export_install() {
-  variable_set('custom_export_vat', 21);
   variable_set('custom_export_stock', 'stock.xml');
   variable_set('custom_export_catalog', 'catalog.xml');
 }

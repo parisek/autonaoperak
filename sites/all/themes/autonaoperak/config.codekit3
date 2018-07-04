@@ -379,22 +379,22 @@
 		"sC": 0,
 		"tS": 0
 		},
-	"\/js\/js.cookie.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 1,
-		"oAP": "\/js\/min\/js.cookie-min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 0
-		},
 	"\/js\/script.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
 		"oA": 1,
 		"oAP": "\/js\/min\/script-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/js\/vat.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/js\/min\/vat-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
@@ -647,6 +647,237 @@
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
+		},
+	"\/plugins\/accounting.js\/accounting.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/accounting.js\/min\/accounting-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/accounting.js\/accounting.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/accounting.js\/min\/accounting.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/accounting.js\/demo-resources\/js\/libs\/jquery.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/accounting.js\/demo-resources\/js\/libs\/min\/jquery.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/accounting.js\/demo-resources\/js\/prettify.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/accounting.js\/demo-resources\/js\/min\/prettify-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/accounting.js\/demo-resources\/style.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/plugins\/accounting.js\/demo-resources\/style-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/plugins\/accounting.js\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/accounting.js\/index.html",
+		"oF": 0
+		},
+	"\/plugins\/accounting.js\/license": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/accounting.js\/license",
+		"oF": 0
+		},
+	"\/plugins\/accounting.js\/package.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/plugins\/accounting.js\/package-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/plugins\/accounting.js\/readme.md": {
+		"cB": 0,
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 1,
+		"oAP": "\/plugins\/accounting.js\/readme.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
+	"\/plugins\/accounting.js\/tests\/jasmine\/core\/formatMoneySpec.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/accounting.js\/tests\/jasmine\/core\/min\/formatMoneySpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/accounting.js\/tests\/jasmine\/core\/formatNumberSpec.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/accounting.js\/tests\/jasmine\/core\/min\/formatNumberSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/accounting.js\/tests\/jasmine\/core\/unformatSpec.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/accounting.js\/tests\/jasmine\/core\/min\/unformatSpec-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/accounting.js\/tests\/jasmine\/lib\/jasmine\/jasmine-html.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/accounting.js\/tests\/jasmine\/lib\/jasmine\/min\/jasmine-html-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/accounting.js\/tests\/jasmine\/lib\/jasmine\/jasmine.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/plugins\/accounting.js\/tests\/jasmine\/lib\/jasmine\/jasmine-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/plugins\/accounting.js\/tests\/jasmine\/lib\/jasmine\/jasmine.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/accounting.js\/tests\/jasmine\/lib\/jasmine\/min\/jasmine-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/accounting.js\/tests\/jasmine\/lib\/jasmine\/MIT.LICENSE": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/accounting.js\/tests\/jasmine\/lib\/jasmine\/MIT.LICENSE",
+		"oF": 0
+		},
+	"\/plugins\/accounting.js\/tests\/jasmine\/runner.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/accounting.js\/tests\/jasmine\/runner.html",
+		"oF": 0
+		},
+	"\/plugins\/accounting.js\/tests\/qunit\/methods.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/accounting.js\/tests\/qunit\/min\/methods-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/accounting.js\/tests\/qunit\/speed.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/accounting.js\/tests\/qunit\/min\/speed-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/accounting.js\/tests\/qunit\/test.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/accounting.js\/tests\/qunit\/test.html",
+		"oF": 0
+		},
+	"\/plugins\/accounting.js\/tests\/qunit\/vendor\/jquery.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/accounting.js\/tests\/qunit\/vendor\/min\/jquery-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/accounting.js\/tests\/qunit\/vendor\/jslitmus.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/accounting.js\/tests\/qunit\/vendor\/min\/jslitmus-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/accounting.js\/tests\/qunit\/vendor\/qunit.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/plugins\/accounting.js\/tests\/qunit\/vendor\/qunit-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/plugins\/accounting.js\/tests\/qunit\/vendor\/qunit.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/accounting.js\/tests\/qunit\/vendor\/min\/qunit-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
 		},
 	"\/plugins\/animate.css\/.editorconfig": {
 		"cB": 0,
@@ -6343,6 +6574,281 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
+		},
+	"\/plugins\/js-cookie\/.gitignore": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/js-cookie\/.gitignore",
+		"oF": 0
+		},
+	"\/plugins\/js-cookie\/.jshintignore": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/js-cookie\/.jshintignore",
+		"oF": 0
+		},
+	"\/plugins\/js-cookie\/.jshintrc": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/js-cookie\/.jshintrc",
+		"oF": 0
+		},
+	"\/plugins\/js-cookie\/.tm_properties": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/js-cookie\/.tm_properties",
+		"oF": 0
+		},
+	"\/plugins\/js-cookie\/.travis.yml": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/js-cookie\/.travis.yml",
+		"oF": 0
+		},
+	"\/plugins\/js-cookie\/bower.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/plugins\/js-cookie\/bower-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/plugins\/js-cookie\/CONTRIBUTING.md": {
+		"cB": 0,
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 1,
+		"oAP": "\/plugins\/js-cookie\/CONTRIBUTING.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
+	"\/plugins\/js-cookie\/Gruntfile.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/js-cookie\/min\/Gruntfile-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/js-cookie\/LICENSE": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/js-cookie\/LICENSE",
+		"oF": 0
+		},
+	"\/plugins\/js-cookie\/package.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/plugins\/js-cookie\/package-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/plugins\/js-cookie\/README.md": {
+		"cB": 0,
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 1,
+		"oAP": "\/plugins\/js-cookie\/README.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
+	"\/plugins\/js-cookie\/SERVER_SIDE.md": {
+		"cB": 0,
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 1,
+		"oAP": "\/plugins\/js-cookie\/SERVER_SIDE.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
+	"\/plugins\/js-cookie\/src\/.jshintrc": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/js-cookie\/src\/.jshintrc",
+		"oF": 0
+		},
+	"\/plugins\/js-cookie\/src\/js.cookie.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/js-cookie\/src\/min\/js.cookie-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/js-cookie\/test\/.jshintrc": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/js-cookie\/test\/.jshintrc",
+		"oF": 0
+		},
+	"\/plugins\/js-cookie\/test\/amd-config.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/js-cookie\/test\/min\/amd-config-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/js-cookie\/test\/amd.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/js-cookie\/test\/amd.html",
+		"oF": 0
+		},
+	"\/plugins\/js-cookie\/test\/amd.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/js-cookie\/test\/min\/amd-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/js-cookie\/test\/encoding.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/js-cookie\/test\/encoding.html",
+		"oF": 0
+		},
+	"\/plugins\/js-cookie\/test\/encoding.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/js-cookie\/test\/min\/encoding-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/js-cookie\/test\/environment-with-amd-and-umd.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/js-cookie\/test\/environment-with-amd-and-umd.html",
+		"oF": 0
+		},
+	"\/plugins\/js-cookie\/test\/environment-with-amd-and-umd.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/js-cookie\/test\/min\/environment-with-amd-and-umd-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/js-cookie\/test\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/js-cookie\/test\/index.html",
+		"oF": 0
+		},
+	"\/plugins\/js-cookie\/test\/malformed_cookie.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/js-cookie\/test\/malformed_cookie.html",
+		"oF": 0
+		},
+	"\/plugins\/js-cookie\/test\/missing_semicolon.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/js-cookie\/test\/missing_semicolon.html",
+		"oF": 0
+		},
+	"\/plugins\/js-cookie\/test\/node.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/js-cookie\/test\/min\/node-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/js-cookie\/test\/polyfill.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/js-cookie\/test\/min\/polyfill-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/js-cookie\/test\/tests.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/js-cookie\/test\/min\/tests-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/js-cookie\/test\/utils.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/plugins\/js-cookie\/test\/min\/utils-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/plugins\/js-cookie\/travis.sh": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/plugins\/js-cookie\/travis.sh",
+		"oF": 0
 		},
 	"\/plugins\/owlcarousel\/.gitattributes": {
 		"cB": 0,

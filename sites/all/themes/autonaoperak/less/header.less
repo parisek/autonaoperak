@@ -121,6 +121,15 @@
         }
       }
     }
+    .block-header-vat {
+      .title {
+        color: #fff;
+      }
+      label {
+        color: #fff;
+        font-weight: normal;
+      }
+    }
   }
 }
 
@@ -233,6 +242,10 @@
         padding: 0;
       }
     }
+    .region-navigation {
+      display: flex;
+      flex-wrap: wrap;
+    }
     .block-logo {
       display: flex;
       align-items: center;
@@ -245,6 +258,8 @@
       }
     }
     .block-main-menu {
+      display: flex;
+      align-items: center;
       ul.menu {
         margin: 0;
         padding: 0;
@@ -356,6 +371,21 @@
             }
           }
         }
+      }
+    }
+    .block-header-vat {
+      margin-left: @line-height-computed*2;
+      text-align: center;
+      .title {
+        line-height: 30px;
+        font-weight: 300;
+        color: #fff;
+        text-transform: uppercase;
+      }
+      label {
+        font-weight: 300;
+        font-size: @font-size-small;
+        color: #fff;
       }
     }
   }

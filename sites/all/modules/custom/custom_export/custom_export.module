@@ -147,7 +147,12 @@ function _custom_export_generate($type) {
 
   global $language;
 
-  $vat = variable_get('custom_export_vat', 21);
+  $vat = 0;
+  if($language->language == 'sk') {
+    $vat = variable_get('customize_vat_sk', 20);
+  }elseif($language->language == 'cs') {
+    $vat = variable_get('customize_vat_cs', 21);
+  }
 
   $content = '';
 
@@ -237,7 +242,7 @@ function _custom_export_generate($type) {
             'road_tax' => ($wrapper->field_car_roadtax->raw()) ? 1 : 0,
             'leasing_partner' => 'Autonaoperak.cz',
             'price' => $pricelist_item['price'],
-            'price_vat' => $pricelist_item['price']*(1+$vat/100),
+            'price_vat' => round($pricelist_item['price']*(1+$vat/100)),
             'storage' => $wrapper->field_car_stock->raw(),
             'url' => url('node/' . $wrapper->getIdentifier(), array('absolute' => TRUE, 'query' => array('utm_source' => $manufacturer, 'utm_campaign' => 'naoperak.cz', 'utm_medium' => 'feed'))),
           ];

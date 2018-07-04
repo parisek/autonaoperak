@@ -8,9 +8,14 @@ function customize_car_title_render($field, $title = NULL) {
     $node = $field['entity'];
     $wrapper = entity_metadata_wrapper('node', $field['entity']);
 
-    $currency_symbol = 'Kč';
+    $currency_symbol = '';
+    $vat = 0;
     if($wrapper->language->value() == 'sk') {
       $currency_symbol = '€';
+      $vat = variable_get('customize_vat_sk', 20);
+    }elseif($wrapper->language->value() == 'cs') {
+      $currency_symbol = 'Kč';
+      $vat = variable_get('customize_vat_cs', 21);
     }
 
     $content .= '<h1 class="page-header">' . $wrapper->label() . '</h1>';
@@ -18,7 +23,9 @@ function customize_car_title_render($field, $title = NULL) {
       $content .= '<div class="subtitle">' . $wrapper->field_car_anotation->value() . '</div>';
     }
     if(!empty($wrapper->field_price_from->value())) {
-      $content .= '<div class="price">' . t('From') . ' <span class="value">' . number_format($wrapper->field_price_from->value(), 0, ',', ' ') . '&nbsp;' . $currency_symbol . '</span> / ' . t('month') . '</div>';
+      $price = $wrapper->field_price_from->value();
+      $price_vat = round($wrapper->field_price_from->value()*(1+$vat/100));
+      $content .= '<div class="price">' . t('From') . ' <span class="value"><span class="js-car-price" data-price="' . $price . '" data-price-vat="' . $price_vat . '" data-symbol="' . $currency_symbol . '">' . number_format($price, 0, ',', ' ') . '&nbsp;' . $currency_symbol . '</span></span> / ' . t('month') . '</div>';
     }
 
   }catch (EntityMetadataWrapperException $exc) {
@@ -217,9 +224,14 @@ function customize_car_teaser_render($field, $title = NULL) {
     $node = $field['entity'];
     $wrapper = entity_metadata_wrapper('node', $field['entity']);
 
-    $currency_symbol = 'Kč';
+    $currency_symbol = '';
+    $vat = 0;
     if($wrapper->language->value() == 'sk') {
       $currency_symbol = '€';
+      $vat = variable_get('customize_vat_sk', 20);
+    }elseif($wrapper->language->value() == 'cs') {
+      $currency_symbol = 'Kč';
+      $vat = variable_get('customize_vat_cs', 21);
     }
 
     // get first image
@@ -256,7 +268,9 @@ function customize_car_teaser_render($field, $title = NULL) {
     }
 
     if(!empty($wrapper->field_price_from->value())) {
-      $content .= '<div class="price">' . t('From') . ' <span class="value">' . number_format($wrapper->field_price_from->value(), 0, ',', ' ') . '&nbsp;' . $currency_symbol . '</span> / ' . t('month') . '</div>';
+      $price = $wrapper->field_price_from->value();
+      $price_vat = round($wrapper->field_price_from->value()*(1+$vat/100));
+      $content .= '<div class="price">' . t('From') . ' <span class="value"><span class="js-car-price" data-price="' . $price . '" data-price-vat="' . $price_vat . '" data-symbol="' . $currency_symbol . '">' . number_format($price, 0, ',', ' ') . '&nbsp;' . $currency_symbol . '</span></span> / ' . t('month') . '</div>';
     }
 
     $content .= '</a>';
@@ -330,9 +344,14 @@ function customize_car_pricelist_render($field, $title = NULL) {
     $node = $field['entity'];
     $wrapper = entity_metadata_wrapper('node', $field['entity']);
 
-    $currency_symbol = 'Kč';
+    $currency_symbol = '';
+    $vat = 0;
     if($wrapper->language->value() == 'sk') {
       $currency_symbol = '€';
+      $vat = variable_get('customize_vat_sk', 20);
+    }elseif($wrapper->language->value() == 'cs') {
+      $currency_symbol = 'Kč';
+      $vat = variable_get('customize_vat_cs', 21);
     }
 
     $pricelist = [];
@@ -351,8 +370,10 @@ function customize_car_pricelist_render($field, $title = NULL) {
         if($deposit>0) {
           $deposit_formatted = number_format($deposit, 0, ',', '&nbsp;') . '&nbsp;' . $currency_symbol;
         }
-        $price = number_format($item_wrapper->field_pricelist_price->value(), 0, ',', '&nbsp;') . '&nbsp;' . $currency_symbol;
-        $price2 = number_format($item_wrapper->field_pricelist_price2->value(), 0, ',', '&nbsp;') . '&nbsp;' . $currency_symbol;
+        $price = $item_wrapper->field_pricelist_price->value();
+        $price_vat = round($item_wrapper->field_pricelist_price->value()*(1+$vat/100));
+        $price2 = $item_wrapper->field_pricelist_price2->value();
+        $price2_vat = round($item_wrapper->field_pricelist_price2->value()*(1+$vat/100));
 
         $pricelist_mobile[$km][] = [
           'km' => $km,
@@ -360,7 +381,11 @@ function customize_car_pricelist_render($field, $title = NULL) {
           'year' => $year_label,
           'deposit' => $deposit_formatted,
           'price' => $price,
+          'price_vat' => $price_vat,
           'price2' => $price2,
+          'price2_vat' => $price2_vat,
+          'currency_symbol' => $currency_symbol,
+          'vat' => $vat,
         ];
 
         if(!isset($pricelist[$km])) {
@@ -377,13 +402,23 @@ function customize_car_pricelist_render($field, $title = NULL) {
           'value' => $year_label,
         ];
         $pricelist[$km]['price'][$year] = [
-          'value' => $price,
+          'value' => [
+            'price' => $price,
+            'price_vat' => $price_vat,
+            'currency_symbol' => $currency_symbol,
+            'vat' => $vat,
+          ],
         ];
 
         // deposit is not required
         if(!empty($deposit)) {
           $pricelist[$km]['deposit'][$deposit]['items'][$year] = [
-            'value' => $price2,
+            'value' => [
+              'price' => $price2,
+              'price_vat' => $price2_vat,
+              'currency_symbol' => $currency_symbol,
+              'vat' => $vat,
+            ],
           ];
         }
       }
@@ -391,6 +426,7 @@ function customize_car_pricelist_render($field, $title = NULL) {
 
     $data = [];
     $data['pricelist'] = $pricelist;
+    $data['pricelist_vat'] = $vat;
     $data['pricelist_type'] = $wrapper->field_car_pricelist_type->value();
     $data['pricelist_mobile'] = $pricelist_mobile;
     $data['car_type'] = $wrapper->field_car_type->value();

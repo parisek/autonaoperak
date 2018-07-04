@@ -1,0 +1,24 @@
+<?php
+/**
+ * @file
+ * Installation file for customize.
+ */
+
+function customize_install() {
+  variable_set('customize_vat_sk', 20);
+  variable_set('customize_vat_cs', 21);
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function customize_uninstall() {
+  // Get global variable array
+  global $conf;
+  foreach (array_keys($conf) as $key) {
+    // Find variables that have the module prefix
+    if (strpos($key, 'customize_') === 0) {
+      variable_del($key);
+    }
+  }
+}

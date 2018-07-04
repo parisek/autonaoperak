@@ -49,8 +49,10 @@ scripts[] = 'plugins/owlcarousel/dist/owl.carousel.min.js'
 scripts[] = 'plugins/jquery-viewport-checker/dist/jquery.viewportchecker.min.js'
 scripts[] = 'plugins/bootstrap-slider/dist/bootstrap-slider.min.js'
 scripts[] = 'plugins/countUp.js/dist/countUp.min.js'
-scripts[] = 'js/js.cookie.js'
+scripts[] = 'plugins/accounting.js/accounting.min.js'
+scripts[] = 'plugins/js-cookie/src/js.cookie.js'
 scripts[] = 'js/eucookie.js'
+scripts[] = 'js/vat.js'
 scripts[] = 'js/script.js'
 
 ; Disable BootstrapCDN so the compiled LESS source files can be used.

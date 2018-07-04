@@ -50,6 +50,9 @@ function customize_block_info() {
   $blocks['sidebar_contact'] = array(
     'info' => t('Customize: Contact form - sidebar')
   );
+  $blocks['vat'] = array(
+    'info' => t('Customize: VAT Switch')
+  );
   $blocks['responsive_switch'] = array(
     'info' => t('Customize: Responsive Switch')
   );
@@ -138,6 +141,9 @@ function customize_block_view($delta='') {
       break;
     case 'howto':
       $block['content'] = customize_howto_content();
+      break;
+    case 'vat':
+      $block['content'] = customize_vat_content();
       break;
     case 'responsive_switch':
       $block['content'] = customize_responsive_switch_content();
@@ -731,6 +737,23 @@ function customize_howto_content() {
   $content .= '</div>';
 
   return $content;
+}
+
+/**
+ * Callback for block Customize: VAT Switch.
+ */
+function customize_vat_content() {
+
+  $content = '';
+
+  $content .= '<div class="title">' . t('Show prices') . '</div>';
+  $content .= '<form>';
+  $content .= '<label class="radio-inline"><input type="radio" name="vat" value="0" checked="checked">' . t('without VAT') . '</label>';
+  $content .= '<label class="radio-inline"><input type="radio" name="vat" value="1">' . t('with VAT') . '</label>';
+  $content .= '</form>';
+
+  return $content;
+
 }
 
 /**
