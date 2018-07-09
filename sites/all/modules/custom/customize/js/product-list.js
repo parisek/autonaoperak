@@ -116,26 +116,37 @@
 
       // load price value from URL
       // useful when hitting back button
-      var price_from = parseInt($('.view-block-car-list #edit-field-price-from-value-min').val());
-      var price_to = parseInt($('.view-block-car-list #edit-field-price-from-value-max').val());
-      if(price_from>0 || price_to>0) {
-        $('.slider-from', $filter).text(number_format(price_from));
-        $('.slider-to', $filter).text(number_format(price_to));
-        $('input.input-slider', $filter).slider('setValue', [price_from, price_to]);
+      var fromDisplay = fromValue = parseInt($('.view-block-car-list #edit-field-price-from-value-min').val());
+      var toDisplay = toValue = parseInt($('.view-block-car-list #edit-field-price-from-value-max').val());
+      if(fromValue>0 || toValue>0) {
+        $('.slider-from', $filter).text(number_format(fromDisplay));
+        $('.slider-to', $filter).text(number_format(toDisplay));
+        $('input.input-slider', $filter).slider('setValue', [fromDisplay, toDisplay]);
       }
 
       // define outside of scope
       var submitTimeout = '';
 
       $('input.input-slider', $filter).on('slide', function(event) {
-        var from = event.value[0];
-        var to = event.value[1];
+        var fromDisplay = fromValue = event.value[0];
+        var toDisplay = toValue = event.value[1];
+        var vatIncluded = Cookies.get('vat_included');
+        if (typeof vatIncluded === 'undefined') {
+          vatIncluded = 'false';
+        }
+
+        // adjust for VAT
+        if(vatIncluded === 'true') {
+          fromValue = Math.round(fromValue/(1+vat/100));
+          toValue = Math.round(toValue/(1+vat/100));
+        }
+
         // show to user
-        $('.slider-from', $filter).text(number_format(from));
-        $('.slider-to', $filter).text(number_format(to));
+        $('.slider-from', $filter).text(number_format(fromDisplay));
+        $('.slider-to', $filter).text(number_format(toDisplay));
         // pass to view
-        $('.view-block-car-list #edit-field-price-from-value-min').val(from);
-        $('.view-block-car-list #edit-field-price-from-value-max').val(to);
+        $('.view-block-car-list #edit-field-price-from-value-min').val(fromValue);
+        $('.view-block-car-list #edit-field-price-from-value-max').val(toValue);
 
         // Reset timelimit
         clearTimeout(submitTimeout);
