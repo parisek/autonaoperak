@@ -11,6 +11,7 @@
       }
 
       var $filter = $('.category-list-form', context);
+      var vat = Drupal.settings.customize.vat;
 
       // if parameter passed from URL
       var fuel = $('.view-block-car-list #edit-field-car-fuel-value').val();
@@ -94,6 +95,9 @@
       });
       $(document).ajaxSuccess(function(){
          $('div.view', context).removeClass('view-refresh');
+         if($('div.view', context).length) {
+           $('.block-header-vat input[type="radio"]').trigger('change');
+         }
       });
 
       // toggle text for morelink button

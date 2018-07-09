@@ -499,6 +499,14 @@ function _customize_product_list($vocabulary) {
 
   global $language;
 
+  if($language->language == 'sk') {
+    $vat = variable_get('customize_vat_sk', 20);
+  }elseif($language->language == 'cs') {
+    $vat = variable_get('customize_vat_cs', 21);
+  }
+
+  drupal_add_js(['customize' => ['vat' => $vat]], 'setting');
+
   $content = '';
 
   try {

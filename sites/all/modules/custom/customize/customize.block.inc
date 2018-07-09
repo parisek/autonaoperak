@@ -748,8 +748,8 @@ function customize_vat_content() {
 
   $content .= '<div class="title">' . t('Show prices') . '</div>';
   $content .= '<form>';
-  $content .= '<label class="radio-inline"><input type="radio" name="vat" value="0" checked="checked">' . t('without VAT') . '</label>';
-  $content .= '<label class="radio-inline"><input type="radio" name="vat" value="1">' . t('with VAT') . '</label>';
+  $content .= '<label class="radio-inline"><input type="radio" name="vat" value="0" checked="checked" class="vat-excluded">' . t('without VAT') . '</label>';
+  $content .= '<label class="radio-inline"><input type="radio" name="vat" value="1" class="vat-included">' . t('with VAT') . '</label>';
   $content .= '</form>';
 
   return $content;
