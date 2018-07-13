@@ -296,12 +296,17 @@
         .form-group {
           display: flex;
           justify-content: space-between;
-          max-width: 250px;
+          max-width: 300px;
           label {
             display: flex;
             align-items: center;
             margin: 0;
           }
+        }
+        &.animated.pulse {
+          animation-name: animatePricelistSelect;
+          animation-duration: 1s;
+          animation-fill-mode: both;
         }
       }
       .pricelist {

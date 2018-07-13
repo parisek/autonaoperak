@@ -173,6 +173,14 @@
         $( '.pricelist .pricelist-item-' + raid + ', .pricelist-mobile .pricelist-item-' + raid ).addClass('show').removeClass('hide');
       });
 
+      $('.pricelist-select').on('inview', function(event, isInView) {
+        if (isInView) {
+          $('.pricelist-select').addClass('animated pulse');
+        }else{
+          $('.pricelist-select').removeClass('animated pulse');
+        }
+      });
+
     }
   };
 
