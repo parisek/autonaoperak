@@ -302,7 +302,7 @@ function customize_hp_offer_content() {
     $data['morelink'] = customize_get_translate_link('node/4', TRUE);
     $data['highlight'] = theme('customize_highlight', array('data' => array()));
 
-    if($carCount) {
+    if(count($cars)) {
       $content .= theme('customize_hp_offer', array('cars' => $cars, 'data' => $data));
     }
 
