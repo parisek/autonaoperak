@@ -77,6 +77,8 @@ function autonaoperak_preprocess_page(&$vars) {
     $vars['content_column_class_custom'] = 'col-xs-12 main-content';
   }
 
+  $vars['language'] = $language->language;
+
   // assign value to main menu
   $query = db_select('node', 'n');
   $query->join('field_data_field_car_type', 's', 'n.nid = %alias.entity_id');

@@ -86,7 +86,7 @@
       <div class="region-header">
         <div class="block-logo">
           <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-            <img src="<?php print $base_path . $directory; ?>/logo.svg" alt="<?php print t('Home'); ?>" class="img-responsive">
+            <img src="<?php print $base_path . $directory; ?>/logo-<?php print $language; ?>.svg" alt="<?php print t('Home'); ?>" class="img-responsive">
           </a>
           <?php if (!empty($page['navigation'])): ?>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"><?php print t('Menu'); ?></button>
@@ -96,7 +96,8 @@
           <div class="block-main-menu">
             <?php if($cars_stock): ?>
             <style type="text/css">
-              .block-main-menu ul.menu li.menu-580 a:after {
+              .block-main-menu ul.menu li.menu-580 a:after,
+              .block-main-menu ul.menu li.menu-934 a:after {
                 content: '<?php print $cars_stock; ?>'!important;
               }
             </style>
