@@ -52,9 +52,9 @@
           let price_vat = $this.data('price-vat');
           let symbol = $this.data('symbol');
           if(included === 'true') {
-            $this.text(accounting.formatMoney(price_vat, ' ' + symbol, 0, ' ', ',', '%v%s'));
+            $this.html(accounting.formatMoney(price_vat, '&nbsp;' + symbol, 0, '&nbsp;', ',', '%v%s'));
           }else{
-            $this.text(accounting.formatMoney(price, ' ' + symbol, 0, ' ', ',', '%v%s'));
+            $this.html(accounting.formatMoney(price, '&nbsp;' + symbol, 0, '&nbsp;', ',', '%v%s'));
           }
         });
 

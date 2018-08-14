@@ -370,9 +370,11 @@ function customize_car_pricelist_render($field, $title = NULL) {
         $year = $item_wrapper->field_pricelist_year->value();
         $year_label = $item_wrapper->field_pricelist_year->label();
         $deposit = $item_wrapper->field_pricelist_deposit->value();
-        $deposit_formatted = '';
+        $deposit_price = 0;
+        $deposit_price_vat = 0;
         if($deposit>0) {
-          $deposit_formatted = number_format($deposit, 0, ',', '&nbsp;') . '&nbsp;' . $currency_symbol;
+          $deposit_price = $deposit;
+          $deposit_price_vat = round($deposit*(1+$vat/100));
         }
         $price = $item_wrapper->field_pricelist_price->value();
         $price_vat = round($item_wrapper->field_pricelist_price->value()*(1+$vat/100));
@@ -383,7 +385,8 @@ function customize_car_pricelist_render($field, $title = NULL) {
           'km' => $km,
           'km_label' => $km_label,
           'year' => $year_label,
-          'deposit' => $deposit_formatted,
+          'deposit_price' => $deposit_price,
+          'deposit_price_vat' => $deposit_price_vat,
           'price' => $price,
           'price_vat' => $price_vat,
           'price2' => $price2,
@@ -399,7 +402,14 @@ function customize_car_pricelist_render($field, $title = NULL) {
 
         }
         if(!empty($deposit) && !isset($pricelist[$km]['deposit'])) {
-          $pricelist[$km]['deposit'][$deposit]['name'] = $deposit_formatted;
+          $pricelist[$km]['deposit'][$deposit] = [
+            'name' => [
+              'price' => $deposit_price,
+              'price_vat' => $deposit_price_vat,
+              'currency_symbol' => $currency_symbol,
+              'vat' => $vat,
+            ],
+          ];
         }
 
         $pricelist[$km]['year'][$year] = [

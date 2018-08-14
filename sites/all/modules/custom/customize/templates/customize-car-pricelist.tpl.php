@@ -50,7 +50,7 @@
               <?php if($data['car_type'] == 'used'): ?>
                 <td class="name"><?php print t('Monthly installment with service'); ?></td>
               <?php else: ?>
-                <td class="name"><?php print t('Monthly installment with down payment'); ?> <?php print $deposit['name']; ?></td>
+                <td class="name"><?php print t('Monthly installment with down payment'); ?> <span class="js-car-price" data-price="<?php print $deposit['name']['price']; ?>" data-price-vat="<?php print $deposit['name']['price_vat']; ?>" data-symbol="<?php print $deposit['name']['currency_symbol']; ?>"><?php print number_format($deposit['name']['price'], 0, ',', '&nbsp;') . '&nbsp;' . $deposit['name']['currency_symbol']; ?></span></td>
               <?php endif; ?>
               <?php foreach($deposit['items'] as $dep): ?>
                 <td class="value"><span class="js-car-price" data-price="<?php print $dep['value']['price']; ?>" data-price-vat="<?php print $dep['value']['price_vat']; ?>" data-symbol="<?php print $dep['value']['currency_symbol']; ?>"><?php print number_format($dep['value']['price'], 0, ',', '&nbsp;') . '&nbsp;' . $dep['value']['currency_symbol']; ?></span></td>
@@ -85,12 +85,12 @@
           <?php endif; ?>
           <div class="item-value"><span class="js-car-price" data-price="<?php print $item['price']; ?>" data-price-vat="<?php print $item['price_vat']; ?>" data-symbol="<?php print $item['currency_symbol']; ?>"><?php print number_format($item['price'], 0, ',', '&nbsp;') . '&nbsp;' . $item['currency_symbol']; ?></span></div>
         </div>
-        <?php if(!empty($item['deposit'])): ?>
+        <?php if(!empty($item['deposit_price'])): ?>
           <div class="item item-deposit">
             <?php if($data['car_type'] == 'used'): ?>
               <div class="item-label"><?php print t('Monthly installment with service'); ?>:</div>
             <?php else: ?>
-              <div class="item-label"><?php print t('Monthly installment with down payment'); ?> <?php print $item['deposit']; ?>:</div>
+              <div class="item-label"><?php print t('Monthly installment with down payment'); ?> <span class="js-car-price" data-price="<?php print $item['deposit_price']; ?>" data-price-vat="<?php print $item['deposit_price_vat']; ?>" data-symbol="<?php print $item['currency_symbol']; ?>"><?php print number_format($item['deposit_price'], 0, ',', '&nbsp;') . '&nbsp;' . $item['currency_symbol']; ?></span>:</div>
             <?php endif; ?>
             <div class="item-value"><span class="js-car-price" data-price="<?php print $item['price2']; ?>" data-price-vat="<?php print $item['price2_vat']; ?>" data-symbol="<?php print $item['currency_symbol']; ?>"><?php print number_format($item['price2'], 0, ',', '&nbsp;') . '&nbsp;' . $item['currency_symbol']; ?></span></div>
           </div>
