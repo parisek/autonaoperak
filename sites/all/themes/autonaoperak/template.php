@@ -106,44 +106,6 @@ function autonaoperak_preprocess_html(&$vars) {
   if(arg(0) == 'search') {
     $head_title = check_plain(variable_get('site_name', 'Drupal'));
     $vars['head_title'] = t('Search', array(), array('context' => 'page_title')) . ' | ' . $head_title;
-  }elseif(arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2))) {
-    $current_term = menu_get_object('taxonomy_term', 2);
-    $vocabulary = $current_term->vocabulary_machine_name;
-    if($vocabulary == 'category_stock') {
-      $head_title = check_plain(variable_get('site_name', 'Drupal'));
-      // add parent name and term name to browser bar
-      if(isset($current_term->depth) && $current_term->depth == 2) {
-        $title = [];
-        $parents = taxonomy_get_parents($current_term->tid);
-        if(count($parents)) {
-          foreach ($parents as $brand) {
-            $title[] = $brand->name;
-            break;
-          }
-          $title[] = $current_term->name;
-          $vars['head_title'] = t('@title operating lease (in stock)', ['@title' => implode($title, ' ')]) . ' | ' . $head_title;
-        }
-      }else{
-        $vars['head_title'] = t('@title operating lease (in stock)', ['@title' => $current_term->name]) . ' | ' . $head_title;
-      }
-    }elseif($vocabulary == 'category_car') {
-      $head_title = check_plain(variable_get('site_name', 'Drupal'));
-      // add parent name and term name to browser bar
-      if(isset($current_term->depth) && $current_term->depth == 2) {
-        $title = [];
-        $parents = taxonomy_get_parents($current_term->tid);
-        if(count($parents)) {
-          foreach ($parents as $brand) {
-            $title[] = $brand->name;
-            break;
-          }
-          $title[] = $current_term->name;
-          $vars['head_title'] = t('@title operating lease', ['@title' => implode($title, ' ')]) . ' | ' . $head_title;
-        }
-      }else{
-        $vars['head_title'] = t('@title operating lease', ['@title' => $current_term->name]) . ' | ' . $head_title;
-      }
-    }
   }
 
   // complete logic is in customize_init() and customize_responsive_switch_content()
