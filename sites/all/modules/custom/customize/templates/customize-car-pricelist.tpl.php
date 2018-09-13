@@ -25,7 +25,9 @@
       <?php endif; ?>
       <div class="pricelist-item pricelist-item-<?php print $key; ?> <?php print ($first) ? 'show' : 'hide' ?>">
         <?php if($data['pricelist_type'] == 'company'): ?>
-        <div class="alert alert-danger"><?php print t('This pricelist is only for companies'); ?></div>
+          <div class="alert alert-danger"><?php print t('This pricelist is only for companies'); ?></div>
+        <?php elseif($data['pricelist_type'] == 'consumer'): ?>
+          <div class="alert alert-danger"><?php print t('This pricelist is only for consumers'); ?></div>
         <?php endif; ?>
         <table class="table">
           <tbody>
