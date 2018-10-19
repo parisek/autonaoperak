@@ -55,7 +55,7 @@
           dots:true,
           lazyLoad:true,
           autoplay:true,
-          autoplayTimeout:5000,
+          autoplayTimeout:7000,
           autoplayHoverPause:true,
           dotsContainer: '#carousel-custom-dots',
         })

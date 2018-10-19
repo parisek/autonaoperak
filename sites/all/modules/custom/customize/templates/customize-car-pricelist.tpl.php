@@ -68,6 +68,11 @@
     <?php endforeach; ?>
   </div>
   <div class="pricelist-mobile visible-xs visible-sm">
+    <?php if($data['pricelist_type'] == 'company'): ?>
+      <div class="alert alert-danger"><?php print t('This pricelist is only for companies'); ?></div>
+    <?php elseif($data['pricelist_type'] == 'consumer'): ?>
+      <div class="alert alert-danger"><?php print t('This pricelist is only for consumers'); ?></div>
+    <?php endif; ?>
     <?php $first = TRUE; ?>
     <?php foreach($data['pricelist_mobile'] as $key => $group): ?>
       <?php if(count($data['pricelist_mobile']) == 1): ?>

@@ -105,12 +105,16 @@ DirectoryIndex index.php index.html index.htm
   # (http://example.com/... will be redirected to http://www.example.com/...)
   # uncomment the following:
 
-  RewriteCond %{HTTP_HOST} ^/?(?:www\.)?volvonaoperak.cz [NC]
-  RewriteRule ^(.*)$ http%{ENV:protossl}://www.autonaoperak.cz/osobni-vozy/volvo [L,R=301,NC]
+  RewriteCond %{HTTP_HOST} autonaoperak\.cz$ [NC]
+  RewriteCond %{HTTP_HOST} !^www\.autonaoperak\.cz$ [OR]
+  RewriteCond %{HTTPS} off [NC]
+  RewriteRule ^(.*)$ https://www.autonaoperak.cz/$1 [L,R=301]
 
-  #RewriteCond %{HTTP_HOST} .
-  #RewriteCond %{HTTP_HOST} !^www\. [NC]
-  #RewriteRule ^ http%{ENV:protossl}://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  RewriteCond %{HTTP_HOST} autonaoperak\.sk$ [NC]
+  RewriteCond %{HTTP_HOST} !^www\.autonaoperak\.sk$ [OR]
+  RewriteCond %{HTTPS} off [NC]
+  RewriteRule ^(.*)$ https://www.autonaoperak.sk/$1 [L,R=301]
+
   #
   # To redirect all users to access the site WITHOUT the 'www.' prefix,
   # (http://www.example.com/... will be redirected to http://example.com/...)
@@ -189,4 +193,5 @@ DirectoryIndex index.php index.html index.htm
 <IfModule mod_headers.c>
   # Disable content sniffing, since it's an attack vector.
   Header always set X-Content-Type-Options nosniff
+  Header set Referrer-Policy: strict-origin-when-cross-origin
 </IfModule>
