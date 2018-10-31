@@ -22,6 +22,11 @@ function customize_car_title_render($field, $title = NULL) {
     if(!empty($wrapper->field_car_anotation->value())) {
       $content .= '<div class="subtitle">' . $wrapper->field_car_anotation->value() . '</div>';
     }
+    if(!empty($wrapper->field_car_value->value())) {
+      $content .= '<div class="list-price">';
+      $content .= t('List price <span>!price</span> with VAT', ['!price' => number_format($wrapper->field_car_value->value(), 0, ',', ' ') . '&nbsp;' . $currency_symbol]);
+      $content .= '</div>';
+    }
     if(!empty($wrapper->field_price_from->value())) {
       $price = $wrapper->field_price_from->value();
       $price_vat = round($wrapper->field_price_from->value()*(1+$vat/100));
@@ -443,6 +448,10 @@ function customize_car_pricelist_render($field, $title = NULL) {
     $data['pricelist_vat'] = $vat;
     $data['pricelist_type'] = $wrapper->field_car_pricelist_type->value();
     $data['pricelist_mobile'] = $pricelist_mobile;
+    $data['car_value'] = '';
+    if(!empty($wrapper->field_car_value->value())) {
+      $data['car_value'] = number_format($wrapper->field_car_value->value(), 0, ',', ' ') . '&nbsp;' . $currency_symbol;
+    }
     $data['car_type'] = $wrapper->field_car_type->value();
     $data['service_included'] = $wrapper->field_car_included->value()['safe_value'];
     $data['service_excluded'] = $wrapper->field_car_excluded->value()['safe_value'];

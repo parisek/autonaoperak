@@ -1,5 +1,7 @@
 <h2><?php print t('Sample price of operating leases'); ?></h2>
-<p><?php print t('The final price will be calculated based on your requirements and adjustments.'); ?></p>
+<?php if(!empty($data['car_value'])): ?>
+<h3><?php print t('List price <span>!price</span> with VAT', ['!price' => $data['car_value']]); ?></h3>
+<?php endif; ?>
 <?php if(count($data['pricelist'])): ?>
   <?php if(count($data['pricelist']) > 1): ?>
     <form class="pricelist-select">
@@ -21,7 +23,7 @@
     <?php $first = TRUE; ?>
     <?php foreach($data['pricelist'] as $key => $item): ?>
       <?php if(count($data['pricelist']) == 1): ?>
-        <h3><?php print t('Annual raid'); ?>: <?php print $item['name']; ?></h3>
+        <h3><?php print t('Annual raid', [], ['context' => 'pricelist:raid:1']); ?>: <?php print $item['name']; ?></h3>
       <?php endif; ?>
       <div class="pricelist-item pricelist-item-<?php print $key; ?> <?php print ($first) ? 'show' : 'hide' ?>">
         <?php if($data['pricelist_type'] == 'company'): ?>
@@ -110,6 +112,7 @@
     <p class="js-car-note-without-vat"><small><?php print t('Prices are without @vat % VAT.', ['@vat' => $data['pricelist_vat']]); ?></small></p>
   </div>
 <?php endif; ?>
+<p><?php print t('The final price will be calculated based on your requirements and adjustments.'); ?></p>
 <div class="pricelist-description">
   <div class="row">
     <div class="col-sm-6 col-xs-12 item-left">

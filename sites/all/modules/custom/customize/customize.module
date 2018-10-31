@@ -596,8 +596,12 @@ function customize_node_presave($node) {
       // find lowest price in field collection
       $prices = [];
       foreach ($wrapper->field_car_pricelist->getIterator() as $delta => $item_wrapper) {
-        $prices[] = (int)$item_wrapper->field_pricelist_price->value();
-        $prices[] = (int)$item_wrapper->field_pricelist_price2->value();
+        if(!empty($item_wrapper->field_pricelist_price->value())) {
+          $prices[] = (int)$item_wrapper->field_pricelist_price->value();
+        }
+        if(!empty($item_wrapper->field_pricelist_price2->value())) {
+          $prices[] = (int)$item_wrapper->field_pricelist_price2->value();
+        }
       }
 
       if(!empty($prices)) {
