@@ -156,13 +156,10 @@ function _custom_export_generate($type) {
 
   $content = '';
 
-  try {
-
     $nodes = [];
     $items = [];
     $data = [];
 
-    //loading via node entity
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', array('car'))
@@ -180,99 +177,118 @@ function _custom_export_generate($type) {
     if(count($nodes)) {
 
       foreach ($nodes as $node) {
-        $wrapper = entity_metadata_wrapper('node', $node);
 
-        // find brand like ŠKODA
-        $manufacturer = '';
-        $manufacturer_parents = taxonomy_get_parents($wrapper->field_car_brand->raw());
-        if(count($manufacturer_parents)) {
-          $manufacturer_object = taxonomy_term_load(key($manufacturer_parents));
-          $manufacturer = $manufacturer_object->name;
-        }
+        try {
 
-        $images = [];
-        foreach ($wrapper->field_car_gallery->getIterator() as $delta => $file_wrapper) {
-          $file = $file_wrapper->value();
-          $images[] = file_create_url($file['uri']);
-        }
+          $wrapper = entity_metadata_wrapper('node', $node);
 
-        $equipment = [];
-        foreach ($wrapper->field_car_equipment->getIterator() as $delta => $item_wrapper) {
-          $equipment[] = $item_wrapper->label();
-        }
+          // find brand like ŠKODA
+          $manufacturer = '';
+          $manufacturer_parents = taxonomy_get_parents($wrapper->field_car_brand->raw());
+          if(count($manufacturer_parents)) {
+            $manufacturer_object = taxonomy_term_load(key($manufacturer_parents));
+            if($manufacturer_object) {
+              $manufacturer = $manufacturer_object->name;
+            }
+          }
 
-        $pricelist = [];
-        foreach ($wrapper->field_car_pricelist->getIterator() as $delta => $item_wrapper) {
-          if(!empty($item_wrapper->field_pricelist_km->value()) &&
-             !empty($item_wrapper->field_pricelist_year->value()) &&
-             !empty($item_wrapper->field_pricelist_price->value())
-            ) {
-            $km = $item_wrapper->field_pricelist_km->value();
-            $year = $item_wrapper->field_pricelist_year->value();
-            $deposit = $item_wrapper->field_pricelist_deposit->value();
+          $images = [];
+          foreach ($wrapper->field_car_gallery->getIterator() as $delta => $file_wrapper) {
+            $file = $file_wrapper->value();
+            $images[] = file_create_url($file['uri']);
+          }
 
-            $pricelist[] = [
-              'km' => $item_wrapper->field_pricelist_km->value(),
-              'months' => $item_wrapper->field_pricelist_year->raw(),
-              'price' => $item_wrapper->field_pricelist_price->value(),
+          $equipment = [];
+          foreach ($wrapper->field_car_equipment->getIterator() as $delta => $item_wrapper) {
+            $equipment[] = $item_wrapper->label();
+          }
+
+          $pricelist = [];
+          foreach ($wrapper->field_car_pricelist->getIterator() as $delta => $item_wrapper) {
+            if(!empty($item_wrapper->field_pricelist_km->value()) &&
+               !empty($item_wrapper->field_pricelist_year->value()) &&
+               !empty($item_wrapper->field_pricelist_price->value())
+              ) {
+              $km = $item_wrapper->field_pricelist_km->value();
+              $year = $item_wrapper->field_pricelist_year->value();
+              $deposit = $item_wrapper->field_pricelist_deposit->value();
+
+              $pricelist[] = [
+                'km' => $item_wrapper->field_pricelist_km->value(),
+                'months' => $item_wrapper->field_pricelist_year->raw(),
+                'price' => $item_wrapper->field_pricelist_price->value(),
+              ];
+            }
+          }
+
+          $models = [];
+          foreach ($pricelist as $pricelist_item) {
+            $models[] = [
+              'tax_payer' => 0,
+              'engine' => $wrapper->field_car_engine->value(),
+              'fuel' => $wrapper->field_car_fuel->raw(),
+              'vol' => $wrapper->field_car_vol->value(),
+              'awd' => ($wrapper->field_car_awd->raw()) ? 1 : 0,
+              'power' => $wrapper->field_car_power->raw(),
+              'body' => $wrapper->field_car_body->raw(),
+              'transmission' => $wrapper->field_car_transmission->raw(),
+              'color' => $wrapper->field_car_color_type->raw(),
+              'months' => $pricelist_item['months'],
+              'per_year' => $pricelist_item['km'],
+              'free_per_year' => $pricelist_item['km'],
+              'pneu' => ($wrapper->field_car_pneu->raw()) ? 1 : 0,
+              'insurance' => ($wrapper->field_car_insurance->raw()) ? 1 : 0,
+              'stamp' => ($wrapper->field_car_stamp->raw()) ? 1 : 0,
+              'radio' => ($wrapper->field_car_radio->raw()) ? 1 : 0,
+              'service' => ($wrapper->field_car_servis->raw()) ? 1 : 0,
+              'road_tax' => ($wrapper->field_car_roadtax->raw()) ? 1 : 0,
+              'leasing_partner' => 'Autonaoperak.cz',
+              'price' => $pricelist_item['price'],
+              'price_vat' => round($pricelist_item['price']*(1+$vat/100)),
+              'storage' => $wrapper->field_car_stock->raw(),
+              'url' => url('node/' . $wrapper->getIdentifier(), array('absolute' => TRUE, 'query' => array('utm_source' => $manufacturer, 'utm_campaign' => 'naoperak.cz', 'utm_medium' => 'feed'))),
             ];
           }
-        }
 
-        $models = [];
-        foreach ($pricelist as $pricelist_item) {
-          $models[] = [
-            'tax_payer' => 0,
-            'engine' => $wrapper->field_car_engine->value(),
-            'fuel' => $wrapper->field_car_fuel->raw(),
-            'vol' => $wrapper->field_car_vol->value(),
-            'awd' => ($wrapper->field_car_awd->raw()) ? 1 : 0,
-            'power' => $wrapper->field_car_power->raw(),
-            'body' => $wrapper->field_car_body->raw(),
-            'transmission' => $wrapper->field_car_transmission->raw(),
-            'color' => $wrapper->field_car_color_type->raw(),
-            'months' => $pricelist_item['months'],
-            'per_year' => $pricelist_item['km'],
-            'free_per_year' => $pricelist_item['km'],
-            'pneu' => ($wrapper->field_car_pneu->raw()) ? 1 : 0,
-            'insurance' => ($wrapper->field_car_insurance->raw()) ? 1 : 0,
-            'stamp' => ($wrapper->field_car_stamp->raw()) ? 1 : 0,
-            'radio' => ($wrapper->field_car_radio->raw()) ? 1 : 0,
-            'service' => ($wrapper->field_car_servis->raw()) ? 1 : 0,
-            'road_tax' => ($wrapper->field_car_roadtax->raw()) ? 1 : 0,
-            'leasing_partner' => 'Autonaoperak.cz',
-            'price' => $pricelist_item['price'],
-            'price_vat' => round($pricelist_item['price']*(1+$vat/100)),
-            'storage' => $wrapper->field_car_stock->raw(),
-            'url' => url('node/' . $wrapper->getIdentifier(), array('absolute' => TRUE, 'query' => array('utm_source' => $manufacturer, 'utm_campaign' => 'naoperak.cz', 'utm_medium' => 'feed'))),
+          $class = '';
+          if($wrapper->field_car_brand->value() != NULL) {
+            $class = $wrapper->field_car_brand->name->value();
+          }
+          $color = '';
+          $color_id = '';
+          if($wrapper->field_car_color->value() != NULL) {
+            $color_id = $wrapper->field_car_color->raw();
+            $color = $wrapper->field_car_color->name->value();
+          }
+          $color_kind = '';
+          if($wrapper->field_car_color_type->value() != NULL) {
+            $color_kind = $wrapper->field_car_color_type->raw();
+          }
+
+          $items[] = [
+            'item_id' => $wrapper->getIdentifier(),
+            'name' => $wrapper->label(),
+            'manufacturer' => $manufacturer,
+            'class' => $class,
+            'equipment' => implode($equipment, ', '),
+            'color_id' => $color_id,
+            'color_name' => $color,
+            'color_kind' => $color_kind,
+            'images' => $images,
+            'models' => $models,
           ];
+
+        }catch (EntityMetadataWrapperException $exc) {
+          watchdog(
+            'custom_export',
+            'See '  . __FUNCTION__ . '() <pre>' .  $exc->getTraceAsString() . '</pre>',
+             NULL, WATCHDOG_ERROR
+          );
         }
-
-        $items[] = [
-          'item_id' => $wrapper->getIdentifier(),
-          'name' => $wrapper->label(),
-          'manufacturer' => $manufacturer,
-          'class' => $wrapper->field_car_brand->name->value(),
-          'equipment' => implode($equipment, ', '),
-          'color_id' => $wrapper->field_car_color->raw(),
-          'color_name' => $wrapper->field_car_color->name->value(),
-          'color_kind' => $wrapper->field_car_color_type->raw(),
-          'images' => $images,
-          'models' => $models,
-        ];
       }
-
-      $content .= theme('customize_export_template', array('items' => $items, 'data' => $data));
-
     }
 
-  }catch (EntityMetadataWrapperException $exc) {
-    watchdog(
-      'custom_export',
-      'See '  . __FUNCTION__ . '() <pre>' .  $exc->getTraceAsString() . '</pre>',
-       NULL, WATCHDOG_ERROR
-    );
-  }
+  $content .= theme('customize_export_template', array('items' => $items, 'data' => $data));
 
   return $content;
 
