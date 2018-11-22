@@ -111,6 +111,25 @@
     flex-wrap: wrap;
     margin-left: -25px;
     margin-right: -25px;
+    &.node-car-status-end {
+      .field-customize-car-gallery {
+        img {
+          filter: grayscale(100%);
+          opacity: 0.4;
+        }
+        .product-image-full-container a:before {
+          content: 'Tento vůz má už jiného majitele';
+          color: @text-color;
+          font-size: @font-size-large;
+          text-align: center;
+          position: absolute;
+          top: 5px;
+          left: 0;
+          right: 0;
+          z-index: 10;
+        }
+      }
+    }
     .group-header,
     .group-footer {
       flex: 0 0 100%;

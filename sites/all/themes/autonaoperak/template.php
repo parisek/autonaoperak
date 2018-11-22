@@ -224,6 +224,19 @@ function autonaoperak_preprocess_html(&$vars) {
 }
 
 /**
+ * Implements template_preprocess_node().
+ */
+function autonaoperak_preprocess_node(&$vars) {
+  $node = $vars['node'];
+  if($node) {
+    $wrapper = entity_metadata_wrapper('node', $node);
+    if($wrapper->__isset('field_car_status') && $wrapper->field_car_status->value()) {
+      $vars['classes_array'][] = drupal_html_class('node-car-status-' . $wrapper->field_car_status->raw());
+    }
+  }
+}
+
+/**
  * Overrides theme_textarea().
  */
 function autonaoperak_textarea($element) {
