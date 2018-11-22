@@ -16,11 +16,8 @@
 # For syntax checking, see:
 # http://www.frobee.com/robots-txt-check
 
-User-agent: *
-Crawl-delay: 10
-
 # Sitemap
-Sitemap: http://www.autonaoperak.sk/sitemap.xml
+Sitemap: https://www.autonaoperak.sk/sitemap.xml
 # JS/CSS
 Allow: /misc/*.js$
 Allow: /misc/*.css$
