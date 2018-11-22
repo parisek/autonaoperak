@@ -30,6 +30,8 @@
           <div class="alert alert-danger"><?php print t('This pricelist is only for companies'); ?></div>
         <?php elseif($data['pricelist_type'] == 'consumer'): ?>
           <div class="alert alert-danger"><?php print t('This pricelist is only for consumers'); ?></div>
+        <?php elseif($data['pricelist_type'] == 'bmw'): ?>
+          <div class="alert alert-danger"><?php print t('All BMW cars have service included for 5 year or 100,000 km'); ?></div>
         <?php endif; ?>
         <table class="table">
           <tbody>
@@ -74,6 +76,8 @@
       <div class="alert alert-danger"><?php print t('This pricelist is only for companies'); ?></div>
     <?php elseif($data['pricelist_type'] == 'consumer'): ?>
       <div class="alert alert-danger"><?php print t('This pricelist is only for consumers'); ?></div>
+    <?php elseif($data['pricelist_type'] == 'bmw'): ?>
+      <div class="alert alert-danger"><?php print t('All BMW cars have service included for 5 year or 100,000 km'); ?></div>
     <?php endif; ?>
     <?php $first = TRUE; ?>
     <?php foreach($data['pricelist_mobile'] as $key => $group): ?>
