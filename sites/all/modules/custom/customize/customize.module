@@ -299,7 +299,7 @@ function customize_ds_fields_info($entity_type) {
   $fields['node']['customize_car_title_mobile'] = array(
     'title' => t('Customize: Title (mobile)'),
     'ui_limit' => array('car|full'),
-    'function' => 'customize_car_title_render',
+    'function' => 'customize_car_title_mobile_render',
   ) + $defaults;
 
   $fields['node']['customize_car_sold'] = array(

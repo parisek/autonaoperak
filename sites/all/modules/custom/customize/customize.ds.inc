@@ -44,6 +44,50 @@ function customize_car_title_render($field, $title = NULL) {
   return $content;
 }
 
+function customize_car_title_mobile_render($field, $title = NULL) {
+  $content = '';
+
+  try {
+
+    $node = $field['entity'];
+    $wrapper = entity_metadata_wrapper('node', $field['entity']);
+
+    $currency_symbol = '';
+    $vat = 0;
+    if($wrapper->language->value() == 'sk') {
+      $currency_symbol = '€';
+      $vat = variable_get('customize_vat_sk', 20);
+    }elseif($wrapper->language->value() == 'cs') {
+      $currency_symbol = 'Kč';
+      $vat = variable_get('customize_vat_cs', 21);
+    }
+
+    $content .= '<div class="page-header">' . $wrapper->label() . '</div>';
+    if(!empty($wrapper->field_car_anotation->value())) {
+      $content .= '<div class="subtitle">' . $wrapper->field_car_anotation->value() . '</div>';
+    }
+    if(!empty($wrapper->field_car_value->value())) {
+      $content .= '<div class="list-price">';
+      $content .= t('List price <span>!price</span> with VAT', ['!price' => number_format($wrapper->field_car_value->value(), 0, ',', ' ') . '&nbsp;' . $currency_symbol]);
+      $content .= '</div>';
+    }
+    if(!empty($wrapper->field_price_from->value())) {
+      $price = $wrapper->field_price_from->value();
+      $price_vat = round($wrapper->field_price_from->value()*(1+$vat/100));
+      $content .= '<div class="price">' . t('From') . ' <span class="value"><span class="js-car-price" data-price="' . $price . '" data-price-vat="' . $price_vat . '" data-symbol="' . $currency_symbol . '">' . number_format($price, 0, ',', ' ') . '&nbsp;' . $currency_symbol . '</span></span> / ' . t('month') . '</div>';
+    }
+
+  }catch (EntityMetadataWrapperException $exc) {
+    watchdog(
+      'customize',
+      'See '  . __FUNCTION__ . '() <pre>' .  $exc->getTraceAsString() . '</pre>',
+       NULL, WATCHDOG_ERROR
+    );
+  }
+
+  return $content;
+}
+
 function customize_car_sold_render($field, $title = NULL) {
   $content = '';
 
@@ -95,15 +139,20 @@ function customize_car_gallery_render($field, $title = NULL) {
       $title = $image_wrapper->value()['title'];
       $image_info = image_get_info($uri);
 
+      if(empty($title)) {
+        $title = $wrapper->label();
+      }
+
       $images[] = array(
         'image' => theme('photoswipe_imagefield', array(
             'image' => array(
               'path' => $uri,
               'style_name' => ($delta) ? 'product-small' : 'product-full',
+              'alt' => $title,
             ),
             'path' => file_create_url($uri),
             'dimensions' => $image_info['width'] . 'x' . $image_info['height'],
-            'caption' => $title . ' - ' . $wrapper->label(),
+            'caption' => $title,
         )),
       );
     }
@@ -243,8 +292,14 @@ function customize_car_teaser_render($field, $title = NULL) {
     $image = '';
     foreach ($wrapper->field_car_gallery->getIterator() as $delta => $file_wrapper) {
       $file = $file_wrapper->value();
+      $title = $file_wrapper->value()['title'];
+
+      if(empty($title)) {
+        $title = $wrapper->label();
+      }
+
       if($file) {
-        $image = theme('image_style', array('style_name' => 'product-list', 'path' => $file['uri']));
+        $image = theme('image_style', array('style_name' => 'product-list', 'path' => $file['uri'], 'alt' => $title));
       }
       break;
     }
@@ -518,7 +573,7 @@ function customize_car_related_render($field, $title = NULL) {
         // get first image from gallery
         foreach ($wrapper->field_car_gallery->getIterator() as $delta => $image_wrapper) {
           $file = $image_wrapper->value();
-          $image = theme('image_style', array('style_name' => 'product-small', 'path' => $file['uri']));
+          $image = theme('image_style', array('style_name' => 'product-small', 'path' => $file['uri'], 'alt' => $title));
           break;
         }
 
