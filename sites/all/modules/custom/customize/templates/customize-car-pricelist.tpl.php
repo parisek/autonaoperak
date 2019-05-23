@@ -32,6 +32,8 @@
           <div class="alert alert-danger"><?php print t('This pricelist is only for consumers'); ?></div>
         <?php elseif($data['pricelist_type'] == 'bmw'): ?>
           <div class="alert alert-danger"><?php print t('All BMW cars have service included for 5 year or 100,000 km'); ?></div>
+        <?php elseif($data['pricelist_type'] == 'volvo'): ?>
+          <div class="alert alert-danger"><?php print t('All Volvo cars have service included for 4 year or 80,000 km'); ?></div>
         <?php endif; ?>
         <table class="table">
           <tbody>
