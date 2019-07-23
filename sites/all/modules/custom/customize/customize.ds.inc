@@ -378,7 +378,7 @@ function customize_car_contact_render($field, $title = NULL) {
       $content .= '<a href="tel:+420601601805">601 601 805</a><br>';
       $content .= '<a href="tel:+420601601807">601 601 807</a>';
     }elseif($language->language == 'sk') {
-      $content .= '<a href="tel:0919420460">0919 420 460</a>';
+      $content .= '<a href="tel:0949350035">0949 350 035</a>';
     }
     $content .= '</span>';
     $content .= '</div>';
