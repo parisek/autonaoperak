@@ -166,6 +166,7 @@ function _custom_export_generate($type) {
     ->propertyCondition('status', NODE_PUBLISHED)
     ->propertyCondition('language', $language->language)
     ->fieldCondition('field_car_type', 'value', $type)
+    ->fieldCondition('field_car_status', 'value', 'sale')
     ->propertyOrderBy('created', 'DESC');
     $result = $query->execute();
 
