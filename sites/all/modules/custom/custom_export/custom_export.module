@@ -203,6 +203,10 @@ function _custom_export_generate($type) {
           foreach ($wrapper->field_car_equipment->getIterator() as $delta => $item_wrapper) {
             $equipment[] = $item_wrapper->label();
           }
+          if($wrapper->field_car_pdf->value()) {
+            $file = $wrapper->field_car_pdf->value();
+            $equipment[] = file_create_url($file['uri']);
+          }
 
           $pricelist = [];
           foreach ($wrapper->field_car_pricelist->getIterator() as $delta => $item_wrapper) {
@@ -269,6 +273,7 @@ function _custom_export_generate($type) {
           $items[] = [
             'item_id' => $wrapper->getIdentifier(),
             'name' => $wrapper->label(),
+            'anotation' => $wrapper->field_car_anotation->value(),
             'manufacturer' => $manufacturer,
             'class' => $class,
             'equipment' => implode($equipment, ', '),

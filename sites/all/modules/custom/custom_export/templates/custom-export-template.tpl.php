@@ -4,7 +4,7 @@
   <?php foreach($items as $item): ?>
   <ITEM>
     <ITEM_ID><?php print $item['item_id']; ?></ITEM_ID>
-    <NAME><![CDATA[<?php print $item['name']; ?>]]></NAME>
+    <NAME><![CDATA[<?php print $item['name']; ?> <?php print $item['anotation']; ?>]]></NAME>
     <MANUFACTURER><![CDATA[<?php print $item['manufacturer']; ?>]]></MANUFACTURER>
     <CLASS><![CDATA[<?php print $item['class']; ?>]]></CLASS>
     <KIND_ID>1</KIND_ID>
