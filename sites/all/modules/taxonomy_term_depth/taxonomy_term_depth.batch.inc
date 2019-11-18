@@ -27,7 +27,10 @@ function taxonomy_term_depth_batch_depth_update_form_submit($form, &$form_state)
     case 'btn_rebuild_all':
       batch_set(array(
         'operations' => array(
-          array('taxonomy_term_depth_batch_callbacks_update_term_depth', array($options)),
+          array(
+            'taxonomy_term_depth_batch_callbacks_update_term_depth',
+            array($options),
+          ),
         ),
         'title' => t('Updating depths for all terms'),
         'file' => TAXONOMY_TERM_DEPTH_ROOT_REL . '/taxonomy_term_depth.batch.inc',
@@ -53,7 +56,8 @@ function taxonomy_term_depth_batch_callbacks_update_term_depth($options, &$conte
     // Clear all depths first
     db_update('taxonomy_term_data')
       ->fields(array(
-        'depth' => NULL)
+          'depth' => NULL,
+        )
       )
       ->execute();
 
@@ -76,6 +80,6 @@ function taxonomy_term_depth_batch_callbacks_update_term_depth($options, &$conte
     $sandbox['position']++;
   }
 
-  $context['finished'] = $sandbox['count'] ? $sandbox['position'] / $sandbox['count']: 1;
+  $context['finished'] = $sandbox['count'] ? $sandbox['position'] / $sandbox['count'] : 1;
   $context['finished'] = $context['finished'] > 1 ? 1 : $context['finished'];
 }

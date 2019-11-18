@@ -6,6 +6,7 @@
  *
  */
 class taxonomy_term_depth_handler_field_taxonomy extends views_handler_field_taxonomy {
+
   /**
    * Constructor to provide additional field to add.
    *
@@ -38,7 +39,8 @@ class taxonomy_term_depth_handler_field_taxonomy extends views_handler_field_tax
   }
 
   /**
-   * Find the parent at the desired depth if available. Render whatever the data is as a link to the taxonomy.
+   * Find the parent at the desired depth if available. Render whatever the
+   * data is as a link to the taxonomy.
    *
    * Data should be made XSS safe prior to calling this function.
    */

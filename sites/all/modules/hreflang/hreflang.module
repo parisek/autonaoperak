@@ -25,7 +25,7 @@ function hreflang_page_build(&$page) {
   }
   foreach ($links->links as $link) {
     // Content translation module may unset the href attribute.
-    if (!isset($link['href'])) {
+    if (!isset($link['href']) || !isset($link['attributes']['hreflang'])) {
       continue;
     }
     $link['absolute'] = TRUE;
