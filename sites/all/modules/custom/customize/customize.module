@@ -649,3 +649,39 @@ function customize_get_langugage_object($language) {
   $installed_languages = language_list();
   return $installed_languages[$language];
 }
+
+function customize_webform_select_options_info() {
+
+  $items['leasing_length'] = array(
+    'title' => t('Leasing length'),
+    'options callback' => 'customize_leasing_length_options',
+    'options arguments' => array(),
+  );
+  $items['leasing_km'] = array(
+    'title' => t('Leasing km'),
+    'options callback' => 'customize_leasing_km_options',
+    'options arguments' => array(),
+  );
+
+  return $items;
+}
+
+function customize_leasing_length_options($component, $flat, $arguments) {
+  $options = array();
+
+  for ($i=24; $i <= 60; $i+=6) {
+    $options[$i] = $i . ' měsíců';
+  }
+
+  return $options;
+}
+
+function customize_leasing_km_options($component, $flat, $arguments) {
+  $options = array();
+
+  for ($i = 5000; $i <= 50000; $i += 5000) {
+    $options[$i] = number_format($i, 0, ',', ' ') . ' km';
+  }
+
+  return $options;
+}
