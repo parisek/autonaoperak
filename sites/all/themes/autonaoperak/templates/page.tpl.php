@@ -76,13 +76,13 @@
 <header role="banner" class="header">
   <?php if (!empty($page['topbar'])): ?>
   <div class="topbar">
-    <div class="container">
+    <div class="container-fluid">
       <?php print render($page['topbar']); ?>
     </div>
   </div>
   <?php endif; ?>
   <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
+    <div class="container-fluid">
       <div class="region-header">
         <div class="block-logo">
           <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">

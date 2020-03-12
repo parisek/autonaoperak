@@ -181,6 +181,12 @@
         }
       });
 
+      $('.pricelist-link').on('click', function () {
+        $this = $(this);
+        $('.webform-client-form .webform-component--length select').val($this.data('length'));
+        $('.webform-client-form .webform-component--km select').val($this.data('km'));
+      });
+
     }
   };
 
