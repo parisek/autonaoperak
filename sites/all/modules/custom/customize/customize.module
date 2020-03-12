@@ -606,6 +606,8 @@ function customize_node_presave($node) {
 
       if(!empty($prices)) {
         $wrapper->field_price_from = min($prices);
+      }else{
+        $wrapper->field_price_from = 0;
       }
 
     }catch (EntityMetadataWrapperException $exc) {
