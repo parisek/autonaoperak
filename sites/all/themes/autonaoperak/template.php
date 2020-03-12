@@ -451,7 +451,7 @@ function autonaoperak_css_alter(&$css) {
  * - Remove the type attribute from the <script>, <style> and <link> elements.
  * - Remove the CDATA comments from inline JavaScript and CSS.
  */
-function autonaoperak_process_html_tag(&$vars) {
+function autonaoperak_preprocess_html_tag(&$vars) {
   $element = &$vars['element'];
   // Remove the "type" attribute.
   if (in_array($element['#tag'], array('script', 'link', 'style'))) {
