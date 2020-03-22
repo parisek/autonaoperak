@@ -429,12 +429,27 @@ function customize_car_pricelist_render($field, $title = NULL) {
         $km_label = number_format($item_wrapper->field_pricelist_km->value(), 0, ',', ' ') . '&nbsp;km';
         $year = $item_wrapper->field_pricelist_year->value();
         $year_label = $item_wrapper->field_pricelist_year->label();
-        $deposit = $item_wrapper->field_pricelist_deposit->value();
+
+        $deposit_type = 'fixed';
+        if($wrapper->__isset('field_car_deposit2') && !empty($wrapper->field_car_deposit2->value())) {
+          $deposit = $wrapper->field_car_deposit2->value();
+        }elseif($wrapper->__isset('field_car_deposit') && !empty($wrapper->field_car_deposit->value())) {
+          $deposit = $wrapper->field_car_deposit->value();
+          $deposit_type = 'percentage';
+        }else{
+          $deposit = $item_wrapper->field_pricelist_deposit->value();
+        }
+
         $deposit_price = 0;
         $deposit_price_vat = 0;
-        if($deposit>0) {
-          $deposit_price = $deposit;
-          $deposit_price_vat = round($deposit*(1+$vat/100));
+        $deposit_percentage = 0;
+        if($deposit > 0) {
+          if ($deposit_type === 'fixed') {
+            $deposit_price = $deposit;
+            $deposit_price_vat = round($deposit * (1 + $vat / 100));
+          } elseif ($deposit_type === 'percentage') {
+            $deposit_percentage = $deposit;
+          }
         }
         $price = $item_wrapper->field_pricelist_price->value();
         $price_vat = round($item_wrapper->field_pricelist_price->value()*(1+$vat/100));
@@ -447,6 +462,8 @@ function customize_car_pricelist_render($field, $title = NULL) {
           'year' => $year_label,
           'deposit_price' => $deposit_price,
           'deposit_price_vat' => $deposit_price_vat,
+          'deposit_percentage' => $deposit_percentage,
+          'deposit_type' => $deposit_type,
           'price' => $price,
           'price_vat' => $price_vat,
           'price2' => $price2,
@@ -468,6 +485,8 @@ function customize_car_pricelist_render($field, $title = NULL) {
               'price_vat' => $deposit_price_vat,
               'currency_symbol' => $currency_symbol,
               'vat' => $vat,
+              'percentage' => $deposit_percentage,
+              'type' => $deposit_type,
             ],
           ];
         }
@@ -484,7 +503,7 @@ function customize_car_pricelist_render($field, $title = NULL) {
           ],
         ];
 
-        // deposit is not required
+        // deposit is not required (with service price)
         if(!empty($deposit)) {
           $pricelist[$km]['deposit'][$deposit]['items'][$year] = [
             'value' => [
