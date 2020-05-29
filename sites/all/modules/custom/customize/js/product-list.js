@@ -14,19 +14,19 @@
       var vat = Drupal.settings.customize.vat;
 
       // if parameter passed from URL
-      var fuel = $('.view-block-car-list #edit-field-car-fuel-value').val();
+      var fuel = $('.view-block-car-list .form-item-field-car-fuel-value select').val();
       if(fuel != 'All') {
-        $('.item-fuel select', $filter).val(body);
+        $('.item-fuel select', $filter).val(fuel);
       }
       $('.item-fuel select', $filter).on('change', function(event) {
         var $this = $(this);
-        $('.view-block-car-list #edit-field-car-fuel-value').val($this.val());
+        $('.view-block-car-list .form-item-field-car-fuel-value select').val($this.val());
 
         $('.view-block-car-list .view-filters .form-submit').trigger('click');
       });
 
       // if parameter passed from URL
-      var trans = $('.view-block-car-list #edit-field-car-transmission-value');
+      var trans = $('.view-block-car-list .form-item-field-car-transmission-value select');
       if(trans.val()) {
         trans = trans.val();
         $('.item-transmission input[type=checkbox]', $filter).each(function() {
@@ -40,26 +40,26 @@
         $('.item-transmission input[type=checkbox]:checked', $filter).each(function() {
           items.push($(this).val());
         });
-        $('.view-block-car-list #edit-field-car-transmission-value').val(items);
+        $('.view-block-car-list .form-item-field-car-transmission-value select').val(items);
 
         $('.view-block-car-list .view-filters .form-submit').trigger('click');
       });
 
-      var body = $('.view-block-car-list #edit-field-car-body-value').val();
+      var body = $('.view-block-car-list .form-item-field-car-body-value select').val();
       if(body != 'All') {
         $('.item-body select', $filter).val(body);
       }
       $('.item-body select', $filter).on('change', function(event) {
         var $this = $(this);
-        $('.view-block-car-list #edit-field-car-body-value').val($this.val());
+        $('.view-block-car-list .form-item-field-car-body-value select').val($this.val());
 
         $('.view-block-car-list .view-filters .form-submit').trigger('click');
       });
 
       $('.item-sort input[type=radio],.item-sort select', $filter).on('change', function(event) {
         var type = $(this).val();
-        var $orderby = $('.view-block-car-list #edit-sort-by'); // field_price_from_value, field_weight_value
-        var $order = $('.view-block-car-list #edit-sort-order'); // ASC, DESC
+        var $orderby = $('.view-block-car-list .form-item-sort-by select'); // field_price_from_value, field_weight_value
+        var $order = $('.view-block-car-list .form-item-sort-order select'); // ASC, DESC
 
         if(type == 'recommended') {
           $orderby.val('field_weight_value');
@@ -77,11 +77,11 @@
 
       $('.item-price #price-from', $filter).on('keyup change paste', function(event) {
         var value = $(this).val();
-        $('.view-block-car-list #edit-field-price-from-value-min').val(value);
+        $('.view-block-car-list .form-item-field-price-from-value-min input').val(value);
       });
       $('.item-price #price-to', $filter).on('keyup change paste', function(event) {
         var value = $(this).val();
-        $('.view-block-car-list #edit-field-price-from-value-max').val(value);
+        $('.view-block-car-list .form-item-field-price-from-value-max input').val(value);
       });
 
       $('.form-submit', $filter).on('click', function(e) {
@@ -116,8 +116,8 @@
 
       // load price value from URL
       // useful when hitting back button
-      var fromDisplay = fromValue = parseInt($('.view-block-car-list #edit-field-price-from-value-min').val());
-      var toDisplay = toValue = parseInt($('.view-block-car-list #edit-field-price-from-value-max').val());
+      var fromDisplay = fromValue = parseInt($('.view-block-car-list .form-item-field-price-from-value-min input').val());
+      var toDisplay = toValue = parseInt($('.view-block-car-list .form-item-field-price-from-value-max input').val());
       if(fromValue>0 || toValue>0) {
         $('.slider-from', $filter).text(number_format(fromDisplay));
         $('.slider-to', $filter).text(number_format(toDisplay));
@@ -145,8 +145,8 @@
         $('.slider-from', $filter).text(number_format(fromDisplay));
         $('.slider-to', $filter).text(number_format(toDisplay));
         // pass to view
-        $('.view-block-car-list #edit-field-price-from-value-min').val(fromValue);
-        $('.view-block-car-list #edit-field-price-from-value-max').val(toValue);
+        $('.view-block-car-list .form-item-field-price-from-value-min input').val(fromValue);
+        $('.view-block-car-list .form-item-field-price-from-value-max input').val(toValue);
 
         // Reset timelimit
         clearTimeout(submitTimeout);
