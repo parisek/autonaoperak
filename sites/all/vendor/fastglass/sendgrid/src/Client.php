@@ -1,16 +1,13 @@
 <?php
 namespace SendGrid;
 
-use \Email;
-use \Exception;
-use \Response;
 use GuzzleHttp\Exception\ClientException;
 
 /**
  * Class SendGrid
  */
 class Client {
-  const VERSION = '1.0.7';
+  const VERSION = '1.0.12';
 
   protected
     $headers = ['Content-Type' => 'application/json'],
@@ -18,7 +15,6 @@ class Client {
     $options;
 
   public
-    $apiUser,
     $apiKey,
     $url,
     $endpoint,
@@ -37,7 +33,6 @@ class Client {
     if (is_array($apiKeyOrOptions) || $apiKeyOrOptions === NULL) {
       // API key.
       $this->apiKey = $apiUserOrKey;
-      $this->apiUser = NULL;
 
       // With options.
       if (is_array($apiKeyOrOptions)) {
@@ -46,7 +41,7 @@ class Client {
     }
     else {
       // Won't be thrown?
-      throw new InvalidArgumentException('Need an api key!');
+      throw new \InvalidArgumentException('Need an api key!');
     }
 
     $this->options['turn_off_ssl_verification'] = (isset($this->options['turn_off_ssl_verification']) && $this->options['turn_off_ssl_verification'] == TRUE);
@@ -70,11 +65,9 @@ class Client {
    */
   private function prepareHttpClient() {
     $headers = [];
-    // $headers['verify'] = !$this->options['turn_off_ssl_verification'];
-    // Using api key
-    if ($this->apiUser === NULL) {
-      $headers['Authorization'] = 'Bearer' . ' ' . $this->apiKey;
-    }
+    // Using api key.
+    $headers['Authorization'] = 'Bearer' . ' ' . $this->apiKey;
+
 
     // Using http proxy
     if (isset($this->options['proxy'])) {
@@ -107,20 +100,15 @@ class Client {
    * Returns response codes after sending and will throw exceptions on faults.
    *
    * @param \SendGrid\Email $email
-   * @return \SendGrid\Response
+   * @return bool|\SendGrid\Response
    * @throws \SendGrid\Exception
    */
   public function send(\SendGrid\Email $email) {
     $form = $email->toWebFormat();
-    // Adding API keys to header.
-    if ($this->apiUser !== NULL) {
-      $form['api_user'] = $this->apiUser;
-      $form['api_key'] = $this->apiKey;
-    }
 
     $response = $this->postRequest($this->endpoint, $form);
 
-    if ($response->code != 200 && $this->options['raise_exceptions']) {
+    if ($response && (!in_array($response->code, [200, 250])) && $this->options['raise_exceptions']) {
       throw new \SendGrid\Exception($response->raw_body, $response->code);
     }
 
@@ -158,12 +146,12 @@ class Client {
     try {
       $res = $this->client->request('POST', $endpoint, $requestoptions);
     }
-    catch (GuzzleHttp\Exception\ClientException $e) {
-      echo 'Sendgrid API has experienced and error completing your request.';
-      echo '<pre>';
-      var_dump($e);
-      echo '</pre>';
-      return FALSE;
+    catch (ClientException $e) {
+      if (empty($e->getResponse())) {
+        return FALSE;
+      }
+
+      $res = $e->getResponse();
     }
     $response = new \SendGrid\Response($res->getStatusCode(), $res->getHeaders(), $res->getBody(TRUE), json_decode($res->getBody(TRUE)));
 

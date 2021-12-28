@@ -5,7 +5,7 @@ namespace SendGrid\Tests;
 use \Mockery as m;
 use \SendGrid as s;
 
-class SendGridTest_Client extends \PHPUnit_Framework_TestCase {
+class SendGridTest_Client extends \PHPUnit\Framework\TestCase {
 
   /**
    * Tear down test.
@@ -18,7 +18,7 @@ class SendGridTest_Client extends \PHPUnit_Framework_TestCase {
    * Test the version number.
    */
   public function testVersion() {
-    $this->assertEquals(s\Client::VERSION, '1.0.7');
+    $this->assertEquals(s\Client::VERSION, '1.0.12');
     $this->assertEquals(json_decode(file_get_contents('composer.json'))->version, \SendGrid\Client::VERSION);
   }
 
@@ -28,7 +28,6 @@ class SendGridTest_Client extends \PHPUnit_Framework_TestCase {
   public function testInitWithApiKey() {
     $sendgrid = new s\Client('token123456789');
     $this->assertEquals('SendGrid\Client', get_class($sendgrid));
-    $this->assertNull($sendgrid->apiUser);
     $this->assertEquals($sendgrid->apiKey, 'token123456789');
   }
 

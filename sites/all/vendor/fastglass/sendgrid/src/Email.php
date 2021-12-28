@@ -936,7 +936,7 @@ class Email {
    * @return null|string
    */
   public function getHeadersJson() {
-    if (count($this->getHeaders()) <= 0) {
+    if (is_array($this->getHeaders()) && count($this->getHeaders()) <= 0) {
       return NULL;
     }
 
@@ -945,7 +945,7 @@ class Email {
 
   /**
    * Set headers by passing an array of key/value custom header values.
-   * 
+   *
    * @param array $key_value_pairs
    * @return $this
    */
@@ -1034,7 +1034,7 @@ class Email {
     if ($this->getDate()) {
       $web['date'] = $this->getDate();
     }
-    if ($this->smtpapi->to && (count($this->smtpapi->to) > 0)) {
+    if (is_array($this->smtpapi->to) && (count($this->smtpapi->to) > 0)) {
       $web['to'] = "";
     }
 
@@ -1062,7 +1062,7 @@ class Email {
         }
         // This creates an keyed array with the filenames as the key and the
         // full path as a value.
-        $web['files'][$f['basename']] = $f['dirname'] . '/' . $f['basename'];
+        $web['files'][$full_filename] = $f['dirname'] . '/' . $f['basename'];
       };
     }
 
@@ -1073,11 +1073,11 @@ class Email {
    * There needs to be at least one to address, or else the mail won't send.
    * This method modifies the data that will be sent via either Rest
    *
-   * @param mixed $data
-   * @return mixed $data
+   * @param array $data
+   * @return array $data
    */
-  public function updateMissingTo($data) {
-    if ($this->smtpapi->to && (count($this->smtpapi->to) > 0)) {
+  public function updateMissingTo(array $data) {
+    if (is_array($this->smtpapi->to) && (count($this->smtpapi->to) > 0)) {
       $data['to'] = $this->getFrom();
     }
 

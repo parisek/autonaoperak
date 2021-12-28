@@ -2,6 +2,30 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.0.12](https://github.com/taz77/sendgrid-php-ng/tree/v1.0.12) (2020-11-18)
+[Full Changelog](https://github.com/taz77/sendgrid-php-ng/compare/v1.0.11...v1.0.12)
+
+## [1.0.11](https://github.com/taz77/sendgrid-php-ng/tree/v1.0.11) (2019-01-15)
+[Full Changelog](https://github.com/taz77/sendgrid-php-ng/compare/v1.0.10...v1.0.11)
+
+## [1.0.10](https://github.com/taz77/sendgrid-php-ng/tree/v1.0.10) (2018-09-08)
+[Full Changelog](https://github.com/taz77/sendgrid-php-ng/compare/v1.0.9...v1.0.10)
+
+**Fixed issues:**
+- Upgrade [PHPUnit](https://github.com/taz77/sendgrid-php-ng/issues/17) to 7.3
+
+## [1.0.9](https://github.com/taz77/sendgrid-php-ng/tree/v1.0.9) (2018-08-15)
+[Full Changelog](https://github.com/taz77/sendgrid-php-ng/compare/v1.0.8...v1.0.9)
+
+**Fixed issues:**
+- PHP 7.2 compatibility [issue](https://github.com/taz77/sendgrid-php-ng/issues/15) with count()
+
+## [1.0.8](https://github.com/taz77/sendgrid-php-ng/tree/v1.0.8) (2017-08-16)
+[Full Changelog](https://github.com/taz77/sendgrid-php-ng/compare/v1.0.7...v1.0.8)
+
+**Fixed issues:**
+- Incorrect Client method in example documentation
+
 ## [1.0.7](https://github.com/taz77/sendgrid-php-ng/tree/v1.0.7) (2016-07-20)
 [Full Changelog](https://github.com/taz77/sendgrid-php-ng/compare/v1.0.6...v1.0.7)
 

@@ -1,22 +1,21 @@
 # SendGrid-PHP
 
-**This is a forked version of SendGrid-PHP which uses Guzzle 6.x**
+**This is a version of SendGrid-PHP which uses Guzzle 6.x**
 
-[![BuildStatus](https://travis-ci.org/taz77/sendgrid-php-ng.svg?branch=master)](https://travis-ci.org/taz77/sendgrid-php-ng)
+Badge Bling: [![BuildStatus](https://travis-ci.org/taz77/sendgrid-php-ng.svg?branch=master)](https://travis-ci.org/taz77/sendgrid-php-ng) 
+[![ScanStatus](https://img.shields.io/coverity/scan/11112.svg)](https://scan.coverity.com/projects/taz77-sendgrid-php-ng)
 
-This library allows you to quickly and easily send emails through SendGrid using PHP with the help of Guzzle 6.x. This development was to support the new PSR messaging standard in PHP that is implemented in Guzzle 6.x
+This library allows you to quickly and easily send emails through SendGrid using PHP with the help of Guzzle 6.x. Guzzle is a very popular HTTP client for PHP used in many other PHP packages.
 
-This module inherits the updates from the official Sendgrid library that were introduced in version 3.x of the official API.
+SendGrid has chosen to write their own PHP HTTP client. This module uses Guzzle instead. From the point that SendGrid choose to provide their own HTTP client library, this module has permanantly forked away from the official code and is mantained independently from the official libraries. This module uses Guzzle for the transport layer and so the code is differnt. Contributions to help maintain this libary is welcome!
 
-This API is maintained in support of the [Drupal Sendgrid Integration Module](https://www.drupal.org/project/sendgrid_integration) that I also maintain. Drupal 8 ships with Guzzle 6.x in the core of the software and Guzzle 6.x supports the standardization of PSR messages. The official Sendgrid PHP API supports only the deprecated Guzzle 3.x as they are maintaining support for PHP 5.3.
-
-Interfacing with this library is exactly the same as interfacing with the official library with the exception of the API Key requirement. This Sendgrid library will not function with a username/password. API keys are Sendgrid's recommended way to use the API for all future code. The API calls are the same, just the dependencies and the internal processing of the data has been altered for Guzzle 6.x.
+Mainly, this API is maintained in support of the [Drupal Sendgrid Integration Module](https://www.drupal.org/project/sendgrid_integration) that I also maintain. Drupal 8 ships with Guzzle 6.x in the core of the software and Guzzle 6.x supports the standardization of PSR messages. The official Sendgrid PHP API supports only the deprecated Guzzle 3.x as they are maintaining support for PHP 5.3.
 
 To install this library it is best to use composer. I have published a package through Packagist for this library. Use the following in your composer.json:
 
 ``` php
 "require": {
-    "fastglass/sendgrid": ">=1.0.5"
+    "fastglass/sendgrid": ">=1.0.9"
   }
 ```
 
@@ -24,9 +23,9 @@ To install this library it is best to use composer. I have published a package t
 
 If you would like to look at some example code for using this library, clone [this](https://github.com/Fastglass-LLC/sendgrid-php-example) repository.
 
-## Notes from Sendgrid official library
+## Upgade to V3 API
 
-WARNING: This module was recently upgraded from [2.2.x](https://github.com/sendgrid/sendgrid-php/tree/v2.2.1) to 3.X. There were API breaking changes for various method names. See [usage](https://github.com/sendgrid/sendgrid-php#usage) for up to date method names.
+Work is underway (in a development branch) to upgrade this module to the V3 API. Please help if you can!
 
 ## PLEASE READ THIS
 
@@ -44,15 +43,14 @@ Important: This library requires PHP 5.5 or higher.
 
 
 ```php
-$sendgrid = new SendGrid('YOUR_SENDGRID_APIKEY');
+$sendgrid = new SendGrid\Client('YOUR_SENDGRID_APIKEY');
 $email = new SendGrid\Email();
 $email
     ->addTo('foo@bar.com')
     ->setFrom('me@bar.com')
     ->setSubject('Subject goes here')
     ->setText('Hello World!')
-    ->setHtml('<strong>Hello World!</strong>')
-;
+    ->setHtml('<strong>Hello World!</strong>');
 
 $sendgrid->send($email);
 
@@ -105,7 +103,7 @@ There is a [sendgrid-php-example app](https://github.com/sendgrid/sendgrid-php-e
 
 ## Usage
 
-To begin using this library, initialize the SendGrid object with your SendGrid credentials OR a SendGrid [API Key](https://sendgrid.com/docs/User_Guide/Account/api_keys.html). API Key is the preferred method. API Keys are in beta. To configure API keys, visit https://sendgrid.com/beta/settings/api_key.
+To begin using this library, initialize the SendGrid object with a SendGrid [API Key](https://sendgrid.com/docs/User_Guide/Account/api_keys.html). API Key is the only preferred method allowed. To configure API keys, visit https://sendgrid.com/beta/settings/api_key.
 
 ```php
 $sendgrid = new SendGrid('YOUR_SENDGRID_APIKEY');
@@ -161,7 +159,7 @@ $sendgrid = new SendGrid('YOUR_SENDGRID_APIKEY', $options);
 You may change the URL sendgrid-php uses to send email by supplying various parameters to `options`, all parameters are optional:
 
 ```php
-$sendgrid = new SendGrid(
+$sendgrid = new SendGrid\Client(
     'YOUR_SENDGRID_APIKEY',
     array(
         'protocol' => 'http',
@@ -175,7 +173,7 @@ $sendgrid = new SendGrid(
 A full URL may also be provided:
 
 ```php
-$sendgrid = new SendGrid(
+$sendgrid = new SendGrid\Client(
     'YOUR_SENDGRID_APIKEY',
     array( 'url' => 'http://sendgrid.org:80/send')
 );
@@ -186,7 +184,7 @@ $sendgrid = new SendGrid(
 You can optionally ignore verification of SSL certificate when using the Web API.
 
 ```php
-$sendgrid = new SendGrid(
+$sendgrid = new SendGrid\Client(
     'YOUR_SENDGRID_APIKEY',
     array("turn_off_ssl_verification" => true)
 );
@@ -900,10 +898,9 @@ $result = $sendgrid->send($email);
 
 The existing tests in the `test` directory can be run using [PHPUnit](https://github.com/sebastianbergmann/phpunit/) with the following command:
 
-````bash
+```bash
 composer update --dev
-cd test
-../vendor/bin/phpunit
+./vendor/bin/phpunit ./tests
 ```
 
 or if you already have PHPUnit installed globally.

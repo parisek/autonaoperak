@@ -7,5 +7,4 @@ $baseDir = dirname(dirname($vendorDir)).'/default/files/composer';
 
 return array(
     'Smtpapi' => array($vendorDir . '/sendgrid/smtpapi/lib'),
-    'SensioLabs\\Security' => array($vendorDir . '/sensiolabs/security-checker'),
 );
