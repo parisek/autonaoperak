@@ -300,6 +300,7 @@ function composer_manager_installed_packages_load() {
   if ($json === NULL) {
     $file_uri = composer_manager_vendor_dir() . '/composer/installed.json';
     $json = composer_manager_read_composer_file($file_uri);
+    $json = isset($json['packages']) ? $json['packages'] : $json;
   }
   return $json;
 }

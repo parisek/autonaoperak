@@ -33,7 +33,7 @@ class SendGridMailSystem implements MailSystemInterface {
     $key_secret = variable_get('sendgrid_integration_apikey', '');
     if (empty($key_secret)) {
       // Set a warning int he logs of there is no key.
-      watchdog('SendGrid Integration', t('No API Secret key has been set'), [], WATCHDOG_ERRROR);
+      watchdog('SendGrid Integration', t('No API Secret key has been set'), [], WATCHDOG_ERROR);
       // Return false to indicate message was not able to send.
       return FALSE;
     }
@@ -62,12 +62,17 @@ class SendGridMailSystem implements MailSystemInterface {
       $sendgrid_message->addFilter('bypass_list_management', 'enable', 1);
     }
 
+    // Bypass spam filters if requested by othe modules.
+    if (!empty($message['sendgrid']['bypass_list_management'])) {
+      $sendgrid_message->addFilter('bypass_list_management', 'enable', 1);
+    }
+
     if (isset($message['params']['account']->uid)) {
       $unique_args['uid'] = $message['params']['account']->uid;
     }
 
     // Allow other modules to modify unique arguments.
-    $args = module_invoke_all('sendgrid_integration_unique_args_alter', $unique_args);
+    $args = module_invoke_all('sendgrid_integration_unique_args_alter', $unique_args, $message);
 
     // Check if we got any variable back.
     if (!empty($args)) {
@@ -281,9 +286,7 @@ class SendGridMailSystem implements MailSystemInterface {
           break;
 
         case 'reply-to':
-          if (isset($message['headers']['reply-to']) || (isset($message['headers']['Reply-To']) && $message['headers']['reply-to'] = $message['headers']['Reply-To'])) {
-            $sendgrid_message->setReplyTo($message['headers']['reply-to']);
-          }
+          $sendgrid_message->setReplyTo($message['headers']['$key']);
 
           break;
       }
@@ -493,7 +496,7 @@ class SendGridMailSystem implements MailSystemInterface {
     // Creating hook, allowing other modules react on sent email.
     module_invoke_all('sendgrid_integration_sent', $message['to'], $response_code, $unique_args, $response);
 
-    if ($response_code = 200) {
+    if ($response_code == 200) {
       // If the code is 200 we are good to finish and proceed.
       return TRUE;
     }
