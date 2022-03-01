@@ -575,6 +575,7 @@ function customize_car_related_render($field, $title = NULL) {
       ->propertyCondition('status', NODE_PUBLISHED)
       ->propertyCondition('language', $language->language)
       ->fieldCondition('field_car_brand', 'tid', $brand_tid)
+      ->fieldCondition('field_car_status', 'value', 'sale')
       ->fieldCondition('field_car_type', 'value', $car_type)
       ->fieldOrderBy('field_weight', 'value', 'ASC');
 
