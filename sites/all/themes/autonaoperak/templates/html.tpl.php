@@ -68,6 +68,15 @@
   <![endif]-->
   <?php print $scripts; ?>
   <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/1f9fa685ae28ee4decd136542/d6869a681e7fe1cf409b808a7.js");</script>
+<script type="text/javascript" src="https://c.seznam.cz/js/rc.js"></script>
+<script>
+  var retargetingConf = {
+    rtgId: 1375131
+  };
+  if (window.rc && window.rc.retargetingHit) {
+    window.rc.retargetingHit(retargetingConf);
+  }
+</script>
 </head>
 <body<?php print $body_attributes; ?>>
   <div id="skip-link">
