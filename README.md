@@ -7,3 +7,11 @@
 6. Use `ddev drush status` to access Drush
 7. Use `ddev ssh` and now you can use all commands
 8. User `ddev auth ssh` or `ddev auth ssh -d ~/.ssh/ddev` to add keys
+
+# Database dump
+`ddev drush sql:dump --gzip --result-file=db.sql`
+
+# How to use production database?
+1. Remove domain autonaoperak.cz / autonaoperak.sk in table `languages`
+2. Change prefix for sk language "sk"
+3. Log in and visit https://autonaoperak.ddev.site/admin/config/regional/language/configure/url and change to "prefix"
