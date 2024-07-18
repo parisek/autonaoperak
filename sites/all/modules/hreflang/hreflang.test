@@ -28,12 +28,12 @@ class HreflangTest extends DrupalWebTestCase {
     parent::setUp('hreflang', 'locale');
 
     // User to add language.
-    $this->adminUser = $this->drupalCreateUser(array(
+    $adminUser = $this->drupalCreateUser(array(
       'access administration pages',
       'administer languages',
       'administer site configuration',
     ));
-    $this->drupalLogin($this->adminUser);
+    $this->drupalLogin($adminUser);
 
     // Add predefined language.
     $edit = array('langcode' => 'fr');

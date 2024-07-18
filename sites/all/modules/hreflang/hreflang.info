@@ -5,8 +5,8 @@ package = Multilingual
 files[] = hreflang.test
 configure = admin/config/search/hreflang
 
-; Information added by Drupal.org packaging script on 2021-12-01
-version = "7.x-1.6"
+; Information added by Drupal.org packaging script on 2023-01-12
+version = "7.x-1.7"
 core = "7.x"
 project = "hreflang"
-datestamp = "1638376149"
+datestamp = "1673519748"

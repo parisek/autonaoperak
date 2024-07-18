@@ -55,7 +55,10 @@ function hreflang_page_build(&$page) {
  */
 function hreflang_language_switch_links_alter(array &$links, $type, $path) {
   foreach ($links as $langcode => &$link) {
-    $link['attributes']['hreflang'] = $langcode;
+    // Defer to other modules setting the hreflang attribute.
+    if (!isset($link['attributes']) || !array_key_exists('hreflang', $link['attributes'])) {
+      $link['attributes']['hreflang'] = $langcode;
+    }
   }
 }
 

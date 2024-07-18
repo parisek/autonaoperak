@@ -17,8 +17,8 @@ files[] = includes/taxonomy_term_depth_handler_field_taxonomy.inc
 files[] = includes/taxonomy_term_depth_handler_filter_has_children.inc
 files[] = taxonomy_term_depth.test
 
-; Information added by Drupal.org packaging script on 2019-04-11
-version = "7.x-1.5"
+; Information added by Drupal.org packaging script on 2023-05-23
+version = "7.x-1.6"
 core = "7.x"
 project = "taxonomy_term_depth"
-datestamp = "1554979989"
+datestamp = "1684849468"
