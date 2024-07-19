@@ -255,6 +255,16 @@ function customize_car_description_render($field, $title = NULL) {
       $content .= l($title, $url, ['html' => TRUE, 'attributes' => ['target'=>'_blank']]);
       $content .= '</div>';
     }
+    if(!empty($wrapper->field_car_pdf2->value())) {
+      $file = $wrapper->field_car_pdf2->value();
+      $filesize = format_size($file['filesize']);
+      $url = file_create_url($file['uri']);
+      $content .= '<div class="file" style="margin-bottom: 20px;">';
+      $title = '<span class="icon-pdf"></span>';
+      $title .= '<span class="text">' . t('Sample loan calculation with residual value') . ' <span class="size">(PDF, ' . $filesize .')</span></span>';
+      $content .= l($title, $url, ['html' => TRUE, 'attributes' => ['target'=>'_blank']]);
+      $content .= '</div>';
+    }
 
   }catch (EntityMetadataWrapperException $exc) {
     watchdog(
