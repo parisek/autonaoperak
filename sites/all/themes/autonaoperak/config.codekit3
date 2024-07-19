@@ -181,19 +181,6 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/images\/bg-testimonial.jpg" : {
-      "ft" : 16384,
-      "iS" : 43572,
-      "jF" : 0,
-      "oA" : 0,
-      "oAP" : "\/images\/bg-testimonial.jpg",
-      "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
-      "ou" : "lpckwebp-none",
-      "q" : 100,
-      "rq" : 75
-    },
     "\/images\/flags\/flag-cs.svg" : {
       "ft" : 2097152,
       "miP" : 0,

@@ -517,8 +517,6 @@
 }
 .block-hp-testimonial {
   padding: @line-height-computed*4 0 @line-height-computed*6 0;
-  background-image: url('../images/bg-testimonial.jpg');
-  background-size: cover;
   h2 {
     font-size: 40px;
     text-align: center;
@@ -852,6 +850,16 @@
     }
     #categoryAdvancedFilters,
     .morelink {
+      display: none;
+    }
+  }
+}
+
+// hide from Elektromobily
+// we dont have filters
+.product-list-used {
+  .category-list-form {
+    .category-list-filter {
       display: none;
     }
   }
